@@ -1,0 +1,477 @@
+\documentclass[draft,ras]{agutex}
+\usepackage{lineno}
+\linenumbers*[1]
+
+% When submitting articles through the GEMS system:
+% COMMENT OUT ANY COMMANDS THAT INCLUDE GRAPHICS.
+% (See FIGURES section near the end of the file.)
+%
+%  Figures and tables should be placed AT THE END OF THE ARTICLE,
+%  after the references.
+%
+%  Uncomment the following command to include .eps files
+%  (comment out this line for draft format):
+ \usepackage{graphicx}
+
+\authorrunninghead{HUTCHINS ET AL.}
+
+\titlerunninghead{RELATIVE DETECTION EFFICIENCY OF WWLLN}
+
+\authoraddr{J. B. Brundell, UltraMSK.com, 
+7 Gowan Close, Waverley, Dunedin, 9013, New Zealand.
+(james@brundell.co.nz)}
+
+\authoraddr{R. H. Holzworth,
+Department of Earth and Space Sciences, University of Washington, 
+Box 351310, Johnson Hall 070, Seattle, WA 98105, USA.
+(bobholz@ess.washington.edu)}
+
+\authoraddr{M. L. Hutchins,
+Department of Earth and Space Sciences, 
+University of Washington, 
+Box 351310, Johnson Hall 070, Seattle, WA 98105, USA.
+(mlhutch@uw.edu)}
+
+\authoraddr{C. J. Rodger,
+Department of Physics, University of Otago,
+PO Box 56, Dunedin, 9016, New Zealand.
+(crodger@physics.otago.ac.nz)}
+
+\begin{document}
+
+\title{Relative Detection Efficiency of the World Wide Lightning Location Network}
+
+\author{M. L. Hutchins\altaffilmark{1}, R. H. Holzworth\altaffilmark{1}, J. B. Brundell\altaffilmark{2}, and C. J. Rodger\altaffilmark{3}}
+
+\altaffiltext{1}{Department of Earth and Space Sciences, University of Washington, Seattle, Washington, USA}
+
+\altaffiltext{2}{UltraMSK.com, Dunedin, New Zealand}
+
+\altaffiltext{3}{Department of Physics, University of Otago, Dunedin, New Zealand}
+
+\begin{abstract}
+
+Using the detected energy per strokes of the World Wide Lightning Location Network (WWLLN) we calculate the relative detection efficiency for the network as if it had a uniform  detection efficiency. The model uses the energy statistics of located strokes to determine which stations are sensitive to what stroke energies. We are then able to estimate the number of strokes that may be missing from any given regions as compared to the best, most sensitive regions of the WWLLN network. Stroke density maps can be corrected with the knowledge of how sensitive various regions of the network are operating.
+
+This new model for the relative WWLLN detection efficiency compensates for the uneven global coverage of the network sensors as well as variations in very low frequency (VLF) propagation. The model gives a way to represent the global distribution of strokes as if observed by a globally uniform network. The model results are analyzed in spatial and temporal regimes, and the effects of a single VLF detector going offline are investigated in areas of sparse and dense detector coverage. The results are also used to show spatial, temporal and energy distributions as seen by the detection efficiency corrected WWLLN.
+
+\end{abstract}
+
+\begin{article}
+
+\section{Introduction}
+
+The World Wide Lightning Location Network (WWLLN) has been generating global lightning locations since 2004 \citep{Rodger2006, Rodger2009}. Since then the network has grown from 18 stations to over 60 as of August 2012. Additional stations have greatly improved the ability of WWLLN to locate progressively weaker strokes \citep{Rodger2009, Abarca2010}. However the WWLLN network does not observe lightning with the same detection efficiency everywhere. This is due to variable WWLLN station coverage and the strong affect on very low frequency (VLF) radio propagation from orography and ionospheric conditions along the great circle path of a wave. This paper demonstrates a technique which uses only data collected by the WWLLN network itself, to estimate the relative detection efficiency of each $5^\circ$ x $5^\circ$ pixel over the earth compared to the best average WWLLN detection efficiency. For instance, the lightning stroke density over central Africa, where WWLLN station density is sparse, can now be compared to the region of the Earth with the best detection efficiency, such as North America. This paper does not provide an absolute detection efficiency calculation.
+
+WWLLN (see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time \citep{Jacobson2006c}. The network uses VLF radio wave receivers distributed around the globe to identify the time of group arrival (TOGA) for the wave packets from individual lightning-produced sferics \citep{Dowden2002d}. A central processor combines the TOGAs to determine the source locations over the spherical Earth. The TOGA of the VLF wave packet developed by \citet{Dowden2000}, is used rather than ``trigger time'' to produce more uniform arrival times across the network. Stroke locations are determined using the TOGAs with  a time of arrival algorithm over the spherical earth (see \citet{Rodger2009, Rodger2009a}). Knowledge of global stroke locations, with high temporal and spatial accuracy is beneficial for both scientific and technical uses. WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
+
+As of April 2012 WWLLN consisted of 60 VLF stations distributed around the world, with more stations continuously being added to the network. The network improves in accuracy and detection efficiency with increased stations; for example an increase in the number of WWLLN stations from 11 in 2003 to 30 in 2007 led to a $\sim$165\% increase in the number of lightning strokes located \citep{Rodger2009}. As of 2011 the network located 61\% of strokes to $<$5~km and 54\% to $<$15~$\mu s$ with an estimated detection efficiency of about 11\% for cloud to ground flashes and $>$30\% for higher peak current flashes over the Continental United States\citep{Hutchins2012c, Abarca2010, Rodger2009}.
+
+A concern for all VLF networks is the non-uniform propagation of VLF waves due to changing ionospheric  and surface conditions; this is true for networks monitoring lightning produced VLF signals like WWLLN, or those monitoring fixed-frequency communication transmitters like AARDDVARK \citep{Clilverd2009}. During the day there is a larger ionospheric electron density at lower D-region altitudes. This causes the range of electron-neutral collision frequencies to overlap with the range of sferic wave frequencies, increasing the attenuation rate of the sferics. This increase in electron number density is also seen in the change of the reference ionospheric height, $h'$ \citep{Wait1960a}, during the day ($h'=74$~km) compared to during the night ($h'=87$~km). There is a similar change in attenuation over the path of the sferic from the differences in the conductivity of the oceans (4~S/m), continents ($10^{-2}$~-- $10^{-4}$~S/m), and Antarctic/Arctic ice ($10^{-5}$~S/m). The many path parameters for a given sferic result in a highly variable attenuation \citep{Volland1995}.
+
+Thus, independently determining the real-time detection efficiency has always been a challenging topic. Several studies have been conducted comparing the network to other ground based networks or satellite measurements \citep{Lay2004b, Jacobson2006c, Rodger2009, Abarca2010, Abreu2010}. These studies tend to be limited in either scope or in time due to the availability of data from other networks. Past work by \citet{Rodger2006} attempted to determine the global detection efficiency of WWLLN using a theoretical model linked to observations from a ground based commercial lightning network in New Zealand. In this paper a new method is developed for determining  the relative detection efficiency of WWLLN based upon the recent network advancement of measuring the radiated energy of detected strokes \citep{Hutchins2012}.
+
+Developing a model of detection efficiency expands the capabilities and uses for WWLLN. In particular a model that does not rely on external comparisons to other networks or sensors is critical for obtaining a dynamic global view of network performance. Such a view will enable the network to be used with more confidence in areas of lower coverage and enable the network to be utilized with uniform detection efficiency in work requiring lightning rates and densities. This uniform performance will allow for more accurate studies of global phenomena such as the short time ($<$10 minute) variability of the global electric circuit, comparative lightning climatology between regions, and production rate estimations of transient luminous events and terrestrial gamma ray flashes. The detection efficiency model can combine with the measurements of stroke energy and regional absolute detection efficiency studies to advance research in global effects of lightning such as estimating the total sferic energy transferred to the magnetosphere in the form of whistler waves.
+
+\subsection{Calculating the Radiated Stroke Energy}
+
+Every WWLLN sferic packet includes the TOGA and a measure of the root mean square (RMS) electric field of the triggered waveform. The RMS electric field is taken in the 6-18~kHz band over the triggering window of 1.33~ms. The U.S. Navy Long Wave Propagation Capability (LWPC) code described by \citet{Ferguson1998} is utilized to model the VLF propagation from each located stroke to determine the necessary stroke energy to produce the measured RMS electric field (in the VLF band) at each WWLLN station. Using the measured RMS field at each station, the radiated energy of each detected stroke is found. In 2010 WWLLN observed a global median stroke energy of 629 J, with a 25\% average uncertainty in the measured energy. The global and regional distribution of energy is shown in Figure~\ref{2010_Energy}a. Of all the detected strokes 97\% have corresponding energy values. \citep{Hutchins2012}
+
+In Figure~\ref{2010_Energy}a the statistical error bars (Poisson statistics) are not plotted as they would be on the order, or smaller than, the line width. It is important to note that the distribution of strokes in each region is lognormal \citep{Hutchins2012} with the main differences in the total strokes detected and the median energy, which is 399~J, 1101~J, and 798~J for the Americas ($-180^\circ$ E to $-60^\circ$ E), Africa ($-60^\circ$ E to $60^\circ$ E), and Asia ($60^\circ$ E to $180^\circ$ E) respectively. An overall lower detection efficiency over Africa, particularly for low energy strokes, causes median energy to be higher than the other regions. Along with each region the energy distribution is lognormal from an hourly time scale to the annual distribution. In Figure~\ref{2010_Energy}b the annual lognormal distribution is shown with a monthly, daily, and hourly distribution. It is not until the hourly distribution that the errors are noticeable, and the distribution is still fairly lognormal.
+
+\section{Minimum Detectable Energy}
+
+The first step in calculating the relative detection efficiency for the entire network is working out the minimum stroke energy that WWLLN can detect at a given location and time. This process starts by finding the detection threshold at each station, converting it to an energy value at each location in the world, and then selecting the minimum detectable network energy at every location based on the minimum observable energy from each station. Detailed examples of how this works are given next for single stations and for the network as a whole.
+
+\subsection{Station Threshold}
+
+At each WWLLN station the threshold for triggering on an event (and calculating the TOGA at that station) is dynamically selected depending on observed activity at that station as described in Section 5.3 of \citet{Rodger2006}. Presently every WWLLN station automatically adjusts the triggering threshold to send an average of 3 packets per second to the central processor. For instance, when a station is detecting many strokes, the trigger threshold at that station is raised to maintain a steady flow of sferic packets. Since a station can only measure the electric (or magnetic) field of an event it cannot accurately discern whether a sferic comes from a nearby weak stroke or a strong distant stroke; for the case of the strongest lightning strokes the discharge could be on the other side of the Earth from the WWLLN station and still be detected. 
+
+The effect of the variable trigger threshold can be seen in Figure~\ref{Threshold}a which is a 2~-~D histogram of number of strokes with specific RMS field and UT values on 15 June 2010 for the Dunedin, New Zealand, WWLLN station ($-45.864^\circ$ N, $170.514^\circ$ E). In Figure~\ref{Threshold}b the threshold can be seen as the lower cutoff of the triggered RMS field strength distribution, the station threshold is reconstructed hourly as the 5th percentile value (red line) of the distribution. The threshold value varies relatively slowly over the course of the day. 
+
+\subsection{Station Minimum Detectable Energy}
+
+The minimum detectable energy (MDE) is the minimum energy a lightning stroke must radiate in the VLF to be detected by WWLLN or a WWLLN station (denoted network MDE and station MDE respectively). The MDE is a function of space, time and station threshold. Each station has a variable threshold which varies slowly during the day. Slow ionospheric variations can also affect the MDE by changing the VLF attenuation and detected RMS field. 
+
+Every hour the reconstructed minimum RMS field necessary to trigger an event is calculated and converted to a stroke energy. To make this conversion the same method as calculating the radiated energy per stroke is used as described in \citet{Hutchins2012}. This results in a station MDE for every point on a $5^\circ$ x $5^\circ$ global grid, which is the stroke energy necessary at that location to trigger a TOGA calculation at the given station. As an example the map of the MDE for our Dunedin station (data shown in Figure~\ref{Threshold}) is shown in Figure~\ref{Threshold_Map}. Figure~\ref{Threshold_Map} applies only to strokes detected at this one station in Dunedin, a similar map can be generated for every WWLLN station. The high MDEs in Figure~\ref{Threshold_Map} over the Antarctic, Western Africa, and Greenland are due to the high VLF attenuation over ice, and imply that Dunedin is very unlikely to detect strokes with energy less than the MDE if they were to occur in these regions.
+
+In order to locate a stroke, WWLLN requires TOGA values from at least five stations in order to conduct adequate fit error analysis. For every $5^\circ$ x $5^\circ$ grid cell all of the minimum stroke energies from currently active WWLLN stations are ordered. An example for one cell is shown in Table~\ref{mdeTable}. The 5th lowest from this list is used as the network MDE, because at least five stations can trigger on that energy value. In other words, WWLLN cannot detect a stroke until it has a radiated energy which is above the trigger threshold at five or more WWLLN stations. A map of the network MDE is shown in Figure~\ref{Minimum_Energy}. Similar to the station MDE map for our Dunedin station, Figure~\ref{Threshold_Map}, there are higher MDE values above the Arctic and Antarctic ice regions.
+
+Regions of the network with higher MDE, from either increased VLF attenuation, station thresholds or sparse coverage, preferentially detect a higher ratio of energetic strokes to all strokes. For example southern Africa has a higher MDE than other regions and the median energy, shown in Figure~\ref{2010_Energy}a is correspondingly higher. Conversely regions with low MDE, such as the Americas, show a lower median energy.
+
+\section{Relative Detection Efficiency}
+
+The next important step in calculating the relative detection efficiency is to establish the relationship between the network MDE and relative detection efficiency. The relative detection efficiency is a measure of how well a given location in the network is being observed relative to the best region in the network. In a given grid cell the network MDE is compared to the total WWLLN energy distribution of the past seven days. For a given network MDE value the fraction of total strokes above the network MDE gives the relative detection efficiency. The past seven day distribution is used as the base distribution in order to average over diurnal and station performance variations. This lognormal base distribution is assumed to be representative of a single universal distribution of stroke energies that could be detected globally by a uniform WWLLN.
+
+For example, if a location has an network MDE of 100~J, then the number of strokes in the past seven days above 100~J (grey area, Figure~\ref{Curve}a) is compared to the total number of strokes which were located in that location in those seven days. In this case the grey area has a count of $2.6\times10^6$ strokes and the total number of WWLLN strokes is $2.9\times10^6$ strokes, so for this network MDE of 100~J the relative detection efficiency is 90\%. Similarly if a location has a high network MDE value there will be few strokes with energy above it, so it will have a low relative detection efficiency.
+
+This calculation is done for a range of hypothetical network MDE values which produces a curve shown in Figure~\ref{Curve}b, to give the relationship between MDE and relative detection efficiency. This relationship is established once per day, and it is used to produce hourly maps of relative detection efficiency for that day. This is done by taking the hourly maps of network MDE and applying this relation to every $5^\circ$ x $5^\circ$ point on the globe for every hour to convert the network MDE to the relative detection efficiency.
+
+The relative detection values given by this process are only in reference to the energy distribution of the past seven days as seen by WWLLN. If a region has a relative detection efficiency of 100\% then the region is able to detect all of the detected stroke energies present in the 7-day network energy distribution. The corrections from the relative detection efficiency maps can be used to generate lightning density distributions as though WWLLN had global uniform coverage at the same level as that of the best parts of the network. This is because the method does not correct the network to absolute stroke counts, just to a globally uniform performing WWLLN.
+
+\subsection{Hourly Maps}
+
+A set of four hourly maps from 15 June 2010 showing the networks relative detection efficiency every 6 hours from 00~UTC to 18~UTC is presented in Figure~\ref{Hour_Maps}. Stations that were operational for the hour shown are displayed in white and stations that were not operational are black (operational taken to triggering $>500$ strokes/hour). The four major competing effects on the detection efficiency are the day/night terminator, local stroke activity, station density, and station performance. The day/night terminator effect can be seen as it moves from 00~UTC (Figure~\ref{Hour_Maps}a) through 18~UTC (Figure~\ref{Hour_Maps}d). An increase in local stroke activity in North American afternoon (Figure~\ref{Hour_Maps}a) causes a decrease in detection efficiency as nearby stations raise their triggering thresholds. Station density is coupled with station performance, since when a station is not operating optimally it has a similar effect as removing that station, the effect of station performance is discussed in a later section.
+
+Figure~\ref{Daily_Map} shows the daily relative detection efficiency from the average of the hourly maps, here grey stations were only operational part of the day. This average map is more representative of the relative detection efficiency for the day and it shows behavior that is expected based on the distribution of stations: lower detection efficiency over most of Africa with higher detection efficiency over and around the Pacific and North America. The low detection efficiency over Antarctica, parts of Siberia, and Greenland are due to the high attenuation of VLF propagating subionospherically over ice. Conversely the high detection efficiency over North America, Western Europe, and Oceania, are due to the high station density and low attenuation of VLF over ocean. In order to prevent unphysical overcorrections, a minimum relative detection efficiency of 5\% has been set for all of the relative detection efficiency maps.
+
+\section{Analysis}
+
+\subsection{Distribution Changes}
+
+As shown in the previous sections the relative detection efficiency values in a given day are derived from the WWLLN observed stroke energy distribution from the previous seven days, this allows for direct comparisons within a day and for nearby days, but it does not take into account the changing distribution from changes in the network. As more stations are added to the network additional low-energy strokes will be detected and the overall energy distribution will shift towards lower values. When the overall network distribution changes between years, then for a given region the relative detection efficiency can change even if that region of the network has detected the same distribution of strokes. 
+
+One way to examine the change in the distribution of energy is to examine the temporal variability of the median of the global WWLLN energy distribution, the median of the seven day distribution is shown in Figure~\ref{MedianEnergy}. The median energy varies from the three year median by 52\% with the daily median value ranging from 400~J to 2000~J. The variability is caused by ionospheric changes not accounted for in the ionospheric model used. Several jumps in the median energy (e.g., Dec 2009 and Dec 2010) are caused by changes in the primary calibrated WWLLN station (see \citet{Hutchins2012}) such as gain changes. The slow increase to Aug 2011 was due to a change of the primary calibrated station from the Dunedin, New Zealand station to the Scott Base, Antarctica station. It is important to note that since the detection efficiency is relative to the past seven days, the relatively slow changes in median energy do not strongly affect the detection efficiency and highlight how the relative detection efficiency cannot correct for absolute overall network performance.
+
+\subsection{Temporal Variability}
+
+The evolution of the network can be seen as an increase in the global average relative detection efficiency, calculated by averaging all grid cells of the each hourly maps for a day. While no region can have a relative detection efficiency over 100\%, as regions improve with more stations they will approach 100\% and increase the global average detection efficiency. The global average relative detection efficiency from April 2009 through October 2011 is shown as the green line in Figure~\ref{DE_Evolution}. In the Figure the total number of operational stations is shown as the black line, and it has a strong correlation to the global averaged detection efficiency with a correlation value of 0.86. With more stations strategically added to the network the 7-day energy distribution will also change to include more low energy strokes and increase the average relative detection efficiency. 
+
+While Figure~\ref{DE_Evolution} shows an overall increase in the number of network stations and hence detection efficiency, Figure~\ref{deTrendLocal} shows similar curves for just low-latitude regions ($-30^\circ$ N to $30^\circ$ N, blue), a single location near Florida ($-85^\circ$E, $30^\circ$N, red), and a single location near South Africa ($25^\circ$E, $-20^\circ$N, green). Removing high latitude regions increases the overall detection efficiency but does not change the overall upward trend shown by the blue curve in Figure~\ref{deTrendLocal}. When the region near Florida is examined it can be seen that it remains fairly close to 1.0 for the entire dataset, with downward trends during local summer months due to increased local lightning activity. The region near South Africa has a steady increase in detection efficiency except during a large drop out which occurred in the middle of 2011, caused by one of the African stations going offline. This shows the global detection efficiency tracks the network as a whole, but it cannot be used as an accurate proxy for smaller spatial scales.
+
+The local time variability over the region near Florida is shown in black in Figure~\ref{deUTC} and shows a total variability of about 4.9\%. The largest drop in the relative detection efficiency occurs in the afternoon, near the peak in local lightning activity at 3pm. This drop is due to the nearby stations raising their detection threshold in response to detecting more local strokes. For this location the effects of local activity dominates over the expected day/night effect due to changes in VLF propagation.
+
+The variability for the region near South Africa is shown as the dotted line in Figure~\ref{deUTC}, there is a total variability of 25.5\%. There is an overall decrease in relative the detection efficiency during the day when the sferics are propagating over the continent. The best in relative detection efficiency occurs in the middle of the night when the stations in Africa have less nearby activity and sferics are able to propagate more readily under a night ionosphere. Compared to the Florida region there is a much higher dependence on day and night conditions as well as a much wider range of variability.
+
+\subsection{Station Outage Effects}
+
+While the overall performance of the network trends along with the total number of stations, the effects  a single station turning on or off can have an effect on a large region of the global but only small effect on the network as a whole. To test the influence of single stations a day of data was randomly selected, 16 June 2010, and the entire data were reprocessed with just the Honolulu, Hawaii station ($-158^\circ$E, $21^\circ$N) removed from the raw data and again with just the Maitri, Antarctica station ($12^\circ$E, $-71^\circ$N) removed. The maps of the daily average with and without these stations are shown in Figure~\ref{scrubMap}. For Hawaii the change is fairly local to its region in the Northeast Pacific Ocean, but leads to little effect across the entire network.  In the case of Maitri there is a larger effect since it is located in a region of sparse detector coverage and covers much of the southern Atlantic.
+
+The daily average global relative detection efficiency dropped from 64\% to 63\% without Hawaii and from 64\% to 53\% without Maitri. The detection efficiency in the grid cell over Hawaii dropped from 85\% to 78\% and from 45\% to 7.4\% in the grid cell over Maitri. A plot of the total change between the daily averages in Figure~\ref{scrubMap} is shown in Figure~\ref{scrub}. 
+
+\section{Results}
+
+The detection efficiency model can be applied to global maps of stroke density to estimate, or correct for the global stroke density which would be seen if WWLLN had a uniform spatial and temporal coverage. This does not correct for the overall absolute detection efficiency (11\% for CG flashes in the United States, see \citet{Abarca2010}), rather it corrects for the areas with less WWLLN coverage. The hourly stroke density plots are corrected by dividing the counts in each grid cell by the relative detection efficiency of that cell. For example a grid cell with 100 strokes and an efficiency of 80\% would be corrected to 125 strokes. The stroke density from 2011, Figure~\ref{Global2011}, had the model corrections applied hourly with the condition that a 5$^\circ$ x 5$^\circ$ grid cell needed at least two strokes to have a correction applied. A second condition was that a minimum relative detection efficiency of 5\% was set for the model. 
+
+The total number of strokes for 2010 was $1.4\times10^8$ (4.4 strokes/second), and after applying the model the total was $2.0\times10^8$ strokes (6.3 strokes/second). In 2011 the total number of strokes was $1.5\times10^8$ (4.8 strokes/second) with a model-corrected value of $1.9\times10^8$ (6.0 strokes/second). In 2010 63\% of the global area between $\pm60^\circ$ latitude had a relative detection efficiency of at least 80\% and in 2011 this area increased from 66\% to 72\%. If we assume that the global lightning flash rate was a constant 46 flashes/second as determined by satellite measurements using the Optical Transient Detector and Lightning Imaging Sensor \citep{Cecil2011, Christian2003} for both years, this would imply a corrected global absolute detection efficiency for cloud to ground and in-cloud flashes of 13.7\% for 2010 and 13.0\% in 2011.
+
+The corrected yearly density is shown in Figure~\ref{Global2011Corrected}, aside from the overall increase in number counts the important feature is the relative count rates over the US, Africa, and Southeast Asia. In the uncorrected Figure~\ref{Global2011} the peak stroke density in Asia and America are similar while Africa is about $\sim$1-10\% of these values (also shown in Figure~\ref{2010_Energy}a). In the corrected maps we can see that the peak density in Africa is much closer in magnitude to that seen for America and Asia, and the relative densities match the distributions seen by OTD (see \citet{Christian2003} Figure 4). The total increase in stroke counts is shown in Figure~\ref{Global2011Diff} with the greatest increases occurring over land, in particular central Africa.
+
+\section{Conclusion}
+
+A relative detection efficiency model is developed for WWLLN based on the WWLLN observed stroke energy distribution. The model is examined on various temporal scales as well as performance changes due to station outage effects. The model is applied to the 2011 WWLLN dataset to produce a corrected map of stroke activity, matching the expected characteristics of satellite data. Work on comparing distant regions is now possible as the network data can be corrected to a uniform global level of performance. Future work will focus on achieving a model for absolute detection efficiency.
+
+\begin{acknowledgments}
+
+The authors wish to thank the World Wide Lightning Location Network (http://wwlln.net), a collaboration among over 50 universities and institutions, for providing the lightning location data used in this paper.
+
+\end{acknowledgments}
+
+  \begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{\textit{Abarca et~al.}(2010)\textit{Abarca, Corbosiero, and
+  Galarneau}}]{Abarca2010}
+Abarca, S.~F., K.~L. Corbosiero, and T.~J. Galarneau (2010), {An evaluation of
+  the Worldwide Lightning Location Network (WWLLN) using the National Lightning
+  Detection Network (NLDN) as ground truth}, \textit{Journal of Geophysical
+  Research}, \textit{115}(D18), 1--11, \doi{10.1029/2009JD013411}.
+
+\bibitem[{\textit{Abreu et~al.}(2010)\textit{Abreu, Chandan, Holzworth, and
+  Strong}}]{Abreu2010}
+Abreu, D., D.~Chandan, R.~H. Holzworth, and K.~Strong (2010), {A performance
+  assessment of the World Wide Lightning Location Network (WWLLN) via
+  comparison with the Canadian Lightning Detection Network (CLDN)},
+  \textit{Atmospheric Measurement Techniques}, \textit{3}(4), 1143--1153,
+  \doi{10.5194/amt-3-1143-2010}.
+
+\bibitem[{\textit{Cecil et~al.}(2011)\textit{Cecil, Buechler, and
+  Blakeslee}}]{Cecil2011}
+Cecil, D., D.~Buechler, and R.~Blakeslee, {TRMM-based Lightning Climatology},
+  in \textit{Proceedings of the 14th International Conference on Atmospheric
+  Electricity - ICAE}, Proceedings of the 14th International Conference on
+  Atmospheric Electricity - ICAE, ICAE, Rio de Janeiro, 2011.
+
+\bibitem[{\textit{Christian et~al.}(2003)}]{Christian2003}
+Christian, H., et~al. (2003), {Global frequency and distribution of lightning
+  as observed from space by the Optical Transient Detector}, \textit{Journal of
+  Geophysical Research}, \textit{108}(D1), 4005, \doi{10.1029/2002JD002347}.
+
+\bibitem[{\textit{Clilverd et~al.}(2009)}]{Clilverd2009}
+Clilverd, M.~a., et~al. (2009), {Remote sensing space weather events: the
+  AARDDVARK network}, \textit{Space Weather}, \textit{7}(4),
+  \doi{10.1029/2008SW000412}.
+
+\bibitem[{\textit{Connaughton et~al.}(2010)}]{Connaughton2010}
+Connaughton, V., et~al. (2010), {Associations between Fermi Gamma-ray Burst
+  Monitor terrestrial gamma ray flashes and sferics from the World Wide
+  Lightning Location Network}, \textit{Journal of Geophysical Research},
+  \textit{115}(A12), 1--14, \doi{10.1029/2010JA015681}.
+
+\bibitem[{\textit{Collier et~al.}(2009)\textit{Collier, Delport, Hughes,
+  Lichtenberger, Steinbach, \"{O}ster, and Rodger}}]{Collier2009}
+Collier, a.~B., B.~Delport, a.~R.~W. Hughes, J.~Lichtenberger, P.~Steinbach,
+  J.~\"{O}ster, and C.~J. Rodger, {Correlation between global lightning and
+  whistlers observed at Tihany, Hungary}, \textit{Journal of Geophysical
+  Research}, \textit{114}(A7), \doi{10.1029/2008JA013863}, 2009.
+
+\bibitem[{Doughton(2010)}]{Doughton2010}
+Doughton, S., 2010: {Faraway volcanic eruptions now detected in a flash}.
+  Seattle Times, available from:
+  http://seattletimes.nwsource.com/html/localnews/ 2013733939\_lightning22m.html,
+  (front page).
+
+\bibitem[{\textit{Dowden and Brundell}(2000)}]{Dowden2000}
+Dowden, R.~L., and J.~B. Brundell (2000), {Improvements relating to the
+  location of lightning discharges}, \textit{Australia Patent}, 749713.
+
+\bibitem[{\textit{Dowden et~al.}(2002)\textit{Dowden, Brundell, and
+  Rodger}}]{Dowden2002d}
+Dowden, R.~L., J.~B. Brundell, and C.~J. Rodger (2002), {VLF lightning location
+  by time of group arrival (TOGA) at multiple sites}, \textit{Journal of
+  Atmospheric and Solar-Terrestrial Physics}, \textit{64}(7), 817--830.
+
+\bibitem[{\textit{Ferguson}(1998)}]{Ferguson1998}
+Ferguson, J.~A. (1998), {Computer Programs for Assessment of Long- Wavelength
+  Radio Communications, Version 2.0}, \textit{Tech. Rep. 3030}, Space and Naval
+  Warfare Systems Center, San Diego.
+
+\bibitem[{\textit{Holzworth et~al.}(2011)\textit{Holzworth, McCarthy, Pfaff,
+  Jacobson, Willcockson, and Rowland}}]{Holzworth2011}
+Holzworth, R.~H., M.~P. McCarthy, R.~F. Pfaff, a.~R. Jacobson, W.~L.
+  Willcockson, and D.~E. Rowland (2011), {Lightning-generated whistler waves
+  observed by probes on the Communication/Navigation Outage Forecast System
+  satellite at low latitudes}, \textit{Journal of Geophysical Research},
+  \textit{116}(A6), 1--7, \doi{10.1029/2010JA016198}.
+
+\bibitem[{\textit{Hutchins et~al.}(2012a)\textit{Hutchins, Holzworth, Rodger,
+  and Brundell}}]{Hutchins2012}
+Hutchins, M.~L., R.~H. Holzworth, C.~J. Rodger, and J.~B. Brundell (2012a),
+  {Far-field Power of Lightning Strokes as Measured by the World Wide Lightning
+  Location Network}, \textit{Journal of Atmospheric and Oceanic Technology},
+  \textit{29}, 1102--1110, \doi{10.1175/JTECH-D-11-00174.1}.
+
+\bibitem[{\textit{Hutchins et~al.}(2012b)\textit{Hutchins, Holzworth, Rodger,
+  Heckman, and Brundell}}]{Hutchins2012c}
+Hutchins, M.~L., R.~H. Holzworth, C.~J. Rodger, S.~Heckman, and J.~B. Brundell (2012b),
+  {WWLLN Absolute Detection Efficiencies and the Global Lightning Source
+  Function}, presented at European Geophysical Union General Assembly 2012, Vienna, Austria.
+
+\bibitem[{\textit{Jacobson et~al.}(2006)\textit{Jacobson, Holzworth, Harlin,
+  Dowden, and Lay}}]{Jacobson2006c}
+Jacobson, A.~R., R.~Holzworth, J.~Harlin, R.~Dowden, and E.~Lay (2006),
+  {Performance Assessment of the World Wide Lightning Location Network (WWLLN),
+  Using the Los Alamos Sferic Array (LASA) as Ground Truth}, \textit{Journal of
+  Atmospheric and Oceanic Technology}, \textit{23}(8), 1082,
+  \doi{10.1175/JTECH1902.1}.
+
+\bibitem[{\textit{Jacobson et~al.}(2011)\textit{Jacobson, Holzworth, Pfaff, and
+  McCarthy}}]{Jacobson2011}
+Jacobson, a.~R., R.~H. Holzworth, R.~F. Pfaff, and M.~P. McCarthy (2011),
+  {Study of oblique whistlers in the low-latitude ionosphere, jointly with the
+  C/NOFS satellite and the World-Wide Lightning Location Network},
+  \textit{Annales Geophysicae}, \textit{29}(5), 851--863,
+  \doi{10.5194/angeo-29-851-2011}.
+
+\bibitem[{\textit{Kumar et~al.}(2009)\textit{Kumar, Deo, and
+  Ramachandran}}]{Kumar2009}
+Kumar, S., A.~Deo, and V.~Ramachandran (2009), {Nighttime D-region equivalent
+  electron density determined from tweek sferics observed in the South Pacific
+  Region}, \textit{Earth Planets Space}, \textit{3}(2), 905--911.
+
+\bibitem[{\textit{Lay et~al.}(2004)\textit{Lay, Holzworth, Rodger, Thomas, Jr.,
+  and Dowden}}]{Lay2004b}
+Lay, E.~H., R.~H. Holzworth, C.~J. Rodger, J.~N. Thomas, O.~P. Jr., and R.~L.
+  Dowden (2004), {WWLL global lightning detection system: Regional validation
+  study in Brazil}, \textit{Geophysical Research Letters}, \textit{31}.
+
+\bibitem[{\textit{Lay et~al.}(2007)\textit{Lay, Jacobson, Holzworth, Rodger,
+  and Dowden}}]{Lay2007}
+Lay, E.~H., A.~R. Jacobson, R.~H. Holzworth, C.~J. Rodger, and R.~L. Dowden
+  (2007), {Local time variation in land/ocean lightning flash density as
+  measured by the World Wide Lightning Location Network}, \textit{Journal of
+  Geophysical Research}, \textit{112}(D13), 1--9, \doi{10.1029/2006JD007944}.
+
+\bibitem[{\textit{Price et~al.}(2009)\textit{Price, Asfur, and
+  Yair}}]{Price2009}
+Price, C., M.~Asfur, and Y.~Yair (2009), {Maximum hurricane intensity preceded
+  by increase in lightning frequency}, \textit{Nature Geoscience},
+  \textit{2}(April), 2--5, \doi{10.1038/NGEO477}.
+
+\bibitem[{\textit{Rodger et~al.}(2006)\textit{Rodger, Werner, Brundell, Lay,
+  Thomson, Holzworth, and Dowden}}]{Rodger2006}
+Rodger, C.~J., S.~Werner, J.~B. Brundell, E.~H. Lay, N.~R. Thomson, R.~H.
+  Holzworth, and R.~L. Dowden (2006), {Detection efficiency of the VLF
+  World-Wide Lightning Location Network ( WWLLN ): initial case study},
+  \textit{Annales geophysicae}, \textit{24}, 3197--3214.
+
+\bibitem[{\textit{Rodger et~al.}(2009{\natexlab{a}})\textit{Rodger, Brundell,
+  Holzworth, Lay, Crosby, Huang, and Rycroft}}]{Rodger2009}
+Rodger, C.~J., J.~B. Brundell, R.~H. Holzworth, E.~H. Lay, N.~B. Crosby, T.-Y.
+  Huang, and M.~J. Rycroft (2009{\natexlab{a}}), {Growing Detection Efficiency
+  of the World Wide Lightning Location Network}, \textit{AIP Conference
+  Proceedings}, pp. 15--20, \doi{10.1063/1.3137706}.
+
+\bibitem[{\textit{Rodger et~al.}(2009{\natexlab{b}})\textit{Rodger, Brundell,
+  and Holzworth}}]{Rodger2009a}
+Rodger, C.~J., J.~B. Brundell, and R.~H. Holzworth (2009{\natexlab{b}}),
+  {Improvements in the WWLLN network: Improving detection efficiencies through
+  more stations and smarter algorithms}, in \textit{Japan Geoscience Union
+  Meeting}, p. (Invited Oral), Chiba City, Japan.
+
+\bibitem[{\textit{Thomas et~al.}(2010)\textit{Thomas, Solorzano, Cummer, and
+  Holzworth}}]{Thomas2010d}
+Thomas, J.~N., N.~N. Solorzano, S.~A. Cummer, and R.~H. Holzworth (2010),
+  {Polarity and energetics of inner core lightning in three intense North
+  Atlantic hurricanes}, \textit{Journal of Geophysical Research},
+  \textit{115}(A00E15), 1--11, \doi{10.1029/2009JA014777}.
+
+\bibitem[{\textit{Volland}(1995)}]{Volland1995}
+Volland, H. (1995), {Longwave Sferic Propagation within the Atmospheric
+  Waveguide}, in \textit{Handbook of Atmospherics Volume II}, edited by
+  H.~Volland, chap.~3, pp. 65--93, CRC Press, Boca Raton.
+
+\bibitem[{\textit{Wait and Spies}(1960)}]{Wait1960a}
+Wait, J., and K.~Spies (1960), {Influence of earth curvature and the
+  terrestrial magnetic field on VLF propagation}, \textit{Journal of
+  Geophysical Research}, \textit{65}(8), 2325--2331.
+
+\end{thebibliography}
+
+\end{article}
+
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p1.pdf} 
+   \caption{(a) WWLLN stroke energy distribution for the globe (black), the Americas (blue), Asia (green) and Aftica/Europe(red). (b) WWLLN global stroke energy distribution for a year (2010), month (June 2010), day (15 June 2010), and hour (09 UTC 15 June 2010). Grey lines are statistical count errors.}
+   \label{2010_Energy}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=39pc]{2012RS005049-p2.pdf} 
+   \caption{(a) shows the evolution of the triggered RMS field strength distribution (in arbitrary units) for the Dunedin WWLLN station with the red line showing the 5th percentile value. (b) shows the 9 UTC slice of the distribution, with the 5th percentile value marked (red line).}
+   \label{Threshold}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p3.pdf} 
+   \caption{The minimum detectable energy (MDE) for the Dunedin station at 9 UTC on 15 June 2010. The regions of high MDE are due to poor VLF propagation over ice from those regions to Dunedin station. The white line shows the terminator.}
+   \label{Threshold_Map}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p4.pdf} 
+   \caption{The minimum detectable energy (MDE) for the entire WWLLN network at 9 UTC on 15 June 2010.}
+   \label{Minimum_Energy}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-f5.pdf} 
+   \caption{(a) The seven day energy distribution with the strokes above the MDE of 100~J shown in grey. The fraction of strokes above 100~J to total strokes gives a relative detection efficiency of 0.9, shown as a circle in (b). The fraction for all possible MDE values is shown as the curve in (b).}
+   \label{Curve}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=39pc]{2012RS005049-p6.pdf} 
+   \caption{Relative detection efficiency maps for 00, 06, 12, and 18 UTC on 15 June 2010. Stations are shown as triangles with operational stations in white and non-operational in black. The minimum value of detection efficiency is set at 5\% to prevent unphysical corrections.}
+   \label{Hour_Maps}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p7.pdf} 
+   \caption{Daily average relative detection efficiency for 15 June 2010. Stations are shown as triangles with operational stations in white, non operational in black, and operational for part of the day in grey. The minimum value of detection efficiency is set at 5\% to prevent unphysical corrections.}
+   \label{Daily_Map}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-f8.pdf} 
+   \caption{Median stroke energy of the 7-day distribution observed by WWLLN. The relative detection efficiency of the network is based on this 7-day energy distribution.}
+   \label{MedianEnergy}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p9.pdf} 
+   \caption{The number of WWLLN stations operating (black) and the global average relative detection efficiency (green) for April 2009 through October 2011.}
+   \label{DE_Evolution}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p10.pdf} 
+   \caption{Daily variation of average detection efficiency for the globe (black), low-latitudes ($-30^\circ$ N to $30^\circ$ N, blue), over Florida ($-85^\circ$E, $30^\circ$N, red), and over South Africa ($-25^\circ$E, $-20^\circ$N, green).}
+   \label{deTrendLocal}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-f11.pdf} 
+   \caption{Average local time variation of detection efficiency over Florida ($-85^\circ$E, $30^\circ$N, solid) and South Africa ($-25^\circ$E, $-20^\circ$N, dashed), from 2009-2011.}
+   \label{deUTC}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p12.pdf} 
+   \caption{Relative detection efficiency map of 16 June 2010  for (a) the complete network, (b) the network with the Hawaii station (black star, $-158^\circ$E, $21^\circ$N) removed, and (c) the network with Maitri station (black star, $12^\circ$E, $-71^\circ$N) removed. Stations are shown as triangles with operational stations in white, non operational in black, and operational for part of the day in grey.}
+   \label{scrubMap}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=39pc]{2012RS005049-p13.pdf}
+\caption{The difference in detection efficiency for 16 June 2010 with Hawaii (a) and Maitri (b) stations completely removed from processing.}
+\label{scrub}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p14.pdf} 
+   \caption{The raw 2011 global stroke density measured by WWLLN.}
+   \label{Global2011}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p15.pdf} 
+   \caption{The 2011 global stroke density measured by WWLLN and corrected for the relative detection efficiency of the network. Note the large change in the African continent relative to Figure~\ref{Global2011}.}
+   \label{Global2011Corrected}
+\end{figure}
+
+\begin{figure}[ht!]
+   \centering
+\noindent\includegraphics[width=20pc]{2012RS005049-p16.pdf} 
+   \caption{The increase in stroke density due to the relative detection efficiency corrections for 2011. Uncorrected and corrected stroke densities shown in Figure~\ref{Global2011} and~\ref{Global2011Corrected} respectively. The increase is plotted on the same scale as the previous two figures.}
+   \label{Global2011Diff}
+\end{figure}
+
+
+\clearpage
+
+\begin{table}[ht!]
+\caption{Ordered list of station MDE values at $-25^\circ$N, $20^\circ$E and 09 UTC on 15 June 2010. The fifth lowest value (in bold) is the network MDE at this location.}
+\begin{center}
+\begin{tabular}{p{2in}p{1in}}
+\hline
+Station Name 		& 	MDE (J)\\
+\hline
+\rule{0pt}{3ex}
+Davis, Antarctica	&	34.5\\ 
+Ascension Island	&	169.2\\ 
+SANAE Base, Antarctica	&	193.9\\ 
+Perth, Australia	&	2268.3\\ 
+{\bf Rothera, Antarctica}	&	{\bf 2413.5}\\ 
+Tel Aviv, Isreal	&	4701.1\\ 
+. . .	&	. . .\\ 
+Honolulu, Hawaii	&	$1.35 \times 10^8$\\ 
+Dunedin, New Zealand	&	$5.09 \times 10^8$\\ 
+\hline
+\end{tabular}
+\end{center}
+\label{mdeTable}
+\end{table}
+
+
+\end{document}
