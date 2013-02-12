@@ -1,6 +1,6 @@
 \documentclass [11pt, twoside] {uwthesis}[2012/06/19]
  
-\usepackage{amsmath, graphicx, natbib}
+\usepackage{amsmath, graphicx, natbib, listings}
 \def\bibpreamble{\protect\addcontentsline{toc}{chapter}{Bibliography}}
 
 \setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
@@ -140,11 +140,21 @@ Text
  
 % Appendix
 
+\chapter{Code Repository}
+
+\include{Appendix/code}
+
 \chapter{Energy Processing}
+
+\include{Appendix/bootstrap}
 
 \chapter{Flash Directory Structure}
 
+\include{Appendix/flash}
+
 \chapter{WWLLN Service Unit v4}
+
+\include{Appendix/su}
 
 \chapter{Gumstix}
 
