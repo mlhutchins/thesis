@@ -1,0 +1,345 @@
+\section{Creating Gumstix microSD Card}
+
+\begin{verbatim}
+# Make and populate Gumstix microSD card for WWLLN
+
+# Copy necessary files from ~/bbImages to ~/Work/ and rename
+#cp ~/bbImages/MLO-overo ~/Work/bitbake/MLO
+# Use updated MLO instead
+#cp ~/Work/Angstrom/mlo-updated ~/Work/bitbake/MLO
+#cp ~/bbImages/uImage-overo.bin ~/Work/bitbake/uImage
+#cp ~/bbImages/u-boot-overo.bin ~/Work/bitbake/u-boot.bin
+#cp ~/Work/Angstrom/uImage ~/Work/bitbake/uImage
+#cp ~/Work/Angstrom/u-boot.bin ~/Work/bitbake/u-boot.bin
+#cp ~/bbImages/omap3-console-image-overo.tar.bz2 ~/Work/bitbake/rootfs.tar.bz2
+
+# Card size in bytes /255 /63 /512 to rounded down to get cylinders
+IMG=sakoman-gnome-image.tar.bz2
+UIMAGE=uImage-3.0-r102-omap3-multi.bin
+SD=/dev/sdb
+DIR=~/gumstix/baseKernel/
+MOD=modules-3.0-r102-omap3-multi.tgz
+
+echo Loading ${DIR}${IMG} onto $SD
+
+echo 'Creating Parition Table'
+# Partition the card
+dd if=/dev/zero of=$SD bs=1024 count=1024
+
+# Count Cylinders
+SIZE=`fdisk -l $SD | grep Disk | awk '{print $5}'` 
+echo DISK SIZE - $SIZE bytes
+CYL=`echo $SIZE/255/63/512 | bc`
+echo CYLINDERS - $CYL
+
+# Make partition table
+{
+echo 128,130944,0x0C,*
+echo 131072,,,-
+} | sfdisk --force -D -uS -H 255 -S 63 -C $CYL $SD
+
+echo 'Waiting for partition to settle'
+sleep 1
+echo '.'
+sleep 3
+echo '..'
+sleep 3
+echo '...'
+sleep 3
+
+
+echo 'Formatting and Mounting'
+#Format and Mount
+mkfs.vfat -F 32 ${SD}1 -n boot
+mke2fs -j -L rootfs ${SD}2
+sleep 2
+rm -r /media/boot
+rm -r /media/rootfs
+sleep 1
+mkdir /media/boot
+mkdir /media/rootfs
+sleep 1
+mount -t vfat ${SD}1 /media/boot
+mount -t ext3 ${SD}2 /media/rootfs
+sleep 1
+
+# Copy over boot files and expand OS
+echo 'Copying boot files and rootfs'
+cp ${DIR}MLO /media/boot/MLO
+cp ${DIR}u-boot.bin /media/boot/u-boot.bin
+cp $DIR$UIMAGE /media/boot/uImage
+tar xaf $DIR$IMG -C /media/rootfs
+tar xzvf $DIR$MOD
+rm -rf /media/rootfs/lib/modules
+rm -rf /media/rootfs/lib/firmware
+cp -r lib/modules lib/firmware /media/rootfs/lib/
+rm -rf lib
+
+sync
+
+# Copy over vim syntax folder
+tar -zxvf ${DIR}syntax
+cp -r ${DIR}syntax /usr/share/vim/vim72/ 
+
+# Adjust Network and opkg parameters
+echo 'Adjusting parameters'
+echo 'src/gz angstrom-base http://feeds.angstrom-distribution.org/feeds/core/ipk/eglibc/armv7a/base' > /media/rootfs/etc/opkg/angstrom-base.conf
+NET=/media/rootfs/etc/network/interfaces
+
+cp $NET ${NET}.defaults
+cp firstRunFiles/interfaces $NET
+
+# Copy first run script and files
+echo 'Copying firstRun script and files'
+# cp firstRun.sh /media/rootfs/home/root/
+cp -r firstRunFiles /media/rootfs/home/root/
+
+# Unmount
+echo 'Unmounting microSD card'
+umount /media/boot
+umount /media/rootfs
+
+rmdir /media/boot
+rmdir /media/rootfs
+
+echo 'Load into Gumstix and run /home/root/firstRun.sh'
+\end{verbatim}
+
+
+\section{Setting Gumstix OS Parameters}
+
+\subsection{Installing Packages}
+
+\begin{verbatim}
+
+# Install necessary system packages
+
+# Comment dhclient out if setting up via SSH
+echo 'Starting DHCP'
+dhclient
+
+echo 'Installing packages...'
+opkg update
+opkg install gcc
+opkg install libstdc++6
+opkg install python-pyserial
+opkg install gd
+opkg install ntp
+opkg install ntp-bin
+opkg install gps-utils
+opkg install vim
+opkg install iptables
+opkg install openvpn
+opkg install vpnc
+opkg remove apache2
+opkg install apache2
+opkg install openssh-keygen
+opkg install openssh-ssh
+#opkg install openssl
+#opkg install openssh
+# opkg install gpsd
+
+# opkg remove dropbear --force-removal
+# opkg install openssh
+
+# Update and set clock
+echo 'Setting clock'
+/usr/bin/ntpdate -s -u bigben.cac.washington.edu
+
+# echo 'System update'
+# opkg upgrade
+
+echo 'Run setup.sh'
+
+\end{verbatim}
+
+\subsection{Configuring Settings}
+
+\begin{verbatim}
+# Change Root password
+echo 'Changing Root Password:'
+passwd
+
+# Setup Sferix user
+echo 'Creating sferix account'
+adduser sferix
+usermod -s /bin/bash -G sferix sferix
+usermod -a -G audio sferix
+usermod -a -G dialout sferix
+touch sferix_sudo
+echo 'sferix ALL=(ALL) ALL' >> sferix_sudo
+chmod 0440 sferix_sudo
+cp sferix_sudo /etc/sudoers.d/
+rm sferix_sudo
+
+# Set user path
+echo PATH=${PATH}:/home/sferix/bin > /home/sferix/.profile
+echo export PATH >> /home/sferix/.profile
+
+# Copy over configuration files
+echo 'Copying Configuration Files'
+DIR=''
+cp ${DIR}sshd_config /etc/ssh/
+#cp ${DIR}gpelogin /etc/sysconfig/
+cat ${DIR}.bashrc >> /home/sferix/.profile
+cp ${DIR}.bashrc ~/.profile
+cp ${DIR}.vimrc ~/
+cp ${DIR}.vimrc /home/sferix/
+cp ${DIR}iptables /etc/iptables.rules
+cp ${DIR}resolv.conf /etc/
+cp ${DIR}ntp.conf /etc/
+cp ${DIR}NetworkManager.conf /etc/NetworkManager/
+rm /etc/rc*.d/*NetworkManager
+cp ${DIR}dropbear /etc/init.d/
+cp ${DIR}httpd.conf /etc/apache2/
+cp ${DIR}gpsd /etc/default/
+cp ${DIR}networkConfig.sh /home/sferix/
+cp ${DIR}asound.state /etc/
+cp ${DIR}asound.state /home/sferix/asound.state.default
+cp ${DIR}asound.txt /home/sferix/asound.txt
+
+# Install toga
+echo 'Installing Toga'
+tar -xvf ${DIR}toga.arm.bin.tar -C /home/sferix
+
+# Setup toga folders on ramdisk
+mkdir /media/ram/public_html
+mkdir /media/ram/sferics
+mkdir /home/sferix/public_html_static
+ln -s /media/ram/sferics /home/sferix/sferics
+ln -s /media/ram/public_html /home/sferix/public_html
+touch /home/sferix/sferics/sferics.log
+chown -R sferix /home/sferix
+chown -R sferix /home/sferix/sferics
+chown -R sferix /media/ram/sferics
+chown -R sferix /media/ram/public_html
+chown sferix /home/sferix/sferics/sferics.log
+
+# Create folders at startup
+cp ${DIR}ramdisk.sh /etc/init.d/
+ln -s /etc/init.d/ramdisk.sh /etc/rc5.d/S90ramdisk
+
+# Set /dev/snd ownership at startup
+cp ${DIR}setsnd.sh /etc/init.d/
+ln -s /etc/init.d/setsnd.sh /etc/rc5.d/S90setsnd
+
+# Install TSIP programs
+mkdir /home/sferix/gps
+cp ${DIR}readTSIP.py /home/sferix/gps
+cp ${DIR}sendTSIP.py /home/sferix/gps
+cp ${DIR}startGPSD.py /home/sferix/gps
+chown -R sferix /home/sferix/gps
+
+# Install sferix crontab
+crontab -u sferix ${DIR}crontab_install
+
+# Create gps.log file
+touch /home/sferix/public_html/gps.log
+chown sferix /home/sferix/public_html/gps.log
+
+# Add flash4 into authorized keys
+mkdir /home/sferix/.ssh
+cp ${DIR}authorized_keys /home/sferix/.ssh
+chown sferix /home/sferix/.ssh
+chown sferix /home/sferix/.ssh/authorized_keys
+
+# Link public_html to htdocs
+mv /usr/share/apache2/htdocs /usr/share/apache2/htdocs.orig
+ln -s /home/sferix/public_html /usr/share/apache2/htdocs
+chmod a+rx /home/sferix/public_html
+cp ${DIR}index.html /home/sferix/public_html_static/
+
+# Install preamp startup scripts
+echo "Installing preamp scripts"
+mkdir /home/sferix/preamp
+cp ${DIR}preamp* /home/sferix/preamp/
+chown sferix /home/sferix/preamp
+chown sferix /home/sferix/preamp/*
+cp ${DIR}preamp.sh /etc/init.d/
+ln -s /etc/init.d/preamp.sh /etc/rc5.d/S90preamp
+
+echo 'Reboot recommended'
+
+\end{verbatim}
+
+\section{WWLLN Service Unit v4 Initial Setup}
+
+\subsection*{Method 1: SSH Setup}
+The SSH setup method requires:
+\begin{itemize}
+\item{Ethernet cable}
+\item{SSH capable computer}
+\end{itemize}
+
+\begin{enumerate}
+\item{Connect SU to a host computer directly with an ethernet cable}
+\item{Set host computer ethernet network settings to:
+\begin{verbatim}
+address:	192.168.10.1
+gateway:	192.168.10.100
+netmask:	255.255.255.0
+\end{verbatim}}
+\item{SSH into the SU from host computer:
+\begin{verbatim}
+ssh -p 7777 sferix@192.168.10.2
+password: [	]
+\end{verbatim}}
+\item{Set desired static ip configuration in file $\sim$/networkSetup.sh}
+\item{\begin{verbatim}
+sudo ./networkSetup.sh
+\end{verbatim}}
+\item{Switch SU to main network ethernet within 1 minute of running networkSetup.sh}
+\item{Test connection by SSH'ing into SU with new IP address}
+\item{
+\begin{enumerate}
+\item{If successful: set new IP setting in /etc/network/interfaces}
+\item{If unsuccessful: power cycle SU and check settings starting with step 3}
+\end{enumerate}}
+\item{Reset SU and confirm new settings}
+\end{enumerate}
+
+\subsection*{Method 2: Workstation Setup}
+The Workstation setup method requires:
+\begin{itemize}
+\item{HDMI Monitor and cable}
+\item{{\bf Powered} USB Hub}
+\item{USB Keyboard}
+\item{USB Mouse}
+\end{itemize}
+
+\begin{enumerate}
+\item{Connect an HDMI display, keyboard and mouse}
+\item{Set network information through GUI}
+\end{enumerate}
+
+\begin{centering}
+\section*{Website Setup}
+\end{centering}
+
+\subsection*{Starting apache2}
+
+To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
+
+\begin{verbatim}
+Line 96:	#ServerName www.example.com:80
+\end{verbatim}
+
+Needs to be uncommented and changed to the hostname of the computer, e.g.:
+
+\begin{verbatim}
+Line96:	ServerName bobholz-3.ess.washington.edu:80
+\end{verbatim}
+
+Then httpd needs to be restarted:
+
+\begin{verbatim}
+sudo httpd -k restart
+\end{verbatim}
+
+\subsection*{Setting up the website}
+
+All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up.
+Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations.
+A restart in not necessary if the public\_html\_static contents are copied to public\_html.
+
+
