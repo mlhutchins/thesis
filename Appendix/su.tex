@@ -1,1 +1,121 @@
 Service unit design, justification, operation and construction.
+
+\section{Design Choices}
+
+\section{Previous Design}
+
+\section{Capabilities}
+
+\section{Components}
+
+\section{Layout and Design}
+
+\section{Eagle Files}
+
+\section{Parts List}
+
+\section{Construction}
+
+\subsection{Populating Board}
+
+\subsection{Box}
+
+\subsection{Putting It In}
+
+\section{Testing Procedures}
+
+\section{Setup}
+
+\subsection{GPS Engine}
+
+\subsection{Network Configuration}
+
+\section{WWLLN Service Unit v4 Initial Setup}
+
+\subsection*{Method 1: SSH Setup}
+The SSH setup method requires:
+\begin{itemize}
+\item{Ethernet cable}
+\item{SSH capable computer}
+\end{itemize}
+
+\begin{enumerate}
+\item{Connect SU to a host computer directly with an ethernet cable}
+\item{Set host computer ethernet network settings to:
+\begin{verbatim}
+address:	192.168.10.1
+gateway:	192.168.10.100
+netmask:	255.255.255.0
+\end{verbatim}}
+\item{SSH into the SU from host computer:
+\begin{verbatim}
+ssh -p 7777 sferix@192.168.10.2
+password: [	]
+\end{verbatim}}
+\item{Set desired static ip configuration in file $\sim$/networkSetup.sh}
+\item{\begin{verbatim}
+sudo ./networkSetup.sh
+\end{verbatim}}
+\item{Switch SU to main network ethernet within 1 minute of running networkSetup.sh}
+\item{Test connection by SSH'ing into SU with new IP address}
+\item{
+\begin{enumerate}
+\item{If successful: set new IP setting in /etc/network/interfaces}
+\item{If unsuccessful: power cycle SU and check settings starting with step 3}
+\end{enumerate}}
+\item{Reset SU and confirm new settings}
+\end{enumerate}
+
+\subsection*{Method 2: Workstation Setup}
+The Workstation setup method requires:
+\begin{itemize}
+\item{HDMI Monitor and cable}
+\item{{\bf Powered} USB Hub}
+\item{USB Keyboard}
+\item{USB Mouse}
+\end{itemize}
+
+\begin{enumerate}
+\item{Connect an HDMI display, keyboard and mouse}
+\item{Set network information through GUI}
+\end{enumerate}
+
+\begin{centering}
+\section*{Website Setup}
+\end{centering}
+
+\subsection*{Starting apache2}
+
+To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
+
+\begin{verbatim}
+Line 96:	#ServerName www.example.com:80
+\end{verbatim}
+
+Needs to be uncommented and changed to the hostname of the computer, e.g.:
+
+\begin{verbatim}
+Line96:	ServerName bobholz-3.ess.washington.edu:80
+\end{verbatim}
+
+Then httpd needs to be restarted:
+
+\begin{verbatim}
+sudo httpd -k restart
+\end{verbatim}
+
+\subsection*{Setting up the website}
+
+All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up.
+Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations.
+A restart in not necessary if the public\_html\_static contents are copied to public\_html.
+
+
+
+\subsection{Alternative Access}
+
+\section{Issues}
+
+\subsection{Heat}
+
+\subsection{Floating Output}
