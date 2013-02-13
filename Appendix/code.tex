@@ -1,4 +1,90 @@
-\section{File Storage on FlashX}
+This appendix discusses the distribution of WWLLN data files on the Flash series of computers along with the storage locations of routine processing code.
+The code locations are given in terms of both their active locations and as the source control repositories, managed using git (http://git-scm.com).
+
+\section{File Storage on Flash Machines}
+
+There are several types of WWLLN data files, summarized in Table~\ref{code:fileType}.
+The example filenames given in the table are for 31 December 2013, 5:10 UTC.
+Most of the file types, with exception of WB-files, are located on flash5 on one of two hard drives.
+Data for the current year is stored on /wd2/ while previous years are stored on /wd3/.
+Each file type has it's own directory, denoted Afiles, AEfiles, etc., with flat file structures (except for R-files).
+R-files, due to the large number generated, are broken into yearly and monthly folders of the form: /wd2/R[YYYY]/R[YYYY][MM]
+The R-file repository on flash5 differs from that of flashdat since the 2005 and 2006 data has been cleaned and organized into a consistent file hierarchy.
+Some, but not all, of the WWLLN data file directories have been copied to the other flashes on a need-basis and so the other flashes should not be considered a backup of the flash5 dataset.
+
+\begin{table}[h!]
+\begin{center}
+\caption{WWLLN Data Types}
+\begin{tabular}{|p{.75in}|p{2in}|p{4in}|}
+
+\hline
+{\bf File Type} & {\bf Naming} &	{\bf Description} \\
+
+\hline
+\rule{0pt}{3ex}
+R-files	& R20121231051000	&	Raw packets sent by stations\\ 
+
+\hline
+\rule{0pt}{3ex}
+A-files	& A20121231.loc	&	Lightning locations generated in real time\\ 
+
+\hline
+\rule{0pt}{3ex}
+AP-files	& AP20121231.loc	&	Location data with station and E-field data of each stroke solution, generated daily with relocate-B\\ 
+
+\hline
+\rule{0pt}{3ex}
+AE-files	& AE20121231.loc	&	Location and stroke energy data, generated daily by Bootstrap (Chapter~\ref{ch:energy})\\ 
+
+\hline
+\rule{0pt}{3ex}
+DE-files	& DE20121231.mat	&	Relative detection efficiency maps, as Matlab data (Chapter~\ref{ch:de})\\ 
+
+\hline
+\rule{0pt}{3ex}
+S-files	& S201212310510.Seattle.loc	&	Waveform data for strokes located near a given station.\\ 
+
+\hline
+\rule{0pt}{3ex}
+WB-files	& WB201212310510.dat	&	Continuos wideband field data output by toga -r\\ 
+
+\hline
+\end{tabular}
+\end{center}
+\label{code:fileType}
+\end{table}
+ 
+An example line from each of the R, A, AP, and AE files are given below with descriptors for each file.
+R-files are the simplest with each line containing three columns:
+
+\begin{verbatim}
+10      3000.015563     2668
+\end{verbatim}
+
+The first number is the station ID, the second is the seconds from the start of the hour, and the last is the root integrated square electric field at the station, in uncalibrated sound card units.
+For A-files each line if of the form:
+
+\begin{verbatim}
+2013/01/31,16:18:54.103460,  9.0621,-117.8276, 19.9,  9
+\end{verbatim}
+
+The first six numbers are the date (YYYY/MM/DD) and UTC time of the stroke (hh,mm,ss).
+The next two are the stroke location in degrees north latitude and east longitude.
+The final two are the timing uncertainty in microseconds and the number of WWLLN stations that participated in the stroke location.
+AP-files are similar to A-files with additional information after the stroke location:
+
+\begin{verbatim}
+2013/02/12,00:00:07.142335,-10.4622,  20.0863, 13.4,  5,17,600,19,2084,26,453,53,225,
+	64,2263
+\end{verbatim}
+
+Starting at 17,600 are pairs of numbers that give the station ID (17) and the field strength (600) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
+
+\begin{verbatim}
+2013/2/12,00:00:07.142335, -10.4622,  020.0863, 13.4, 5, 448.86, 114.87, 4
+\end{verbatim}
+
+The last three numbers correspond to the radiated VLF stroke energy in joules (448.86), the median absolute deviation of the energy value in joules (114.87), and the subset of stations that participated in the energy value solution (4).
 
 \section{Code Repositories}
 
