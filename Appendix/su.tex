@@ -19,7 +19,14 @@ Finally the system is designed to be operated remotely via SSH, but it does have
 
 \section{Layout and Design}
 
+The Eagle files (v5) are available on flash5 at /home/mlhutch/eagle/ or through a git repository (see Appendix~\ref{app:code}. 
+
 \subsection{Design}
+
+The board design is shown in Figure~\ref{app:suSchematic} with corresponding component names and values.
+The Gumstix is represented as a 40 pin header and a matching header needs to be soldered to the Tobi breakout board.
+One adjustment that may need to be changed in future iterations is the voltage divider on the VLF and PPS signal output to the internal stereo jack (upper left of diagram).
+Current values are set to reduce the two signals to within the input voltages of the Gumstix sound card.
 
 \begin{figure}[ht!]
    \centering
@@ -29,6 +36,12 @@ Finally the system is designed to be operated remotely via SSH, but it does have
 \end{figure}
 
 \subsection{Layout}
+
+Unlike previous versions of the service unit most small components (resistors, capacitors, etc.) are placed on the underside of the board so the same form factor can be used.
+The overall layout is shown in Figure~\ref{app:suBoard} with the topside in Figure~\ref{app:suTop} and bottom in Figure~\ref{app:suBot}.
+For heating issues the two voltage regulators need to be screwed onto the board with metal screws which act as heat sinks and connect them to the ground plane for heat dissipation.
+Both the USB and ethernet jacks are on the board so the Gumstix does not face directly out of the box, preventing inevitable wear and tear on the Gumstix itself.
+The HDMI plug is not on the board due to the inability to wire two jacks together (pins are spaced too close) so a wall-mount HMDI extension cord is used instead.
 
 \begin{figure}[ht!]
    \centering
