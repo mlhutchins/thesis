@@ -79,7 +79,7 @@ Price breaks are available for many of the components which can bring down the t
 \bf Part & \bf Value & \bf Quantity  & \bf Unit Price & \bf Price & \bf Supplier & \bf Part Number\\ 
 \hline
 \endfirsthead
-\multicolumn{4}{c}%
+\multicolumn{4}{c}
 {\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
 \hline
 \bf Part & \bf Value & \bf Quantity  & \bf Unit Price & \bf Price & \bf Supplier & \bf Part Number\\ 
@@ -213,14 +213,22 @@ Service unit construction steps:
 \subsection{Initial Board Test}
 \label{app:suTest1}
 
+%% Fill in
+
 \subsection{GPS Power Test}
 \label{app:suTest2}
+
+%% Fill in
 
 \subsection{Gumstix Power Test}
 \label{app:suTest3}
 
+%% Fill in
+
 \subsection{Final Service Unit Test}
 \label{app:suTest4}
+
+%% Fill in
 
 \section{Software Setup}
 
@@ -228,9 +236,7 @@ Service unit construction steps:
 
 \subsection{Network Configuration}
 
-\section{WWLLN Service Unit v4 Initial Setup}
-
-\subsection*{Method 1: SSH Setup}
+\subsubsection{Method 1: SSH Setup}
 The SSH setup method requires:
 \begin{itemize}
 \item{Ethernet cable}
@@ -264,7 +270,7 @@ sudo ./networkSetup.sh
 \item{Reset SU and confirm new settings}
 \end{enumerate}
 
-\subsection*{Method 2: Workstation Setup}
+\subsubsection{Method 2: Workstation Setup}
 The Workstation setup method requires:
 \begin{itemize}
 \item{HDMI Monitor and cable}
@@ -278,11 +284,9 @@ The Workstation setup method requires:
 \item{Set network information through GUI}
 \end{enumerate}
 
-\begin{centering}
-\section*{Website Setup}
-\end{centering}
+\subsection{Website Setup}
 
-\subsection*{Starting apache2}
+\subsubsection{Starting apache2}
 
 To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
 
@@ -302,18 +306,28 @@ Then httpd needs to be restarted:
 sudo httpd -k restart
 \end{verbatim}
 
-\subsection*{Setting up the website}
+\subsubsection{Setting up the website}
 
 All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up.
 Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations.
 A restart in not necessary if the public\_html\_static contents are copied to public\_html.
 
-
-
 \subsection{Alternative Access}
 
-\section{Issues}
+\subsubsection{Direct Console Connection}
+
+%% Fill in
+
+\subsubsection{MicroSD Access}
+
+%% Fill in
+
+\section{Known Issues}
 
 \subsection{Heat}
 
+%% Fill in
+
 \subsection{Floating Output}
+
+%% Fill in
