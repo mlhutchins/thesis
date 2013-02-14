@@ -49,6 +49,10 @@ S-files	& S201212310510.Seattle.loc	&	Waveform data for strokes located near a g
 WB-files	& WB201212310510.dat	&	Continuos wideband field data output by toga -r\\ 
 
 \hline
+\rule{0pt}{3ex}
+T-files	& T20130130.dat	&	Station packet count record, listed date is last date updated-r\\ 
+
+\hline
 \end{tabular}
 \end{center}
 \label{code:fileType}
@@ -85,6 +89,10 @@ Starting at 17,600 are pairs of numbers that give the station ID (17) and the fi
 \end{verbatim}
 
 The last three numbers correspond to the radiated VLF stroke energy in joules (448.86), the median absolute deviation of the energy value in joules (114.87), and the subset of stations that participated in the energy value solution (4).
+
+T-files are records of how many packets a given station sent to flash4 during the history of WWLLN.
+Unlike the other files it is not automatically generated, rather it is written whenever it is updated through the TfileUpdater.m script in the functions.git repository.
+Each line contains the date in days since 01/01/0000 and the counts for each station, where column 2 corresponds to station 0.
 
 \section{Code Repositories}
 
