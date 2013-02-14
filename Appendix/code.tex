@@ -88,6 +88,60 @@ The last three numbers correspond to the radiated VLF stroke energy in joules (4
 
 \section{Code Repositories}
 
+All of my code should be stored on flash5 at /home/mlhutch/matlab for Matlab scripts.
+For example the code to run the energy processing is located at /home/mlhutch/matlab/Bootstrap/bootstrap\_automation.m.
+The exact details of where the energy processing code is located, the necessary files, and similar code for the relative detection efficiency processing is covered in Appendix~\ref{app:energy}.
+Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located both on flash5 (/home/mlhutch/Git) and hosted online on bitbucket.org.
+
+The Git repositories have the advantage of multiple back ups, version control, easily portable, and easy to use.
+A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:repo}.
+\begin{table}[h!]
+\caption{Git Repositories (flash5:/home/mlhutch/Git/)}
+\begin{center}
+\begin{tabular}{|p{1.5in}|p{1.25in}|p{3.25in}|}
+
+\hline
+{\bf Code} &	{\bf Repository} &	{\bf Notes}\\
+
+\hline
+\rule{0pt}{3ex}
+Energy Processing	&bootstrap.git	&	Corresponds to $\sim$/matlab/Bootstrap \\ 
+
+\hline
+\rule{0pt}{3ex}
+Detection Efficiency	&de.git	&	Corresponds to $\sim$/matlab/detection\_efficiency\\ 
+
+\hline
+\rule{0pt}{3ex}
+LWPC	&lwpc.git	&	LWPC and Matlab implementation\\ 
+
+\hline
+\rule{0pt}{3ex}
+AP Processing	&process.git	&	Relocate files (required for energy processing)\\ 
+
+\hline
+\rule{0pt}{3ex}
+MATLAB Functions	&functions.git	&	Various Matlab functions required by other scripts.\\ 
+
+\hline
+\rule{0pt}{3ex}
+SU Eagle Files	&eagle.git	&	Eagle files for WWLLN SU and Pre-amps, includes Erin Lay's files.\\ 
+
+\hline
+\rule{0pt}{3ex}
+Gumstix	&gumstix.git	&	Files for building and configuring Gumstix microSD cards.\\ 
+
+\hline
+\rule{0pt}{3ex}
+Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix kernel\\ 
+
+\hline
+\end{tabular}
+\end{center}
+\label{code:repo}
+\end{table}
+
+
 \section{Git Primer}
 
 \section{Other Useful Matlab Code}
