@@ -178,3 +178,16 @@ More information on how to use git for source control, instead of downloading th
 I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
 
 \section{Other Useful Matlab Code}
+
+Some of the functions present in the functions.git repository are very useful and often critical to the routine WWLLN processing.
+The function terminator.m is used to calculating the percentage of a VLF path that is in daylight and the percentage that is nighttime conditions.
+It is written to take into a either a vector or scaler initial location, time, and end location.
+The function vdist.m is from the MathWorks file exchange and calculated the great circle distance between two points on the ellipsoidal Earth.
+The function smoothn.m performs a two dimensional smoothing on an array of data, it is useful for artificially increasing the resolution of detection efficiency maps.
+
+Aside from these three functions there is a directory in the functions.git repository dedicated to reading and writing WWLLN file types.
+In the directory functions/IO are a set of import functions to import A, AP, AE, R, T, and DE files.
+There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{app:energy}), and WWLLN stations.dat data.
+All of these functions take in a give date (and possibly time) to find and load the desired file.
+The file dataPath.dat lists locations that the import functions check for the data folders of the particular file type.
+The default is to look for either /wd2/ or /wd3/ hard drives, but other locations can be added to this list as needed.
