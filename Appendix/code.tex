@@ -95,6 +95,8 @@ Aside from being stored in plaintext scripts, all of the code is also stored in 
 
 The Git repositories have the advantage of multiple back ups, version control, easily portable, and easy to use.
 A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:repo}.
+A basic primer on how to use git, including retrieval of the repositories, is given in Section~\ref{code:primer}.
+
 \begin{table}[h!]
 \caption{Git Repositories (flash5:/home/mlhutch/Git/)}
 \begin{center}
@@ -105,11 +107,11 @@ A list of the WWLLN processing code and corresponding git repository is given in
 
 \hline
 \rule{0pt}{3ex}
-Energy Processing	&bootstrap.git	&	Corresponds to $\sim$/matlab/Bootstrap \\ 
+Energy Processing	&bootstrap.git	&	Requires process.git and functions.git \\ 
 
 \hline
 \rule{0pt}{3ex}
-Detection Efficiency	&de.git	&	Corresponds to $\sim$/matlab/detection\_efficiency\\ 
+Detection Efficiency	&de.git	&	Requires functions.git\\ 
 
 \hline
 \rule{0pt}{3ex}
@@ -141,7 +143,30 @@ Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix k
 \label{code:repo}
 \end{table}
 
-
 \section{Git Primer}
+\label{code:primer}
+
+Git (http://git-scm.com) is an open source distributed version control system available on all operating systems with very little system resources required.
+Most often git is accessed through the command line but there are many graphical interfaces available.
+I chose git for my research and code since it allows easy branching, constant backups (locally and on remote servers), and helps to organize code and projects.
+A brief tutorial on git is available online: http://git-scm.com/book/en/Getting-Started and http://try.github.com/.
+
+Once git is installed on a host machine (http://git-scm.com, apt-get install git, or yum install git-core) repositories can be downloaded with the command:
+
+\begin{verbatim}
+git clone [user]@[server]:[repository] .
+\end{verbatim}
+
+This will copy (clone) the repository to the current directory as a folder of the same name as the repository. 
+For example to copy over the energy processing repository listed in Table~\ref{code:repo} to the matlab directory:
+
+\begin{verbatim}
+cd ~/matlab
+clone sferix@flash5.ess.washington.edu:/home/mlhutch/Git/bootstrap.git .
+\end{verbatim}
+
+Where the user can be anyone with permission to access that directory.
+More information on how to use git for source control, instead of downloading the repositories, can be found in the online resources.
+I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
 
 \section{Other Useful Matlab Code}
