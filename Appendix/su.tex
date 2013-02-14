@@ -1,12 +1,21 @@
-Service unit design, justification, operation and construction.
+\section{New Design}
 
-\section{Design Choices}
+The WWLLN service unit was redesigned due to the obsolescence of the previous Trimble GPS unit, this redesign allowed for several other major revisions to the board:
 
-\section{Previous Design}
+\begin{itemize}
+\item{Built in USB-Serial conversion}
+\item{On board computer}
+\item{Remote controlled pre-amp power system}
+\item{Remove inline preamp LEDs}
+\item{Increased stereo driving power}
+\item{Two-way GPS serial communication}
+\end{itemize}
 
-\section{Capabilities}
-
-\section{Components}
+The biggest change is the addition of the onboard computer, eliminating the need for a separate CPU to be installed with every service unit.
+The Gumstix WaterStormCOM with Tobi breakout board was chosen for the onboard computer.
+An on board computer is able to toggle the preamp power supply remotely, communicate with the GPS engine via TSIP, and standardize the host computer capabilities.
+The USB-serial convert is used to output GPS messages to an external computer if desired, and two communication can be switched from the GPS to the USB port via the use of an onboard jumper.
+Finally the system is designed to be operated remotely via SSH, but it does have the ability to use a keyboard, mouse and monitor through a powered USB hub and HDMI capable display.
 
 \section{Layout and Design}
 
