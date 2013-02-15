@@ -382,18 +382,15 @@ A restart in not necessary if the public\_html\_static contents are copied to pu
 
 \subsubsection{Direct Console Connection}
 
-%% Fill in
+As an alternative to the network connection it is possible to make a direct serial connection to the Gumstix board.
+On the back of the board (the side with with 40-pin header) there is a mini-B USB port that can be connected to as a serial connection.
+The connection settings are 115200 8N1, with no software or hardware flow control.
+This Gumstix can then either be logged into as a normal user or as root, depending on what is needed.
+It is probably easiest to take the service unit board out of the box to do this since there is not enough room to connect normal USB cables.
 
 \subsubsection{MicroSD Access}
 
-%% Fill in
-
-\section{Known Issues}
-
-\subsection{Heat}
-
-%% Fill in
-
-\subsection{Floating Output}
-
-%% Fill in
+A final method exists for changing settings on the Gumstix through directly editing the microSD card.
+If, for example, the network settings become completely unusable and a direct console connection is too involved, then the microSD card can be removed from the Gumstix and read/edited directly on a computer.
+The microSD is formatted as an ext4 file system with the operating system on the rootfs directory.
+Do not edit the boot partition as this may make the card completely unusable in the Gumstix.
