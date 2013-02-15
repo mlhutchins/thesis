@@ -213,22 +213,38 @@ Service unit construction steps:
 \subsection{Initial Board Test}
 \label{app:suTest1}
 
-%% Fill in
+Without an external boards (Gumstix, GPS, etc) connected slowly raise the input voltage from 0 to 12~V. 
+At 12~V the board should be drawing near to 120~mA, and both yellow LEDs should be on.
+The yellow LEDs indicate that the preamp power supply defaults on without the Gumstix plugged in.
+Test the voltages for the GPS and Gumstx mounts.
+The GPS should have two voltages, 5~V on pin 1 and 3.3~V on pin 2, all other pins should be 0~V.
+If the USB-serial jumper it set to Gumstix, then the GPS will have a voltage on pin 5.
+The Gumstix socket should have 0~V everywhere except on pin 40 which should be 5~V and pin 10 which should be 0.8~V.
 
 \subsection{GPS Power Test}
 \label{app:suTest2}
 
-%% Fill in
+Turn off the board and plug in the GPS engine.
+At 12~V power the board should be drawing 240~mA.
+The bottom red LED should be blinking and the top one should be on.
 
 \subsection{Gumstix Power Test}
 \label{app:suTest3}
 
-%% Fill in
+Plug in to the Gumstix and connect the ethernet (the ethernet LEDs allow for a quick check of the system).
+Power the GPS with a 12~VDC wall plug, not a variable power supply.
+During the Gumstix startup it draws near to 1~A briefly which can cause a drop in voltage with a variable power supply, this restarting the Gumstix.
+After about 30 seconds the ethernet lights should start to blink and flash on the Gumstix ethernet port, indicating it has booted fully.
+While idling the board should be drawing 600-700~mA.
 
 \subsection{Final Service Unit Test}
 \label{app:suTest4}
 
-%% Fill in
+With all of the boards and cables connected, including the preamp and GPS antenna, power the complete service unit box on with the 12~VDC wall supply.
+While waiting for the GPS to sync up check to see if the Gumstix has started up properly, the yellow LEDs should flash on briefly, turn off and then turn back on when the system has started up.
+Follow the steps in Section~\ref{app:suSoftware} to connect to the Gumstix via a direct ethernet connect to ensure all cable connections.
+If GPS does not sync up in 10 minutes check the status with either the Gumstix readTSIP.py script, or connect to the GPS using the Trimble Studio Software via a Windows PC.
+Allow the box to run for several hours with the lid closed to check for overheating.
 
 \section{Software Setup}
 
