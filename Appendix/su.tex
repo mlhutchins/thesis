@@ -253,6 +253,49 @@ However the GPS engine needs to be programmed directly, and the network settings
 
 \subsection{GPS Engine}
 
+There are three ways to configure the GPS Resolution T engine.
+The first one is to utilize the Trimble Studio Configurator tool and load the configuration file that is located in the Gumstix software directory: gumstix/gps/ResolutionT Configuration.dat
+The second option is to use the Trimble Studio tool to manually set the configuration on the GPS itself, if that option is taken the desired settings are listed in Table~\ref{app:suGPSSettings}.
+The third option is to use the Gumstix to send the appropriate TSIP configuration messages to the GPS.
+The last method has the advantage of not requiring a second computer, it can be done with units in the field, and it can be done remotely.
+However the disadvantage is that the current TSIP messages to send are not yet worked out or preset in the sendTSIP.py program on the Gumstix.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|p{.5in}|p{2in}|p{1.5in}|}
+\hline
+{\bf } &	{\bf Setting} &	{\bf Value}\\
+\hline
+\rule{0pt}{3ex}
+I/O	&Position	&	LLA\\ 
+	&Altitude	&	HAE\\ 
+	&Velocity	&	ENU\\ 
+	&Time	&	UTC\\ 
+	&Signal Level	&	AMU\\ 
+	&Satellite Tracking Packet	&	0x5C\\ 
+\hline
+GPS	&Mode	&	O-D Clk\\ 
+	&Dynamics	&	Stationary\\
+	&DGPS	&	Auto Off\\
+	&Datum	&	WGS-84\\
+	&Auto Jamming	&	Enabled\\
+	&Elevation Mask	&	$5^\circ$\\
+	&Signal Level Mask	&	4 AMU\\
+	&PDOP Mask	&	12\\
+	&PDOP Switch	&	6\\
+\hline
+PPS	&Output	&	Enabled\\ 
+	&Polarity	&	Positive\\ 
+	&Time Base	&	UTC\\ 
+	&Qualifier	&	$>=3$ Satellites\\ 
+	&Packet Masks	&	0x8F-AB\\ 
+\hline
+\end{tabular}
+\end{center}
+\label{app:suGPSSettings}
+\caption{Resolution T GPS Settings}
+\end{table}
+
 \subsection{Network Configuration}
 
 The two standard methods for network configuration that are sent out with every service unit are listed below.
