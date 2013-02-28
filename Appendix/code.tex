@@ -175,7 +175,64 @@ clone sferix@flash5.ess.washington.edu:/home/mlhutch/Git/bootstrap.git .
 
 Where the user can be anyone with permission to access that directory.
 More information on how to use git for source control, instead of downloading the repositories, can be found in the online resources.
+Several useful commands are given in Table~\ref{code:gitCommands}.
 I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|p{3in}|p{3in}|}
+
+\hline
+{\bf Title 1} &	{\bf Title 2} \\
+\hline 
+git checkout -b [name] master/origin/[name] & Checkout and create branch on server  \\
+
+Push over a specific port: &  \\
+
+host flash5 
+user mlhutch
+hostname flash5.ess.washington.edu
+port 7777
+identityfile ~/.ssh/id\_dsa & Create .ssh/config file  \\
+
+git push flash5:~/Git/landsea.git & Shortened format  \\
+
+On a new git install: & \\
+git config --global user.email "mlhutch@uw.edu" & \\
+git config --global user.name "Michael Hutchins" & \\
+
+Common commands: & \\
+git status & \\
+git add [filename] & \\
+git commit & \\
+git commit -am "Message" & Adds all modified files and commits them with Message \\
+git branch [branch name] & Creates a new branch, all files appear to be unstaged \\
+git checkout [branch name] & Switch to new branch (add and commit files after this) \\
+git diff [filename] & diff between file name and last branch commit \\
+git diff --staged & diff on all staged files \\
+git status -- . & revert to last convert for all files (or use filename instead of . for one file) \\
+git push origin [branch name] & push new branch to server, otherwise git push updates ALL branches \\
+git pull & update current branch from origin (bitbucket) \\
+git fetch & update all branch information (i.e. update not upgrade) \\
+git merge [branch] & merges latest in [branch] into current branch \\
+& resolve conflicts by editing files \\
+& add and commit resolved files (still in branch, [branch] untouched) \\
+& git push afterward to put onto server \\
+
+Setting up Git server: & \\
+mkdir ~/Git/eagle.git & Make the repository file on the server \\
+cd ~/Git/eagle.git & \\
+git init --bare & \\
+
+On computer set up server & \\
+git remote add [server name/alias] user@server.edu:Git/eagle.git & \\
+git push -u [server name/alias] & uploads everything to server \\
+
+\hline
+\end{tabular}
+\end{center}
+\label{label}
+\end{table}
 
 \section{Other Useful Matlab Code}
 
