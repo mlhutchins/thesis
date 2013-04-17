@@ -74,11 +74,61 @@ While LWPC itself cannot be run in parallel, this method simply copies the LWPC 
 
 \section{Lookup Tables}
 
-\subsection{Description}
+While LWPC can be parallelized it is still too slow to run faster than realtime for WWLLN processing.
+As a result two sets of lookup tables are generated for each station with the pre-calculated LWPC electric field values.
+
+The lookup tables are part of the main Bootstrap directory under the names \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat}.
+Each of these files are tab-delimited text with the format given in Table~\ref{app:table:lookup}.
+The tables list the electric field measured the the station given a 100~kW transmitter in each grid point on the globe.
+The latest lookup tables are at a resolution of $2^\circ$.
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|p{1.5in}|p{1.75in}|p{1.75in}|p{1in}|}
+\hline
+\rule{0pt}{3ex}
+Station Name	&Station North Latitude	&	Station East Longitude & \\ 
+\hline
+\rule{0pt}{3ex}
+E-field at (-179,89)	& E-field at (-177,89) &	E-field at (-175,89) & \dots \\ 
+\hline
+\rule{0pt}{3ex}
+E-field at (-179,87)	& E-field at (-177,87) &	E-field at (-175,87) & \dots \\ 
+\hline
+\rule{0pt}{3ex}
+E-field at (-179,85)	& E-field at (-177,85) &	E-field at (-175,85) & \dots \\ 
+\hline
+\rule{0pt}{3ex}
+\dots	& \dots &	\dots & \dots \\ 
+\hline
+\end{tabular}
+\end{center}
+\caption{Format for \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat} data files for a resolution of $2^\circ$.}
+\label{app:table:lookup}
+\end{table}
+
+An example of a lookup table for the all day ionosphere for Dunedin station is shown in Figure~\ref{app:fig:lookup}.
+
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[scale=1]{Energy/Figures/PPS_Lookup.pdf} 
+   \caption{Lookup table for an all day ionosphere for Dunedin station.}
+   \label{app:fig:lookup}
+\end{figure}
 
 \subsection{Generation}
 
-And automation
+The LWPC lookup tables are generated automatically with the matlab script \textbf{$\sim$/Bootstrap/Lookup_automation.m} that is called at the start of the daily energy processing.
+The script checks the current number of stations in the \textbf{.dat} files and compares it to the most recent \textbf{stations.dat} file.
+If there are a new entries in the \textbf{stations.dat} then the script proceeds to make the lookup tables.
+
+The automatic script calculates the electric field at every grid point for 11 frequencies ranging from 8~kHz to 18~kHz, and averages them together to add to the \textbf{.dat} files.
+
+The same script can be run for specific stations with the \textbf{$\sim$/matlab/lwpcpar/lwpc\_generate.m} script.
+
+Tables generated with either script can be validated with the \textbf{$\sim$/matlab/Bootstrap/lookup\_validation.m} scipt.
+This script checks each grid point to ensure there is a real number there, sometimes LWPC generates errors for very specific locations.
+If there is no valid electric field value at that spot it is reprocessed by offsetting the transmitter by a fraction of a degree.
 
 \subsection{Code}
 
