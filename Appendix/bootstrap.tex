@@ -118,7 +118,7 @@ An example of a lookup table for the all day ionosphere for Dunedin station is s
 
 \subsection{Generation}
 
-The LWPC lookup tables are generated automatically with the matlab script \textbf{$\sim$/Bootstrap/Lookup_automation.m} that is called at the start of the daily energy processing.
+The LWPC lookup tables are generated automatically with the matlab script {\bf $\sim$/Bootstrap/\\Lookup\_automation.m} that is called at the start of the daily energy processing.
 The script checks the current number of stations in the \textbf{.dat} files and compares it to the most recent \textbf{stations.dat} file.
 If there are a new entries in the \textbf{stations.dat} then the script proceeds to make the lookup tables.
 
@@ -126,7 +126,7 @@ The automatic script calculates the electric field at every grid point for 11 fr
 
 The same script can be run for specific stations with the \textbf{$\sim$/matlab/lwpcpar/lwpc\_generate.m} script.
 
-Tables generated with either script can be validated with the \textbf{$\sim$/matlab/Bootstrap/lookup\_validation.m} scipt.
+Tables generated with either script can be validated with the \textbf{$\sim$/matlab/Bootstrap/\\lookup\_validation.m} scipt.
 This script checks each grid point to ensure there is a real number there, sometimes LWPC generates errors for very specific locations.
 If there is no valid electric field value at that spot it is reprocessed by offsetting the transmitter by a fraction of a degree.
 
