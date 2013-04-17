@@ -1,12 +1,34 @@
-Point to Paper
+The process for bootstrap calibrating the WWLLN stations and how the energy is calculated is described in \citet{Hutchins2012}.
+This section walks through the code used in the processing along with the decisions behind various checks and adjustments made in the processing.
 
 \section{Code Summary}
 
-Location, descriptor of parts
+There are XXX main sections to the bootstrap processing:
 
-Relocate and required files
+\begin{itemize}
+	\item{Process R-files into AP-files}
+	\item{Calculate LWPC attenuation coefficients for each stroke-station pair}
+	\item{Bootstrap calibrate the network}
+	\item{Calculate stroke energy using LWPC and calibration}
+	\item{Iterative re-calibrate the network}
+	\item{Final energy calculation}
+	\item{Run Relative Detection Efficiency Model (Chaper~\ref{ch:de})}
+	\item{Move files to storage locations}
+\end{itemize}
+
+This processing requires several files, locations given relative to mlhutch@flash5.ess.washington.edu.
+
+\begin{itemize}
+	\item{\textbf{$\sim$/Process/relocate-B31Jan2013.x86-64} -- James Brundell's relocate program used to process R-files into AP-files, this version compiled for Linux 64-bit systems}
+	\item{\textbf{stations.dat} -- list of current WWLLN stations, copied over from flash4 at the start every processing run.}
+	\item{\textbf{lwpcv21} -- directory containing a working compiled version of the LWPC code. Used in generating new lookup tables as stations are added, a parallelized matlab implentation is discussed below.}
+	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{app:code}).}
+	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{app:code}).}
+\end{itemize}
 
 \section{LWPC}
+
+The Long Wave Propagation Capability code is a codebase developed by \citet{Ferguson
 
 \subsection{Compiling}
 
