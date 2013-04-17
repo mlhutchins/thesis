@@ -57,6 +57,19 @@ It is also capable of outputting plots, azimuthal dependence, and many other fea
 
 \subsection{Matlab Function}
 
+A matlab implementation of LWPC is available as a git repository (see Appendix~\ref{app:code}).
+This implantation allows for LWPC to called in matlab with:
+
+\begin{verbatim}
+LWPCpar(freq,lat,long,time,stat_lat,stat_long,model)
+\end{verbatim}
+
+Where freq is the transmitter frequency, lat/long is the transmitter location, time is the date and time, stat\_lat/stat\_long are the receiver locations, and model is the ionospheric model used.
+If model is set to ``time'' then day and night is considered in the calculation, if it is set to ``day'' or ``night'' an all day or all night ionosphere will be used.
+
+LWPCpar as the advantage of being runnable within matlab parallelized loops (parfor).
+While LWPC itself cannot be run in parallel, this method simply copies the LWPC directory to allow each matlab instance it's own copy.
+
 \section{Lookup Tables}
 
 \subsection{Description}
