@@ -21,16 +21,25 @@ This processing requires several files, locations given relative to mlhutch@flas
 \begin{itemize}
 	\item{\textbf{$\sim$/Process/relocate-B31Jan2013.x86-64} -- James Brundell's relocate program used to process R-files into AP-files, this version compiled for Linux 64-bit systems}
 	\item{\textbf{stations.dat} -- list of current WWLLN stations, copied over from flash4 at the start every processing run.}
-	\item{\textbf{lwpcv21} -- directory containing a working compiled version of the LWPC code. Used in generating new lookup tables as stations are added, a parallelized matlab implentation is discussed below.}
+	\item{\textbf{lwpcv21} -- directory containing a working compiled version of the LWPC code.
+		Used in generating new lookup tables as stations are added, a parallelized matlab implemtation is discussed below.}
 	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{app:code}).}
 	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{app:code}).}
 \end{itemize}
 
 \section{LWPC}
 
-The Long Wave Propagation Capability code is a codebase developed by \citet{Ferguson
+The Long Wave Propagation Capability code is a codebase developed by \citet{Ferguson1998} that is used to calculated the electric field at a given location for a VLF transmitter at another location.
+For the WWLLN energy processing it is used to estimate the attenuation between a stroke (treated as a transmitter) and a station.
+The original LWPC code has been altered in two ways: first the Windows-compiler specific code has been replaced with GCC compilable code, second all warning have been removed to produce output of a constant shape (for reading into MATLAB).
+All edits in the source code have been marked by my initials of MH.
 
 \subsection{Compiling}
+
+To recompile LWPC two bash scripts need to be run.
+The first is \textbf{BuildData.cmd}, BuildData recompiles the data files that contain the surface parameters such as ground conductivity and coastlines.
+The second step is to run \textbf{buildlwpc.cmd}, this should compile the program and result in an executable called LWPC.
+To test a successful compile run the script \textbf{run\_bench.cmd}, if it runs successfully it is compiled, if not consult the \textbf{Readme - Unix.txt} file that has some common troubleshooting steps.
 
 \subsection{Running}
 
