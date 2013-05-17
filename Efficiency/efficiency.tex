@@ -59,7 +59,7 @@ The RMS electric field is taken in the 6-18~kHz band over the triggering window 
 The U.S. Navy Long Wave Propagation Capability (LWPC) code described by \citet{Ferguson1998} is utilized to model the VLF propagation from each located stroke to determine the necessary stroke energy to produce the measured RMS electric field (in the VLF band) at each WWLLN station.
 Using the measured RMS field at each station, the radiated energy of each detected stroke is found.
 In 2010 WWLLN observed a global median stroke energy of 629 J, with a 25\% average uncertainty in the measured energy.
-The global and regional distribution of energy is shown in Figure~\ref{2010_Energy}a.
+The global and regional distribution of energy is shown in Figure~\ref{efficiency:fig:2010_Energy}a.
 Of all the detected strokes 97\% have corresponding energy values.
 \citep{Hutchins2012}
 
@@ -69,14 +69,14 @@ Of all the detected strokes 97\% have corresponding energy values.
    \caption{(a) WWLLN stroke energy distribution for the globe (black), the Americas (blue), Asia (green) and Aftica/Europe(red).
 (b) WWLLN global stroke energy distribution for a year (2010), month (June 2010), day (15 June 2010), and hour (09 UTC 15 June 2010).
 Grey lines are statistical count errors.}
-   \label{2010_Energy}
+   \label{efficiency:fig:2010_Energy}
 \end{figure}
 
-In Figure~\ref{2010_Energy}a the statistical error bars (Poisson statistics) are not plotted as they would be on the order, or smaller than, the line width.
+In Figure~\ref{efficiency:fig:2010_Energy}a the statistical error bars (Poisson statistics) are not plotted as they would be on the order, or smaller than, the line width.
 It is important to note that the distribution of strokes in each region is lognormal \citep{Hutchins2012} with the main differences in the total strokes detected and the median energy, which is 399~J, 1101~J, and 798~J for the Americas ($-180^\circ$ E to $-60^\circ$ E), Africa ($-60^\circ$ E to $60^\circ$ E), and Asia ($60^\circ$ E to $180^\circ$ E) respectively.
 An overall lower detection efficiency over Africa, particularly for low energy strokes, causes median energy to be higher than the other regions.
 Along with each region the energy distribution is lognormal from an hourly time scale to the annual distribution.
-In Figure~\ref{2010_Energy}b the annual lognormal distribution is shown with a monthly, daily, and hourly distribution.
+In Figure~\ref{efficiency:fig:2010_Energy}b the annual lognormal distribution is shown with a monthly, daily, and hourly distribution.
 It is not until the hourly distribution that the errors are noticeable, and the distribution is still fairly lognormal.
 
 \section{Minimum Detectable Energy}
@@ -93,8 +93,8 @@ For instance, when a station is detecting many strokes, the trigger threshold at
 Since a station can only measure the electric (or magnetic) field of an event it cannot accurately discern whether a sferic comes from a nearby weak stroke or a strong distant stroke; for the case of the strongest lightning strokes the discharge could be on the other side of the Earth from the WWLLN station and still be detected.
 
 
-The effect of the variable trigger threshold can be seen in Figure~\ref{Threshold}a which is a 2~-~D histogram of number of strokes with specific RMS field and UT values on 15 June 2010 for the Dunedin, New Zealand, WWLLN station ($-45.864^\circ$ N, $170.514^\circ$ E).
-In Figure~\ref{Threshold}b the threshold can be seen as the lower cutoff of the triggered RMS field strength distribution, the station threshold is reconstructed hourly as the 5th percentile value (red line) of the distribution.
+The effect of the variable trigger threshold can be seen in Figure~\ref{efficiency:fig:Threshold}a which is a 2~-~D histogram of number of strokes with specific RMS field and UT values on 15 June 2010 for the Dunedin, New Zealand, WWLLN station ($-45.864^\circ$ N, $170.514^\circ$ E).
+In Figure~\ref{efficiency:fig:Threshold}b the threshold can be seen as the lower cutoff of the triggered RMS field strength distribution, the station threshold is reconstructed hourly as the 5th percentile value (red line) of the distribution.
 The threshold value varies relatively slowly over the course of the day.
 
 
@@ -103,7 +103,7 @@ The threshold value varies relatively slowly over the course of the day.
 \noindent\includegraphics[width=39pc]{efficiency/Figures/2012RS005049-p2.pdf} 
    \caption{(a) shows the evolution of the triggered RMS field strength distribution (in arbitrary units) for the Dunedin WWLLN station with the red line showing the 5th percentile value.
 (b) shows the 9 UTC slice of the distribution, with the 5th percentile value marked (red line).}
-   \label{Threshold}
+   \label{efficiency:fig:Threshold}
 \end{figure}
 
 \subsection{Station Minimum Detectable Energy}
@@ -117,9 +117,9 @@ Slow ionospheric variations can also affect the MDE by changing the VLF attenuat
 Every hour the reconstructed minimum RMS field necessary to trigger an event is calculated and converted to a stroke energy.
 To make this conversion the same method as calculating the radiated energy per stroke is used as described in \citet{Hutchins2012}.
 This results in a station MDE for every point on a $5^\circ$ x $5^\circ$ global grid, which is the stroke energy necessary at that location to trigger a TOGA calculation at the given station.
-As an example the map of the MDE for our Dunedin station (data shown in Figure~\ref{Threshold}) is shown in Figure~\ref{Threshold_Map}.
-Figure~\ref{Threshold_Map} applies only to strokes detected at this one station in Dunedin, a similar map can be generated for every WWLLN station.
-The high MDEs in Figure~\ref{Threshold_Map} over the Antarctic, Western Africa, and Greenland are due to the high VLF attenuation over ice, and imply that Dunedin is very unlikely to detect strokes with energy less than the MDE if they were to occur in these regions.
+As an example the map of the MDE for our Dunedin station (data shown in Figure~\ref{efficiency:fig:Threshold}) is shown in Figure~\ref{efficiency:fig:Threshold_Map}.
+Figure~\ref{efficiency:fig:Threshold_Map} applies only to strokes detected at this one station in Dunedin, a similar map can be generated for every WWLLN station.
+The high MDEs in Figure~\ref{efficiency:fig:Threshold_Map} over the Antarctic, Western Africa, and Greenland are due to the high VLF attenuation over ice, and imply that Dunedin is very unlikely to detect strokes with energy less than the MDE if they were to occur in these regions.
 
 \begin{figure}[ht!]
    \centering
@@ -127,16 +127,16 @@ The high MDEs in Figure~\ref{Threshold_Map} over the Antarctic, Western Africa, 
    \caption{The minimum detectable energy (MDE) for the Dunedin station at 9 UTC on 15 June 2010.
 The regions of high MDE are due to poor VLF propagation over ice from those regions to Dunedin station.
 The white line shows the terminator.}
-   \label{Threshold_Map}
+   \label{efficiency:fig:Threshold_Map}
 \end{figure}
 
 In order to locate a stroke, WWLLN requires TOGA values from at least five stations in order to conduct adequate fit error analysis.
 For every $5^\circ$ x $5^\circ$ grid cell all of the minimum stroke energies from currently active WWLLN stations are ordered.
-An example for one cell is shown in Table~\ref{mdeTable}.
+An example for one cell is shown in Table~\ref{efficiency:table:mdeTable}.
 The 5th lowest from this list is used as the network MDE, because at least five stations can trigger on that energy value.
 In other words, WWLLN cannot detect a stroke until it has a radiated energy which is above the trigger threshold at five or more WWLLN stations.
-A map of the network MDE is shown in Figure~\ref{Minimum_Energy}.
-Similar to the station MDE map for our Dunedin station, Figure~\ref{Threshold_Map}, there are higher MDE values above the Arctic and Antarctic ice regions.
+A map of the network MDE is shown in Figure~\ref{efficiency:fig:Minimum_Energy}.
+Similar to the station MDE map for our Dunedin station, Figure~\ref{efficiency:fig:Threshold_Map}, there are higher MDE values above the Arctic and Antarctic ice regions.
 
 \begin{table}[ht!]
 \caption{Ordered list of station MDE values at $-25^\circ$N, $20^\circ$E and 09 UTC on 15 June 2010.
@@ -159,18 +159,18 @@ Dunedin, New Zealand	&	$5.09 \times 10^8$\\
 \hline
 \end{tabular}
 \end{center}
-\label{mdeTable}
+\label{efficiency:table:mdeTable}
 \end{table}
 
 \begin{figure}[ht!]
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p4.pdf} 
    \caption{The minimum detectable energy (MDE) for the entire WWLLN network at 9 UTC on 15 June 2010.}
-   \label{Minimum_Energy}
+   \label{efficiency:fig:Minimum_Energy}
 \end{figure}
 
 Regions of the network with higher MDE, from either increased VLF attenuation, station thresholds or sparse coverage, preferentially detect a higher ratio of energetic strokes to all strokes.
-For example southern Africa has a higher MDE than other regions and the median energy, shown in Figure~\ref{2010_Energy}a is correspondingly higher.
+For example southern Africa has a higher MDE than other regions and the median energy, shown in Figure~\ref{efficiency:fig:2010_Energy}a is correspondingly higher.
 Conversely regions with low MDE, such as the Americas, show a lower median energy.
 
 \section{Relative Detection Efficiency}
@@ -182,7 +182,7 @@ For a given network MDE value the fraction of total strokes above the network MD
 The past seven day distribution is used as the base distribution in order to average over diurnal and station performance variations.
 This lognormal base distribution is assumed to be representative of a single universal distribution of stroke energies that could be detected globally by a uniform WWLLN.
 
-For example, if a location has an network MDE of 100~J, then the number of strokes in the past seven days above 100~J (grey area, Figure~\ref{Curve}a) is compared to the total number of strokes which were located in that location in those seven days.
+For example, if a location has an network MDE of 100~J, then the number of strokes in the past seven days above 100~J (grey area, Figure~\ref{efficiency:fig:Curve}a) is compared to the total number of strokes which were located in that location in those seven days.
 In this case the grey area has a count of $2.6\times10^6$ strokes and the total number of WWLLN strokes is $2.9\times10^6$ strokes, so for this network MDE of 100~J the relative detection efficiency is 90\%.
 Similarly if a location has a high network MDE value there will be few strokes with energy above it, so it will have a low relative detection efficiency.
 
@@ -192,10 +192,10 @@ Similarly if a location has a high network MDE value there will be few strokes w
    \caption{(a) The seven day energy distribution with the strokes above the MDE of 100~J shown in grey.
 The fraction of strokes above 100~J to total strokes gives a relative detection efficiency of 0.9, shown as a circle in (b).
 The fraction for all possible MDE values is shown as the curve in (b).}
-   \label{Curve}
+   \label{efficiency:fig:Curve}
 \end{figure}
 
-This calculation is done for a range of hypothetical network MDE values which produces a curve shown in Figure~\ref{Curve}b, to give the relationship between MDE and relative detection efficiency.
+This calculation is done for a range of hypothetical network MDE values which produces a curve shown in Figure~\ref{efficiency:fig:Curve}b, to give the relationship between MDE and relative detection efficiency.
 This relationship is established once per day, and it is used to produce hourly maps of relative detection efficiency for that day.
 This is done by taking the hourly maps of network MDE and applying this relation to every $5^\circ$ x $5^\circ$ point on the globe for every hour to convert the network MDE to the relative detection efficiency.
 
@@ -206,11 +206,11 @@ This is because the method does not correct the network to absolute stroke count
 
 \subsection{Hourly Maps}
 
-A set of four hourly maps from 15 June 2010 showing the networks relative detection efficiency every 6 hours from 00~UTC to 18~UTC is presented in Figure~\ref{Hour_Maps}.
+A set of four hourly maps from 15 June 2010 showing the networks relative detection efficiency every 6 hours from 00~UTC to 18~UTC is presented in Figure~\ref{efficiency:fig:Hour_Maps}.
 Stations that were operational for the hour shown are displayed in white and stations that were not operational are black (operational taken to triggering $>500$ strokes/hour).
 The four major competing effects on the detection efficiency are the day/night terminator, local stroke activity, station density, and station performance.
-The day/night terminator effect can be seen as it moves from 00~UTC (Figure~\ref{Hour_Maps}a) through 18~UTC (Figure~\ref{Hour_Maps}d).
-An increase in local stroke activity in North American afternoon (Figure~\ref{Hour_Maps}a) causes a decrease in detection efficiency as nearby stations raise their triggering thresholds.
+The day/night terminator effect can be seen as it moves from 00~UTC (Figure~\ref{efficiency:fig:Hour_Maps}a) through 18~UTC (Figure~\ref{efficiency:fig:Hour_Maps}d).
+An increase in local stroke activity in North American afternoon (Figure~\ref{efficiency:fig:Hour_Maps}a) causes a decrease in detection efficiency as nearby stations raise their triggering thresholds.
 Station density is coupled with station performance, since when a station is not operating optimally it has a similar effect as removing that station, the effect of station performance is discussed in a later section.
 
 \begin{figure}[ht!]
@@ -219,10 +219,10 @@ Station density is coupled with station performance, since when a station is not
    \caption{Relative detection efficiency maps for 00, 06, 12, and 18 UTC on 15 June 2010.
 Stations are shown as triangles with operational stations in white and non-operational in black.
 The minimum value of detection efficiency is set at 5\% to prevent unphysical corrections.}
-   \label{Hour_Maps}
+   \label{efficiency:fig:Hour_Maps}
 \end{figure}
 
-Figure~\ref{Daily_Map} shows the daily relative detection efficiency from the average of the hourly maps, here grey stations were only operational part of the day.
+Figure~\ref{efficiency:fig:Daily_Map} shows the daily relative detection efficiency from the average of the hourly maps, here grey stations were only operational part of the day.
 This average map is more representative of the relative detection efficiency for the day and it shows behavior that is expected based on the distribution of stations: lower detection efficiency over most of Africa with higher detection efficiency over and around the Pacific and North America.
 The low detection efficiency over Antarctica, parts of Siberia, and Greenland are due to the high attenuation of VLF propagating subionospherically over ice.
 Conversely the high detection efficiency over North America, Western Europe, and Oceania, are due to the high station density and low attenuation of VLF over ocean.
@@ -234,7 +234,7 @@ In order to prevent unphysical overcorrections, a minimum relative detection eff
    \caption{Daily average relative detection efficiency for 15 June 2010.
 Stations are shown as triangles with operational stations in white, non operational in black, and operational for part of the day in grey.
 The minimum value of detection efficiency is set at 5\% to prevent unphysical corrections.}
-   \label{Daily_Map}
+   \label{efficiency:fig:Daily_Map}
 \end{figure}
 
 \section{Analysis}
@@ -246,7 +246,7 @@ As more stations are added to the network additional low-energy strokes will be 
 When the overall network distribution changes between years, then for a given region the relative detection efficiency can change even if that region of the network has detected the same distribution of strokes.
 
 
-One way to examine the change in the distribution of energy is to examine the temporal variability of the median of the global WWLLN energy distribution, the median of the seven day distribution is shown in Figure~\ref{MedianEnergy}.
+One way to examine the change in the distribution of energy is to examine the temporal variability of the median of the global WWLLN energy distribution, the median of the seven day distribution is shown in Figure~\ref{efficiency:fig:MedianEnergy}.
 The median energy varies from the three year median by 52\% with the daily median value ranging from 400~J to 2000~J.
 The variability is caused by ionospheric changes not accounted for in the ionospheric model used.
 Several jumps in the median energy (e.g., Dec 2009 and Dec 2010) are caused by changes in the primary calibrated WWLLN station (see \citet{Hutchins2012}) such as gain changes.
@@ -258,14 +258,14 @@ It is important to note that since the detection efficiency is relative to the p
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-f8.pdf} 
    \caption{Median stroke energy of the 7-day distribution observed by WWLLN.
 The relative detection efficiency of the network is based on this 7-day energy distribution.}
-   \label{MedianEnergy}
+   \label{efficiency:fig:MedianEnergy}
 \end{figure}
 
 \subsection{Temporal Variability}
 
 The evolution of the network can be seen as an increase in the global average relative detection efficiency, calculated by averaging all grid cells of the each hourly maps for a day.
 While no region can have a relative detection efficiency over 100\%, as regions improve with more stations they will approach 100\% and increase the global average detection efficiency.
-The global average relative detection efficiency from April 2009 through October 2011 is shown as the green line in Figure~\ref{DE_Evolution}.
+The global average relative detection efficiency from April 2009 through October 2011 is shown as the green line in Figure~\ref{efficiency:fig:DE_Evolution}.
 In the Figure the total number of operational stations is shown as the black line, and it has a strong correlation to the global averaged detection efficiency with a correlation value of 0.86.
 With more stations strategically added to the network the 7-day energy distribution will also change to include more low energy strokes and increase the average relative detection efficiency.
 
@@ -274,11 +274,11 @@ With more stations strategically added to the network the 7-day energy distribut
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p9.pdf} 
    \caption{The number of WWLLN stations operating (black) and the global average relative detection efficiency (green) for April 2009 through October 2011.}
-   \label{DE_Evolution}
+   \label{efficiency:fig:DE_Evolution}
 \end{figure}
 
-While Figure~\ref{DE_Evolution} shows an overall increase in the number of network stations and hence detection efficiency, Figure~\ref{deTrendLocal} shows similar curves for just low-latitude regions ($-30^\circ$ N to $30^\circ$ N, blue), a single location near Florida ($-85^\circ$E, $30^\circ$N, red), and a single location near South Africa ($25^\circ$E, $-20^\circ$N, green).
-Removing high latitude regions increases the overall detection efficiency but does not change the overall upward trend shown by the blue curve in Figure~\ref{deTrendLocal}.
+While Figure~\ref{efficiency:fig:DE_Evolution} shows an overall increase in the number of network stations and hence detection efficiency, Figure~\ref{efficiency:fig:deTrendLocal} shows similar curves for just low-latitude regions ($-30^\circ$ N to $30^\circ$ N, blue), a single location near Florida ($-85^\circ$E, $30^\circ$N, red), and a single location near South Africa ($25^\circ$E, $-20^\circ$N, green).
+Removing high latitude regions increases the overall detection efficiency but does not change the overall upward trend shown by the blue curve in Figure~\ref{efficiency:fig:deTrendLocal}.
 When the region near Florida is examined it can be seen that it remains fairly close to 1.0 for the entire dataset, with downward trends during local summer months due to increased local lightning activity.
 The region near South Africa has a steady increase in detection efficiency except during a large drop out which occurred in the middle of 2011, caused by one of the African stations going offline.
 This shows the global detection efficiency tracks the network as a whole, but it cannot be used as an accurate proxy for smaller spatial scales.
@@ -287,10 +287,10 @@ This shows the global detection efficiency tracks the network as a whole, but it
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p10.pdf} 
    \caption{Daily variation of average detection efficiency for the globe (black), low-latitudes ($-30^\circ$ N to $30^\circ$ N, blue), over Florida ($-85^\circ$E, $30^\circ$N, red), and over South Africa ($-25^\circ$E, $-20^\circ$N, green).}
-   \label{deTrendLocal}
+   \label{efficiency:fig:deTrendLocal}
 \end{figure}
 
-The local time variability over the region near Florida is shown in black in Figure~\ref{deUTC} and shows a total variability of about 4.9\%.
+The local time variability over the region near Florida is shown in black in Figure~\ref{efficiency:fig:deUTC} and shows a total variability of about 4.9\%.
 The largest drop in the relative detection efficiency occurs in the afternoon, near the peak in local lightning activity at 3pm.
 This drop is due to the nearby stations raising their detection threshold in response to detecting more local strokes.
 For this location the effects of local activity dominates over the expected day/night effect due to changes in VLF propagation.
@@ -299,10 +299,10 @@ For this location the effects of local activity dominates over the expected day/
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-f11.pdf} 
    \caption{Average local time variation of detection efficiency over Florida ($-85^\circ$E, $30^\circ$N, solid) and South Africa ($-25^\circ$E, $-20^\circ$N, dashed), from 2009-2011.}
-   \label{deUTC}
+   \label{efficiency:fig:deUTC}
 \end{figure}
 
-The variability for the region near South Africa is shown as the dotted line in Figure~\ref{deUTC}, there is a total variability of 25.5\%.
+The variability for the region near South Africa is shown as the dotted line in Figure~\ref{efficiency:fig:deUTC}, there is a total variability of 25.5\%.
 There is an overall decrease in relative the detection efficiency during the day when the sferics are propagating over the continent.
 The best in relative detection efficiency occurs in the middle of the night when the stations in Africa have less nearby activity and sferics are able to propagate more readily under a night ionosphere.
 Compared to the Florida region there is a much higher dependence on day and night conditions as well as a much wider range of variability.
@@ -311,7 +311,7 @@ Compared to the Florida region there is a much higher dependence on day and nigh
 
 While the overall performance of the network trends along with the total number of stations, the effects  a single station turning on or off can have an effect on a large region of the global but only small effect on the network as a whole.
 To test the influence of single stations a day of data was randomly selected, 16 June 2010, and the entire data were reprocessed with just the Honolulu, Hawaii station ($-158^\circ$E, $21^\circ$N) removed from the raw data and again with just the Maitri, Antarctica station ($12^\circ$E, $-71^\circ$N) removed.
-The maps of the daily average with and without these stations are shown in Figure~\ref{scrubMap}.
+The maps of the daily average with and without these stations are shown in Figure~\ref{efficiency:fig:scrubMap}.
 For Hawaii the change is fairly local to its region in the Northeast Pacific Ocean, but leads to little effect across the entire network.
 In the case of Maitri there is a larger effect since it is located in a region of sparse detector coverage and covers much of the southern Atlantic.
 
@@ -320,19 +320,19 @@ In the case of Maitri there is a larger effect since it is located in a region o
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p12.pdf} 
    \caption{Relative detection efficiency map of 16 June 2010  for (a) the complete network, (b) the network with the Hawaii station (black star, $-158^\circ$E, $21^\circ$N) removed, and (c) the network with Maitri station (black star, $12^\circ$E, $-71^\circ$N) removed.
 Stations are shown as triangles with operational stations in white, non operational in black, and operational for part of the day in grey.}
-   \label{scrubMap}
+   \label{efficiency:fig:scrubMap}
 \end{figure}
 
 The daily average global relative detection efficiency dropped from 64\% to 63\% without Hawaii and from 64\% to 53\% without Maitri.
 The detection efficiency in the grid cell over Hawaii dropped from 85\% to 78\% and from 45\% to 7.4\% in the grid cell over Maitri.
-A plot of the total change between the daily averages in Figure~\ref{scrubMap} is shown in Figure~\ref{scrub}.
+A plot of the total change between the daily averages in Figure~\ref{efficiency:fig:scrubMap} is shown in Figure~\ref{efficiency:fig:scrub}.
 
 
 \begin{figure}[ht!]
    \centering
 \noindent\includegraphics[width=39pc]{efficiency/Figures/2012RS005049-p13.pdf}
 \caption{The difference in detection efficiency for 16 June 2010 with Hawaii (a) and Maitri (b) stations completely removed from processing.}
-\label{scrub}
+\label{efficiency:fig:scrub}
 \end{figure}
 
 \section{Results}
@@ -341,7 +341,7 @@ The detection efficiency model can be applied to global maps of stroke density t
 This does not correct for the overall absolute detection efficiency (11\% for CG flashes in the United States, see \citet{Abarca2010}), rather it corrects for the areas with less WWLLN coverage.
 The hourly stroke density plots are corrected by dividing the counts in each grid cell by the relative detection efficiency of that cell.
 For example a grid cell with 100 strokes and an efficiency of 80\% would be corrected to 125 strokes.
-The stroke density from 2011, Figure~\ref{Global2011}, had the model corrections applied hourly with the condition that a 5$^\circ$ x 5$^\circ$ grid cell needed at least two strokes to have a correction applied.
+The stroke density from 2011, Figure~\ref{efficiency:fig:Global2011}, had the model corrections applied hourly with the condition that a 5$^\circ$ x 5$^\circ$ grid cell needed at least two strokes to have a correction applied.
 A second condition was that a minimum relative detection efficiency of 5\% was set for the model.
 
 
@@ -350,33 +350,33 @@ In 2011 the total number of strokes was $1.5\times10^8$ (4.8 strokes/second) wit
 In 2010 63\% of the global area between $\pm60^\circ$ latitude had a relative detection efficiency of at least 80\% and in 2011 this area increased from 66\% to 72\%.
 If we assume that the global lightning flash rate was a constant 46 flashes/second as determined by satellite measurements using the Optical Transient Detector and Lightning Imaging Sensor \citep{Cecil2011, Christian2003} for both years, this would imply a corrected global absolute detection efficiency for cloud to ground and in-cloud flashes of 13.7\% for 2010 and 13.0\% in 2011.
 
-The corrected yearly density is shown in Figure~\ref{Global2011Corrected}, aside from the overall increase in number counts the important feature is the relative count rates over the US, Africa, and Southeast Asia.
-In the uncorrected Figure~\ref{Global2011} the peak stroke density in Asia and America are similar while Africa is about $\sim$1-10\% of these values (also shown in Figure~\ref{2010_Energy}a).
+The corrected yearly density is shown in Figure~\ref{efficiency:fig:Global2011Corrected}, aside from the overall increase in number counts the important feature is the relative count rates over the US, Africa, and Southeast Asia.
+In the uncorrected Figure~\ref{efficiency:fig:Global2011} the peak stroke density in Asia and America are similar while Africa is about $\sim$1-10\% of these values (also shown in Figure~\ref{efficiency:fig:2010_Energy}a).
 In the corrected maps we can see that the peak density in Africa is much closer in magnitude to that seen for America and Asia, and the relative densities match the distributions seen by OTD (see \citet{Christian2003} Figure 4).
-The total increase in stroke counts is shown in Figure~\ref{Global2011Diff} with the greatest increases occurring over land, in particular central Africa.
+The total increase in stroke counts is shown in Figure~\ref{efficiency:fig:Global2011Diff} with the greatest increases occurring over land, in particular central Africa.
 
 \begin{figure}[ht!]
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p14.pdf} 
    \caption{The raw 2011 global stroke density measured by WWLLN.}
-   \label{Global2011}
+   \label{efficiency:fig:Global2011}
 \end{figure}
 
 \begin{figure}[ht!]
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p15.pdf} 
    \caption{The 2011 global stroke density measured by WWLLN and corrected for the relative detection efficiency of the network.
-Note the large change in the African continent relative to Figure~\ref{Global2011}.}
-   \label{Global2011Corrected}
+Note the large change in the African continent relative to Figure~\ref{efficiency:fig:Global2011}.}
+   \label{efficiency:fig:Global2011Corrected}
 \end{figure}
 
 \begin{figure}[ht!]
    \centering
 \noindent\includegraphics[width=20pc]{efficiency/Figures/2012RS005049-p16.pdf} 
    \caption{The increase in stroke density due to the relative detection efficiency corrections for 2011.
-Uncorrected and corrected stroke densities shown in Figure~\ref{Global2011} and~\ref{Global2011Corrected} respectively.
+Uncorrected and corrected stroke densities shown in Figure~\ref{efficiency:fig:Global2011} and~\ref{efficiency:fig:Global2011Corrected} respectively.
 The increase is plotted on the same scale as the previous two figures.}
-   \label{Global2011Diff}
+   \label{efficiency:fig:Global2011Diff}
 \end{figure}
 
 \section{Conclusion}
