@@ -19,11 +19,11 @@ Finally the system is designed to be operated remotely via SSH, but it does have
 
 \section{Layout and Design}
 
-The Eagle files (v5) are available on flash5 at /home/mlhutch/eagle/ or through a git repository (see Appendix~\ref{app:code}. 
+The Eagle files (v5) are available on flash5 at /home/mlhutch/eagle/ or through a git repository (see Appendix~\ref{thesis:appendix:code}. 
 
 \subsection{Design}
 
-The board design is shown in Figure~\ref{app:suSchematic} with corresponding component names and values.
+The board design is shown in Figure~\ref{su:fig:suSchematic} with corresponding component names and values.
 The Gumstix is represented as a 40 pin header and a matching header needs to be soldered to the Tobi breakout board.
 One adjustment that may need to be changed in future iterations is the voltage divider on the VLF and PPS signal output to the internal stereo jack (upper left of diagram).
 Current values are set to reduce the two signals to within the input voltages of the Gumstix sound card.
@@ -32,13 +32,13 @@ Current values are set to reduce the two signals to within the input voltages of
    \centering
    \includegraphics[scale=.75]{Appendix/Figures/wwlln_SU_v4_Schematic.pdf} 
    \caption{WWLLN Service Unit v4d design.}
-   \label{app:suSchematic}
+   \label{su:fig:suSchematic}
 \end{figure}
 
 \subsection{Layout}
 
 Unlike previous versions of the service unit most small components (resistors, capacitors, etc.) are placed on the underside of the board so the same form factor can be used.
-The overall layout is shown in Figure~\ref{app:suBoard} with the topside in Figure~\ref{app:suTop} and bottom in Figure~\ref{app:suBot}.
+The overall layout is shown in Figure~\ref{su:fig:suBoard} with the topside in Figure~\ref{su:fig:suTop} and bottom in Figure~\ref{su:fig:suBot}.
 For heating issues the two voltage regulators need to be screwed onto the board with metal screws which act as heat sinks and connect them to the ground plane for heat dissipation.
 Both the USB and ethernet jacks are on the board so the Gumstix does not face directly out of the box, preventing inevitable wear and tear on the Gumstix itself.
 The HDMI plug is not on the board due to the inability to wire two jacks together (pins are spaced too close) so a wall-mount HMDI extension cord is used instead.
@@ -47,26 +47,26 @@ The HDMI plug is not on the board due to the inability to wire two jacks togethe
    \centering
    \includegraphics[scale=.75]{Appendix/Figures/wwlln_SU_v4.pdf} 
    \caption{WWLLN Service Unit v4d Schematic}
-   \label{app:suBoard}
+   \label{su:fig:suBoard}
 \end{figure}
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=.75]{Appendix/Figures/wwlln_SU_v4_top.pdf} 
    \caption{WWLLN Service Unit v4d Topside}
-   \label{app:suTop}
+   \label{su:fig:suTop}
 \end{figure}
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=.75]{Appendix/Figures/wwlln_SU_v4_bottom.pdf} 
    \caption{WWLLN Service Unit v4d Bottomside}
-   \label{app:suBot}
+   \label{su:fig:suBot}
 \end{figure}
 
 \section{Parts List}
 
-The most recent parts list for the entire service unit, including price estimates are given in Table~\ref{app:suPrice}.
+The most recent parts list for the entire service unit, including price estimates are given in Table~\ref{su:table:suPrice}.
 Total price for the service unit, excluding external cables and connectors, is \$546 before shipping and tax.
 Price breaks are available for many of the components which can bring down the total price.
 
@@ -74,7 +74,7 @@ Price breaks are available for many of the components which can bring down the t
 \begin{center}
 \begin{longtable}{|p{2in}|p{1.5in}|p{.75in}|p{.5in}|p{.5in}|p{1in}|p{1.5in}|}
 \caption{WWLLN Service Unit Parts List}\\
-\label{app:suPrice}\\
+\label{su:table:suPrice}\\
 \hline
 \bf Part & \bf Value & \bf Quantity  & \bf Unit Price & \bf Price & \bf Supplier & \bf Part Number\\ 
 \hline
@@ -176,18 +176,18 @@ Service unit construction steps:
 \item{Screw down voltage regulators}
 \item{Solder connection pins to USB-serial converter}
 \item{Solder matching header to Gumstix Tobi board (with COM detached!)}
-\item{Test board (see Section~\ref{app:suTest1})}
+\item{Test board (see Section~\ref{su:subsection:suTest1})}
 \item{Mount GPS and USB-serial converter}
-\item{Test board (see Section~\ref{app:suTest2})}
+\item{Test board (see Section~\ref{su:subsection:suTest2})}
 \item{Mount Gumstix to board}
 \item{Plug USB, ethernet, HDMI, and stereo cables into Gumstix}
 \item{Plug USB, ethernet, and stereo into Service Unit board}
 \item{Insert formatted microSD card into Gumstix board}
-\item{Test board and Gumstix (see Section~\ref{app:suTest3})}
-\item{Drill out holes in Service Unit box (Figures~\ref{app:suBox} and~\ref{app:suBoxBot})}
+\item{Test board and Gumstix (see Section~\ref{su:subsection:suTest3})}
+\item{Drill out holes in Service Unit box (Figures~\ref{su:fig:suBox} and~\ref{su:fig:suBoxBot})}
 \item{Attach HDMI wall mount to side of box}
 \item{Mount Service Unit board into box and wrap cables to fit}
-\item{Final Service Unit and Gumstix test (see Section~\ref{app:suTest4})}
+\item{Final Service Unit and Gumstix test (see Section~\ref{su:subsection:suTest4})}
 \end{enumerate}
 
 \begin{landscape}
@@ -195,7 +195,7 @@ Service unit construction steps:
    \centering
    \includegraphics[scale=1]{Appendix/Figures/su_box_holes_sides.pdf} 
    \caption{Schematic for Service Unit box holes.}
-   \label{app:suBox}
+   \label{su:fig:suBox}
 \end{figure}
 \end{landscape}
 
@@ -204,14 +204,14 @@ Service unit construction steps:
    \centering
    \includegraphics[scale=1]{Appendix/Figures/su_box_holes_bottom.pdf} 
    \caption{Schematic for Service Unit mounting holes.}
-   \label{app:suBoxBot}
+   \label{su:fig:suBoxBot}
 \end{figure}
 \end{landscape}
 
 \section{Testing Procedures}
 
 \subsection{Initial Board Test}
-\label{app:suTest1}
+\label{su:subsection:suTest1}
 
 Without an external boards (Gumstix, GPS, etc) connected slowly raise the input voltage from 0 to 12~V. 
 At 12~V the board should be drawing near to 120~mA, and both yellow LEDs should be on.
@@ -222,14 +222,14 @@ If the USB-serial jumper it set to Gumstix, then the GPS will have a voltage on 
 The Gumstix socket should have 0~V everywhere except on pin 40 which should be 5~V and pin 10 which should be 0.8~V.
 
 \subsection{GPS Power Test}
-\label{app:suTest2}
+\label{su:subsection:suTest2}
 
 Turn off the board and plug in the GPS engine.
 At 12~V power the board should be drawing 240~mA.
 The bottom red LED should be blinking and the top one should be on.
 
 \subsection{Gumstix Power Test}
-\label{app:suTest3}
+\label{su:subsection:suTest3}
 
 Plug in to the Gumstix and connect the ethernet (the ethernet LEDs allow for a quick check of the system).
 Power the GPS with a 12~VDC wall plug, not a variable power supply.
@@ -238,24 +238,24 @@ After about 30 seconds the ethernet lights should start to blink and flash on th
 While idling the board should be drawing 600-700~mA.
 
 \subsection{Final Service Unit Test}
-\label{app:suTest4}
+\label{su:subsection:suTest4}
 
 With all of the boards and cables connected, including the preamp and GPS antenna, power the complete service unit box on with the 12~VDC wall supply.
 While waiting for the GPS to sync up check to see if the Gumstix has started up properly, the yellow LEDs should flash on briefly, turn off and then turn back on when the system has started up.
-Follow the steps in Section~\ref{app:suSoftware} to connect to the Gumstix via a direct ethernet connect to ensure all cable connections.
+Follow the steps in Section~\ref{su:subsection:suSoftware} to connect to the Gumstix via a direct ethernet connect to ensure all cable connections.
 If GPS does not sync up in 10 minutes check the status with either the Gumstix readTSIP.py script, or connect to the GPS using the Trimble Studio Software via a Windows PC.
 Allow the box to run for several hours with the lid closed to check for overheating.
 
 \section{Software Setup}
 
-Most of the software is already installed and updated during the process of creating the microSD card, as described in Appendix~\ref{app:gumstix}.
+Most of the software is already installed and updated during the process of creating the microSD card, as described in Appendix~\ref{thesis:appendix:gumstix}.
 However the GPS engine needs to be programmed directly, and the network settings are unique to each station host.
 
 \subsection{GPS Engine}
 
 There are three ways to configure the GPS Resolution T engine.
 The first one is to utilize the Trimble Studio Configurator tool and load the configuration file that is located in the Gumstix software directory: gumstix/gps/ResolutionT Configuration.dat
-The second option is to use the Trimble Studio tool to manually set the configuration on the GPS itself, if that option is taken the desired settings are listed in Table~\ref{app:suGPSSettings}.
+The second option is to use the Trimble Studio tool to manually set the configuration on the GPS itself, if that option is taken the desired settings are listed in Table~\ref{su:table:suGPSSettings}.
 The third option is to use the Gumstix to send the appropriate TSIP configuration messages to the GPS.
 The last method has the advantage of not requiring a second computer, it can be done with units in the field, and it can be done remotely.
 However the disadvantage is that the current TSIP messages to send are not yet worked out or preset in the sendTSIP.py program on the Gumstix.
@@ -292,11 +292,12 @@ PPS	&Output	&	Enabled\\
 \hline
 \end{tabular}
 \end{center}
-\label{app:suGPSSettings}
+\label{su:table:suGPSSettings}
 \caption{Resolution T GPS Settings}
 \end{table}
 
 \subsection{Network Configuration}
+\label{su:subsection:suSoftware}
 
 The two standard methods for network configuration that are sent out with every service unit are listed below.
 The SSH setup method is also the best way to connect to a Gumstix once it is in a service unit box and not yet set up a as a static IP address.
