@@ -1,4 +1,5 @@
-chapter_test*
+*.swp
+chapter_test.pdf
 *.blg
 *.lof
 *.lot
