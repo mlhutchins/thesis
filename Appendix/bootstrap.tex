@@ -12,7 +12,7 @@ There are XXX main sections to the bootstrap processing:
 	\item{Calculate stroke energy using LWPC and calibration}
 	\item{Iterative re-calibrate the network}
 	\item{Final energy calculation}
-	\item{Run Relative Detection Efficiency Model (Chaper~\ref{ch:de})}
+	\item{Run Relative Detection Efficiency Model (Chaper~\ref{thesis:chapter:efficiency})}
 	\item{Move files to storage locations}
 \end{itemize}
 
@@ -23,8 +23,8 @@ This processing requires several files, locations given relative to mlhutch@flas
 	\item{\textbf{stations.dat} -- list of current WWLLN stations, copied over from flash4 at the start every processing run.}
 	\item{\textbf{lwpcv21} -- directory containing a working compiled version of the LWPC code.
 		Used in generating new lookup tables as stations are added, a parallelized matlab implemtation is discussed below.}
-	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{app:code}).}
-	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{app:code}).}
+	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
+	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
 \end{itemize}
 
 \section{LWPC}
@@ -59,7 +59,7 @@ It is also capable of outputting plots, azimuthal dependence, and many other fea
 
 \subsection{Matlab Function}
 
-A matlab implementation of LWPC is available as a git repository (see Appendix~\ref{app:code}).
+A matlab implementation of LWPC is available as a git repository (see Appendix~\ref{thesis:appendix:code}).
 This implantation allows for LWPC to called in matlab with:
 
 \begin{verbatim}
@@ -78,7 +78,7 @@ While LWPC can be parallelized it is still too slow to run faster than realtime 
 As a result two sets of lookup tables are generated for each station with the pre-calculated LWPC electric field values.
 
 The lookup tables are part of the main Bootstrap directory under the names \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat}.
-Each of these files are tab-delimited text with the format given in Table~\ref{app:table:lookup}.
+Each of these files are tab-delimited text with the format given in Table~\ref{bootstrap:table:lookup}.
 The tables list the electric field measured the the station given a 100~kW transmitter in each grid point on the globe.
 The latest lookup tables are at a resolution of $2^\circ$.
 
@@ -104,16 +104,16 @@ E-field at (-179,85)	& E-field at (-177,85) &	E-field at (-175,85) & \dots \\
 \end{tabular}
 \end{center}
 \caption{Format for \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat} data files for a resolution of $2^\circ$.}
-\label{app:table:lookup}
+\label{bootstrap:table:lookup}
 \end{table}
 
-An example of a lookup table for the all day ionosphere for Dunedin station is shown in Figure~\ref{app:fig:lookup}.
+An example of a lookup table for the all day ionosphere for Dunedin station is shown in Figure~\ref{bootstrap:fig:lookup}.
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=1]{Energy/Figures/PPS_Lookup.pdf} 
    \caption{Lookup table for an all day ionosphere for Dunedin station.}
-   \label{app:fig:lookup}
+   \label{bootstrap:fig:lookup}
 \end{figure}
 
 \subsection{Generation}
