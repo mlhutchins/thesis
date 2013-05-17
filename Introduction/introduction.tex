@@ -1,1 +1,46 @@
-\section{ }
+\section{World Wide Lightning Location Network}
+
+The World Wide Lightning Location Network (WWLLN, see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time (c.f. \citet{Jacobson2006c}).
+The network uses Very Low Frequency (VLF) radio wave receivers distributed around the globe to identify the time of group arrival (TOGA) for the wave packets of individual lightning sferics \citep{Dowden2002d}, and a central processor combines the TOGAs to determine the source locations over the spherical Earth.
+Knowledge of individual stroke locations, with high temporal accuracy, and within a fraction of a wavelength is beneficial for both scientific and technical uses. WWLLN lightning location data have recently been used for advances in space science (c.f. \citet{Kumar2009}, or \citet{Holzworth2011}), meteorology (c.f. \citet{Price2009}, \citet{Thomas2010d}) and detailed lightning physics (\citet{Connaughton2010a}) to name a few.
+Near instantaneous knowledge of lightning stroke location anywhere in the world, provided by WWLLN, is now actively used by the USGS (U.S. Geological Survey) to help identify remote, explosive volcanic eruptions (see \citet{Doughton2010}).
+
+WWLLN currently consists of 57 VLF stations distributed as shown in figure~\ref{energy:fig:wwlln_dist}, with more stations continuously being added to the network.
+As stations are added the accuracy and detection efficiency of the network improves. As of 2010 the network locates most strokes to within 10 kilometers and $<$10~$\mu$s with an estimated detection efficiency of about 11\% for all strokes and $>$30\% for more powerful strokes \citep{Abarca2010,Rodger2009}.
+The network uses a TOGA technique, originally developed by \citet{Dowden2000}, to locate strokes by analyzing the sferic waveforms at each station using the Stroke\_B algorithm as discussed by \citet{Rodger2006,Rodger2009}.
+
+As only the spectral variations through the sferic wave packet are needed for determining the TOGA, the absolute electric field amplitude is unnecessary to accurately locate lightning. Due to this, the network does not currently report other characteristics of strokes such as peak current.
+However, each WWLLN station does record the root mean square (RMS) electric field value of the sferic waveform used in the TOGA calculation, but these values need to be calibrated, as discussed below.
+
+The World Wide Lightning Location Network (WWLLN) has been generating global lightning locations since 2004 \citep{Rodger2006, Rodger2009}.
+Since then the network has grown from 18 stations to over 60 as of August 2012.
+Additional stations have greatly improved the ability of WWLLN to locate progressively weaker strokes \citep{Rodger2009, Abarca2010}.
+However the WWLLN network does not observe lightning with the same detection efficiency everywhere.
+This is due to variable WWLLN station coverage and the strong affect on very low frequency (VLF) radio propagation from orography and ionospheric conditions along the great circle path of a wave.
+This paper demonstrates a technique which uses only data collected by the WWLLN network itself, to estimate the relative detection efficiency of each $5^\circ$ x $5^\circ$ pixel over the earth compared to the best average WWLLN detection efficiency.
+For instance, the lightning stroke density over central Africa, where WWLLN station density is sparse, can now be compared to the region of the Earth with the best detection efficiency, such as North America.
+This paper does not provide an absolute detection efficiency calculation.
+
+WWLLN (see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time \citep{Jacobson2006c}.
+The network uses VLF radio wave receivers distributed around the globe to identify the time of group arrival (TOGA) for the wave packets from individual lightning-produced sferics \citep{Dowden2002d}.
+A central processor combines the TOGAs to determine the source locations over the spherical Earth.
+The TOGA of the VLF wave packet developed by \citet{Dowden2000}, is used rather than ``trigger time'' to produce more uniform arrival times across the network.
+Stroke locations are determined using the TOGAs with  a time of arrival algorithm over the spherical earth (see \citet{Rodger2009, Rodger2009a}).
+Knowledge of global stroke locations, with high temporal and spatial accuracy is beneficial for both scientific and technical uses.
+WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
+
+As of April 2012 WWLLN consisted of 60 VLF stations distributed around the world, with more stations continuously being added to the network.
+The network improves in accuracy and detection efficiency with increased stations; for example an increase in the number of WWLLN stations from 11 in 2003 to 30 in 2007 led to a $\sim$165\% increase in the number of lightning strokes located \citep{Rodger2009}.
+As of 2011 the network located 61\% of strokes to $<$5~km and 54\% to $<$15~$\mu s$ with an estimated detection efficiency of about 11\% for cloud to ground flashes and $>$30\% for higher peak current flashes over the Continental United States\citep{Hutchins2012c, Abarca2010, Rodger2009}.
+
+As of January 2013, the World Wide Lightning Location Network (WWLLN, see wwlln.net) consists of 70 very low frequency (VLF) stations around the world allowing it to detect with a 5~km location and $15\mu$s timing accuracy and an estimated overall stroke detection efficiency of 11\% \citep{Hutchins2012a, Abarca2010,Rodger2009}.
+An upgrade to the WWLLN allows for the network to measure radiated VLF stroke energies in addition to stroke locations \citep{Hutchins2012}.
+The capability to measure stroke energies as well as the global coverage of the network allows for a global comparison of stroke energies over land and ocean regimes.
+
+
+\section{Earth Networks Total Lightning Network}
+
+A second ground based detection network, the Earth Networks Total Lightning Network (ENTLN), is used to corroborate the results of the WWLLN data.
+ENTLN is a higher density, broadband (1~Hz to 12~MHz receiver) network with about 500 operational stations in the United States \citep{Heckman2010}.
+The network utilizes a time of arrival method to determine the location of each stroke, where a minimum of 8 stations is required to produce a valid solution.
+From the recorded waveforms ENTLN infers polarity, peak current, and stroke type \citep{Liu2011a}.
