@@ -152,7 +152,14 @@ This script:
 
 In order to rerun lost days the only change necessary for Bootstrap\_automation is to change the rundate from:
 
-\subsection{Automation}
+\begin{verbatim}
+		RUNDATE = floor(now - 1);
+\end{verbatim}
+
+to the day (or dates) that need to be rerun.
+The LIVE variable and second part of the if clause is for rerunning \emph{previously processed} data.
+If LIVE is set to false then the script runs and stores in an alternative directory with a copy of the resulting calibration file.
+For the case of restarting the script on the same day it failed to run, no changes need to be made.
 
 \subsection{Time Estimates}
 
