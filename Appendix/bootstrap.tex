@@ -3,6 +3,7 @@ This section walks through the code used in the processing along with the decisi
 
 \section{Code Summary}
 
+%% Fix
 There are XXX main sections to the bootstrap processing:
 
 \begin{itemize}
@@ -22,8 +23,11 @@ This processing requires several files, locations given relative to mlhutch@flas
 	\item{\textbf{$\sim$/Process/relocate-B31Jan2013.x86-64} -- James Brundell's relocate program used to process R-files into AP-files, this version compiled for Linux 64-bit systems}
 	\item{\textbf{stations.dat} -- list of current WWLLN stations, copied over from flash4 at the start every processing run.}
 	\item{\textbf{lwpcv21} -- directory containing a working compiled version of the LWPC code.
-		Used in generating new lookup tables as stations are added, a parallelized matlab implemtation is discussed below.}
+		Used in generating new lookup tables as stations are added, a parallelized matlab implementation is discussed below.
+		Provided as a sub-module of the Bootstrap directory.}
 	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
+	\item{\textbf{Detection Efficiency} -- The code for modeling the network relative detection efficiency.
+		Provided as a sub-module of the Bootstrap directory.}
 	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
 \end{itemize}
 
