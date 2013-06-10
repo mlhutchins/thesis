@@ -180,6 +180,13 @@ The 11 values in each grid point (in dB) are averaged together and added to the 
 
 This code takes about twelve hours to run using a single core due to calling the LWPC code.
 The LWPCpar.m function is set up to run in parallel (it copies the LWPC code to new locations), however the {\bf Lookup\_automation.m} script has not be parallelized.
+
+\subsection{generate\_ap.m}
+
+{bf generate\_ap.m} copies over the R-files to the TOGA relocate folder and processes them with the -e flag.
+This generate the normal WWLLN A-file structure, with the addition of the participating stations and their RMS electric field values at the end of each line.
+The RMS electric field (as mentioned elsewhere) is in the uncalibrated sound card units, where the calibration is the main part of the wwlln\_energy.m code.
+The script ends with moving the new AP file and R-files to their storage locations.
 \section{Relative Detection Efficiency Code}
 
 \subsection{Point to Paper}
