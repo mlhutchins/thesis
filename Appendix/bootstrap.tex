@@ -185,6 +185,43 @@ The LWPCpar.m function is set up to run in parallel (it copies the LWPC code to 
 This generate the normal WWLLN A-file structure, with the addition of the participating stations and their RMS electric field values at the end of each line.
 The RMS electric field (as mentioned elsewhere) is in the uncalibrated sound card units, where the calibration is the main part of the wwlln\_energy.m code.
 The script ends with moving the new AP file and R-files to their storage locations.
+
+\subsection{wwlln\_energy.m}
+
+{\bf wwlln\_energy.m}
+default master station
+calibration vs conversion file
+
+{\bf apply\_lwpc.m}
+Distance range
+
+{\bf cross\_calibration.m}
+Stroke restrictions
+
+{\bf bootstrap.m}
+Bootstrap graph
+5 jumps at most
+
+{\bf conversion\_check.m}
+Forces in master station
+Check for station goodness
+
+{\bf conversion\_mean.m}
+7 day average
+Check against Dunedin, Seattle, and Scottbase for jumps
+
+{\bf stroke\_energy.m}
+Applies the calibration
+Median
+MAd
+
+{\bf energy\_iterate.m}
+Runs stroke\_energy 5 times
+Uses strokes are ground truth to recalibrate
+converges
+
+Save and store data, calibrations, and conversions
+
 \section{Relative Detection Efficiency Code}
 
 \subsection{Point to Paper}
