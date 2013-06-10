@@ -134,8 +134,6 @@ Tables generated with either script can be validated with the \textbf{$\sim$/mat
 This script checks each grid point to ensure there is a real number there, sometimes LWPC generates errors for very specific locations.
 If there is no valid electric field value at that spot it is reprocessed by offsetting the transmitter by a fraction of a degree.
 
-\section{Bootstrap and Calibration Process}
-
 \section{Matlab Code}
 
 The main matlab script to run the entire energy calculation process is {\bf Boostrap\_automation.m}.
@@ -183,7 +181,7 @@ The LWPCpar.m function is set up to run in parallel (it copies the LWPC code to 
 
 \subsection{generate\_ap.m}
 
-{bf generate\_ap.m} copies over the R-files to the TOGA relocate folder and processes them with the -e flag.
+{\bf generate\_ap.m} copies over the R-files to the TOGA relocate folder and processes them with the -e flag.
 This generate the normal WWLLN A-file structure, with the addition of the participating stations and their RMS electric field values at the end of each line.
 The RMS electric field (as mentioned elsewhere) is in the uncalibrated sound card units, where the calibration is the main part of the wwlln\_energy.m code.
 The script ends with moving the new AP file and R-files to their storage locations.
