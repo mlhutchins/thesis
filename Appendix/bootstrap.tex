@@ -161,7 +161,14 @@ The LIVE variable and second part of the if clause is for rerunning \emph{previo
 If LIVE is set to false then the script runs and stores in an alternative directory with a copy of the resulting calibration file.
 For the case of restarting the script on the same day it failed to run, no changes need to be made.
 
-\subsection{Time Estimates}
+\subsection{data\_path.m}
+
+It is important to correctly set up the {\bf data\_path.m} script. 
+Aside from the storage paths, it is important to set how the script should obtain the stations.dat and R-files from flash4.
+The transfer type can either be cp if the computer has flash4 network mounted, or scp if passwordless scp is setup.
+The r\_path\_flat variable determines whether the R-files are stored in one directory or with a hierarchal structure (e.g. /wd2/Rfiles/R2013/R201304/R201304*).
+
+Additionally the location of the bootstrap processing folder itself as well as the TOGA relocate script.
 
 \section{Relative Detection Efficiency Code}
 
