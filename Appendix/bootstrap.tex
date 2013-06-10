@@ -170,6 +170,16 @@ The r\_path\_flat variable determines whether the R-files are stored in one dire
 
 Additionally the location of the bootstrap processing folder itself as well as the TOGA relocate script.
 
+\subsection{Lookup\_automation.m}
+
+The {\bf Lookup\_automation.m} script compares the current number of entries in the lookup\_day.dat data file and compares it to the latest stations.dat file.
+If stations.dat has new entries, then the script generates the corresponding LWPC lookup tables for those new stations.
+
+Using the current lookup spatial resolution LWPCpar is called for each grid point at 11 frequencies (8 -- 11~kHz) for both day and night.
+The 11 values in each grid point (in dB) are averaged together and added to the existing lookup data files.
+
+This code takes about twelve hours to run using a single core due to calling the LWPC code.
+The LWPCpar.m function is set up to run in parallel (it copies the LWPC code to new locations), however the {\bf Lookup\_automation.m} script has not be parallelized.
 \section{Relative Detection Efficiency Code}
 
 \subsection{Point to Paper}
