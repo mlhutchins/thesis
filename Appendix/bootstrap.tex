@@ -138,7 +138,19 @@ If there is no valid electric field value at that spot it is reprocessed by offs
 
 \section{Matlab Code}
 
-\subsection{Rerunning Lost Days}
+The main matlab script to run the entire energy calculation process is {\bf Boostrap\_automation.m}.
+This script:
+\begin{enumerate}
+\item{Defines the dates to run (in case past days need to be rerun)}
+\item{Sets the system path parameters from {\bf data\_path.m}}
+\item{Updates stations.dat and the lookup tables {\bf Lookup\_automation.m}.}
+\item{Generate the current AP-file with {\bf generate\_ap.m}}
+\item{Calculate the energies and station calibrations using {\bf wwlln\_energy.m}}
+\item{Generates the relative detection efficiency map with {\bf de\_mapper.m}}
+\item{Saves and archives all of the resulting data files}
+\end{enumerate}
+
+In order to rerun lost days the only change necessary for Bootstrap\_automation is to change the rundate from:
 
 \subsection{Automation}
 
