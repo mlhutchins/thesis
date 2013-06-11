@@ -198,8 +198,9 @@ It is saved in the case that the master calibration requires a retroactive chang
 The calibration file gives the values to convert from individual station sound card units to RMS electric-field values.
 The station calibration incorporates both the actual station calibration and any environmental changes near the station.
 
-{\bf apply\_lwpc.m}
-Distance range
+{\bf apply\_lwpc.m} applies the LWPC lookup tables to each sound card value in each stroke-station pair.
+The day and night lookup table values are weighted by the percent of the path in daytime and nighttime.
+There is also a distance range restriction, where only stroke-station values between 1 and 8~Mm are calculated, otherwise they are given a value of zero.
 
 {\bf cross\_calibration.m}
 Stroke restrictions
