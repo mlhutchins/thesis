@@ -3,8 +3,7 @@ This section walks through the code used in the processing along with the decisi
 
 \section{Code Summary}
 
-%% Fix
-There are XXX main sections to the bootstrap processing:
+There are 8 main sections to the bootstrap processing:
 
 \begin{itemize}
 	\item{Process R-files into AP-files}
@@ -188,9 +187,16 @@ The script ends with moving the new AP file and R-files to their storage locatio
 
 \subsection{wwlln\_energy.m}
 
-{\bf wwlln\_energy.m}
-default master station
-calibration vs conversion file
+The {\bf wwlln\_energy.m} function runs the subfunctions described below in order to calculate the stroke energies.
+Unless it is set otherwise (which it should be), the script sets the default master station to use to be Scott Base with the most recent calibration.
+The master station is one with a known calibration that is used to bootstrap the calibrations for the rest of the network.
+One future upgrade to the code would be the ability to include multiple master stations and combine their results for a better system-wide calibration.
+
+The script also generates and saves two sets of station ratios.
+The first is the station conversion file, the values in this file give how to convert the sound card units at the master station to the sound card units at the other stations.
+It is saved in the case that the master calibration requires a retroactive change.
+The calibration file gives the values to convert from individual station sound card units to RMS electric-field values.
+The station calibration incorporates both the actual station calibration and any environmental changes near the station.
 
 {\bf apply\_lwpc.m}
 Distance range
