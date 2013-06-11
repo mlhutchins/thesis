@@ -215,13 +215,12 @@ So to test if the calibration of A to B is valid, B is used in the A to B to C c
 If the ABC calibration matches the direct AC calibration to within 75\% then B is considered well calibrated.
 This bootstrapping is conducted for 5 hops, so any converted station is at most 4 intermediary stations away from the master station.
 
-{\bf conversion\_check.m}
-Forces in master station
-Check for station goodness
+{\bf conversion\_check.m} takes the resulting calibration paths from bootstrap.m and performs the bootstrap calibration using the initial calibration of the master station and the conversion ratios of cross\_calibration.m.
+It also requires that the master station is included in the case where it becomes excluded in the bootstrap.m subfunction.
 
-{\bf conversion\_mean.m}
-7 day average
-Check against Dunedin, Seattle, and Scottbase for jumps
+To prevent sudden changes in gain or wildly varying station from being included {\bf conversion\_mean.m} checks the new calibration values against the previous 7 days of calibrations.
+If the new calibration is not drastically different then the average of the previous 7 days of calibration values is used as the calibration value, otherwise it is excluded.
+A station is deemed unstable if one of the past seven days is either larger or smaller than the median by a factor of 10 (normalized by Scott Base, Dunedin, and Seattle).
 
 {\bf stroke\_energy.m}
 Applies the calibration
