@@ -202,8 +202,9 @@ The station calibration incorporates both the actual station calibration and any
 The day and night lookup table values are weighted by the percent of the path in daytime and nighttime.
 There is also a distance range restriction, where only stroke-station values between 1 and 8~Mm are calculated, otherwise they are given a value of zero.
 
-{\bf cross\_calibration.m}
-Stroke restrictions
+{\bf cross\_calibration.m} finds all strokes common to each pair of stations, and uses them to create a conversion ratio between every pair of stations.
+Only if the two stations have common strokes in all day paths and are within the same 1 -- 8~Mm distance restriction.
+The median value of every common stroke value is used as the resulting station-pair conversion ratios.
 
 {\bf bootstrap.m}
 Bootstrap graph
