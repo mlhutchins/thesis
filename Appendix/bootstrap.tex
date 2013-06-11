@@ -222,17 +222,21 @@ To prevent sudden changes in gain or wildly varying station from being included 
 If the new calibration is not drastically different then the average of the previous 7 days of calibration values is used as the calibration value, otherwise it is excluded.
 A station is deemed unstable if one of the past seven days is either larger or smaller than the median by a factor of 10 (normalized by Scott Base, Dunedin, and Seattle).
 
-{\bf stroke\_energy.m}
-Applies the calibration
-Median
-MAd
+{\bf stroke\_energy.m} applies the calibration values from conversion\_mean.m to the LWPC corrected data from apply\_lwpc.m to get the stroke energy.
+The stroke energy is the median of the individual station values and the uncertainty is the median absolute deviation of the values.
+The values are stored as the 11$^\text{th}$ and 12$^\text{th}$ column in the resulting AE-file.
+The 13$^\text{th}$ value is the number of stations that participated in the calculation.
 
-{\bf energy\_iterate.m}
-Runs stroke\_energy 5 times
-Uses strokes are ground truth to recalibrate
-converges
+The final step is to iterate the entire process 5 times with {\bf energy\_iterate.m}.
+Here the stroke energies are taken to be ground truths from which all of the calibration values are recalculated.
+The new calibrations are then used in stroke\_energy.m to get a new set of energy calculations.
+After 5 iterations the values start to converge and the resulting calibrations and values are used as the final values.
+The iteration is performed to remove far outliers (2-4 order of magnitude larger or smaller than other values) and get a more stable result.
 
-Save and store data, calibrations, and conversions
+Once the final energy and calibration values are found, the data is written to both .loc and .mat files for the AE-files and the .txt files for the calibration and conversion values.
+The conversion file is only used within the processing internally (and with reprocessing), for any station level calibration work the calibration file should be used.
+Then the {\bf de\_mapper.m} function is called to get the relative detection efficiency for the day, the results stored as a DE-file.
+Finally a set of network statistics are stored in a file for quick reference (currently this file is not being ingested or incorporated anywhere, such as the wwlln management page).
 
 \section{Relative Detection Efficiency Code}
 
