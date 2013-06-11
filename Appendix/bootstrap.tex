@@ -206,9 +206,14 @@ There is also a distance range restriction, where only stroke-station values bet
 Only if the two stations have common strokes in all day paths and are within the same 1 -- 8~Mm distance restriction.
 The median value of every common stroke value is used as the resulting station-pair conversion ratios.
 
-{\bf bootstrap.m}
-Bootstrap graph
-5 jumps at most
+{\bf bootstrap.m} solves the connected graph of station-pair conversions to find the valid calibration paths from the master station to every other possible station.
+There are two ways for a station to be added as a well calibrated station.
+First it can have common strokes between itself and the master station, this would result in a single hop conversion.
+The second way is to be calibrated off of one of the previously calibrated stations.
+In this case a secondary (or tertiary etc.) calibration is validated by comparing it's direct conversion with a conversion using it as an intermediary.
+So to test if the calibration of A to B is valid, B is used in the A to B to C calibration.
+If the ABC calibration matches the direct AC calibration to within 75\% then B is considered well calibrated.
+This bootstrapping is conducted for 5 hops, so any converted station is at most 4 intermediary stations away from the master station.
 
 {\bf conversion\_check.m}
 Forces in master station
