@@ -242,41 +242,36 @@ The overall description of the relative detection efficiency model is given in C
 
 \subsection{de\_mapper.m}
 
-Several of the settings for the {\bf de\_mapper.m} functions are automatically generated based on other parameters and others are set at the start of the function script.
-The resolution of the resulting map is entirely determined by the resolution of the current LWPC lookup tables. 
-The other settings have been chosen based on either the normal WWLLN operation standards or based on what is found to give the best results.
+{\bf de\_mapper.m} creates the relative detection efficiency model for each hour in the day, currently the code is written such that this step is parallelized if the parallel toolbox is available and running.
+Within each hour the subset of operational stations ($>500$ stroke solutions) are used to create the model.
 
-The distance variables control the range of stroke-station pairs to use in calculating the relative detection efficiency.
-They are currently set to a minimum of 500~km and a maximum of 20~Mm.
+For each station the stroke-station pairs are found that are between 0.5 -- 20~Mm, these are used to determine the station detection threshold for the current hour.
+The threshold is determined as the 5th percentile value of the local electric field value (in uncalibrated soundcard units) from the stroke-station pairs.
+This is converted into a minimum stroke energy for an array of potential attenuation rates to serve as a lookup table.
+Using the current station calibration averaged over the past 7 days.
 
-resolution dependence
+The {\bf terminator.m} program is used to determine the percent day and night paths between the station and every grid point on the globe.
+These ratios are combined with the LWPC lookup tables to determine the attenuation at every grid point.
+Finally the attenuation values are used to index the potential stroke energy lookup to get the minimum detectable stroke energy at each grid point.
 
-Last seven days of data
+After this is performed for each station the 5th lowest value is found at each grid point.
+The 5th lowest is chosen as at least 5 stations are required to locate a WWLLN stroke, if that requirement ever changes then it would need to be changed in this code as well.
+The 5th lowest value corresponds to the minimum detectable energy of the network for the given hour.
 
-Generate blendmap
-
-exclude $<500$ km and $> 20000$ km
-
-station on at 500 counts
-
-station\_min to 5th lowest station
-
-station on criteria
-
-each hour processed separately
-
-noise floor calculation (minimum energy)
-
-define 7 day energy distribution
-
-get \% detection efficiency for each energy value
-
-apply to the minimum energy map
+The minimum detectable network energy is compared to the energy distribution of the past 7 days.
+For this distribution only strokes with energy solutions using 2 or more stations are totaled.
+The percentage of strokes above the minimum is called the relative detection efficiency for that grid point.
 
 \subsection{Output Interpretation}
 
-output formats
+The output of the model is a $n\times m \times 24$ array where $n$ and $m$ are determined by the resolution of the lookup tables.
+For example if the lookup tables have a resolution of $2^\circ$, then $n=180$ and $m=90$.
+The third dimension of the array corresponds to the UTC hours 0--23.
 
-suggested minimum relative detection efficiency and reasoning
+In each grid cell is the relative detection efficiency of the network on a 0--1 scale.
+The 1 corresponds to locations that could detect 100\% of the past 7 day distribution and are the best performing regions of the network.
+Other locations will have values below 1\%, such as Antarctica.
+It is recommended that prior to use a minimum relative detection efficiency, such as 5\%, is set on the maps to prevent unphysical stroke density counts.
 
-smoothing done by bootstrap and why
+In the automated Boostrap processing the resulting relative detection efficiency maps are expanded to a $1^\circ$ grid and smoothed to give a standardized size in the case that the lookup tables change their resolution.
+In the unlikely case that the resolution goes below $1^\circ$ the maps should then be downsampled to recreate this resolution.
