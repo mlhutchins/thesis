@@ -25,8 +25,6 @@ This processing requires several files, locations given relative to mlhutch@flas
 		Used in generating new lookup tables as stations are added, a parallelized matlab implementation is discussed below.
 		Provided as a sub-module of the Bootstrap directory.}
 	\item{\textbf{$\sim$/matlab/Bootstrap/} -- directory containing the necessary matlab files, available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
-	\item{\textbf{Detection Efficiency} -- The code for modeling the network relative detection efficiency.
-		Provided as a sub-module of the Bootstrap directory.}
 	\item{\textbf{$\sim$/matlab/functions/} -- directory of necessary matlab functions used by the Bootstrap code files, also available as a git directory (see Appendix~\ref{thesis:appendix:code}).}
 \end{itemize}
 
@@ -240,9 +238,16 @@ Finally a set of network statistics are stored in a file for quick reference (cu
 
 \section{Relative Detection Efficiency Code}
 
-point to paper
+The overall description of the relative detection efficiency model is given in Chapter~\ref{ch:de}.
 
-\subsection{Code Summary}
+\subsection{de\_mapper.m}
+
+Several of the settings for the {\bf de\_mapper.m} functions are automatically generated based on other parameters and others are set at the start of the function script.
+The resolution of the resulting map is entirely determined by the resolution of the current LWPC lookup tables. 
+The other settings have been chosen based on either the normal WWLLN operation standards or based on what is found to give the best results.
+
+The distance variables control the range of stroke-station pairs to use in calculating the relative detection efficiency.
+They are currently set to a minimum of 500~km and a maximum of 20~Mm.
 
 resolution dependence
 
@@ -250,11 +255,11 @@ Last seven days of data
 
 Generate blendmap
 
-exclude <500 km and > 20,000 km
+exclude $<500$ km and $> 20000$ km
 
 station on at 500 counts
 
-station_min -> 5th lowest station
+station\_min to 5th lowest station
 
 station on criteria
 
