@@ -17,6 +17,37 @@ An on board computer is able to toggle the preamp power supply remotely, communi
 The USB-serial convert is used to output GPS messages to an external computer if desired, and two communication can be switched from the GPS to the USB port via the use of an onboard jumper.
 Finally the system is designed to be operated remotely via SSH, but it does have the ability to use a keyboard, mouse and monitor through a powered USB hub and HDMI capable display.
 
+\section{Gumstix Selection}
+
+There are a few important aspects of the Gumstix WaterStormCOM that makes it suitable as a WWLLN service unit computer.
+Other compact computers meet most, if not all, of these requirements and they should be satistifed for future upgrades and revisions to the design.
+The primary requirements are:
+
+\begin{itemize}
+\item{48~kHz stereo input}
+\item{Ethernet connection}
+\item{Linux OS}
+\end{itemize}
+
+Once these are met the secondary requirements are:
+
+\begin{itemize}
+\item{Serial input (GPS comminication)}
+\item{8~GB of memory}
+\item{512~MB of RAM}
+\item{USB}
+\item{Video out (VGA/DVI/HDMI)}
+\item{Low power ($<1$ A)}
+\item{Low cost ($<$\$300)}
+\end{itemize}
+
+Other alternative systems include BeagleBoards, PandaBoard, Gumstix (other models), and maybe future versions of RaspberryPi.
+One consideration not listed above is size.
+The Gumstix was chosen for the final computer since it could fit into the previous form factor for the service units, other systems such as BeagleBoards were too large to fit easily.
+
+Another important note is that some of the requirements can be remedied with USB peripherals if suitable ones are found.
+RaspberryPi with a USB soundcard could work in lieu of the Gumstix, however no USB soundcard could be reliable found that accurately processed the GPS pulse per second signal.
+
 \section{Layout and Design}
 
 The Eagle files (v5) are available on flash5 at /home/mlhutch/eagle/ or through a git repository (see Appendix~\ref{thesis:appendix:code}. 
