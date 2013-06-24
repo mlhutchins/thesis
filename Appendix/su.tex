@@ -327,14 +327,19 @@ PPS	&Output	&	Enabled\\
 \caption{Resolution T GPS Settings}
 \end{table}
 
+\clearpage
+
 \subsection{Network Configuration}
 \label{su:subsection:suSoftware}
 
-The two standard methods for network configuration that are sent out with every service unit are listed below.
-The SSH setup method is also the best way to connect to a Gumstix once it is in a service unit box and not yet set up a as a static IP address.
+The WWLLN Service Unit v4 runs a customized version of the Angstrom Linux distribution for ARM processors.
+For additional help contact Michael Hutchins (\mbox{mlhutch@uw.edu}) or Bob Holzworth 
+\\
+(\mbox{bobholz@ess.washington.edu}).
 
+\subsubsection{WWLLN Service Unit v4 Initial Setup}
 
-\subsubsection{Method 1: SSH Setup}
+\paragraph{Method 1: SSH Setup}
 The SSH setup method requires:
 \begin{itemize}
 \item{Ethernet cable}
@@ -368,7 +373,7 @@ sudo ./networkSetup.sh
 \item{Reset SU and confirm new settings}
 \end{enumerate}
 
-\subsubsection{Method 2: Workstation Setup}
+\paragraph{Method 2: Workstation Setup}
 The Workstation setup method requires:
 \begin{itemize}
 \item{HDMI Monitor and cable}
@@ -377,14 +382,45 @@ The Workstation setup method requires:
 \item{USB Mouse}
 \end{itemize}
 
+Connect the powered USB hub to the back USB port of the service unit, and attach the keyboard and mouse to the hub.
+Connect a monitor to the HDMI port, DVI - HDMI adapters work as well.
+Power on the box, it will take a few minutes for the login screen to show up.
+Select ``Other...'' and login with the username \textbf{host}.
+Wait a few more minutes for the graphical display to load.
+
+Adjust the network settings by either changing the files listed in Method 1, or by logging in as root as adjusting them through System $\rightarrow$ Network in the top menu bar.
+
 \begin{enumerate}
 \item{Connect an HDMI display, keyboard and mouse}
 \item{Set network information through GUI}
 \end{enumerate}
 
-\subsection{Website Setup}
 
-\subsubsection{Starting apache2}
+\paragraph{Method 3: Manual microSD Editing}
+
+The file that need to be edited on the rootfs partition are:
+
+\begin{verbatim}
+/etc/network/interfaces
+/etc/resolv.conf
+/etc/init.d/dropbear
+\end{verbatim}
+
+The interfaces file lists the IP information of the machine whole the resolv.conf file is for the DNS information.
+The sshd\_config file on line 13 sets the port with which SSH is allowed.
+
+The last step, if a non-standard port is being used, is to also alter the built in firewall of iptables and netfilter.
+The firewall settings are stored in:
+
+\begin{verbatim}
+/etc/iptable.rules
+\end{verbatim}
+
+and can be edited as a standard iptables configuration file.
+
+\subsubsection{Website Setup}
+
+\paragraph{Starting apache2}
 
 To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
 
@@ -395,7 +431,7 @@ Line 96:	#ServerName www.example.com:80
 Needs to be uncommented and changed to the hostname of the computer, e.g.:
 
 \begin{verbatim}
-Line96:	ServerName bobholz-3.ess.washington.edu:80
+Line96:	ServerName gumstix.ess.washington.edu:80
 \end{verbatim}
 
 Then httpd needs to be restarted:
@@ -404,25 +440,9 @@ Then httpd needs to be restarted:
 sudo httpd -k restart
 \end{verbatim}
 
-\subsubsection{Setting up the website}
+\paragraph{Setting up the website}
 
-All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up.
-Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations.
-A restart in not necessary if the public\_html\_static contents are copied to public\_html.
+All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up. Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations. A restart in not necessary if the public\_html\_static contents are copied to public\_html.
 
-\subsection{Alternative Access}
 
-\subsubsection{Direct Console Connection}
 
-As an alternative to the network connection it is possible to make a direct serial connection to the Gumstix board.
-On the back of the board (the side with with 40-pin header) there is a mini-B USB port that can be connected to as a serial connection.
-The connection settings are 115200 8N1, with no software or hardware flow control.
-This Gumstix can then either be logged into as a normal user or as root, depending on what is needed.
-It is probably easiest to take the service unit board out of the box to do this since there is not enough room to connect normal USB cables.
-
-\subsubsection{MicroSD Access}
-
-A final method exists for changing settings on the Gumstix through directly editing the microSD card.
-If, for example, the network settings become completely unusable and a direct console connection is too involved, then the microSD card can be removed from the Gumstix and read/edited directly on a computer.
-The microSD is formatted as an ext4 file system with the operating system on the rootfs directory.
-Do not edit the boot partition as this may make the card completely unusable in the Gumstix.
