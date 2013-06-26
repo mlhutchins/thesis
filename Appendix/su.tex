@@ -284,12 +284,14 @@ However the GPS engine needs to be programmed directly, and the network settings
 
 \subsection{GPS Engine}
 
-There are three ways to configure the GPS Resolution T engine.
-The first one is to utilize the Trimble Studio Configurator tool and load the configuration file that is located in the Gumstix software directory: gumstix/gps/ResolutionT Configuration.dat
-The second option is to use the Trimble Studio tool to manually set the configuration on the GPS itself, if that option is taken the desired settings are listed in Table~\ref{su:table:suGPSSettings}.
-The third option is to use the Gumstix to send the appropriate TSIP configuration messages to the GPS.
-The last method has the advantage of not requiring a second computer, it can be done with units in the field, and it can be done remotely.
-However the disadvantage is that the current TSIP messages to send are not yet worked out or preset in the sendTSIP.py program on the Gumstix.
+There are two ways to configure the GPS Resolution T engine.
+The first is to utilize the Trimble Studio Configurator tool and load the configuration file that is located in the Gumstix software directory: gumstix/gps/ResolutionT Configuration.dat
+The second is to use the Trimble Studio tool to manually set the configuration on the GPS itself, if that option is taken the desired settings are listed in Table~\ref{su:table:suGPSSettings}.
+
+A current issue with the Service Unit design is that the GPS communication is currently read only for the Gumstix computer.
+Either the TSIP writing script (sendTSIP.py) needs to be fixed or the level shifting on the board.
+Once this issue is fixed the Gumstix itself can be used to send the appropriate TSIP configuration messages to the GPS.
+This has the advantage of not requiring a second computer, it can be done with units in the field, and it can be done remotely.
 
 \begin{table}[h!]
 \begin{center}
