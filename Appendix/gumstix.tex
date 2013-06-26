@@ -14,19 +14,42 @@
 
 \subsection{Bitbake and the Kernel}
 
-\subsection{Development Environment}
+\section{Software}
 
-Virtual Machine
-
-\subsection{RAM Disk}
-
-\subsection{Other Software}
+\subsection{WWLLN Software}
 
 TOGA, etc.
 
+\subsection{Hardware Controls}
+
+Pin GPIO145 is the pin that controls whether the preamp power supply is turned on or off.
+When the pin is held low (value of 0) the power supply is on, when it is set high (value of 1) it is turned off.
+The command to change a GPIO pin value is:
+
+\begin{verbatim}
+echo 0 > /sys/class/gpio/gpio145/value
+\end{verbatim}
+
+The two scripts {\bf preampOn.sh} and {\bf preampOff.sh} can be used to easily toggle the preamp power supply.
+
+The default value for GPIO pins is to hold them high, so during boot the preamp turns off until the {\bf preampOn.sh} script can be called at the end of the boot sequence.
+
+\subsection{GPS Interface}
+
+The Trimble GPS communicates with the TSIP protocal, compared the NMEA of the previous GPS engine used.
+The pythons script {\bf readTSIP.py} interprets the TSIP messages and reports the GPS status to the file gps.log and prints them to the console.
+The console printing can be turned off by changing the variable print\_to\_console to False.
+
+The program can be started and run in the background to produce a continues record of GPS activity.
+The default location for the gps.log file is in the public\_html folder where it can be remotely checked through the service unit website.
+
+\subsection{RAM Disk}
+
+Necessary to TOGA for fast read/write
+
 \section{Creating Gumstix microSD Card}
 
-\lstinputlisting{../Gumstix/makeSD.sh}
+%\lstinputlisting{../Gumstix/makeSD.sh}
 
 \section{Gumstix System Setup}
 
@@ -34,10 +57,10 @@ TOGA, etc.
 
 \subsection{Installing Packages}
 
-\lstinputlisting{../Gumstix/firstRunFiles/install.sh}
+%\lstinputlisting{../Gumstix/firstRunFiles/install.sh}
 
 \subsection{Configuring Settings}
 
-\lstinputlisting{../Gumstix/firstRunFiles/setup.sh}
+%\lstinputlisting{../Gumstix/firstRunFiles/setup.sh}
 
 \subsection{Sound Settings}
