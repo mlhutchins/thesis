@@ -446,5 +446,26 @@ sudo httpd -k restart
 
 All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up. Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations. A restart in not necessary if the public\_html\_static contents are copied to public\_html.
 
+\clearpage
 
+\section{Operations}
+
+\subsection{LED Signals}
+
+The two sets of front facing LEDs can be used to diagnose most issues with a given Service Unit.
+The left two red lights correspond to the status of the GPS receiver, and the right two yellow lights with the Gumstix and Preamp.
+
+The bottom red LED lights up when the GPS engine is sending a serial packet to the Gumstix and USB serial out port on the front.
+The packet is a TSIP packet (9600 801) that can be read on the Gumstix with {\bf readTSIP.py} python program, on a connected computer with the same program, or on a Windows computer with the Trimble Studio Software.
+
+The red LED lights up for every pulse per second.
+If the GPS is not synced with three or more satellites the engine will not send a pulse per second.
+
+The two yellow LED's correspond to the $\pm15$~V preamp power supply output.
+The default setting for no Gumstix attached is to turn the preamp power supply on.
+When the Gumstix is booting it first turns the preamp off (default behavior) and then turns it on during the boot process.
+The power can be manually toggled with the {\bf preampOn.sh} and {\bf preampOff.sh} scripts.
+If the Gumstix does not turn the preamp on after a minute then there is something wrong with the Gumstix or the operating system.
+
+If none of the LEDs turn on then the fuse has likely blown and needs to be replaced.
 
