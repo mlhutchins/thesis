@@ -18,7 +18,18 @@
 
 \subsection{WWLLN Software}
 
-TOGA, etc.
+The WWLLN software is provided by James Brundell and compiled specifically for the ARM process.
+The three programs are {\bf toga}, {\bf ntpcheck}, and {\bf GDspectro}.
+{\bf toga} is the main WWLLN processing programming that reads in the VLF and GPS signals to produce the UDP packets sent on to the main WWLLN processors.
+It should be always running on the system with a crontab entry such as:
+
+\begin{verbatim}
+0,5,10,15,20,25,30,35,40,45,50,55 * * * * toga -s 100 -a 3 -j 1 -g -o &
+\end{verbatim}
+
+This will try to start it every 5 minutes in case it stops for any reason.
+
+The {\bf ntpcheck} and {\bf GDspectro} and programs used by {\bf toga} but do not need to be called or run on their own.
 
 \subsection{Hardware Controls}
 
