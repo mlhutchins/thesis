@@ -45,7 +45,12 @@ The default location for the gps.log file is in the public\_html folder where it
 
 \subsection{RAM Disk}
 
-Necessary to TOGA for fast read/write
+The \r{A}ngstrom distribution for Gumstix automatically sets up a RAM disk for users.
+It is created at /media/ram with half of the available RAM (256~MB).
+It needs to be used for the running of the WWLLN software as the microSD card is too slow.
+At start-up the public\_html folder (logs and spectrograms) and sferics folder are created in the ram disk and symlinked to the main sferics directory.
+
+For this reason all permanent edits to the Service Unit website should be made in the public\_html\_static directory.
 
 \section{Creating Gumstix microSD Card}
 
