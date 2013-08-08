@@ -12,7 +12,42 @@
 
 \subsection{Distribution Location}
 
+The operating system used is the Sakoman GNOME r13 build available:
+
+http://www2.sakoman.com/category/8-gnome-daily-builds-r13.html
+
+http://feeds.sakoman.com/feeds/gnome-r13/images/
+
 \subsection{Bitbake and the Kernel}
+
+The default kernel provided in the builds listed above is missing the ability to run netfilter/ipfilter which is necessary to run a firewall on the Gumstix operating system.
+The enable this the kernel needs to be reconfigured, compiled, and deployed.
+Bitbake was used previously to alter the linux kernel
+
+To set up Bitbake development environment follow the instructions online: http://ezrover.com/2012/01/12/sakoman-r13-gnome-firmware-howto-101-guide-for-gumstix-overo-openembedded-board/
+Where the git repository for the bitback and recipes is: www.sakoman.com/git/openembedded.git
+
+The following commands allow for changing the kernal:
+
+cd overo-oe/tmp/work/omap3-multi-angstrom-linux-gnueabi/linux-sakoman-pm-3.0-r102/git
+make ARCH=arm menuconfig
+Enable all netfilter options under: Networking Support / Networking Options / Network Packet Filtering (netfilter) /
+save as new.config
+Copy (and backup originals) as defconfig in:
+overo-oe/openembedded/recipes/linux/linux-sakoman-pm-3.0/omap3-multi/defconfig
+
+bitbake virtual/kernel -c clean; bitbake virtual/kernel
+
+Where the resulting kernel and modules are in:
+
+/tmp/deploy/glibc/images/overo/
+
+After deploying a new kernel it may be necessary to recover the default boot variables on the Gumstix.
+On the initial Gumstix startup, pause in the first 5 seconds (this needs to be done via the USB-console connection).
+Once paused the defaults can be restored with:
+
+nand erase 240000 20000
+reset
 
 \section{Software}
 
@@ -64,6 +99,8 @@ At start-up the public\_html folder (logs and spectrograms) and sferics folder a
 For this reason all permanent edits to the Service Unit website should be made in the public\_html\_static directory.
 
 \section{Creating Gumstix microSD Card}
+
+
 
 %\lstinputlisting{../Gumstix/makeSD.sh}
 
