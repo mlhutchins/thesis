@@ -3,7 +3,7 @@ The code locations are given in terms of both their active locations and as the 
 
 \section{File Storage on Flash Machines}
 
-There are several types of WWLLN data files, summarized in Table~\ref{code:fileType}.
+There are several types of WWLLN data files, summarized in Table~\ref{code:table:fileType}.
 The example filenames given in the table are for 31 December 2013, 5:10 UTC.
 Most of the file types, with exception of WB-files, are located on flash5 on one of two hard drives.
 Data for the current year is stored on /wd2/ while previous years are stored on /wd3/.
@@ -34,11 +34,11 @@ AP-files	& AP20121231.loc	&	Location data with station and E-field data of each 
 
 \hline
 \rule{0pt}{3ex}
-AE-files	& AE20121231.loc	&	Location and stroke energy data, generated daily by Bootstrap (Chapter~\ref{ch:energy})\\ 
+AE-files	& AE20121231.loc	&	Location and stroke energy data, generated daily by Bootstrap (Chapter~\ref{thesis:chapter:energy})\\ 
 
 \hline
 \rule{0pt}{3ex}
-DE-files	& DE20121231.mat	&	Relative detection efficiency maps, as Matlab data (Chapter~\ref{ch:de})\\ 
+DE-files	& DE20121231.mat	&	Relative detection efficiency maps, as Matlab data (Chapter~\ref{thesis:chapter:efficiency})\\ 
 
 \hline
 \rule{0pt}{3ex}
@@ -55,7 +55,7 @@ T-files	& T20130130.dat	&	Station packet count record, listed date is last date 
 \hline
 \end{tabular}
 \end{center}
-\label{code:fileType}
+\label{code:table:fileType}
 \end{table}
  
 An example line from each of the R, A, AP, and AE files are given below with descriptors for each file.
@@ -98,12 +98,12 @@ Each line contains the date in days since 01/01/0000 and the counts for each sta
 
 All of my code should be stored on flash5 at /home/mlhutch/matlab for Matlab scripts.
 For example the code to run the energy processing is located at /home/mlhutch/matlab/Bootstrap/bootstrap\_automation.m.
-The exact details of where the energy processing code is located, the necessary files, and similar code for the relative detection efficiency processing is covered in Appendix~\ref{app:energy}.
+The exact details of where the energy processing code is located, the necessary files, and similar code for the relative detection efficiency processing is covered in Appendix~\ref{thesis:appendix:bootstrap}.
 Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located both on flash5 (/home/mlhutch/Git) and hosted online on bitbucket.org.
 
 The Git repositories have the advantage of multiple back ups, version control, easily portable, and easy to use.
-A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:repo}.
-A basic primer on how to use git, including retrieval of the repositories, is given in Section~\ref{code:primer}.
+A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:table:repo}.
+A basic primer on how to use git, including retrieval of the repositories, is given in Section~\ref{code:section:primer}.
 
 \begin{table}[h!]
 \caption{Git Repositories (flash5:/home/mlhutch/Git/)}
@@ -148,11 +148,11 @@ Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix k
 \hline
 \end{tabular}
 \end{center}
-\label{code:repo}
+\label{code:table:repo}
 \end{table}
 
 \section{Git Primer}
-\label{code:primer}
+\label{code:section:primer}
 
 Git (http://git-scm.com) is an open source distributed version control system available on all operating systems with very little system resources required.
 Most often git is accessed through the command line but there are many graphical interfaces available.
@@ -166,7 +166,7 @@ git clone [user]@[server]:[repository] .
 \end{verbatim}
 
 This will copy (clone) the repository to the current directory as a folder of the same name as the repository. 
-For example to copy over the energy processing repository listed in Table~\ref{code:repo} to the matlab directory:
+For example to copy over the energy processing repository listed in Table~\ref{code:table:repo} to the matlab directory:
 
 \begin{verbatim}
 cd ~/matlab
@@ -175,14 +175,14 @@ clone sferix@flash5.ess.washington.edu:/home/mlhutch/Git/bootstrap.git .
 
 Where the user can be anyone with permission to access that directory.
 More information on how to use git for source control, instead of downloading the repositories, can be found in the online resources.
-Several useful commands are given in Table~\ref{code:gitCommands}.
+Several useful commands are given in Table~\ref{code:table:gitCommands}.
 I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
 
 \begin{landscape}
 \begin{center}
 \begin{longtable}{|p{4in}|p{4in}|}
 \caption{Command git commands}
-\label{code:gitCommands}\\
+\label{code:table:gitCommands}\\
 \hline
 \bf Command & \bf Notes \\ 
 \hline
@@ -247,7 +247,7 @@ The function smoothn.m performs a two dimensional smoothing on an array of data,
 
 Aside from these three functions there is a directory in the functions.git repository dedicated to reading and writing WWLLN file types.
 In the directory functions/IO are a set of import functions to import A, AP, AE, R, T, and DE files.
-There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{app:energy}), and WWLLN stations.dat data.
+There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{thesis:appendix:bootstrap}), and WWLLN stations.dat data.
 All of these functions take in a give date (and possibly time) to find and load the desired file.
 The file dataPath.dat lists locations that the import functions check for the data folders of the particular file type.
 The default is to look for either /wd2/ or /wd3/ hard drives, but other locations can be added to this list as needed.
