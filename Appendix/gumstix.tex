@@ -118,11 +118,34 @@ For this reason all permanent edits to the Service Unit website should be made i
 \section{Creating Gumstix microSD Card}
 
 There are two methods for configuring a new microSD card for use with the service unit Gumstix computer.
-Either a card can be formatted and loaded with the latest software using the {\bf makeSD.sh} script, or an existing installation disk image can be copied over.
+Either a card can be formatted and loaded with the latest software using the {\bf makeSD.sh} script and other configuration scripts, or an existing installation disk image can be copied over.
+
+\subsection{Formatting and Installation}
 
 The {\bf makeSD.sh} is based on the script given in Subsection~\ref{app:gum:distribution}.
 It is configured to run on a Linux system but may also work with other Unix based operating systems.
 The script automatically formats the microSD, loads the bootscripts, loads the operating system, and updates the kernel and modules produced with Bitbake.
+
+\subsection{Installing Packages}
+
+After a card has been successfully partitioned with a new operating system installed it should be run in a Gumstix to allow for the new kernel to configure the necessary modules.
+This process takes a few hours for each card, on top of installation, so it is recommended that further cards are created via duplication described below in subsection~\ref{app:gumstix:duplication}.
+
+Once configured a new user can login as {\bf root} with the password {\bf root}.
+In the root directory should be a folder called {\bf firstRunFiles}.
+The {\bf install.sh} script should be run after connecting the Gumstix to the internet (the script will start dhcp).
+This script will install all of the necessary packages for the Gumstix to function as a WWLLN station.
+
+\subsection{Configuring Settings}
+
+With the packages installed the Gumstix needs to be configured with the {\bf setup.sh} script.
+The first three tasks of the script are changing the root, sferix, and host passwords.
+They should be set according the current standard password practices (contact Robert Holzworth bobholz@ess.washington.edu for exact details).
+The script finishes by moving all of the programs, crontabs, startup scripts, bash profiles, and WWLLN programs to the sferix and host accounts.
+Lastly it sets up the RAM disk to use with the web server and running the toga program.
+
+\subsection{Card Duplication}
+\label{app:gumstix:duplication}
 
 Once a new card is created it is advised to make an exact copy of the card to allow for duplication onto new cards.
 Since the partitioning, and bit location on the card, is critical for the Gumstix the direct copy program {\bf dd} should be used to make the copy.
@@ -144,13 +167,5 @@ Always double check the mount point of the microSD card before running the {\bf 
 \section{Gumstix System Setup}
 
 \subsection{Connecting to the Gumstix}
-
-\subsection{Installing Packages}
-
-%\lstinputlisting{../Gumstix/firstRunFiles/install.sh}
-
-\subsection{Configuring Settings}
-
-%\lstinputlisting{../Gumstix/firstRunFiles/setup.sh}
 
 \subsection{Sound Settings}
