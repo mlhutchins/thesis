@@ -166,6 +166,131 @@ Always double check the mount point of the microSD card before running the {\bf 
 
 \section{Gumstix System Setup}
 
+Subsection~\ref{app:appendix:setup} gives the setup instructions for a new station, namely setting the IP address so it can be added to the network.
+A more up to date version is available in the {\bf gumstix.git} repository in the {\bf user\_manual} folder.
+Also included in the station setup instructions are how to setup and customize the service unit webpage, as described in Subsection~\ref{app:gumstix:website}.
+
 \subsection{Connecting to the Gumstix}
+\label{app:appendix:setup} 
+%%
+%% Update to latest version
+
+\subsection*{Method 1: SSH Setup}
+The SSH setup method requires:
+\begin{itemize}
+\item{Ethernet cable}
+\item{SSH capable computer}
+\end{itemize}
+
+\begin{enumerate}
+\item{Connect SU to a host computer directly with an ethernet cable}
+\item{Set host computer ethernet network settings to:
+\begin{verbatim}
+address:	192.168.10.1
+gateway:	192.168.10.100
+netmask:	255.255.255.0
+\end{verbatim}}
+\item{SSH into the SU from host computer:
+\begin{verbatim}
+ssh -p 7777 sferix@192.168.10.2
+password: [	]
+\end{verbatim}}
+\item{Set desired static ip configuration in file $\sim$/networkSetup.sh}
+\item{\begin{verbatim}
+sudo ./networkSetup.sh
+\end{verbatim}}
+\item{Switch SU to main network ethernet within 1 minute of running networkSetup.sh}
+\item{Test connection by SSH'ing into SU with new IP address}
+\item{
+\begin{enumerate}
+\item{If successful: set new IP setting in /etc/network/interfaces}
+\item{If unsuccessful: power cycle SU and check settings starting with step 3}
+\end{enumerate}}
+\item{Reset SU and confirm new settings}
+\end{enumerate}
+
+\subsection*{Method 2: Workstation Setup}
+The Workstation setup method requires:
+\begin{itemize}
+\item{HDMI Monitor and cable}
+\item{{\bf Powered} USB Hub}
+\item{USB Keyboard}
+\item{USB Mouse}
+\end{itemize}
+
+Connect the powered USB hub to the back USB port of the service unit, and attach the keyboard and mouse to the hub.
+Connect a monitor to the HDMI port, DVI - HDMI adapters work as well.
+Power on the box, it will take a few minutes for the login screen to show up.
+Select ``Other...'' and login with the username \textbf{host}.
+Wait a few more minutes for the graphical display to load.
+
+Adjust the network settings by either changing the files listed in Method 1, or by logging in as root as adjusting them through System $\rightarrow$ Network in the top menu bar.
+
+\begin{enumerate}
+\item{Connect an HDMI display, keyboard and mouse}
+\item{Set network information through GUI}
+\end{enumerate}
+
+
+\subsection*{Method 3: Manual microSD Editing}
+
+The file that need to be edited on the rootfs partition are:
+
+\begin{verbatim}
+/etc/network/interfaces
+/etc/resolv.conf
+/etc/init.d/dropbear
+\end{verbatim}
+
+The interfaces file lists the IP information of the machine whole the resolv.conf file is for the DNS information.
+The sshd\_config file on line 13 sets the port with which SSH is allowed.
+
+The last step, if a non-standard port is being used, is to also alter the built in firewall of iptables and netfilter.
+The firewall settings are stored in:
+
+\begin{verbatim}
+/etc/iptable.rules
+\end{verbatim}
+
+and can be edited as a standard iptables configuration file.
+
+\subsection{Website Setup}
+\label{app:gumstix:website}
+
+\subsection*{Starting apache2}
+
+To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
+
+\begin{verbatim}
+Line 96:	#ServerName www.example.com:80
+\end{verbatim}
+
+Needs to be uncommented and changed to the hostname of the computer, e.g.:
+
+\begin{verbatim}
+Line96:	ServerName gumstix.ess.washington.edu:80
+\end{verbatim}
+
+Then httpd needs to be restarted:
+
+\begin{verbatim}
+sudo httpd -k restart
+\end{verbatim}
+
+\subsection*{Setting up the website}
+
+All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up. Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations. A restart in not necessary if the public\_html\_static contents are copied to public\_html.
 
 \subsection{Sound Settings}
+
+The Gumstix a myriad of analog inputs that are all controlled with {\bf alsamixer}.
+For the WWLLN service unit the stereo input is controlled by the $<$Analog$>$ input as shown highlighted in Figure~\ref{app:gumstix:fig:alsa}, and a digital gain through $<$TX1 Digital$>$.
+Included in the installation files is the default alsa profile {\bf asound.state}.
+
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[scale=.3]{Appendix/Figures/gumstixmixer.png} 
+   \caption{Alsamixer settings for Gumstix stereo input, $<$Analog$>$ controls the stereo gain.}
+   \label{app:gumstix:fig:alsa}
+\end{figure}
+
