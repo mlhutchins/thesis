@@ -17,7 +17,7 @@ It also supports Ubuntu, however Ubuntu has been found to be slow and harder to 
 A useful resource in setting up and configuring the Gumstix software is the Gumstix developer site (http://gumstix.org) and the mailing list archive forum (http://gumstix.8.x6.nabble.com).
 
 \subsection{Distribution Location}
-
+\label{app:gum:distribution}
 The operating system used is the Sakoman GNOME r13 build, available online:
 
 http://www2.sakoman.com/category/8-gnome-daily-builds-r13.html
@@ -117,9 +117,29 @@ For this reason all permanent edits to the Service Unit website should be made i
 
 \section{Creating Gumstix microSD Card}
 
+There are two methods for configuring a new microSD card for use with the service unit Gumstix computer.
+Either a card can be formatted and loaded with the latest software using the {\bf makeSD.sh} script, or an existing installation disk image can be copied over.
 
+The {\bf makeSD.sh} is based on the script given in Subsection~\ref{app:gum:distribution}.
+It is configured to run on a Linux system but may also work with other Unix based operating systems.
+The script automatically formats the microSD, loads the bootscripts, loads the operating system, and updates the kernel and modules produced with Bitbake.
 
-%\lstinputlisting{../Gumstix/makeSD.sh}
+Once a new card is created it is advised to make an exact copy of the card to allow for duplication onto new cards.
+Since the partitioning, and bit location on the card, is critical for the Gumstix the direct copy program {\bf dd} should be used to make the copy.
+To copy a card to a disk image the command will look like:
+
+\begin{verbatim}
+sudo dd if=/dev/sdb of=/Path/To/Target/gumstix.iso bs=512
+\end{verbatim}
+
+And the command to copy a microSD image back to a new card in the same slot as the previous card:
+
+\begin{verbatim}
+sudo dd if=/Path/To/Target/gumstix.iso of=/dev/sdb bs=512
+\end{verbatim}
+
+A word of warning: the {\bf dd} command can overwrite and destroy hard drives if they are incorrectly targeted.
+Always double check the mount point of the microSD card before running the {\bf dd} command.
 
 \section{Gumstix System Setup}
 
