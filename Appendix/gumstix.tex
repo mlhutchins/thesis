@@ -1,8 +1,36 @@
 \section{Hardware}
 
+The WWLLN Service Unit uses a Gumstix WaterStormCOM mounted on a Tobi breakout board as the on-board computer to run the WWLLN software.
+
 \subsection{Hardware Summary}
 
+The Gumstix WaterStormCOM has the following features:
+
+\begin{itemize}
+\item Test1
+\end{itemize}
+
+The Tobi breakout boards adds:
+
+\begin{itemize}
+\item Test2
+\end{itemize}
+
 \subsection{Pinouts}
+
+The Gumstix COM has direct pinouts to the processor, however as it is not used without the Tobi breakout board, only the Tobi pinout is shown in Figure~\ref{app:gumstix:fig:tobi}.
+
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[scale=1]{Appendix/Figures/tobi_pinout.pdf} 
+   \caption{Pinout of the Gumstix Tobi breakout board.}
+   \label{app:gumstix:fig:tobi}
+\end{figure}
+
+In the service unit only pins 1 (GND), 9 (RXD1), 10 (TXD1), 28 (GPIO145), and 40 (V\_BATT) are used.
+RXD1 and TXD1 are used for the serial communication with the GPS.
+GPIO145 is used to control the pre-amp power supply.
+V\_BATT is the 5~V power for the Gumstix.
 
 \subsection{Online Resources}
 
@@ -33,7 +61,7 @@ To enable this the kernel needs to be reconfigured to run netfilter, then compil
 Bitbake was used previously to alter the linux kernel.
 
 To set up a Bitbake development environment it is recommended to follow a guide such as:
-http://ezrover.com/2012/01/12/sakoman-r13-gnome-firmware-howto-101-guide-for-gumstix-overo-openembedded-board/
+http://ezrover.com/ 2012/01/12/ sakoman-r13-gnome-firmware-howto-101-guide-for-gumstix-overo-openembedded-board/
 Where the git repository for the bitbake and recipes is either:
 www.sakoman.com/git/openembedded.git
 or already pre-configured with the netfilter options on flash5 in the /home/mlhutch/Git/openembedded.git repository.
