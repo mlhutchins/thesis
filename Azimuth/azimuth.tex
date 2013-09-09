@@ -53,7 +53,7 @@ The stroke energy normalization give the electric field in dB above $1 \mu Vm^{-
 Changes in the normalized electric field with stroke distance gives the attenuation of the lightning sferic for that distance interval, reported as the dB/Mm decrease. 
 
 Normalized field values are grouped into 45$^\circ$ azimuth and 500~km distance bins.
-An example of all of the distance bins for a given azimuth for one station is shown in Figure~\ref{azimuthCalculation} (northwestward-propagation during the day for Honolulu station).
+An example of all of the distance bins for a given azimuth for one station is shown in Figure~\ref{azimuth:fig:azimuthCalculation} (northwestward-propagation during the day for Honolulu station).
 Each distance bin has a distribution of normalized field values with the spread a result of differing ionospheric conditions, uncertainty in the energy measurements, and changes in ground conditions at the station.
 Because of this spread the median value of the normalized field is used for each distance-angle combination (shown as the solid black line).
 At least 15 strokes are required for each distance bin at a given azimuth in order to calculate a reasonable median.
@@ -66,13 +66,13 @@ The magnetic azimuth used is the average magnetic azimuth over the path of wave 
    	Counts are normalized to the maximum value in each distance bin.
 	The median (solid) and median absolute deviation (dashed) values are plotted on top of the distribution.
 	Distances with less than 15 total strokes are not plotted or used.}
-   \label{azimuthCalculation}
+   \label{azimuth:fig:azimuthCalculation}
 \end{figure}
 
 \section{Azimuthal Dependence}
 
 For the three stations data were used from May 2009 to May 2013, resulting in $2.1\times10^6$ stroke-station paths to analyze.
-The results are split into the 8 azimuth octants for day paths and night paths as shown in Figure~\ref{azimuth}.
+The results are split into the 8 azimuth octants for day paths and night paths as shown in Figure~\ref{azimuth:fig:azimuth}.
 For the three stations the westward propagating waves (green) show higher attenuation (electric field change per unit distance) than for the eastward propagating waves (red).
 The attenuation is also seen in the maximum distance that strokes are detected, with night (eastward) paths detectable at farther distances than day (westward) paths.
 
@@ -82,18 +82,18 @@ The attenuation is also seen in the maximum distance that strokes are detected, 
    \caption{Station RMS electric field vs distance for Suva, Tahiti, and Honolulu.
    	Electric field is normalized by stroke energy and given in dB above $1 \mu Vm^{-1}/J^{1/2}$.
 	Day ionosphere paths are in the left column and night ionosphere paths in the right column.}
-   \label{azimuth}
+   \label{azimuth:fig:azimuth}
 \end{figure}
 
-For some stations, such as Honolulu in Figure~\ref{azimuth}, the difference between eastward and westward sferics is quite clear during the day at all distance ranges, and between day and night.
+For some stations, such as Honolulu in Figure~\ref{azimuth:fig:azimuth}, the difference between eastward and westward sferics is quite clear during the day at all distance ranges, and between day and night.
 For other stations, such as Suva, the difference in propagation direction is not distinct for all azimuths.
-Suva and Tahiti stations do not show a differentiation in attenuation until the waves have propagated some distance from the stroke, for example the night strokes for Suva in Figure~\ref{azimuth} are indistinguishable until 4~Mm.
+Suva and Tahiti stations do not show a differentiation in attenuation until the waves have propagated some distance from the stroke, for example the night strokes for Suva in Figure~\ref{azimuth:fig:azimuth} are indistinguishable until 4~Mm.
 
-In all cases the slopes of the field strength curves in Figure~\ref{azimuth} show that the eastward sferics exhibit less attenuation than westward sferics away from the stroke.
+In all cases the slopes of the field strength curves in Figure~\ref{azimuth:fig:azimuth} show that the eastward sferics exhibit less attenuation than westward sferics away from the stroke.
 In cases like Honolulu the westward sferics initially have a lower normalized electric field, but the attenuation rate of these sferics is still lower than the eastward sferics.
   
 The overall behavior of the VLF waves observed by WWLLN can be seen in the compiled station data.
-The station-stroke pairs were combined for all stations to give a single dataset of paths, shown in Figure~\ref{azimuthAverage}.
+The station-stroke pairs were combined for all stations to give a single dataset of paths, shown in Figure~\ref{azimuth:fig:azimuthAverage}.
 The westward sferics in both day and night have similar electric field to the eastward sferics with the distinction developing at greater than 4~Mm from the stroke.
 There is a small upturn in field strength as the sferics propagate past 10~Mm because the waves are re-focusing when they cross the halfway point to their antipode.
 
@@ -102,15 +102,15 @@ There is a small upturn in field strength as the sferics propagate past 10~Mm be
     \includegraphics[scale=1]{Azimuth/Figures/azimuthAverage.pdf} 
     \caption{Compiled station normalized electric field for the three selected stations.
     	Shown in dB above $1 \mu Vm^{-1}/J^{1/2}$.}
-    \label{azimuthAverage}
+    \label{azimuth:fig:azimuthAverage}
  \end{figure}
 
-The method for estimating the attenuation and the uncertainty is outlined in Figure~\ref{attenuationCalculation} using the station averaged eastward-propagating electric field values as an example (red line in Figure~\ref{azimuthAverage}).
-First, the normalized electric field versus distance curves are smoothed and fitted to quadratics for the bins that have data, as shown with the dashed line in Figure~\ref{attenuationCalculation}a.
-Second, the attenuation between each bin of the fit (the slope of Figure~\ref{attenuationCalculation}a) is found and shown in Figure~\ref{attenuationCalculation}b.
+The method for estimating the attenuation and the uncertainty is outlined in Figure~\ref{azimuth:fig:attenuationCalculation} using the station averaged eastward-propagating electric field values as an example (red line in Figure~\ref{azimuth:fig:azimuthAverage}).
+First, the normalized electric field versus distance curves are smoothed and fitted to quadratics for the bins that have data, as shown with the dashed line in Figure~\ref{azimuth:fig:attenuationCalculation}a.
+Second, the attenuation between each bin of the fit (the slope of Figure~\ref{azimuth:fig:attenuationCalculation}a) is found and shown in Figure~\ref{azimuth:fig:attenuationCalculation}b.
 Lastly, the attenuation for a given electric field curve is calculated by the mean of the fitted attenuation where positive attenuation corresponds to a signal loss over distance.
 The standard deviation of the attenuation is taken as the uncertainty in the attenuation measurement.
-In the example of Figure~\ref{attenuationCalculation} the fitted attenuation is $1.13\pm0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{attenuationCalculation}b) is $0.79\pm2.34$~dB/Mm.
+In the example of Figure~\ref{azimuth:fig:attenuationCalculation} the fitted attenuation is $1.13\pm0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{azimuth:fig:attenuationCalculation}b) is $0.79\pm2.34$~dB/Mm.
 The increased uncertainty in the direct attenuation is due to the variations in attenuation between successive 500~km distance bins.
 The fitted attenuation is used for all of the following attenuation values.
 
@@ -120,13 +120,13 @@ The fitted attenuation is used for all of the following attenuation values.
     \caption{Method for calculating the attenuation.
     	In a) the normalized electric field vs distance data (solid line) and the fitted quadratic (dashed line).
 	In b) the change in electric field with distance step (derivative) for the data (solid line) and the fit (dashed line) normalized to dB/Mm.}
-    \label{attenuationCalculation}
+    \label{azimuth:fig:attenuationCalculation}
  \end{figure}
 
 Overall there is an average attenuation of $1.87\pm1.06$~dB/Mm for all azimuths and times.
 Within the first 4~Mm of the stroke the attenuation is fairly high for both day and night, with $2.08\pm0.90$~dB/Mm during the day and $2.09\pm1.02$~dB/Mm at night.
 Beyond 4~Mm the attenuation decreases to $1.29\pm1.09$~dB/Mm for day and $0.24\pm0.48$~dB/Mm for night.
-The 4~Mm cutoff was chosen based on Figure~\ref{azimuth} and~\ref{azimuthAverage} where the eastward and westward-propagating sferics start to clearly differentiate.
+The 4~Mm cutoff was chosen based on Figure~\ref{azimuth:fig:azimuth} and~\ref{azimuth:fig:azimuthAverage} where the eastward and westward-propagating sferics start to clearly differentiate.
 The increased attenuation near the stroke is likely due to the fast decay of higher order modes that cannot propagate far from their source \citep{Wait1970}.
 
 For eastward sferics the average attenuation is $1.13\pm0.35$~dB/Mm and $0.71\pm0.68$~dB/Mm for day and night; for westward sferics attenuation is higher with rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night paths.
@@ -134,7 +134,7 @@ The difference in attenuation between eastward and westward-propagating sferics 
   
 \section{Comparisons to Theory}
 
-The azimuthal variability of the WWLLN normalized electric-field attenuation is directly compared to the azimuthal variance predicted by \citet{Wait1960a} in Figure~\ref{attenuationTheory}.
+The azimuthal variability of the WWLLN normalized electric-field attenuation is directly compared to the azimuthal variance predicted by \citet{Wait1960a} in Figure~\ref{azimuth:fig:attenuationTheory}.
 The azimuthal variation, P$(\phi)$, is found by comparing the attenuation with the presence of a magnetic field to the attenuation without.
 For the WWLLN data the average attenuation of all azimuths is taken as representative of the attenuation with no magnetic field.
 The variability of the attenuation rate (in dB/Mm) with magnetic azimuth from \citet{Wait1960a} is approximated as $P(\phi) = - 0.3 \times \text{sin}(\phi) + 1$.
@@ -146,10 +146,10 @@ The variability of the attenuation rate (in dB/Mm) with magnetic azimuth from \c
    	Shown for \citet{Wait1960a} (black), day paths (green), and night paths (blue).
 	The best fit curves are shown as dashed lines.
 	Day and night paths are normalized by their mean.}
-   \label{attenuationTheory}
+   \label{azimuth:fig:attenuationTheory}
 \end{figure}
 
-The average attenuation azimuthal variation was fit to the same form as the theory ($P(\phi) = - a~\times~\text{sin}(b~\times~\phi + c) + d$) with the resulting fits shown in Figure~\ref{attenuationTheory}.
+The average attenuation azimuthal variation was fit to the same form as the theory ($P(\phi) = - a~\times~\text{sin}(b~\times~\phi + c) + d$) with the resulting fits shown in Figure~\ref{azimuth:fig:attenuationTheory}.
 The leading coefficient, $a$, gives the relative variation in attenuation with azimuth; how much attenuation rates will change between northward/southward and eastward/westward propagating sferics.
 The day attenuation best fit is $P(\phi) = - 0.58 \times \text{sin}(1.00\times\phi - 13.0) + 0.99$ and the night attenuation best fit is $P(\phi) = - 0.77 \times \text{sin}(1.03\times\phi - 20.4) + 0.99$.
 Both day and night paths show twice the amplitude relative to the theory ($a_{theory} = 0.3$), with a weaker day dependence and a stronger night dependence, $a=0.58$ and $a=0.77$ respectively.
