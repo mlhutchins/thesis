@@ -1,42 +1,9 @@
-\documentclass[draft,jgrga]{AGUTeX}
-\usepackage{lineno, amsmath}
-\usepackage[dvipdf]{graphicx}
-  %\usepackage{amsmath, graphicx, natbib, lineno}
 
-\linenumbers*[1]
-
-\authorrunninghead{HUTCHINS ET AL.}
-\titlerunninghead{AZIMUTHAL DEPENDENCE OF VLF PROPAGATION}
-
-\authoraddr{Corresponding author: M. L. Hutchins,
-Department of Earth and Space Sciences,
-University of Washington, Johnson Hall 070, Seattle, WA 98195, USA.
-(mlhutch@uw.edu)}
-
-\begin{document}
-
-\title{Azimuthal Dependence of VLF Propagation}
-
-\authors{M. L. Hutchins,\altaffilmark{1}
-Abram R. Jacobson\altaffilmark{1},
-Robert H. Holzworth\altaffilmark{1}, and
-James B. Brundell\altaffilmark{2}}
-
-\altaffiltext{1}{Department of Earth and Space Sciences,
-University of Washington, Seattle, Washington, USA.}
-\altaffiltext{2}{UltraMSK.com,
-Dunedin, New Zealand}
-
-\begin{abstract}
 
 The World Wide Lightning Location Network (WWLLN) is used to measure the normalized lightning electric field at three network stations in order to examine the sferic attenuation between the stroke and the station.
 The electric field measurements are normalized to the radiated very low frequency (VLF) stroke energy to allow direct comparisons of the many stroke-station paths seen by WWLLN.
 Comparing past theoretical results and models show that WWLLN observes a stronger dependence of VLF propagation on magnetic azimuth compared to past work.
 The average attenuation over the water of eastward-propagating sferics is found to be $1.13\pm0.35$~dB/Mm during the day and $0.71\pm0.68$~dB/Mm at night, with westward-propagating sferics having average attenuation rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night respectively.
-
-\end{abstract}
-
-\begin{article}
 
 \section{Introduction}
 
@@ -92,12 +59,31 @@ Because of this spread the median value of the normalized field is used for each
 At least 15 strokes are required for each distance bin at a given azimuth in order to calculate a reasonable median.
 The magnetic azimuth used is the average magnetic azimuth over the path of wave propagation.
 
+ \begin{figure}[h!t]
+   \centering
+   \includegraphics[scale=1]{Azimuth/Figures/azimuthCalculation.pdf} 
+   \caption{Normalized electric field values for the 315$^\circ$ azimuth bin for the Honolulu station during the day.
+   	Counts are normalized to the maximum value in each distance bin.
+	The median (solid) and median absolute deviation (dashed) values are plotted on top of the distribution.
+	Distances with less than 15 total strokes are not plotted or used.}
+   \label{azimuthCalculation}
+\end{figure}
+
 \section{Azimuthal Dependence}
 
 For the three stations data were used from May 2009 to May 2013, resulting in $2.1\times10^6$ stroke-station paths to analyze.
 The results are split into the 8 azimuth octants for day paths and night paths as shown in Figure~\ref{azimuth}.
 For the three stations the westward propagating waves (green) show higher attenuation (electric field change per unit distance) than for the eastward propagating waves (red).
 The attenuation is also seen in the maximum distance that strokes are detected, with night (eastward) paths detectable at farther distances than day (westward) paths.
+
+ \begin{figure}[h!t]
+   \centering
+   \includegraphics[scale=1]{Azimuth/Figures/e-field_3.pdf} 
+   \caption{Station RMS electric field vs distance for Suva, Tahiti, and Honolulu.
+   	Electric field is normalized by stroke energy and given in dB above $1 \mu Vm^{-1}/J^{1/2}$.
+	Day ionosphere paths are in the left column and night ionosphere paths in the right column.}
+   \label{azimuth}
+\end{figure}
 
 For some stations, such as Honolulu in Figure~\ref{azimuth}, the difference between eastward and westward sferics is quite clear during the day at all distance ranges, and between day and night.
 For other stations, such as Suva, the difference in propagation direction is not distinct for all azimuths.
@@ -111,6 +97,14 @@ The station-stroke pairs were combined for all stations to give a single dataset
 The westward sferics in both day and night have similar electric field to the eastward sferics with the distinction developing at greater than 4~Mm from the stroke.
 There is a small upturn in field strength as the sferics propagate past 10~Mm because the waves are re-focusing when they cross the halfway point to their antipode.
 
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=1]{Azimuth/Figures/azimuthAverage.pdf} 
+    \caption{Compiled station normalized electric field for the three selected stations.
+    	Shown in dB above $1 \mu Vm^{-1}/J^{1/2}$.}
+    \label{azimuthAverage}
+ \end{figure}
+
 The method for estimating the attenuation and the uncertainty is outlined in Figure~\ref{attenuationCalculation} using the station averaged eastward-propagating electric field values as an example (red line in Figure~\ref{azimuthAverage}).
 First, the normalized electric field versus distance curves are smoothed and fitted to quadratics for the bins that have data, as shown with the dashed line in Figure~\ref{attenuationCalculation}a.
 Second, the attenuation between each bin of the fit (the slope of Figure~\ref{attenuationCalculation}a) is found and shown in Figure~\ref{attenuationCalculation}b.
@@ -119,6 +113,15 @@ The standard deviation of the attenuation is taken as the uncertainty in the att
 In the example of Figure~\ref{attenuationCalculation} the fitted attenuation is $1.13\pm0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{attenuationCalculation}b) is $0.79\pm2.34$~dB/Mm.
 The increased uncertainty in the direct attenuation is due to the variations in attenuation between successive 500~km distance bins.
 The fitted attenuation is used for all of the following attenuation values.
+
+\begin{figure}[h!t]
+    \centering
+    \includegraphics[scale=1]{Azimuth/Figures/attenuationCalculation.pdf} 
+    \caption{Method for calculating the attenuation.
+    	In a) the normalized electric field vs distance data (solid line) and the fitted quadratic (dashed line).
+	In b) the change in electric field with distance step (derivative) for the data (solid line) and the fit (dashed line) normalized to dB/Mm.}
+    \label{attenuationCalculation}
+ \end{figure}
 
 Overall there is an average attenuation of $1.87\pm1.06$~dB/Mm for all azimuths and times.
 Within the first 4~Mm of the stroke the attenuation is fairly high for both day and night, with $2.08\pm0.90$~dB/Mm during the day and $2.09\pm1.02$~dB/Mm at night.
@@ -135,6 +138,16 @@ The azimuthal variability of the WWLLN normalized electric-field attenuation is 
 The azimuthal variation, P$(\phi)$, is found by comparing the attenuation with the presence of a magnetic field to the attenuation without.
 For the WWLLN data the average attenuation of all azimuths is taken as representative of the attenuation with no magnetic field.
 The variability of the attenuation rate (in dB/Mm) with magnetic azimuth from \citet{Wait1960a} is approximated as $P(\phi) = - 0.3 \times \text{sin}(\phi) + 1$.
+
+\begin{figure}[h!t]
+   \centering
+   \includegraphics[scale=1]{Azimuth/Figures/attenuationTheory.pdf} 
+   \caption{Dependence of attenuation with magnetic azimuth shown as P($\phi$), the attenuation normalized to attenuation with no magnetic field.
+   	Shown for \citet{Wait1960a} (black), day paths (green), and night paths (blue).
+	The best fit curves are shown as dashed lines.
+	Day and night paths are normalized by their mean.}
+   \label{attenuationTheory}
+\end{figure}
 
 The average attenuation azimuthal variation was fit to the same form as the theory ($P(\phi) = - a~\times~\text{sin}(b~\times~\phi + c) + d$) with the resulting fits shown in Figure~\ref{attenuationTheory}.
 The leading coefficient, $a$, gives the relative variation in attenuation with azimuth; how much attenuation rates will change between northward/southward and eastward/westward propagating sferics.
@@ -159,138 +172,3 @@ Variations with magnetic azimuth showed that westward propagation had 1.9 -- 2.0
 
 Combining three optimally placed WWLLN stations allowed for this examination of the azimuthal dependence of VLF attenuation.
 Utilizing more of the 70 stations will allow for further investigation of VLF attenuation rates with other path parameters such as ocean salinity, ice, and ground conductivity.
-
-\begin{acknowledgments}
-The authors wish to thank the World Wide Lightning Location Network  (http://wwlln.net), a collaboration among over 50 universities and institutions for providing lightning location data used in this paper.
-\end{acknowledgments}
-
-\begin{thebibliography}{12}
-\providecommand{\natexlab}[1]{#1}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-
-\bibitem[{\textit{Abarca et~al.}(2010)\textit{Abarca, Corbosiero, and
-  Galarneau}}]{Abarca2010}
-Abarca, S.~F., K.~L. Corbosiero, and T.~J. Galarneau, {An evaluation of the
-  Worldwide Lightning Location Network (WWLLN) using the National Lightning
-  Detection Network (NLDN) as ground truth}, \textit{Journal of Geophysical
-  Research}, \textit{115}(D18), 1--11, \doi{10.1029/2009JD013411}, 2010.
-
-\bibitem[{\textit{Burkholder et~al.}(2013)\textit{Burkholder, Hutchins,
-  McCarthy, Pfaff, and Holzworth}}]{Burkholder2013}
-Burkholder, B., M.~Hutchins, M.~McCarthy, R.~Pfaff, and R.~Holzworth,
-  {Attenuation of Lightning-Produced Sferics in the Earth-Ionosphere Waveguide
-  and Low-Latitude Ionosphere}, \textit{Journal of Geophysical Research Space
-  Physics}, \textit{118}, 1--8, \doi{10.1002/jgra.50351}, 2013
-
-\bibitem[{\textit{Crombie}(1958)}]{Crombie1958}
-Crombie, D., {Differences between the east-west and west-east propagation of
-  VLF signals over long distances}, \textit{Journal of Atmospheric and
-  Terrestrial Physics}, \textit{12}(2-3), 110--117, 1958.
-
-\bibitem[{\textit{Dowden and Brundell}(2000)}]{Dowden2000}
-Dowden, R.~L., and J.~B. Brundell (2000), {Improvements relating to the
-  location of lightning discharges}, \textit{Australia Patent}, 749713.
-
-\bibitem[{\textit{Ferguson}(1998)}]{Ferguson1998}
-Ferguson, J.~A., {Computer Programs for Assessment of Long- Wavelength Radio
-  Communications, Version 2.0}, \textit{Tech. Rep. 3030}, Space and Naval
-  Warfare Systems Center, San Diego, 1998.
-
-\bibitem[{\textit{Hutchins et~al.}(2012)\textit{Hutchins, Holzworth, Rodger,
-  and Brundell}}]{Hutchins2012}
-Hutchins, M.~L., R.~H. Holzworth, C.~J. Rodger, and J.~B. Brundell, {Far-Field
-  Power of Lightning Strokes as Measured by the World Wide Lightning Location
-  Network}, \textit{Journal of Atmospheric and Oceanic Technology},
-  \textit{29}(8), 1102--1110, \doi{10.1175/JTECH-D-11-00174.1}, 2012.
-
-\bibitem[{\textit{Jacobson et~al.}(2012)\textit{Jacobson, Shao, and
-  Lay}}]{Jacobson2012}
-Jacobson, A.~R., X.-M. Shao, and E.~Lay, {Time domain waveform and azimuth
-  variation of ionospherically reflected VLF/LF radio emissions from
-  lightning}, \textit{Radio Science}, \textit{47}(4), 1--17,
-  \doi{10.1029/2012RS004980}, 2012.
-
-\bibitem[{\textit{Rodger et~al.}(2006)\textit{Rodger, Werner, Brundell, Lay,
-  Thomson, Holzworth, and Dowden}}]{Rodger2006}
-Rodger, C.~J., S.~Werner, J.~B. Brundell, E.~H. Lay, N.~R. Thomson, R.~H.
-  Holzworth, and R.~L. Dowden, {Detection efficiency of the VLF World-Wide
-  Lightning Location Network ( WWLLN ): initial case study}, \textit{Annales
-  geophysicae}, \textit{24}, 3197--3214, 2006.
-
-\bibitem[{\textit{Rodger et~al.}(2009)\textit{Rodger, Brundell, Holzworth, Lay,
-  Crosby, Huang, and Rycroft}}]{Rodger2009}
-Rodger, C.~J., J.~B. Brundell, R.~H. Holzworth, E.~H. Lay, N.~B. Crosby, T.-Y.
-  Huang, and M.~J. Rycroft, {Growing Detection Efficiency of the World Wide
-  Lightning Location Network}, \textit{AIP Conference Proceedings},
-  \textit{1118}, 15--20, \doi{10.1063/1.3137706}, 2009.
-
-\bibitem[{\textit{Taylor}(1960)}]{Taylor1960a}
-Taylor, W.~L., {VLF attenuation for east-west and west-east daytime propagation
-  using atmospherics}, \textit{Journal of Geophysical Research},
-  \textit{65}(7), 1933--1938, 1960.
-
-\bibitem[{\textit{Wait and Spies}(1960)}]{Wait1960a}
-Wait, J., and K.~Spies, {Influence of earth curvature and the terrestrial
-  magnetic field on VLF propagation}, \textit{Journal of Geophysical Research},
-  \textit{65}(8), 2325--2331, 1960.
-
-\bibitem[{\textit{Wait}(1970)}]{Wait1970}
-Wait, J.~R., \textit{{Electromagnetic Waves in Stratified Media}}, 2nd ed.,
-  Pergamon Press, New York, 1970.
-  
-\end{thebibliography}
-
- \end{article}
- 
- \begin{figure}[h!t]
-   \centering
-   \includegraphics[scale=1]{azimuthCalculation.pdf} 
-   \caption{Normalized electric field values for the 315$^\circ$ azimuth bin for the Honolulu station during the day.
-   	Counts are normalized to the maximum value in each distance bin.
-	The median (solid) and median absolute deviation (dashed) values are plotted on top of the distribution.
-	Distances with less than 15 total strokes are not plotted or used.}
-   \label{azimuthCalculation}
-\end{figure}
- 
- \begin{figure}[h!t]
-   \centering
-   \includegraphics[scale=1]{e-field_3.pdf} 
-   \caption{Station RMS electric field vs distance for Suva, Tahiti, and Honolulu.
-   	Electric field is normalized by stroke energy and given in dB above $1 \mu Vm^{-1}/J^{1/2}$.
-	Day ionosphere paths are in the left column and night ionosphere paths in the right column.}
-   \label{azimuth}
-\end{figure}
-  
-\begin{figure}[h!t]
-    \centering
-    \includegraphics[scale=1]{azimuthAverage.pdf} 
-    \caption{Compiled station normalized electric field for the three selected stations.
-    	Shown in dB above $1 \mu Vm^{-1}/J^{1/2}$.}
-    \label{azimuthAverage}
- \end{figure}
- 
-\begin{figure}[h!t]
-    \centering
-    \includegraphics[scale=1]{attenuationCalculation.pdf} 
-    \caption{Method for calculating the attenuation.
-    	In a) the normalized electric field vs distance data (solid line) and the fitted quadratic (dashed line).
-	In b) the change in electric field with distance step (derivative) for the data (solid line) and the fit (dashed line) normalized to dB/Mm.}
-    \label{attenuationCalculation}
- \end{figure}
-  
-\begin{figure}[h!t]
-   \centering
-   \includegraphics[scale=1]{attenuationTheory.pdf} 
-   \caption{Dependence of attenuation with magnetic azimuth shown as P($\phi$), the attenuation normalized to attenuation with no magnetic field.
-   	Shown for \citet{Wait1960a} (black), day paths (green), and night paths (blue).
-	The best fit curves are shown as dashed lines.
-	Day and night paths are normalized by their mean.}
-   \label{attenuationTheory}
-\end{figure}
-
- \end{document}
-
- 
