@@ -47,30 +47,18 @@ The sferic attenuation for a single station can be found with WWLLN by comparing
 
 \section{Earth Networks Total Lightning Network}
 
-A second ground based detection network, the Earth Networks Total Lightning Network (ENTLN), is used to corroborate the results of the WWLLN data.
-ENTLN is a higher density, broadband (1~Hz to 12~MHz receiver) network with about 500 operational stations in the United States \citep{Heckman2010}.
-The network utilizes a time of arrival method to determine the location of each stroke, where a minimum of 8 stations is required to produce a valid solution.
-From the recorded waveforms ENTLN infers polarity, peak current, and stroke type \citep{Liu2011a}.
-
 The Earth Networks Total Lightning Network (ENTLN) is a ground based network that began in 2009 as the Weatherbug Total Lightning Network (WTLN).
 It has two operational regimes: short range using broadband sferic waveforms (5~kHz -- 12~MHz) and long range with only VLF waveforms (1~Hz -- 256~kHz) \citep{Heckman2010}.
 Correlations of the stroke waveform and amplitude from multiple stations determines the time, location, altitude, peak current, polarity, and type of the located stroke \citep{Liu2011a}.
+The network utilizes a time of arrival method to determine the location of each stroke, where a minimum of 8 stations is required to produce a valid solution.
 To compress the broadband waveforms each station removes the necessary amount of low-amplitude signal to reach the requisite packet size.
-In the continental United States (CONUS) the network has approximately 530 operational stations.
+In the continental United States (CONUS) the network has approximately 530 operational stations in September 2013.
 A comparison to the Oklahoma Lightning Mapping Array (OKLMA) in 2010 demonstrated the ability to discriminate between CG and IC strokes \citep{Beasley2010}.
 
+\section{OTD and TRMM/LIS}
 
-\section{TRMM/LIS}
-
-A comparison is made between the global stroke count climatologies of WWLLN and the 13-year Lightning Imaging Sensor (LIS) and 5-year Optical Transient Detector (OTD) flash count climatologies. 
-The LIS (1997-present) and OTD (1995-2000) are nearly identical satellite-based lightning detectors flown in low earth orbit that observe total lightning activity from individual thunderstorms for 90 sec and 2 min, respectively, as the satellite passes overhead.
-The LIS observes storms from an inclined orbit of 35$^\circ$ at an altitude of 402 km while the OTD observed storms from an inclined orbit of 70$^\circ$ at an altitude of 740 km \citep{Christian1999, Christian2003}.
-Since WWLLN preferentially detects high-energy strokes \citep{Hutchins2012a} a direct comparison between the two systems, as described in \citet{Virts2013}, gives a comparison between high and low-energy strokes because of the detection biases of the two systems.
-
-To evaluate the ENTLN performance it is compared against the Lightning Imaging Sensor (LIS) onboard the Tropical Rainfall Measurement Mission (TRMM) satellite orbiting at a 35$^\circ$ inclination \citep{Christian1999}.
-LIS is used as it is a lightning detection system with no overlapping detections methods with the ground network, and the sensor performance has not changed over time.
-The LIS data are available at several processed levels, the January 2012 -- May 2013 flash level data is used for this comparison.
-The comparison with LIS is made over North America and within the inclination of LIS, the area covered is shown in Figure~\ref{density}.
-In this region LIS located $1.4\times10^5$ flashes, with the distribution shown in Figure~\ref{density}a, and ENTLN located $3.1\times10^8$ strokes shown in Figure~\ref{density}b.
-ENTLN detected $4.7\times10^5$ strokes within the field of view of LIS.
+The Lightning Imaging Sensor (LIS, 1997-present) is a satellite-based lightning detector flown onboard the Tropical Rainfall Measurement Mission (TRMM) satellite orbiting at a 35$^\circ$ inclination and 402~km altitude \citep{Christian1999}.
+In low earth orbit it observes the total lightning activity from individual thunderstorms for 90 sec in each $0.5^\circ \times 0.5^\circ$ viewtime granule.
+LIS is useful as it is a lightning detection system with no overlapping detections methods with ground based networks, and the sensor performance has not changed over time.
+The LIS data are available at several processed levels, throughout this work the flash level data is used.
 
