@@ -1,4 +1,4 @@
-\begin{thebibliography}{55}
+\begin{thebibliography}{72}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -25,10 +25,25 @@ Anderson, F.~J., and G.~D. Freier, {Interactions of the Thunderstorm with a
   Conducting Atmosphere}, \textit{Journal of Geophysical Research},
   \textit{74}(23), 5390--5396, 1969.
 
+\bibitem[{\textit{Boccippio et~al.}(2000)\textit{Boccippio, Goodman, and
+  Heckman}}]{Boccippio2000}
+Boccippio, D.~J., S.~J. Goodman, and S.~Heckman, {Regional Differences in
+  Tropical Lightning Distributions}, \textit{Journal of Applied Meteorology},
+  \textit{39}(12), 2231--2248,
+  \doi{10.1175/1520-0450(2001)040<2231:RDITLD>2.0.CO;2}, 2000.
+
 \bibitem[{\textit{Briggs et~al.}(2011)}]{Briggs2011}
 Briggs, M.~S., et~al., {Electron-positron beams from terrestrial lightning
   observed with Fermi GBM}, \textit{Geophysical Research Letters},
   \textit{38}(2), 1--5, \doi{10.1029/2010GL046259}, 2011.
+
+\bibitem[{\textit{Burkholder et~al.}(2013)\textit{Burkholder, Hutchins,
+  McCarthy, Pfaff, and Holzworth}}]{Burkholder2013}
+Burkholder, B.~S., M.~L. Hutchins, M.~P. McCarthy, R.~F. Pfaff, and R.~H.
+  Holzworth, {Attenuation of Lightning-Produced Sferics in the Earth-Ionosphere
+  Waveguide and Low-Latitude Ionosphere}, \textit{Journal of Geophysical
+  Research - Space Physics}, \textit{118}, 3692--3699,
+  \doi{10.1002/jgra.50351}, 2013.
 
 \bibitem[{\textit{Burns et~al.}(2005)\textit{Burns, Frank-Kamenetsky,
   Troshichev, Bering, and Reddell}}]{Burns2005}
@@ -50,6 +65,11 @@ Christian, H., et~al., {Global frequency and distribution of lightning as
   Geophysical Research}, \textit{108}(D1), 4005, \doi{10.1029/2002JD002347},
   2003.
 
+\bibitem[{\textit{Christian et~al.}(1999)}]{Christian1999}
+Christian, H.~J., et~al., {The Lightning Imaging Sensor}, in \textit{11th
+  International Conference on Atmospheric Electricity}, pp. 746--749,
+  Guntersville, AL, 1999.
+
 \bibitem[{\textit{Clilverd et~al.}(2009)}]{Clilverd2009}
 Clilverd, M.~a., et~al., {Remote sensing space weather events: the AARDDVARK
   network}, \textit{Space Weather}, \textit{7}(4), 1--15,
@@ -67,6 +87,11 @@ Connaughton, V., et~al., {Associations between Fermi Gamma-ray Burst Monitor
   terrestrial gamma ray flashes and sferics from the World Wide Lightning
   Location Network}, \textit{Journal of Geophysical Research},
   \textit{115}(A12), 1--14, \doi{10.1029/2010JA015681}, 2010.
+
+\bibitem[{\textit{Crombie}(1958)}]{Crombie1958}
+Crombie, D., {Differences between the east-west and west-east propagation of
+  VLF signals over long distances}, \textit{Journal of Atmospheric and
+  Terrestrial Physics}, \textit{12}(2-3), 110--117, 1958.
 
 \bibitem[{\textit{Doughton}(2010)}]{Doughton2010}
 Doughton, S., {Faraway volcanic eruptions now detected in a flash},
@@ -91,6 +116,11 @@ Ferguson, J.~A., {Computer Programs for Assessment of Long- Wavelength Radio
 Golde, R.~H., {Lightning currents and related parameters}, in
   \textit{Lightning}, edited by R.~H. Golde, chap.~9, pp. 309--350, Academic
   Press, New York, 1977.
+
+\bibitem[{\textit{Heckman and Liu}(2010)}]{Heckman2010}
+Heckman, S., and C.~Liu, {The Application of Total Lightning Detection for
+  Severe Storm Prediction}, in \textit{10th European Conference on Applications
+  of Meteorology}, p. Abstract, Z\"{u}rich, 2010.
 
 \bibitem[{\textit{Hill}(1971)}]{Hill1971}
 Hill, R.~D., {Spherical capacitor hypothesis of the Earth's electric field},
@@ -122,19 +152,32 @@ Holzworth, R.~H., et~al., {Balloon observations of temporal variation in the
   Space Research}, \textit{36}, 2005.
 
 \bibitem[{\textit{Hutchins et~al.}(2012{\natexlab{a}})\textit{Hutchins,
+  Holzworth, Brundell, and Rodger}}]{Hutchins2012a}
+Hutchins, M.~L., R.~H. Holzworth, J.~B. Brundell, and C.~J. Rodger, {Relative
+  detection efficiency of the World Wide Lightning Location Network},
+  \textit{Radio Science}, \textit{47}(6), RS6005, \doi{10.1029/2012RS005049},
+  2012{\natexlab{a}}.
+
+\bibitem[{\textit{Hutchins et~al.}(2012{\natexlab{b}})\textit{Hutchins,
   Holzworth, Rodger, and Brundell}}]{Hutchins2012}
 Hutchins, M.~L., R.~H. Holzworth, C.~J. Rodger, and J.~B. Brundell, {Far-Field
   Power of Lightning Strokes as Measured by the World Wide Lightning Location
   Network}, \textit{Journal of Atmospheric and Oceanic Technology},
   \textit{29}(8), 1102--1110, \doi{10.1175/JTECH-D-11-00174.1},
-  2012{\natexlab{a}}.
+  2012{\natexlab{b}}.
 
-\bibitem[{\textit{Hutchins et~al.}(2012{\natexlab{b}})\textit{Hutchins,
+\bibitem[{\textit{Hutchins et~al.}(2012{\natexlab{c}})\textit{Hutchins,
   Holzworth, Rodger, Heckman, and Brundell}}]{Hutchins2012c}
 Hutchins, M.~L., R.~H. Holzworth, C.~J. Rodger, S.~Heckman, and J.~B. Brundell,
   {WWLLN Absolute Detection Efficiencies and the Global Lightning Source
   Function}, in \textit{European Geophysical Union}, Vienna,
-  2012{\natexlab{b}}.
+  2012{\natexlab{c}}.
+
+\bibitem[{\textit{Ishii et~al.}(2010)\textit{Ishii, Saito, Fujii, Matsui, and
+  Itamoto}}]{Ishii2010}
+Ishii, M., M.~Saito, F.~Fujii, M.~Matsui, and N.~Itamoto, {High-Current
+  Lightning Discharges in Winter}, \textit{Electrical Engineering in Japan},
+  \textit{170}(1), 291--297, \doi{10.1002/eej.20874}, 2010.
 
 \bibitem[{\textit{Jacobson et~al.}(2006)\textit{Jacobson, Holzworth, Harlin,
   Dowden, and Lay}}]{Jacobson2006c}
@@ -151,6 +194,13 @@ Jacobson, a.~R., R.~H. Holzworth, R.~F. Pfaff, and M.~P. McCarthy, {Study of
   satellite and the World-Wide Lightning Location Network}, \textit{Annales
   Geophysicae}, \textit{29}(5), 851--863, \doi{10.5194/angeo-29-851-2011},
   2011.
+
+\bibitem[{\textit{Jacobson et~al.}(2012)\textit{Jacobson, Shao, and
+  Lay}}]{Jacobson2012}
+Jacobson, A.~R., X.-M. Shao, and E.~Lay, {Time domain waveform and azimuth
+  variation of ionospherically reflected VLF/LF radio emissions from
+  lightning}, \textit{Radio Science}, \textit{47}(4), 1--17,
+  \doi{10.1029/2012RS004980}, 2012.
 
 \bibitem[{\textit{Kniveton}(2004)}]{Kniveton2004}
 Kniveton, D., {Precipitation, cloud cover and Forbush decreases in galactic
@@ -192,12 +242,23 @@ Lay, E.~H., A.~R. Jacobson, R.~H. Holzworth, C.~J. Rodger, and R.~L. Dowden,
   the World Wide Lightning Location Network}, \textit{Journal of Geophysical
   Research}, \textit{112}(D13), 1--9, \doi{10.1029/2006JD007944}, 2007.
 
+\bibitem[{\textit{Liu and Heckman}(2011)}]{Liu2011a}
+Liu, C., and S.~Heckman, {The Application of Total Lightning Detection and Cell
+  Tracking for Severe Weather Prediction}, in \textit{91st American
+  Meteorological Society Annual Meeting}, pp. 1--10, Seattle, 2011.
+
 \bibitem[{\textit{Liu et~al.}(2010)\textit{Liu, Williams, Zipser, and
   Burns}}]{Liu2010}
 Liu, C., E.~R. Williams, E.~J. Zipser, and G.~Burns, {Diurnal Variations of
   Global Thunderstorms and Electrified Shower Clouds and Their Contribution to
   the Global Electrical Circuit}, \textit{Journal of the Atmospheric Sciences},
   \textit{67}(2), 309, \doi{10.1175/2009JAS3248.1}, 2010.
+
+\bibitem[{\textit{Lyons et~al.}(1998)\textit{Lyons, Uliasz, and
+  Nelson}}]{Lyons1998}
+Lyons, W., M.~Uliasz, and T.~Nelson, {Large peak current cloud-to-ground
+  lightning flashes during the summer months in the contiguous United States},
+  \textit{Monthly weather review}, \textit{126}, 2217--2233, 1998.
 
 \bibitem[{\textit{McRae and Thomson}(2000)}]{McRae2000d}
 McRae, W., and N.~Thomson, {VLF phase and amplitude: daytime ionospheric
@@ -251,6 +312,12 @@ Rodger, C.~J., J.~B. Brundell, R.~H. Holzworth, E.~H. Lay, N.~B. Crosby, T.-Y.
   Lightning Location Network}, \textit{AIP Conference Proceedings},
   \textit{1118}, 15--20, \doi{10.1063/1.3137706}, 2009{\natexlab{b}}.
 
+\bibitem[{\textit{Rudlosky and Fuelberg}(2010)}]{Rudlosky2010}
+Rudlosky, S.~D., and H.~E. Fuelberg, {Pre- and Postupgrade Distributions of
+  NLDN Reported Cloud-to-Ground Lightning Characteristics in the Contiguous
+  United States}, \textit{Monthly Weather Review}, \textit{138}(9), 3623--3633,
+  \doi{10.1175/2010MWR3283.1}, 2010.
+
 \bibitem[{\textit{Rycroft et~al.}(2008)\textit{Rycroft, Harrison, Nicoll, and
   Mareev}}]{Rycroft2008}
 Rycroft, M.~J., R.~G. Harrison, K.~a. Nicoll, and E.~a. Mareev, {An Overview of
@@ -258,12 +325,23 @@ Rycroft, M.~J., R.~G. Harrison, K.~a. Nicoll, and E.~a. Mareev, {An Overview of
   \textit{Space Science Reviews}, \textit{137}(1-4), 83--105,
   \doi{10.1007/s11214-008-9368-6}, 2008.
 
+\bibitem[{\textit{Seity et~al.}(2001)\textit{Seity, Soula, and
+  Sauvageot}}]{Seity2001}
+Seity, Y., S.~Soula, and H.~Sauvageot, {Lightning and precipitation
+  relationship in coastal thunderstorms}, \textit{Journal of Geophysical
+  Research}, \textit{106}(D19), 22,801 -- 22,816, 2001.
+
 \bibitem[{\textit{Siingh et~al.}(2007)\textit{Siingh, Gopalakrishnan, Singh,
   Kamra, Singh, Pant, Singh, and Singh}}]{Siingh2007}
 Siingh, D., V.~Gopalakrishnan, R.~Singh, A.~Kamra, S.~Singh, V.~Pant, R.~Singh,
   and A.~Singh, {The atmospheric global electric circuit: an overview},
   \textit{Atmospheric Research}, \textit{84}(2), 91--110,
   \doi{10.1016/j.atmosres.2006.05.005}, 2007.
+
+\bibitem[{\textit{Taylor}(1960)}]{Taylor1960a}
+Taylor, W.~L., {VLF attenuation for east-west and west-east daytime propagation
+  using atmospherics}, \textit{Journal of Geophysical Research},
+  \textit{65}(7), 1933--1938, 1960.
 
 \bibitem[{\textit{Thomas et~al.}(2004)\textit{Thomas, Holzworth, and
   Chin}}]{Thomas2004}
@@ -297,6 +375,13 @@ Tinsley, B., G.~Burns, and L.~Zhou, {The role of the global electric circuit in
   solar and internal forcing of clouds and climate}, \textit{Advances in Space
   Research}, \textit{40}(7), 1126--1139, \doi{10.1016/j.asr.2007.01.071}, 2007.
 
+\bibitem[{\textit{Virts et~al.}(2013)\textit{Virts, Wallace, Hutchins, and
+  Holzworth}}]{Virts2013}
+Virts, K.~S., J.~M. Wallace, M.~L. Hutchins, and R.~H. Holzworth, {Highlights
+  of a new ground-based, hourly global lightning climatology}, \textit{Bulletin
+  of the American Meteorological Society}, \textit{(in press)},
+  130211122058,003, \doi{10.1175/BAMS-D-12-00082.1}, 2013.
+
 \bibitem[{\textit{Volland}(1984)}]{Volland1984}
 Volland, H., \textit{{Atmoshpheric Electrodynamics}}, Springer-Verlag, Berlin,
   1984.
@@ -329,5 +414,22 @@ Whipple, F., {On the association of the diurnal variation of electric potential
 \bibitem[{\textit{Whipple and Scrase}(1936)}]{Whipple1936}
 Whipple, F., and F.~Scrase, {Point discharge in the electric field of the
   Earth}, \textit{Geophys. Memoirs}, \textit{VIII}(68), 1936.
+
+\bibitem[{\textit{Williams and Stanfill}(2002)}]{Williams2002}
+Williams, E., and S.~Stanfill, {The physical origin of the land – ocean
+  contrast in lightning activity}, \textit{Comptes Rendus Physique},
+  \textit{3}(10), 1277--1292, 2002.
+
+\bibitem[{\textit{Williams et~al.}(2005)\textit{Williams, Mushtak, Rosenfeld,
+  Goodman, and Boccippio}}]{Williams2005}
+Williams, E., V.~Mushtak, D.~Rosenfeld, S.~Goodman, and D.~Boccippio,
+  {Thermodynamic conditions favorable to superlative thunderstorm updraft,
+  mixed phase microphysics and lightning flash rate}, \textit{Atmospheric
+  Research}, \textit{76}(1-4), 288--306, \doi{10.1016/j.atmosres.2004.11.009},
+  2005.
+
+\bibitem[{\textit{Zipser}(1994)}]{Zipser1994}
+Zipser, E., {Deep cumulonimbus cloud systems in the tropics with and without
+  lightning}, \textit{Monthly weather review}, \textit{1222}, 1837--1851, 1994.
 
 \end{thebibliography}
