@@ -37,6 +37,13 @@ As of January 2013, the World Wide Lightning Location Network (WWLLN, see wwlln.
 An upgrade to the WWLLN allows for the network to measure radiated VLF stroke energies in addition to stroke locations \citep{Hutchins2012}.
 The capability to measure stroke energies as well as the global coverage of the network allows for a global comparison of stroke energies over land and ocean regimes.
 
+The WWLLN (see wwlln.net) is a global network with, as of May 2013, over 70 VLF receivers distributed around the globe \citep{Rodger2006, Rodger2009}.
+WWLLN locates strokes by analyzing the time of group arrival of the sferic wave packet in the 6 -- 18~kHz band \citep{Dowden2000}.
+The global coverage of the network allows for many long range stroke-receiver paths with which to estimate VLF attenuation rates.
+Previous studies have shown that WWLLN is able to locate most strokes to an average accuracy of 10~km with a cloud to ground detection efficiency of 11\% \citep{Abarca2010, Rodger2009}.
+A recent upgrade to the network allows for the measurement of the radiated VLF energy of located strokes within the 8 -- 18~kHz VLF band.
+The stroke energy is calculated from the time-integrated root mean square (RMS) electric field of the VLF sferic at each WWLLN station, using the Long Wave Propagation Capability code (LWPC) \citep{Ferguson1998} to estimate the sferic attenuation and calculate the source radiated energy \citep{Hutchins2012}.
+The sferic attenuation for a single station can be found with WWLLN by comparing the stroke energies measured by the network to the RMS electric field measured at a single WWLLN station.
 
 \section{Earth Networks Total Lightning Network}
 
@@ -44,3 +51,10 @@ A second ground based detection network, the Earth Networks Total Lightning Netw
 ENTLN is a higher density, broadband (1~Hz to 12~MHz receiver) network with about 500 operational stations in the United States \citep{Heckman2010}.
 The network utilizes a time of arrival method to determine the location of each stroke, where a minimum of 8 stations is required to produce a valid solution.
 From the recorded waveforms ENTLN infers polarity, peak current, and stroke type \citep{Liu2011a}.
+
+\section{TRMM/LIS}
+
+A comparison is made between the global stroke count climatologies of WWLLN and the 13-year Lightning Imaging Sensor (LIS) and 5-year Optical Transient Detector (OTD) flash count climatologies. 
+The LIS (1997-present) and OTD (1995-2000) are nearly identical satellite-based lightning detectors flown in low earth orbit that observe total lightning activity from individual thunderstorms for 90 sec and 2 min, respectively, as the satellite passes overhead.
+The LIS observes storms from an inclined orbit of 35$^\circ$ at an altitude of 402 km while the OTD observed storms from an inclined orbit of 70$^\circ$ at an altitude of 740 km \citep{Christian1999, Christian2003}.
+Since WWLLN preferentially detects high-energy strokes \citep{Hutchins2012a} a direct comparison between the two systems, as described in \citet{Virts2013}, gives a comparison between high and low-energy strokes because of the detection biases of the two systems.
