@@ -17,14 +17,14 @@ The network uses Very Low Frequency (VLF) radio wave receivers distributed aroun
 Knowledge of individual stroke locations, with high temporal accuracy, and within a fraction of a wavelength is beneficial for both scientific and technical uses. WWLLN lightning location data have recently been used for advances in space science (c.f. \citet{Kumar2009}, or \citet{Holzworth2011}), meteorology (c.f. \citet{Price2009}, \citet{Thomas2010d}) and detailed lightning physics (\citet{Connaughton2010a}) to name a few.
 Near instantaneous knowledge of lightning stroke location anywhere in the world, provided by WWLLN, is now actively used by the USGS (U.S. Geological Survey) to help identify remote, explosive volcanic eruptions (see \citet{Doughton2010}).
 
-WWLLN currently consists of 57 VLF stations distributed as shown in figure~\ref{wwlln_dist}, with more stations continuously being added to the network.
+WWLLN currently consists of 57 VLF stations distributed as shown in figure~\ref{energy:fig:wwlln_dist}, with more stations continuously being added to the network.
 As stations are added the accuracy and detection efficiency of the network improves. As of 2010 the network locates most strokes to within 10 kilometers and $<$10~$\mu$s with an estimated detection efficiency of about 11\% for all strokes and $>$30\% for more powerful strokes \citep{Abarca2010,Rodger2009}.
 The network uses a TOGA technique, originally developed by \citet{Dowden2000}, to locate strokes by analyzing the sferic waveforms at each station using the Stroke\_B algorithm as discussed by \citet{Rodger2006,Rodger2009}.
 
  \begin{figure}[b]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_WWLLN_2010.pdf}\\
  \caption{WWLLN 2010 global stroke density on $1^\circ$ x $1^\circ$ grid, station locations shown with black triangles. Data processed with the Stroke\_B algorithm.}
- \label{wwlln_dist}
+ \label{energy:fig:wwlln_dist}
  \end{figure}
 
 As only the spectral variations through the sferic wave packet are needed for determining the TOGA, the absolute electric field amplitude is unnecessary to accurately locate lightning. Due to this, the network does not currently report other characteristics of strokes such as peak current.
@@ -60,7 +60,7 @@ When a station digitizes the electric field waveform it stores it in uncalibrate
 Additionally, the effective gain and calibration differs at each station due to the preamplifier, antenna construction, soundcard frequency response, and local environmental conditions.
 This results in the RMS electric field being reported in station specific sound card units.
 
-The average power spectra from 194 stroke waveforms recorded at the Tallahassee, Florida station are shown in figure~\ref{average_spectra} along with the frequency response of a typical preamplifier.
+The average power spectra from 194 stroke waveforms recorded at the Tallahassee, Florida station are shown in figure~\ref{energy:fig:average_spectra} along with the frequency response of a typical preamplifier.
 The strokes used were located at distances of 5000~km to 10000~km from the station and were recorded between 18:00 and 21:00 UTC on May 3 and May 9 2011.
 As can be seen in the figure the power peaks between 6-18 kHz with the analog response remaining relatively flat through the entire frequency range.
 The spikes in the power spectra are a result of manmade VLF communication transmitters.
@@ -69,7 +69,7 @@ The spikes in the power spectra are a result of manmade VLF communication transm
  \begin{figure}[t]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_Spectra.pdf}\\
  \caption{The top panel shows average power spectra from 194 stroke waveforms recorded at the Tallahassee, FL station between 0 and 48 kHz. The strokes were located between 5000km and 10000km away from the  station on May 3 2011 and May 9 2011 between 18:00 and 21:00 UTC. The bottom panel shows the frequency response of the preamplifier.}
- \label{average_spectra}
+ \label{energy:fig:average_spectra}
  \end{figure}
 
 The waveforms used are 1.33 ms long with 0.33 ms pre-trigger and 1 ms post-trigger.
@@ -83,12 +83,12 @@ To calculate the stroke power based on the RMS electric field at a station the L
 The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{Thomson2011}.
 In this research we made use of LWPC version 2.1.
 
-With a known conversion from a stations SCU value to V m$^{-1}$, $A_{local}$, of the lightning waveform, power is calculated using equation~\ref{power_eq}.
+With a known conversion from a stations SCU value to V m$^{-1}$, $A_{local}$, of the lightning waveform, power is calculated using equation~\ref{energy:eq:power_eq}.
 The ratio from LWPC between a 100kW transmitter and the modeled field (given in dB above 1 $\mu$V m$^{-1}$) is used to account for the sferic attenuation, $\alpha$, along the path for every grid location for every detector.
 
 \begin{equation}
 P_{stroke}=\frac{E_{scu}^2}{A_{local}^2} * \frac{100kW}{(10^{\alpha/20}\mu V/m)^2}
-\label{power_eq}
+\label{energy:eq:power_eq}
 \end{equation}
 
 Since energy of the stroke is the time integrated electric field, and the power measurements are from the RMS electric field value, the energy of the stroke can be found from the size of the triggering window: $E_{stroke}=P_{stroke} * t_{window}$, with the current triggering window set at 1.33 ms.
@@ -98,19 +98,19 @@ Instead a lookup table is used which breaks stroke locations into $5^{\circ}$ by
 The ionospheric models are the default models of LWPC code and fully described in \citet{Ferguson1998}. 
 To account for transitions across the terminator a weighted average of the day and night electric field values are used.
 The lookup tables give the electric field averaged over the 8 - 18 kHz band which captures the frequencies of the peak radiated power from lightning (6-7 kHz omitted due to code limitations) \citep{Volland1995}.
-An example of the day ionosphere lookup table for the Dunedin station is shown in figure~\ref{lookup}.
+An example of the day ionosphere lookup table for the Dunedin station is shown in figure~\ref{energy:fig:lookup}.
 The discontinuity of electric field over Greenland and in the South Atlantic is caused by the high attenuation rate of VLF propagating over ice.
 
  \begin{figure}[t]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_Lookup.pdf}\\
  \caption{LWPC generated lookup table for Dunedin station (white triangle) using an all day ionospheric model ($\beta=0.3$ km$^{-1}$ and $h'=74$ km) averaged over 8-18 kHz. Each $5^{\circ}$ by $5^{\circ}$ bin shows the electric field seen at Dunedin if a 100kW transmitter is centered on that bin.}
- \label{lookup}
+ \label{energy:fig:lookup}
  \end{figure}
 
 \subsection{Calibration and Bootstrapping}
 
 With one calibrated station it is possible to find the calibration of other nearby stations.
-The process is shown in figure~\ref{calibrate}.
+The process is shown in figure~\ref{energy:fig:calibrate}.
 Using a well calibrated station (on the right) the stroke power of a given stroke is found using LWPC for the same stroke.
 The uncalibrated station also finds the power using LWPC, however instead of a power in watts, it measures the power in sound card power, SCP.
 The ratio between the two power values will give the calibration factor, $A_{local}^2$, of the second station.
@@ -119,7 +119,7 @@ This is repeated for many strokes with the median of the conversion factor distr
 \begin{figure}[t]
 \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_Method.pdf}\\
 \caption{Method of calibrating one station to another using LWPC.}
-\label{calibrate}
+\label{energy:fig:calibrate}
 \end{figure}
 
 Only one station in the network is thoroughly calibrated to VLF fields, the station in Scott Base, Antarctica.
@@ -133,19 +133,19 @@ All day paths were chosen as the daytime ionosphere is modeled more accurately b
 
 The first set of calibrations are done between the well calibrated station and those with common strokes that have the desired path characteristics.
 Once calibrated these stations are used to calibrate the next set of stations, and these newly calibrated stations are used to find the next set.
-This process is repeated until no further stations can be calibrated, figure~\ref{bootstrap} is an example of this process.
+This process is repeated until no further stations can be calibrated, figure~\ref{energy:fig:bootstrap} is an example of this process.
 Not all stations are calibrated for each day, they may not be calibrated if they do not see any common strokes with another station that match the path requirements or if their calibration to the next set of stations does not match direct calibrations.
 For example, if station A calibrates B and then B calibrates C then if the calibration path ABC does not match the well calibrated path of AC it is determined that B is not well calibrated, so it is not used.
 
  \begin{figure}[t]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_Hop.pdf}\\
  \caption{An example of the bootstrapping technique, showing calibration distance from the main Dunedin station. Thick green lines are the first calibration stage and the thin red lines the last. Stations may be unconnected due to not having common strokes, being poor intermediary stations or being down for the day.}
- \label{bootstrap}
+ \label{energy:fig:bootstrap}
  \end{figure}
 
 \subsection{Power Calculation}
 
-The fully calibrated WWLLN network is used to calculate the stroke power for each station participating in a TOGA event using equation~\ref{power_eq} with the $A_{local}$ values known for a majority of the stations.
+The fully calibrated WWLLN network is used to calculate the stroke power for each station participating in a TOGA event using equation~\ref{energy:eq:power_eq} with the $A_{local}$ values known for a majority of the stations.
 Of the participating stations, the median of their power measurements is used as the final stroke value for the event.
 The uncertainty in the power is the median absolute deviation (MAD) of the participating station power measurements, the MAD is the method of getting standard deviation of median values (MAD = median($|P_i - $median$(P_i)|$)).
 On average 96.97\% of WWLLN strokes have a power value, even with only an average of 2/3 of stations being well calibrated and participating in power calculations.
@@ -167,20 +167,20 @@ From the comparison the empirical relation between return stroke peak current an
 
 \begin{equation}
 P_{stroke} = 1676 * |I_{peak}|^{1.62}
-\label{Peq}
+\label{energy:eq:Peq}
 \end{equation}
 
 where $P_{stroke}$ has units of watts and $I_{peak}$ has units of kA.
-In figure~\ref{pvi} the WWLLN peak current (using the inverse of equation~\ref{Peq}) is shown against the NZLDN absolute peak current.
+In figure~\ref{energy:fig:pvi} the WWLLN peak current (using the inverse of equation~\ref{energy:eq:Peq}) is shown against the NZLDN absolute peak current.
 When taking the uncertainties of the power values (converted to peak current) and an assumed 30\% uncertainty in the NZLDN data, 84\% of the matched strokes have equivalent peak currents.
 The peak current values fit close to the unity line with a robust linear fit of $I_{WWLLN}=0.93*I_{NZLDN}+1.93$ with an $R^2$ value of 0.92, a robust fit is used due to the lognormal behavior of the WWLLN power data.
-Of the matched strokes 86.5\% are shown in figure~ \ref{pvi} with the remaining 13.5\% out of the plotted bounds.
+Of the matched strokes 86.5\% are shown in figure~ \ref{energy:fig:pvi} with the remaining 13.5\% out of the plotted bounds.
 This strong relationship confirms that the power values measured are directly related to the physical properties of the stroke. i.e. the return stroke peak current.
 
  \begin{figure}[t]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_PvI_Error.pdf}\\
  \caption{WWLLN peak current versus NZLDN return stroke peak current for three time periods in 2009 using 5260 matches. WWLLN peak current derived from $P_{stroke} = 1676 * I_{peak}^{1.62}$, 84\% of strokes are within range of the unity line (red solid line) with uncertainty taken into account. 86.5\% of NZLDN-WWLLN matched strokes shown (others out of range).}
- \label{pvi}
+ \label{energy:fig:pvi}
  \end{figure}
 
 \subsection{Error and Uncertainty}
@@ -245,34 +245,34 @@ This analysis leads to the conclusion that the power being measured by WWLLN is 
 
 \subsection{Power Distribution}
 
-Stroke power in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}. Figure~\ref{distribution} shows the stroke power distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
+Stroke power in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}. Figure~\ref{energy:fig:distribution} shows the stroke power distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
 The Americas and Asia/Australia show similar distributions, likely a result of having similar WWLLN coverage, while Africa/Europe differ, possibly due to uneven network coverage.
 
  \begin{figure}[t]
  \noindent\includegraphics[width=19pc,angle=0]{energy/Figures/PPS_Distribution2.pdf}\\
  \caption{Histogram of stroke powers for 2010 with 100 logarithmically spaced bins, the histogram for the globe (1.4 x 10$^8$ strokes) is shown in black, the Americas (6.1 x 10$^7$ strokes) in blue, Africa/Europe (2.4 x 10$^7$ strokes) in red and Asia/Australia (5.0 x 10$^7$ strokes) in green. Error bars are too small to display.}
- \label{distribution}
+ \label{energy:fig:distribution}
  \end{figure}
  
-When the power distribution of figure~\ref{distribution} is converted to peak current using equation~\ref{Peq} it can be compared to earlier measurements of peak current distributions.
+When the power distribution of figure~\ref{energy:fig:distribution} is converted to peak current using equation~\ref{energy:eq:Peq} it can be compared to earlier measurements of peak current distributions.
 We can compare the WWLLN peak current distribution to that of \citet{Popolansky1972} as shown in \citet{Golde1977}.
-That study used peak current data from 624 return strokes to create a cumulative probability distribution of stroke currents as shown in figure~\ref{PPS_CDF}.
+That study used peak current data from 624 return strokes to create a cumulative probability distribution of stroke currents as shown in Figure~\ref{energy:fig:PPS_CDF}.
 A similar frequency distribution was created using the WWLLN peak current estimates and is shown in the same figure.
 As can be seen, the WWLLN distribution is shifted by a factor of two compared to the previous distribution, which is expected as WWLLN is known to detect higher current strokes when compared to what is seen by regional ground based networks \citep{Abarca2010}.
 In a comparison to the NLDN those authors found that the probability distribution function of the WWLLN coincident strokes was similarly of an order two higher than the distribution for all NLDN strokes.
-These comparisons further validate the stroke power to peak current relation of equation~\ref{Peq} and demonstrates this relationship is likely valid for the entire global network, and not just the New Zealand region.
+These comparisons further validate the stroke power to peak current relation of equation~\ref{energy:eq:Peq} and demonstrates this relationship is likely valid for the entire global network, and not just the New Zealand region.
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=.6]{energy/Figures/PPS_CDF.pdf}
  \caption{The cumulative probability distributions of stroke current for the best fit of the \citet{Popolansky1972} data (dashed) and the 2010 WWLLN dataset (solid).}
- \label{PPS_CDF}
+ \label{energy:fig:PPS_CDF}
  \end{figure}
 
 Africa has a lower detection efficiency in the network due to the small number of stations on the continent.
 With a lower detection efficiency only the strongest strokes are seen by the more distant stations while the weaker strokes are not seen by these stations due to the stronger attenuation of VLF over continents than for propagation paths over water \citep{Wait1970}.
 An initial effort to model the detection efficiency of WWLLN showed this effect very strongly (\citet{Rodger2006}, Fig. 11).
-This results in the distribution of figure~\ref{distribution}, with fewer low powered strokes occurring over Africa compared to the other regions.
+This results in the distribution of figure~\ref{energy:fig:distribution}, with fewer low powered strokes occurring over Africa compared to the other regions.
 
 Without a full understanding of the regional detection efficiency of the network it cannot be concluded if every regions follows the same lognormal power distribution or whether local environments affect the power of strokes in the region.
 However, the bootstrap calibration process described in the current study may allow new estimates of the global variation in WWLLN detection efficiency, following \citet{Rodger2006}.
