@@ -72,8 +72,26 @@ The LIS data are available at several processed levels, throughout this work the
 
 \section{Long Wave Propagation Capability Code}
 
-%% Combine all LWPC descriptions here
-%% Lookup figure
+The Long Wave Propagation Capability code (LWPC) is used to model the VLF attenuation between WWLLN located lightning and the network stations.
+The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{McRae2000d, Thomson2011}.
+In this research we made use of an adapted LWPC version 2.1.
+
+LWPC can be used to model the attenuation along a mixed day/night ionospheric path, however due to computational limitations a lookup table is used instead.
+The lookup tables model the received electric field at a given station for a 100~kW transmitter in each grid cell.
+A $1^{\circ}$ by $1^{\circ}$ grid is used for either an all day ($\beta=0.3$ km$^{-1}$ and $h'=74$ km) or an all night ($\beta(f)=0.3-0.8$ km$^{-1}$ and $h'=87$ km) ionospheric model, where $\beta$ and $h'$ are the slope of the conductivity ($\beta$ is frequency dependent at night) and the reference height in the ionospheric model.
+The ionospheric models are the default models of LWPC code and fully described in \citet{Ferguson1998}. 
+
+For each grid cell the electric field is averaged over the 8 -- 18 kHz band, which captures the frequencies of the peak radiated power from lightning \citep{Volland1995}.
+An example of the day ionosphere lookup table for the Dunedin station is shown in Figure~\ref{intro:fig:lookup} (reproduced from Chapter~\ref{thesis:chapter:efficiency}).
+The discontinuity of electric field over Greenland and in the South Atlantic is caused by the high attenuation rate of VLF propagating over ice.
+Using the lookup tables assumes that the attenuation rates do not vary greatly within a given grid cell and that the frequency spectra of a sferic is relatively flat within the band considered.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=1]{energy/Figures/PPS_Lookup.pdf}\\
+	\caption{LWPC generated lookup table for Dunedin station (white triangle) using an all day ionospheric model ($	\beta=0.3$ km$^{-1}$ and $h'=74$ km) averaged over 8-18 kHz. Each $1^{\circ}$ by $1^{\circ}$ bin shows the electric field seen at Dunedin if a 100kW transmitter is centered on that bin.}
+	\label{intro:fig:lookup}
+\end{figure}
 
 \section{Outline}
 
