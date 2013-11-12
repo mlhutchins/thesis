@@ -1,4 +1,8 @@
-\section{abstract}
+%% Overall change tense as needed
+
+\section{Overview}
+
+%% Merge abstract and introduction together
 
 Using the detected energy per strokes of the World Wide Lightning Location Network (WWLLN) we calculate the relative detection efficiency for the network as if it had a uniform  detection efficiency.
 The model uses the energy statistics of located strokes to determine which stations are sensitive to what stroke energies.
@@ -10,28 +14,12 @@ The model gives a way to represent the global distribution of strokes as if obse
 The model results are analyzed in spatial and temporal regimes, and the effects of a single VLF detector going offline are investigated in areas of sparse and dense detector coverage.
 The results are also used to show spatial, temporal and energy distributions as seen by the detection efficiency corrected WWLLN.
 
-\section{Introduction}
-
-The World Wide Lightning Location Network (WWLLN) has been generating global lightning locations since 2004 \citep{Rodger2006, Rodger2009}.
-Since then the network has grown from 18 stations to over 60 as of August 2012.
-Additional stations have greatly improved the ability of WWLLN to locate progressively weaker strokes \citep{Rodger2009, Abarca2010}.
+%% Better transition
 However the WWLLN network does not observe lightning with the same detection efficiency everywhere.
 This is due to variable WWLLN station coverage and the strong affect on very low frequency (VLF) radio propagation from orography and ionospheric conditions along the great circle path of a wave.
 This paper demonstrates a technique which uses only data collected by the WWLLN network itself, to estimate the relative detection efficiency of each $5^\circ$ x $5^\circ$ pixel over the earth compared to the best average WWLLN detection efficiency.
 For instance, the lightning stroke density over central Africa, where WWLLN station density is sparse, can now be compared to the region of the Earth with the best detection efficiency, such as North America.
-This paper does not provide an absolute detection efficiency calculation.
-
-WWLLN (see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time \citep{Jacobson2006c}.
-The network uses VLF radio wave receivers distributed around the globe to identify the time of group arrival (TOGA) for the wave packets from individual lightning-produced sferics \citep{Dowden2002d}.
-A central processor combines the TOGAs to determine the source locations over the spherical Earth.
-The TOGA of the VLF wave packet developed by \citet{Dowden2000}, is used rather than ``trigger time'' to produce more uniform arrival times across the network.
-Stroke locations are determined using the TOGAs with  a time of arrival algorithm over the spherical earth (see \citet{Rodger2009, Rodger2009a}).
-Knowledge of global stroke locations, with high temporal and spatial accuracy is beneficial for both scientific and technical uses.
-WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
-
-As of April 2012 WWLLN consisted of 60 VLF stations distributed around the world, with more stations continuously being added to the network.
-The network improves in accuracy and detection efficiency with increased stations; for example an increase in the number of WWLLN stations from 11 in 2003 to 30 in 2007 led to a $\sim$165\% increase in the number of lightning strokes located \citep{Rodger2009}.
-As of 2011 the network located 61\% of strokes to $<$5~km and 54\% to $<$15~$\mu s$ with an estimated detection efficiency of about 11\% for cloud to ground flashes and $>$30\% for higher peak current flashes over the Continental United States\citep{Hutchins2012c, Abarca2010, Rodger2009}.
+This chapter does not provide an absolute detection efficiency calculation.
 
 A concern for all VLF networks is the non-uniform propagation of VLF waves due to changing ionospheric  and surface conditions; this is true for networks monitoring lightning produced VLF signals like WWLLN, or those monitoring fixed-frequency communication transmitters like AARDDVARK \citep{Clilverd2009}.
 During the day there is a larger ionospheric electron density at lower D-region altitudes.
