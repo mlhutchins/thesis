@@ -133,7 +133,6 @@ Lightning mapping arrays are able to locally detect, locate, and distinguish IC 
 
 \subsection{World Wide Lightning Location Network}
 
-%% Add in global stroke distribution figure
 
 %% Update with more recent papers
 The World Wide Lightning Location Network (WWLLN, see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time (c.f. \citet{Jacobson2006c}).
@@ -141,6 +140,14 @@ WWLLN has been generating global lightning locations starting in 2004 \citep{Rod
 Since then the network has grown from 18 stations to over 70 as of September 2013.
 Knowledge of individual stroke locations, with high temporal accuracy, and within a fraction of a wavelength is beneficial for both scientific and technical uses.
 WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
+
+%% Text references
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=1]{Introduction/Figures/wwlln_density.pdf}\\
+	\caption{ }
+	\label{intro:fig:wwlln}
+\end{figure}
 
 The network uses a time of group arrival (TOGA) technique, originally developed by \citet{Dowden2002d}, to locate strokes by analyzing the sferic waveforms at each station using the Stroke\_B algorithm as discussed by \citet{Rodger2006,Rodger2009}.
 WWLLN locates strokes by analyzing the TOGA of the sferic wave packet in the 6 -- 18~kHz band \citep{Dowden2000}.
@@ -156,8 +163,6 @@ This is due to variable WWLLN station coverage and the strong affect on VLF radi
 
 \subsection{Earth Networks Total Lightning Network}
 
-%% Add ENTLN stroke density figure
-
 The Earth Networks Total Lightning Network (ENTLN) is a ground based network that began in 2009 as the Weatherbug Total Lightning Network (WTLN).
 It has two operational regimes: short range using broadband sferic waveforms (5~kHz -- 12~MHz) and long range with only VLF waveforms (1~Hz -- 256~kHz) \citep{Heckman2010}.
 Correlations of the stroke waveform and amplitude from multiple stations determines the time, location, altitude, peak current, polarity, and type of the located stroke \citep{Liu2011a}.
@@ -166,14 +171,28 @@ To compress the broadband waveforms each station removes the necessary amount of
 In the continental United States (CONUS) the network has approximately 530 operational stations in September 2013.
 A comparison to the Oklahoma Lightning Mapping Array (OKLMA) in 2010 demonstrated the ability to discriminate between CG and IC strokes \citep{Beasley2010}.
 
-\subsection{TRMM/LIS}
+%% Text references
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=1]{Introduction/Figures/entln_density.pdf}\\
+	\caption{ }
+	\label{intro:fig:entln}
+\end{figure}
 
-%% Add LIS global flash count figure.
+\subsection{TRMM/LIS}
 
 The Lightning Imaging Sensor (LIS, 1997-present) is a satellite-based lightning detector flown onboard the Tropical Rainfall Measurement Mission (TRMM) satellite orbiting at a 35$^\circ$ inclination and 402~km altitude \citep{Christian1999}.
 In low earth orbit it observes the total lightning activity from individual thunderstorms for 90 sec in each $0.5^\circ \times 0.5^\circ$ viewtime granule.
 LIS is useful as it is a lightning detection system with no overlapping detections methods with ground based networks, and the sensor performance has not changed over time.
 The LIS data are available at several processed levels, throughout this work the flash level data is used.
+
+%% Text references
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=1]{Introduction/Figures/lis_density.pdf}\\
+	\caption{ }
+	\label{intro:fig:lis}
+\end{figure}
 
 \section{Long Wave Propagation Capability Code}
 
@@ -193,7 +212,7 @@ Using the lookup tables assumes that the attenuation rates do not vary greatly w
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=1]{energy/Figures/PPS_Lookup.pdf}\\
+	\includegraphics[scale=1]{Introduction/Figures/lwpc_Lookup.pdf}\\
 	\caption{LWPC generated lookup table for Dunedin station (white triangle) using an all day ionospheric model ($	\beta=0.3$ km$^{-1}$ and $h'=74$ km) averaged over 8-18 kHz. Each $1^{\circ}$ by $1^{\circ}$ bin shows the electric field seen at Dunedin if a 100kW transmitter is centered on that bin.}
 	\label{intro:fig:lookup}
 \end{figure}
