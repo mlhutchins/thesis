@@ -70,7 +70,6 @@ Current values are set to reduce the two signals to within the input voltages of
 
 Unlike previous versions of the service unit most small components (resistors, capacitors, etc.) are placed on the underside of the board so the same form factor can be used.
 The overall layout is shown in Figure~\ref{su:fig:suBoard} with the topside in Figure~\ref{su:fig:suTop} and bottom in Figure~\ref{su:fig:suBot}.
-For heating issues the two voltage regulators need to be screwed onto the board with metal screws which act as heat sinks and connect them to the ground plane for heat dissipation.
 Both the USB and ethernet jacks are on the board so the Gumstix does not face directly out of the box, preventing inevitable wear and tear on the Gumstix itself.
 The HDMI plug is not on the board due to the inability to wire two jacks together (pins are spaced too close) so a wall-mount HMDI extension cord is used instead.
 
@@ -104,7 +103,7 @@ Price breaks are available for many of the components which can bring down the t
 \begin{landscape}
 \begin{center}
 \begin{longtable}{|p{2in}|p{1.5in}|p{.75in}|p{.5in}|p{.5in}|p{1in}|p{1.5in}|}
-\caption{WWLLN Service Unit Parts List (2013/02/19)}\\
+\caption{WWLLN Service Unit Parts List (2013/11/15)}\\
 \label{su:table:suPrice}\\
 \hline
 \bf Part & \bf Value & \bf Quantity  & \bf Unit Price & \bf Price & \bf Supplier & \bf Part Number\\ 
@@ -125,13 +124,17 @@ Service Units &  & 5 & 545.632 &  &  & \\
 HDMI Cable (1.5') & Panel Mount 3' Cable & 1 & 11.67 & 11.67 & Amazon & \\ 
 MicroSD Card & SanDisk 16GB microSDHC & 1 & 9.5 & 9.5 & Amazon.com & \\ 
 Stereo Cable (1', Right Angle) &  & 1 & 4.83 & 4.83 & Amazon.com & \\ 
+Feet & 3M SJ5300 & 4 & 0.25 & 1 & Amazon.com & \\
+USB Hub & D-Link DUB-H4 & 1 & 22.93 & 22.93 & Amazon.com & \\
 2-56 Nuts &  & 4 & 0.1055 & 0.422 & Digikey & H612-ND\\ 
 2-56 Screws (.75") &  & 4 & 0.0732 & 0.2928 & Digikey & H702-ND\\ 
 2-56 Standoff (.375") &  & 4 & 0.82 & 3.28 & Digikey & 1797DK-ND\\ 
 2-56 Washer &  & 8 & 0.053 & 0.424 & Digikey & 3357K-ND\\ 
 3.3V Regulator & TLV2217 & 1 & 0.98 & 0.98 & Digikey & 296-21611-5-ND\\ 
+5V Regulator & Recom R-78B5.0-1.0L & 1 & 8.94 & 8.94 & Digikey & 945-1053-ND\\
 4-40 Nuts &  & 18 & 0.0149 & 0.2682 & Digikey & H216-ND\\ 
-4-40 Screws (.75") &  & 10 & 0.0285 & 0.285 & Digikey & H350-ND\\ 
+4-40 Screws (.75") &  & 5 & 0.0285 & 0.285 & Digikey & H350-ND\\ 
+4-40 Screws (1") &  & 4 & 0.07 & 0.28 & Digikey & 9305K-ND\\ 
 4-40 Standoffs (.25") &  & 4 & 0.62 & 2.48 & Digikey & 1902AK-ND\\ 
 4-40 Standoffs (.75") &  & 4 & 0.98 & 3.92 & Digikey & 8440EK-ND\\ 
 555 Timer & NE555N & 1 & 0.42 & 0.42 & Digikey & 497-1963-5-ND\\ 
@@ -158,7 +161,6 @@ Transistor MOSFET & 2N7000 & 1 & 0.39 & 0.39 & Digikey & 2N7000\_D26ZCT-ND\\
 Transistor NPN & 2N3904 & 1 & 0.42 & 0.42 & Digikey & 2N3904-APCT-ND\\ 
 Transistor PNP & 2N3906 & 3 & 0.42 & 1.26 & Digikey & 2N3906-APCT-ND\\ 
 Power Jack & BARREL\_POWER\_CONN & 1 & 1.52 & 1.52 & Digikey & SC1313-ND\\ 
-Resistor 8 & 8 (5W rated) & 1 & 0.55 & 0.55 & Digikey & 8.2W-5-ND\\ 
 Resistor 22 & 22 (1 W rated) & 1 & 0.14 & 0.14 & Digikey & 22WCT-ND\\ 
 Resistor 44 & 44 & 1 & 0.09 & 0.09 & Digikey & CF18JT43R0CT-ND\\ 
 Resistor 51 & 51 & 1 & 0.09 & 0.09 & Digikey & CF18JT51R0CT-ND\\ 
@@ -185,7 +187,6 @@ Gumstix Expansion Board & Tobi & 1 & 69 & 69 & Gumstix & \\
 Gustix COM & WaterSTORM & 1 & 169 & 169 & Gumstix & \\ 
 Ethernet Cable (2') & 3421 & 1 & 0.92 & 0.92 & Monoprice & 3421\\ 
 USB Cable & 1.5' A-A Cable & 1 & 0.85 & 0.85 & Monoprice & 8609\\ 
-5V Regulator & SPX2940U & 1 & 1.75 & 1.75 & Mouser & 701-SPX2940U-L-5-0\\ 
 A262A2E Enclosure & A262CAN & 1 & 7.78 & 7.78 & Newark & 25M7635\\ 
 Audio Transformer & A262A2E & 1 & 16.7 & 16.7 & Newark & 02M8356\\ 
 USB-Serial FT232RL & Bob-00718 & 1 & 14.95 & 14.95 & Sparkfun & BOB-00718\\ 
@@ -245,18 +246,18 @@ Service unit construction steps:
 \label{su:subsection:suTest1}
 
 Without an external boards (Gumstix, GPS, etc) connected slowly raise the input voltage from 0 to 12~V. 
-At 12~V the board should be drawing near to 120~mA, and both yellow LEDs should be on.
+At 12~V the board should be drawing near to 55~mA, and both yellow LEDs should be on.
 The yellow LEDs indicate that the preamp power supply defaults on without the Gumstix plugged in.
 Test the voltages for the GPS and Gumstx mounts.
 The GPS should have two voltages, 5~V on pin 1 and 3.3~V on pin 2, all other pins should be 0~V.
 If the USB-serial jumper it set to Gumstix, then the GPS will have a voltage on pin 5.
-The Gumstix socket should have 0~V everywhere except on pin 40 which should be 5~V and pin 10 which should be 0.8~V.
+The Gumstix socket should have 0~V everywhere except on pin 40 which should be 5~V, pin 10 which should be 2.8~V, and pin 9 at 0.4~V.
 
 \subsection{GPS Power Test}
 \label{su:subsection:suTest2}
 
 Turn off the board and plug in the GPS engine.
-At 12~V power the board should be drawing 240~mA.
+At 12~V power the board should be drawing 155~mA.
 The bottom red LED should be blinking and the top one should be on.
 
 \subsection{Gumstix Power Test}
@@ -264,9 +265,8 @@ The bottom red LED should be blinking and the top one should be on.
 
 Plug in to the Gumstix and connect the ethernet (the ethernet LEDs allow for a quick check of the system).
 Power the GPS with a 12~VDC wall plug, not a variable power supply.
-During the Gumstix startup it draws near to 1~A briefly which can cause a drop in voltage with a variable power supply, this restarting the Gumstix.
 After about 30 seconds the ethernet lights should start to blink and flash on the Gumstix ethernet port, indicating it has booted fully.
-While idling the board should be drawing 600-700~mA.
+While idling the board should be drawing 290~mA.
 
 \subsection{Final Service Unit Test}
 \label{su:subsection:suTest4}
