@@ -1,3 +1,5 @@
 My current in-progress PhD thesis work.
 
-Each chapter is a branch that is merged into the master branch either when a draft of the chapter is done or references/labels need to be tested.
+My goal is to finish by Spring 2013, chapters are added as their respective papers are published.
+
+The most recently compiled PDF can be found on dropbox: https://dl.dropboxusercontent.com/u/583956/Thesis.pdf
