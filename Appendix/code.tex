@@ -50,7 +50,7 @@ WB-files	& WB201212310510.dat	&	Continuos wideband field data output by toga -r\
 
 \hline
 \rule{0pt}{3ex}
-T-files	& T20130130.dat	&	Station packet count record, listed date is last date updated-r\\ 
+T-files	& T20131114\_Single.dat	&	Station packet count record, TCurrent.dat is the current running record\\ 
 
 \hline
 \end{tabular}
@@ -78,11 +78,11 @@ The final two are the timing uncertainty in microseconds and the number of WWLLN
 AP-files are similar to A-files with additional information after the stroke location:
 
 \begin{verbatim}
-2013/02/12,00:00:07.142335,-10.4622,  20.0863, 13.4,  5,17,600,19,2084,26,453,53,225,
-	64,2263
+2013/02/12,00:00:07.142335,-10.4622,  20.0863, 13.4,  5, 17, 600, 19, 2084, 26, 453, 
+	53, 225, 64, 2263
 \end{verbatim}
 
-Starting at 17,600 are pairs of numbers that give the station ID (17) and the field strength (600) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
+Starting at \verb|17,600| are pairs of numbers that give the station ID (\verb|17|) and the field strength (\verb|600|) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
 
 \begin{verbatim}
 2013/2/12,00:00:07.142335, -10.4622,  020.0863, 13.4, 5, 448.86, 114.87, 4
@@ -97,9 +97,9 @@ Each line contains the date in days since 01/01/0000 and the counts for each sta
 \section{Code Repositories}
 
 All of my code should be stored on flash5 at /home/mlhutch/matlab for Matlab scripts.
-For example the code to run the energy processing is located at /home/mlhutch/matlab/Bootstrap/bootstrap\_automation.m.
+For example the code to run the energy processing is located at /home/mlhutch/matlab/bootstrap/Bootstrap\_automation.m.
 The exact details of where the energy processing code is located, the necessary files, and similar code for the relative detection efficiency processing is covered in Appendix~\ref{thesis:appendix:bootstrap}.
-Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located both on flash5 (/home/mlhutch/Git) and hosted online on bitbucket.org.
+Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located both on flash5:/home/mlhutch/Git and hosted online on \href{http://github.com/mlhutchins}{github.com/mlhutchins/}.
 
 The Git repositories have the advantage of multiple back ups, version control, easily portable, and easy to use.
 A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:table:repo}.
@@ -154,10 +154,10 @@ Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix k
 \section{Git Primer}
 \label{code:section:primer}
 
-Git (http://git-scm.com) is an open source distributed version control system available on all operating systems with very little system resources required.
+Git (\href{http://git-scm.com}{http://git-scm.com}) is an open source distributed version control system available on all operating systems with very little system resources required.
 Most often git is accessed through the command line but there are many graphical interfaces available.
 I chose git for my research and code since it allows easy branching, constant backups (locally and on remote servers), and helps to organize code and projects.
-A brief tutorial on git is available online: http://git-scm.com/book/en/Getting-Started and http://try.github.com/.
+A brief tutorial on git is available online: \href{http://git-scm.com/book/en/Getting-Started}{http://git-scm.com/book/en/Getting-Started} and \href{http://try.github.com/}{http://try.github.com/}.
 
 Once git is installed on a host machine (http://git-scm.com, apt-get install git, or yum install git-core) repositories can be downloaded with the command:
 
@@ -248,6 +248,6 @@ The function smoothn.m performs a two dimensional smoothing on an array of data,
 Aside from these three functions there is a directory in the functions.git repository dedicated to reading and writing WWLLN file types.
 In the directory functions/IO are a set of import functions to import A, AP, AE, R, T, and DE files.
 There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{thesis:appendix:bootstrap}), and WWLLN stations.dat data.
-All of these functions take in a give date (and possibly time) to find and load the desired file.
+All of these functions take in a given date (and possibly time) to find and load the desired file.
 The file dataPath.dat lists locations that the import functions check for the data folders of the particular file type.
 The default is to look for either /wd2/ or /wd3/ hard drives, but other locations can be added to this list as needed.
