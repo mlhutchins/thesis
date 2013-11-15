@@ -73,20 +73,18 @@ However these events are less common than typical lightning and will not be cons
 
 \subsection{The Ionosphere}
 
-The ionosphere is the plasma environment located between $80~km$ and 400~$km$, it is a highly conductive region with an exponentially decaying background neutral density.
+The ionosphere is the plasma environment located between $80~km$ and 1000~$km$, it is a highly conductive region with an exponentially decaying background neutral density.
 It forms from the ionization of the background neutrals by ultraviolet sunlight.
-During the day the ionosphere D- and E-regions extend farther down in altitude than during night when they mostly recombine and disappear.
+During the day the ionosphere D- and E-regions extend farther down in altitude than during night when they mostly recombine and disappear, shown in Figure~\ref{intro:fig:ionosphere}.
 High altitudes in the F-region remain through the night as the particle density is much lower, preventing significant recombination.
 Unlike the magnetosphere it is a collisional environment.
 The overall structure is shown in Figure~\ref{intro:fig:ionosphere}.
 
-%% Add neutral density curve
-%% Make better
-
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/ionosphere.pdf}\\
-	\caption{Atmospheric resistivity profile shown on a log scale.}
+	\caption{Atmospheric temperature profile and ionospheric plasma density profile (day ionosphere in black, night ionosphere in red).
+		     }
 	\label{intro:fig:ionosphere}
 \end{figure}
 
@@ -133,19 +131,18 @@ Lightning mapping arrays are able to locally detect, locate, and distinguish IC 
 
 \subsection{World Wide Lightning Location Network}
 
-
 %% Update with more recent papers
 The World Wide Lightning Location Network (WWLLN, see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time (c.f. \citet{Jacobson2006c}).
 WWLLN has been generating global lightning locations starting in 2004 \citep{Rodger2006, Rodger2009}.
 Since then the network has grown from 18 stations to over 70 as of September 2013.
 Knowledge of individual stroke locations, with high temporal accuracy, and within a fraction of a wavelength is beneficial for both scientific and technical uses.
 WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
+The observed stroke density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:wwlln}.
 
-%% Text references
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/wwlln_density.pdf}\\
-	\caption{ }
+	\caption{Global WWLLN stroke density for 2011 -- 2012.}
 	\label{intro:fig:wwlln}
 \end{figure}
 
@@ -170,12 +167,13 @@ The network utilizes a time of arrival method to determine the location of each 
 To compress the broadband waveforms each station removes the necessary amount of low-amplitude signal to reach the requisite packet size.
 In the continental United States (CONUS) the network has approximately 530 operational stations in September 2013.
 A comparison to the Oklahoma Lightning Mapping Array (OKLMA) in 2010 demonstrated the ability to discriminate between CG and IC strokes \citep{Beasley2010}.
+The observed stroke density over North America for 2011 -- 2012 is shown in Figure~\ref{intro:fig:entln}.
 
-%% Text references
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/entln_density.pdf}\\
-	\caption{ }
+	\caption{North American ENTLN stroke density for the 2011-2012 dataset.
+	              Note: same color range as Figure~\ref{intro:fig:wwlln}}
 	\label{intro:fig:entln}
 \end{figure}
 
@@ -185,12 +183,13 @@ The Lightning Imaging Sensor (LIS, 1997-present) is a satellite-based lightning 
 In low earth orbit it observes the total lightning activity from individual thunderstorms for 90 sec in each $0.5^\circ \times 0.5^\circ$ viewtime granule.
 LIS is useful as it is a lightning detection system with no overlapping detections methods with ground based networks, and the sensor performance has not changed over time.
 The LIS data are available at several processed levels, throughout this work the flash level data is used.
+The LIS flash density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:lis}.
 
-%% Text references
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/lis_density.pdf}\\
-	\caption{ }
+	\caption{LIS flash density for 2011 -- 2012.
+		     Note the reduced color range from Figures~\ref{intro:fig:wwlln} and~\ref{intro:fig:entln}}
 	\label{intro:fig:lis}
 \end{figure}
 
