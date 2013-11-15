@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{78}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -25,11 +25,6 @@ Abreu, D., D.~Chandan, R.~H. Holzworth, and K.~Strong, {A performance
 Altaratz, O., I.~Koren, Y.~Yair, and C.~Price, {Lightning response to smoke
   from Amazonian fires}, \textit{Geophysical Research Letters}, \textit{37}(7),
   1--6, \doi{10.1029/2010GL042679}, 2010.
-
-\bibitem[{\textit{Anderson and Freier}(1969)}]{Anderson1969}
-Anderson, F.~J., and G.~D. Freier, {Interactions of the Thunderstorm with a
-  Conducting Atmosphere}, \textit{Journal of Geophysical Research},
-  \textit{74}(23), 5390--5396, 1969.
 
 \bibitem[{\textit{Beasley et~al.}(2010)\textit{Beasley, Weiss, and
   Heckman}}]{Beasley2010}
@@ -62,14 +57,6 @@ Burkholder, B.~S., M.~L. Hutchins, M.~P. McCarthy, R.~F. Pfaff, and R.~H.
   Waveguide and Low-Latitude Ionosphere}, \textit{Journal of Geophysical
   Research - Space Physics}, \textit{118}, 3692--3699,
   \doi{10.1002/jgra.50351}, 2013.
-
-\bibitem[{\textit{Burns et~al.}(2005)\textit{Burns, Frank-Kamenetsky,
-  Troshichev, Bering, and Reddell}}]{Burns2005}
-Burns, G.~B., A.~Frank-Kamenetsky, O.~A. Troshichev, E.~A. Bering, and B.~D.
-  Reddell, {Interannual consistency of bi-monthly differences in diurnal
-  variations of the ground-level, vertical electric field}, \textit{Journal of
-  Geophysical Research}, \textit{110}(D10), 1--14, \doi{10.1029/2004JD005469},
-  2005.
 
 \bibitem[{\textit{Cecil et~al.}(2011)\textit{Cecil, Buechler, and
   Blakeslee}}]{Cecil2011}
@@ -181,25 +168,9 @@ Heckman, S., and C.~Liu, {The Application of Total Lightning Detection for
   Severe Storm Prediction}, in \textit{10th European Conference on Applications
   of Meteorology}, p. Abstract, Z\"{u}rich, 2010.
 
-\bibitem[{\textit{Hill}(1971)}]{Hill1971}
-Hill, R.~D., {Spherical capacitor hypothesis of the Earth's electric field},
-  \textit{Pure and Applied Geophysics}, \textit{84}, 67--75, 1971.
-
 \bibitem[{\textit{Holzworth and Volland}(1986)}]{Holzworth1986}
 Holzworth, R., and H.~Volland, {Do We Need a Geoelectric Index?}, \textit{Eos},
   \textit{67}(26), 545,547--548, 1986.
-
-\bibitem[{\textit{Holzworth}(1984)}]{Holzworth1984}
-Holzworth, R.~H., {Hy-Wire Measurements of Atmospheric Potential},
-  \textit{Journal of Geophysical Research}, \textit{89}(D1), 1395--1401,
-  \doi{10.1029/JD089iD01p01395}, 1984.
-
-\bibitem[{\textit{Holzworth et~al.}(1985)\textit{Holzworth, Kelley, Siefring,
-  Hale, and Mitchell}}]{Holzworth1985}
-Holzworth, R.~H., M.~C. Kelley, C.~L. Siefring, L.~C. Hale, and J.~D. Mitchell,
-  {Electrical measurements in the Atmosphere and the Ionosphere Over an Active
-  Thunderstorm 2. Direct Current Electric Fields and Conductivity},
-  \textit{Journal of Geophysical Research}, \textit{90}(A10), 9824--9830, 1985.
 
 \bibitem[{\textit{Holzworth et~al.}(2011)\textit{Holzworth, McCarthy, Pfaff,
   Jacobson, Willcockson, and Rowland}}]{Holzworth2011}
@@ -279,26 +250,10 @@ Jacobson, A.~R., X.-M. Shao, and E.~Lay, {Time domain waveform and azimuth
   lightning}, \textit{Radio Science}, \textit{47}(4), 1--17,
   \doi{10.1029/2012RS004980}, 2012.
 
-\bibitem[{\textit{Kniveton}(2004)}]{Kniveton2004}
-Kniveton, D., {Precipitation, cloud cover and Forbush decreases in galactic
-  cosmic rays}, \textit{Journal of Atmospheric and Solar-Terrestrial Physics},
-  \textit{66}(13-14), 1135--1142, \doi{10.1016/j.jastp.2004.05.010}, 2004.
-
-\bibitem[{\textit{Kniveton et~al.}(2008)\textit{Kniveton, Tinsley, Burns,
-  Bering, and Troshichev}}]{Kniveton2008}
-Kniveton, D., B.~Tinsley, G.~Burns, E.~Bering, and O.~Troshichev, {Variations
-  in global cloud cover and the fair-weather vertical electric field},
-  \textit{Journal of atmospheric and solar-terrestrial physics},
-  \textit{70}(13), 1633--1642, \doi{10.1016/j.jastp.2008.07.001}, 2008.
-
 \bibitem[{\textit{Krider and Guo}(1983)}]{Krider1983}
 Krider, E.~P., and C.~Guo, {The peak electromagnetic power radiated by
   lightning return strokes}, \textit{Journal of geophysical research},
   \textit{88}(C13), 8471--8474, 1983.
-
-\bibitem[{\textit{Krider and Musser}(1982)}]{Krider1982}
-Krider, E.~P., and J.~A. Musser, {Maxwell currents under thunderstorms},
-  \textit{Journal of Geophysical Research}, \textit{87}(C13), 11,171--11, 1982.
 
 \bibitem[{\textit{Kumar et~al.}(2009)\textit{Kumar, Deo, and
   Ramachandran}}]{Kumar2009}
@@ -323,13 +278,6 @@ Lay, E.~H., A.~R. Jacobson, R.~H. Holzworth, C.~J. Rodger, and R.~L. Dowden,
 Liu, C., and S.~Heckman, {The Application of Total Lightning Detection and Cell
   Tracking for Severe Weather Prediction}, in \textit{91st American
   Meteorological Society Annual Meeting}, pp. 1--10, Seattle, 2011.
-
-\bibitem[{\textit{Liu et~al.}(2010)\textit{Liu, Williams, Zipser, and
-  Burns}}]{Liu2010}
-Liu, C., E.~R. Williams, E.~J. Zipser, and G.~Burns, {Diurnal Variations of
-  Global Thunderstorms and Electrified Shower Clouds and Their Contribution to
-  the Global Electrical Circuit}, \textit{Journal of the Atmospheric Sciences},
-  \textit{67}(2), 309, \doi{10.1175/2009JAS3248.1}, 2010.
 
 \bibitem[{\textit{Lyons et~al.}(1998)\textit{Lyons, Uliasz, and
   Nelson}}]{Lyons1998}
@@ -363,21 +311,11 @@ Pan, L., X.~Qie, D.~Liu, D.~Wang, and J.~Yang, {The lightning activities in
 Popolansky, F., {Frequency Distribution of amplitudes of lightning currents},
   \textit{Electra}, \textit{22}, 139--146, 1972.
 
-\bibitem[{\textit{Price et~al.}(2007)\textit{Price, Pechony, and
-  Greenberg}}]{Price2007}
-Price, C., O.~Pechony, and E.~Greenberg, {Schumann Resonances in Lightning
-  Research}, \textit{Journal of Lightning Research}, \textit{1}, 1 --15, 2007.
-
 \bibitem[{\textit{Price et~al.}(2009)\textit{Price, Asfur, and
   Yair}}]{Price2009}
 Price, C., M.~Asfur, and Y.~Yair, {Maximum hurricane intensity preceded by
   increase in lightning frequency}, \textit{Nature Geoscience},
   \textit{2}(April), 2--5, \doi{10.1038/NGEO477}, 2009.
-
-\bibitem[{\textit{Roble and Tzur}(1986)}]{Roble1986}
-Roble, R.~G., and I.~Tzur, {The Global Atmospheric-Electrical Circuit}, in
-  \textit{The Earth's Electrical Environment}, chap.~15, pp. 206--231, National
-  Academy Press, Washington D.C., 1986.
 
 \bibitem[{\textit{Rodger et~al.}(2006)\textit{Rodger, Werner, Brundell, Lay,
   Thomson, Holzworth, and Dowden}}]{Rodger2006}
@@ -404,13 +342,6 @@ Rudlosky, S. D.~S., and D.~T.~D. Shea, {Evaluating WWLLN performance relative
   to TRMM/LIS}, \textit{Geophysical Research Letters}, \textit{40}(March),
   1--5, \doi{10.1002/grl.50428}, 2013.
 
-\bibitem[{\textit{Rycroft et~al.}(2008)\textit{Rycroft, Harrison, Nicoll, and
-  Mareev}}]{Rycroft2008}
-Rycroft, M.~J., R.~G. Harrison, K.~a. Nicoll, and E.~a. Mareev, {An Overview of
-  Earth’s Global Electric Circuit and Atmospheric Conductivity},
-  \textit{Space Science Reviews}, \textit{137}(1-4), 83--105,
-  \doi{10.1007/s11214-008-9368-6}, 2008.
-
 \bibitem[{\textit{Schultz et~al.}(2009)\textit{Schultz, Petersen, and
   Carey}}]{Schultz2009}
 Schultz, C.~J., W.~a. Petersen, and L.~D. Carey, {Preliminary Development and
@@ -430,13 +361,6 @@ Schultz, C.~J., W.~a. Petersen, and L.~D. Carey, {Lightning and Severe Weather:
 Seity, Y., S.~Soula, and H.~Sauvageot, {Lightning and precipitation
   relationship in coastal thunderstorms}, \textit{Journal of Geophysical
   Research}, \textit{106}(D19), 22,801 -- 22,816, 2001.
-
-\bibitem[{\textit{Siingh et~al.}(2007)\textit{Siingh, Gopalakrishnan, Singh,
-  Kamra, Singh, Pant, Singh, and Singh}}]{Siingh2007}
-Siingh, D., V.~Gopalakrishnan, R.~Singh, A.~Kamra, S.~Singh, V.~Pant, R.~Singh,
-  and A.~Singh, {The atmospheric global electric circuit: an overview},
-  \textit{Atmospheric Research}, \textit{84}(2), 91--110,
-  \doi{10.1016/j.atmosres.2006.05.005}, 2007.
 
 \bibitem[{\textit{Singh et~al.}(2011)\textit{Singh, Veenadhari, Maurya, Cohen,
   Kumar, Selvakumaran, Pant, Singh, and Inan}}]{Singh2011}
@@ -463,13 +387,6 @@ Taylor, W.~L., {VLF attenuation for east-west and west-east daytime propagation
   using atmospherics}, \textit{Journal of Geophysical Research},
   \textit{65}(7), 1933--1938, 1960.
 
-\bibitem[{\textit{Thomas et~al.}(2004)\textit{Thomas, Holzworth, and
-  Chin}}]{Thomas2004}
-Thomas, J., R.~Holzworth, and J.~Chin, {A new high-voltage electric field
-  instrument for studying sprites}, \textit{IEEE Transactions on Geoscience and
-  Remote Sensing}, \textit{42}(7), 1399--1404, \doi{10.1109/TGRS.2004.826806},
-  2004.
-
 \bibitem[{\textit{Thomas et~al.}(2010)\textit{Thomas, Solorzano, Cummer, and
   Holzworth}}]{Thomas2010d}
 Thomas, J.~N., N.~N. Solorzano, S.~A. Cummer, and R.~H. Holzworth, {Polarity
@@ -495,6 +412,10 @@ Tinsley, B., G.~Burns, and L.~Zhou, {The role of the global electric circuit in
   solar and internal forcing of clouds and climate}, \textit{Advances in Space
   Research}, \textit{40}(7), 1126--1139, \doi{10.1016/j.asr.2007.01.071}, 2007.
 
+\bibitem[{\textit{Uman}(1969)}]{Uman1969}
+Uman, M.~A., \textit{{Lightning}}, Dover books on physics and chemistry, Dover
+  Publications, 1969.
+
 \bibitem[{\textit{Virts et~al.}(2011)\textit{Virts, Thornton, Wallace,
   Hutchins, Holzworth, and Jacobson}}]{Virts2011a}
 Virts, K.~S., J.~a. Thornton, J.~M. Wallace, M.~L. Hutchins, R.~H. Holzworth,
@@ -509,10 +430,6 @@ Virts, K.~S., J.~M. Wallace, M.~L. Hutchins, and R.~H. Holzworth, {Highlights
   of the American Meteorological Society}, \textit{94}, 1381 -- 1391,
   \doi{10.1175/BAMS-D-12-00082.1}, 2013.
 
-\bibitem[{\textit{Volland}(1984)}]{Volland1984}
-Volland, H., \textit{{Atmoshpheric Electrodynamics}}, Springer-Verlag, Berlin,
-  1984.
-
 \bibitem[{\textit{Volland}(1995)}]{Volland1995}
 Volland, H., {Longwave Sferic Propagation within the Atmospheric Waveguide}, in
   \textit{Handbook of Atmospherics Volume II}, edited by H.~Volland, chap.~3,
@@ -523,11 +440,6 @@ Wait, J., and K.~Spies, {Influence of earth curvature and the terrestrial
   magnetic field on VLF propagation}, \textit{Journal of Geophysical Research},
   \textit{65}(8), 2325--2331, 1960.
 
-\bibitem[{\textit{Wait}(1960)}]{Wait1960}
-Wait, J.~R., {Terrestrial propagation of very-low-frequency radio waves},
-  \textit{Journal of Research National Beruau of Standards, Section D},
-  \textit{64}, 152--163, 1960.
-
 \bibitem[{\textit{Wait}(1970)}]{Wait1970}
 Wait, J.~R., \textit{{Electromagnetic Waves in Stratified Media}}, 2nd ed.,
   Pergamon Press, New York, 1970.
@@ -537,10 +449,6 @@ Whipple, F., {On the association of the diurnal variation of electric potential
   gradient in fine weather with the distribution of thunderstorms over the
   globe}, \textit{Quarterly Journal of the Royal Meteorological Society},
   \textit{55}(229), 1--18, 1929.
-
-\bibitem[{\textit{Whipple and Scrase}(1936)}]{Whipple1936}
-Whipple, F., and F.~Scrase, {Point discharge in the electric field of the
-  Earth}, \textit{Geophys. Memoirs}, \textit{VIII}(68), 1936.
 
 \bibitem[{\textit{Williams and Stanfill}(2002)}]{Williams2002}
 Williams, E., and S.~Stanfill, {The physical origin of the land – ocean
