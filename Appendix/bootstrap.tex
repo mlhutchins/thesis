@@ -91,20 +91,20 @@ The latest lookup tables are at a resolution of $2^\circ$.
 Station Name	&Station North Latitude	&	Station East Longitude & \\ 
 \hline
 \rule{0pt}{3ex}
-E-field at (-179,89)	& E-field at (-177,89) &	E-field at (-175,89) & \dots \\ 
+E-field at (-179,89)	& E-field at (-178,89) &	E-field at (-177,89) & \dots \\ 
 \hline
 \rule{0pt}{3ex}
-E-field at (-179,87)	& E-field at (-177,87) &	E-field at (-175,87) & \dots \\ 
+E-field at (-179,88)	& E-field at (-178,88) &	E-field at (-177,88) & \dots \\ 
 \hline
 \rule{0pt}{3ex}
-E-field at (-179,85)	& E-field at (-177,85) &	E-field at (-175,85) & \dots \\ 
+E-field at (-179,87)	& E-field at (-178,87) &	E-field at (-177,87) & \dots \\ 
 \hline
 \rule{0pt}{3ex}
 \dots	& \dots &	\dots & \dots \\ 
 \hline
 \end{tabular}
 \end{center}
-\caption{Format for \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat} data files for a resolution of $2^\circ$.}
+\caption{Format for \textbf{lookup\_day.dat} and \textbf{lookup\_night.dat} data files for a resolution of $1^\circ$.}
 \label{bootstrap:table:lookup}
 \end{table}
 
@@ -112,7 +112,7 @@ An example of a lookup table for the all day ionosphere for Dunedin station is s
 
 \begin{figure}[ht!]
    \centering
-   \includegraphics[scale=1]{Energy/Figures/PPS_Lookup.pdf} 
+   \includegraphics[scale=1]{Introduction/Figures/lwpc_lookup.pdf} 
    \caption{Lookup table for an all day ionosphere for Dunedin station.}
    \label{bootstrap:fig:lookup}
 \end{figure}
@@ -142,6 +142,8 @@ This script:
 \item{Generate the current AP-file with {\bf generate\_ap.m}}
 \item{Calculate the energies and station calibrations using {\bf wwlln\_energy.m}}
 \item{Generates the relative detection efficiency map with {\bf de\_mapper.m}}
+\item{Calculates network statistics with {\bf network\_statistics.m}}
+\item{Generate and amend T-files to TCurrent.dat}
 \item{Saves and archives all of the resulting data files}
 \end{enumerate}
 
