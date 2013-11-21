@@ -83,13 +83,14 @@ However these events are less common than typical lightning and will not be cons
 
 \subsection{The Ionosphere}
 
-The ionosphere is the plasma environment located between $80~km$ and 1000~$km$, it is a highly conductive region with an exponentially decaying background neutral density.
+The ionosphere is the plasma environment located between $80~km$ and 1000~$km$ altitude, it is a highly conductive region within the exponentially decreasing atmospheric neutral density.
 It forms from the ionization of the background neutrals by ultraviolet sunlight.
-During the day the ionosphere D- and E-regions extend farther down in altitude than during night when they mostly recombine and disappear, shown in Figure~\ref{intro:fig:ionosphere}.
+During the day the ionospheric D- and E-regions extend farther down in altitude than during night when they mostly recombine and disappear, shown in Figure~\ref{intro:fig:ionosphere}.
 High altitudes in the F-region remain through the night as the particle density is much lower, preventing significant recombination.
-Unlike the magnetosphere it is a collisional environment.
-The overall structure is shown in Figure~\ref{intro:fig:ionosphere}.
 
+%% Add density to left panel, with scale on the top x-axis
+%% Add thin grey lines between atmospheric sections
+%% Move density legend to just point to the lines directly
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/ionosphere.pdf}\\
@@ -98,15 +99,15 @@ The overall structure is shown in Figure~\ref{intro:fig:ionosphere}.
 	\label{intro:fig:ionosphere}
 \end{figure}
 
-For very low frequency waves (a 1~$Hz$ to 40~$kHz$) the conductive ionosphere and ground create the Earth-Ionosphere Wavegude (EIWG).
-The EIWG allows for propagation of VLF waves from natural (lightning) and artificial (Navy VLF transmitters) to propagate great distances ($>10,000~km$).
-As the VLF waves propagate in the waveguide there is loss on the order of 1~$dB/Mm$, with the loss going to heating the waveguide and the generation of plasma waves in the ionosphere (Figure~\ref{intro:fig:eiwg}).
-Attenuation losses are greatest over ice, than continents, with the lowest loss over oceans.
+At very low frequency waves (1~$kHz$ to 24~$kHz$) the conductive ionosphere and ground are good reflectors and form the Earth-Ionosphere Wavegude (EIWG).
+The EIWG allows for propagation of VLF waves from natural sources (lightning) and artificial sources (Navy VLF transmitters) to propagate large distances ($>5,000~km$).
+VLF waves propagating in the waveguide undergo loss on the order of 1~$dB/Mm$, with the lost energy  heating the waveguide (mostly the ionosphere) and the generation of plasma waves in the ionosphere (Figure~\ref{intro:fig:eiwg}).
+VLF wave attenuation is greatest over ice, then continents, with the lowest attenuation over the oceans.
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/eiwg.pdf}\\
-	\caption{Simple model of the Earth-Ionosphere Waveguide.}
+	\caption{Schematic of the Earth-Ionosphere Waveguide.}
 	\label{intro:fig:eiwg}
 \end{figure}
 
