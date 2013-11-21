@@ -1,10 +1,10 @@
-This thesis explores the capabilities and information of ground based lightning detection networks.
-What are the limits of what lightning networks can measure?
-How can these networks be expanded and what are the effects of these expansions?
-Can choosing the right algorithm reveal larger structures from individual lightning strokes?
+This thesis explores the science and capabilities of ground based lightning detection networks.
+What are lightning networks measurement limit?
+How these networks are expanded and what are the results of these expansions?
+Can choosing the right algorithm reveal larger structures from individual lightning locations?
 
-From these questions lightning, thunderstorms, and the Earth-Ionosphere system can be explored.
-The electrical energy in thunderstorms is investigated in how it discharges, where the energy goes, and how does it contribute to the system as a whole.
+With these questions lightning, thunderstorms, and the Earth-Ionosphere system are explored.
+The electrical energy of thunderstorms is investigated in how it discharges, where the energy goes, and how it contributes to the system as a whole.
 
 %% Introductory text / summary / expanded abstract
 
@@ -12,47 +12,56 @@ The electrical energy in thunderstorms is investigated in how it discharges, whe
 
 \subsection{Lightning and Thunderstorms}
 
-Lightning is the discharge process of disparate charge regions in, typically, a thunderstorm.
-When charge is separated in a thunderstorm, a hurricane, a volcanic ash plume, or on other planets it eventually discharges in order to neutralize the charge imbalance.
-Typically this occurs through lightning flashes.
+Lightning is the process discharging disparate charge regions in a thunderstorm.
+When charge is separated in a thunderstorm it eventually discharges, through lightning flashes, in order to neutralize the charge imbalance.
 
-In a thunderstorm deep convection develops, lifting moist air from below the thunderstorm up through the cloud where the moisture begins to precipitate.
+As deep convection develops in a thunderstorm, moist air is lifted from below the thunderstorm through the cloud where the moisture precipitates.
 Figure~\ref{intro:fig:thunderstorm} shows the basic components of an active thunderstorm.
-As the water droplets begin to freeze as they pass through the freezing level of the thunderstorm, at this freezing level they collide with downwelling ice particles.
-At these collisions charge exchange causes the downwelling ice to gain a negative charge and the upwelling water to become positively charged.
-This leads to the gross charge structure shown in Figure~\ref{intro:fig:thunderstorm}, with positive charge at the top of the thunderstorm and negative charge at the bottom.
+The water precipitated begins to freeze as it passes through the freezing level of the thunderstorm; collisions at this freezing level occur with downwelling ice particles.
+These collisions cause charge exchange between the downwelling ice, it gains a negative charge, and the upwelling water, that becomes positively charged.
+This leads to the gross charge structure shown in Figure~\ref{intro:fig:thunderstorm}, with net positive charge in the top portion of the thunderstorm and net negative charge in the bottom portion (divided at the freezing level).
 
+%% Storm Motion -> Wind Direction
+%% Freezing level altitudes
+%% Point to -20 or -10 for freezing level locaiton
+%% Cloud bottom high marker
+%% Charge Separation *Region*
+%% + does not show up over the grey, lighten the thunderstorm grey
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/thunderstorm_structure.pdf}\\
-	\caption{Overall thunderstorm structure showing the general charge distribution.}
+	\caption{Overall thunderstorm charge structure, showing a typical freezing level and tropopause hight.}
 	\label{intro:fig:thunderstorm}
 \end{figure}
 
-When enough charge is separated the stepped-leader process begins.
-While an appreciable voltage builds up between the charge centers (the thunderstorm and ground for example) on the order of $MV$ it is still far less than the breakdown voltage of air.
-However the air is broken down in \~100~$m$ steps that leaves an ionized plasma channel; the breakdown process is semi-fractal with steps occurring until an oppositely charge region is connected.
-The process for the step-leader breakdown is shown in Figure~\ref{intro:fig:evolution}.
+The discharge begins with the stepped-leader process.
+While a voltage on the order of $MV$ builds up between the charge centers (e.g. the thunderstorm and ground) it is still far less than the breakdown electric field of air (on the order of $MV/m$).
+However the air is broken down in $\sim100~m$ steps that creates a continuous ionized plasma channel; the breakdown process is semi-random with steps occurring until an oppositely charge region is connected.
+%% What about failed leaders?
+An example of a step-leader breakdown is shown at the beginning of Figure~\ref{intro:fig:evolution}.
 
-For the first 20~$ms$ the step leader creates the ionized channel to ground (or another charge region).
-Once the channel is established the return stroke moves charge from the ground to the cloud over the course of 70~$\mu s$.
-After the return stroke the top of the ionized channel can connect to other charge regions through a subsequent step-leader process producing multiple return strokes along the same channel.
-The total step-leader through multiple return strokes is considered a single lightning flash.
+For the first $\sim20~ms$ the step leader creates the ionized channel to ground (or to another charge region).
+Once the channel is established the return stroke moves charge from the ground to the cloud over the course of $\sim70~\mu s$ (the return stroke labelled in Figure~\ref{intro:fig:evolution}).
+After the return stroke occurs the top of the ionized channel can connect to other charge regions through a subsequent step-leader process, producing multiple return strokes along the same ionized channel.
+The total process, from step-leader through multiple return strokes, is considered a single lightning flash.
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/Lightning_Evolution.pdf}\\
-	\caption{The step-leader and discharge process of cloud to ground lightning with typical times of each event (adapted from \citet{Uman1969}).}
+	\caption{The step-leader and discharge process of cloud to ground lightning with typical times of each event (adapted from \citet{Uman1969}). Timing not to scale.}
 	\label{intro:fig:evolution}
 \end{figure}
 
-Lightning can discharge in several ways, shown in Figure~\ref{intro:fig:types}.
-Predominately lightning occurs either between clouds or within the same cloud, called: cloud-to-cloud lightning, in-cloud lightning, or cloud lightning (Figure~\ref{intro:fig:types}c).
+Lightning can discharge in several ways, examples shown in Figure~\ref{intro:fig:types}.
+Lightning predominately occurs either between clouds or within the same cloud, called: cloud-to-cloud lightning, in-cloud lightning, or cloud lightning (Figure~\ref{intro:fig:types}c and~\ref{intro:fig:types}f).
 Lightning between the thunderstorm and ground is more powerful, easier to detect, and less common.
 It can occur in 4 combinations of positive or negative charge in the cloud discharging to ground with the discharge beginning in the cloud or on the ground (Figure~\ref{intro:fig:types}a, \ref{intro:fig:types}b, \ref{intro:fig:types}d, and~\ref{intro:fig:types}d).
 Negative cloud to ground lightning (moving negative charge from the cloud to ground, Figure~\ref{intro:fig:types}a) is the most common cloud-to-ground discharge at a ratio of 10:1.
-It is estimated that are around 4 in-cloud (IC) strokes (or flashes) for every cloud-to-ground (CG) stroke.
+It is estimated that there are 4 in-cloud (IC) strokes (or flashes) for every cloud-to-ground (CG) stroke \citep{Uman1969}.
 
+
+%% Change f to Cloud to cloud lightning
+%% Similar to structure, + is not visible in greyscale printing
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/lightning_types.pdf}\\
@@ -62,14 +71,14 @@ It is estimated that are around 4 in-cloud (IC) strokes (or flashes) for every c
 			c) in-cloud,
 			d) positive cloud-to-ground,
 			e) negative ground-to-cloud,
-			f) volcanic ash plume.
+			f) cloud-cloud.
 			Note that a) and b) produce the same overall charge movement (negative charge to ground) and conversely for d) and e).
 			 (Based on \citet{Uman1969})}
 	\label{intro:fig:types}
 \end{figure}
 
-There are other sources for large electrical discharges similar to lightning in thunderstorms.
-For example there are lightning discharges in volcanic ash plumes (Figure~\ref{intro:fig:types}f), and other discharges that produce electromagnetic waves similar to lightning (terrestrial gamma ray flashes, compact intra-cloud discharges).
+There are other sources for large electrical discharges similar to thunderstorm lightning.
+For example there are electrical discharges that produce electromagnetic waves similar to lightning: terrestrial gamma ray flashes, terrestrial luminous events, and compact intra-cloud discharges.
 However these events are less common than typical lightning and will not be considered here.
 
 \subsection{The Ionosphere}
