@@ -148,31 +148,32 @@ Lightning mapping arrays are able to locally detect, locate, and distinguish IC 
 \subsection{World Wide Lightning Location Network}
 
 %% Update with more recent papers
-The World Wide Lightning Location Network (WWLLN, see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time (c.f. \citet{Jacobson2006c}).
+The World Wide Lightning Location Network (WWLLN, see http://wwlln.net) determines the location for nearly all lightning producing storms around the globe in real time \citep{Jacobson2006c}.
 WWLLN has been generating global lightning locations starting in 2004 \citep{Rodger2006, Rodger2009}.
 Since then the network has grown from 18 stations to over 70 as of September 2013.
 Knowledge of individual stroke locations, with high temporal accuracy, and within a fraction of a wavelength is beneficial for both scientific and technical uses.
 WWLLN lightning location data have recently been used for advances in space science \citep{Lay2007, Kumar2009, Collier2009, Holzworth2011, Jacobson2011}, meteorology \citep{Price2009,Thomas2010d}, detailed lightning physics \citep{Connaughton2010}, and volcanic eruption monitoring \citep{Doughton2010}.
-The observed stroke density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:wwlln}.
+The observed lightning stroke density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:wwlln}.
 
+%% Add lightning to colorbar label
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/wwlln_density.pdf}\\
-	\caption{Global WWLLN stroke density for 2011 -- 2012.}
+	\caption{Global WWLLN lightning stroke density for 2011 -- 2012.}
 	\label{intro:fig:wwlln}
 \end{figure}
 
 The network uses a time of group arrival (TOGA) technique, originally developed by \citet{Dowden2002d}, to locate strokes by analyzing the sferic waveforms at each station using the Stroke\_B algorithm as discussed by \citet{Rodger2006,Rodger2009}.
 WWLLN locates strokes by analyzing the TOGA of the sferic wave packet in the 6 -- 18~kHz band \citep{Dowden2000}.
 The TOGA of the VLF wave packet, is used rather than ``trigger time'' to produce more uniform arrival times across the network.
-A recent upgrade to the network allows for the measurement of the radiated VLF energy of located strokes within the 8 -- 18~kHz VLF band.
-The stroke energy is calculated from the time-integrated root mean square (RMS) electric field of the VLF sferic at each WWLLN station, using the Long Wave Propagation Capability code (LWPC) \citep{Ferguson1998} to estimate the sferic attenuation and calculate the source radiated energy \citep{Hutchins2012}.
+A recent upgrade to the network allows for the measurement of the radiated VLF energy of located strokes within the 8 -- 18~kHz VLF band (see Chapter~\ref{thesis:chapter:energy}).
+The stroke energy is calculated from the time-integrated root mean square (RMS) electric field of the VLF sferic at each WWLLN station, using the Long Wave Propagation Capability code \citep{Ferguson1998} to estimate the sferic attenuation and calculate the source radiated energy \citep{Hutchins2012}.
 
 As stations are added the accuracy and detection efficiency of the network improves.
 As of 2010 the network locates most strokes to within 10 kilometers and $<$10~$\mu$s with an estimated detection efficiency of about 11\% for all strokes and $>$30\% for more powerful strokes \citep{Abarca2010,Rodger2009}.
 The network improves in accuracy and detection efficiency with increased stations; for example an increase in the number of WWLLN stations from 11 in 2003 to 30 in 2007 led to a $\sim$165\% increase in the number of lightning strokes located \citep{Rodger2009}.
 However the WWLLN network does not observe lightning with the same detection efficiency everywhere.
-This is due to variable WWLLN station coverage and the strong affect on VLF radio propagation from orography and ionospheric conditions along the great circle path of a wave.
+This is due to variable WWLLN station coverage and the strong affect on VLF radio propagation from orography and ionospheric conditions along the great-circle path of the VLF wave.
 
 \subsection{Earth Networks Total Lightning Network}
 
@@ -185,11 +186,12 @@ In the continental United States (CONUS) the network has approximately 530 opera
 A comparison to the Oklahoma Lightning Mapping Array (OKLMA) in 2010 demonstrated the ability to discriminate between CG and IC strokes \citep{Beasley2010}.
 The observed stroke density over North America for 2011 -- 2012 is shown in Figure~\ref{intro:fig:entln}.
 
+%% Add lightning to colorbar label
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/entln_density.pdf}\\
-	\caption{North American ENTLN stroke density for the 2011-2012 dataset.
-	              Note: same color range as Figure~\ref{intro:fig:wwlln}}
+	\caption{North American ENTLN lightning stroke density for the 2011 -- 2012 dataset.
+	              Note same color range as Figure~\ref{intro:fig:wwlln}}
 	\label{intro:fig:entln}
 \end{figure}
 
@@ -201,10 +203,11 @@ LIS is useful as it is a lightning detection system with no overlapping detectio
 The LIS data are available at several processed levels, throughout this work the flash level data is used.
 The LIS flash density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:lis}.
 
+%% Add lightning to colorbar label
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=1]{Introduction/Figures/lis_density.pdf}\\
-	\caption{LIS flash density for 2011 -- 2012.
+	\caption{LIS lightning flash density for 2011 -- 2012.
 		     Note the reduced color range from Figures~\ref{intro:fig:wwlln} and~\ref{intro:fig:entln}}
 	\label{intro:fig:lis}
 \end{figure}
@@ -213,7 +216,7 @@ The LIS flash density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:lis}.
 
 The Long Wave Propagation Capability code (LWPC) is used to model the VLF attenuation between WWLLN located lightning and the network stations.
 The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{McRae2000d, Thomson2011}.
-In this research we made use of an adapted LWPC version 2.1.
+In this research we made use of an adapted LWPC version 2.1 (available online, see Appendix~\ref{thesis:appendix:code}).
 
 LWPC can be used to model the attenuation along a mixed day/night ionospheric path, however due to computational limitations a lookup table is used instead.
 The lookup tables model the received electric field at a given station for a 100~kW transmitter in each grid cell.
@@ -221,7 +224,7 @@ A $1^{\circ}$ by $1^{\circ}$ grid is used for either an all day ($\beta=0.3$ km$
 The ionospheric models are the default models of LWPC code and fully described in \citet{Ferguson1998}. 
 
 For each grid cell the electric field is averaged over the 8 -- 18 kHz band, which captures the frequencies of the peak radiated power from lightning \citep{Volland1995}.
-An example of the day ionosphere lookup table for the Dunedin station is shown in Figure~\ref{intro:fig:lookup} (reproduced from Chapter~\ref{thesis:chapter:efficiency}).
+An example of the day ionosphere lookup table for the Dunedin station is shown in Figure~\ref{intro:fig:lookup}.
 The discontinuity of electric field over Greenland and in the South Atlantic is caused by the high attenuation rate of VLF propagating over ice.
 Using the lookup tables assumes that the attenuation rates do not vary greatly within a given grid cell and that the frequency spectra of a sferic is relatively flat within the band considered.
 
@@ -234,19 +237,19 @@ Using the lookup tables assumes that the attenuation rates do not vary greatly w
 
 \section{Outline}
 
-In Chapter~\ref{thesis:chapter:energy} the process for calculating the far-field radiated VLF energy of lightning with WWLLN is described.
-The work is adapted from the \citet{Hutchins2012} paper.
-Chapter~\ref{thesis:chapter:efficiency} discusses the relative detection efficiency model of WWLLN.
-The work is from the \citet{Hutchins2012a} paper.
-The network improvements of Chapters~\ref{thesis:chapter:energy} and~\ref{thesis:chapter:efficiency} enables the work in Chapters~\ref{thesis:chapter:landsea} and~\ref{thesis:chapter:landsea}.
+In Chapter~\ref{thesis:chapter:energy} the process for calculating the far-field radiated VLF energy of lightning with WWLLN is described, adapted from the \citet{Hutchins2012} paper.
+Chapter~\ref{thesis:chapter:efficiency} discusses the relative detection efficiency model of WWLLN, from the \citet{Hutchins2012a} paper.
+%% Update status as needed
+Chapter~\ref{thesis:chapter:entln-lis} examines the detection efficiency between the ENTLN and LIS lightning data over North America, the work is currently under review.
+The network improvements of Chapters~\ref{thesis:chapter:energy} and~\ref{thesis:chapter:efficiency} enables the work in Chapters~\ref{thesis:chapter:landsea} and~\ref{thesis:chapter:prop}.
 
-Chapter~\ref{thesis:chapter:landsea} examines the contrast between oceanic and continental lightning using the WWLLN stroke energy measurements with a linear regression method developed in the chapter.
-This research is adapted from the \citet{Hutchins2013}.
-Chapter~\ref{thesis:chapter:prop} combines the WWLLN energy measurements with the LWPC code to estimate the VLF attenuation rates over ocean in the day and night ionospheric regimes.
-This research is adapted from the \citet{Hutchins2013a}.
+Chapter~\ref{thesis:chapter:landsea} examines the energy contrast between oceanic and continental lightning using a linear regression method developed in the chapter.
+This chapter is adapted from the \citet{Hutchins2013}.
+Chapter~\ref{thesis:chapter:prop} combines the WWLLN energy measurements with network station electric field measurements estimate the VLF attenuation rates over ocean in the day and night ionospheric regimes.
+This chapter is adapted from the \citet{Hutchins2013a}.
 Chapter~\ref{thesis:chapter:gec} applies a clustering algorithm to the WWLLN stroke locations, producing thunderstorm clusters, to create a prediction of the global electric circuit activity.
 %% Update status as needed
-This research is currently submitted and under review.
+This chapter is currently submitted and under review.
 
 Appendix~\ref{thesis:appendix:code} describes the different types of WWLLN data files available, their location, and the common code used in this thesis (code for individual chapters can be made available upon request).
 Notably the code for the energy calculations (Chapter~\ref{thesis:chapter:energy}), relative detection efficiency model (Chapter~\ref{thesis:chapter:efficiency}), and thunderstorm clustering (Chapter~\ref{thesis:chapter:gec}) are available online.

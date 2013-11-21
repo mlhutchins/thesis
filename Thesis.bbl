@@ -1,4 +1,4 @@
-\begin{thebibliography}{78}
+\begin{thebibliography}{79}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -171,6 +171,12 @@ Heckman, S., and C.~Liu, {The Application of Total Lightning Detection for
 \bibitem[{\textit{Holzworth and Volland}(1986)}]{Holzworth1986}
 Holzworth, R., and H.~Volland, {Do We Need a Geoelectric Index?}, \textit{Eos},
   \textit{67}(26), 545,547--548, 1986.
+
+\bibitem[{\textit{Holzworth et~al.}(1984)\textit{Holzworth, Onsager, Kintner,
+  and Powerll}}]{Holzworth1984a}
+Holzworth, R., T.~Onsager, P.~Kintner, and S.~Powerll, {Planetary-scale
+  variability of the fair-weather vertical electric field in the stratosphere},
+  \textit{Physical review \ldots}, \textit{53}(14), 1398 --1401, 1984.
 
 \bibitem[{\textit{Holzworth et~al.}(2011)\textit{Holzworth, McCarthy, Pfaff,
   Jacobson, Willcockson, and Rowland}}]{Holzworth2011}
