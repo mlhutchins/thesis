@@ -1,4 +1,4 @@
-\begin{thebibliography}{79}
+\begin{thebibliography}{116}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -31,6 +31,12 @@ Altaratz, O., I.~Koren, Y.~Yair, and C.~Price, {Lightning response to smoke
 Beasley, W.~H., S.~Weiss, and S.~Heckman, {Comparison of WTLN and OKLMA data},
   in \textit{Southern Thunder}, Southern Thunder, 2010.
 
+\bibitem[{\textit{Blakeslee et~al.}(1989)\textit{Blakeslee, Christian, and
+  Vonnegut}}]{Blakeslee1989}
+Blakeslee, R.~J., H.~J. Christian, and B.~Vonnegut, {Electrical Measurements
+  Over Thunderstorms}, \textit{Journal of Geophysical Research},
+  \textit{94}(89), 13,135--13,140, 1989.
+
 \bibitem[{\textit{Boccippio et~al.}(2000)\textit{Boccippio, Goodman, and
   Heckman}}]{Boccippio2000}
 Boccippio, D.~J., S.~J. Goodman, and S.~Heckman, {Regional Differences in
@@ -57,6 +63,22 @@ Burkholder, B.~S., M.~L. Hutchins, M.~P. McCarthy, R.~F. Pfaff, and R.~H.
   Waveguide and Low-Latitude Ionosphere}, \textit{Journal of Geophysical
   Research - Space Physics}, \textit{118}, 3692--3699,
   \doi{10.1002/jgra.50351}, 2013.
+
+\bibitem[{\textit{Burns et~al.}(2005)\textit{Burns, Frank-Kamenetsky,
+  Troshichev, Bering, and Reddell}}]{Burns2005}
+Burns, G.~B., A.~Frank-Kamenetsky, O.~A. Troshichev, E.~A. Bering, and B.~D.
+  Reddell, {Interannual consistency of bi-monthly differences in diurnal
+  variations of the ground-level, vertical electric field}, \textit{Journal of
+  Geophysical Research}, \textit{110}(D10), 1--14, \doi{10.1029/2004JD005469},
+  2005.
+
+\bibitem[{\textit{Burns et~al.}(2012)\textit{Burns, Tinsley, Frank-Kamenetsky,
+  Troshichev, French, and Klekociuk}}]{Burns2012}
+Burns, G.~B., B.~a. Tinsley, a.~V. Frank-Kamenetsky, O.~a. Troshichev, W.~J.~R.
+  French, and a.~R. Klekociuk, {Monthly Diurnal Global Atmospheric Circuit
+  Estimates Derived from Vostok Electric Field Measurements Adjusted for Local
+  Meteorological and Solar Wind Influences}, \textit{Journal of the Atmospheric
+  Sciences}, \textit{69}(6), 2061--2082, \doi{10.1175/JAS-D-11-0212.1}, 2012.
 
 \bibitem[{\textit{Cecil et~al.}(2011)\textit{Cecil, Buechler, and
   Blakeslee}}]{Cecil2011}
@@ -133,10 +155,23 @@ Dowden, R.~L., J.~B. Brundell, and C.~J. Rodger, {VLF lightning location by
   time of group arrival (TOGA) at multiple sites}, \textit{Journal of
   Atmospheric and Solar-Terrestrial Physics}, \textit{64}(7), 817--830, 2002.
 
+\bibitem[{\textit{Driscoll et~al.}(1992)\textit{Driscoll, Blakeslee, and
+  Baginski}}]{Driscoll1992}
+Driscoll, K.~T., R.~J. Blakeslee, and M.~E. Baginski, {A modeling study of the
+  time-averaged electric currents in the vicinity of isolated thunderstorms},
+  \textit{Journal of Geophysical Research}, \textit{97}(D11), 11,535--11, 1992.
+
 \bibitem[{\textit{Dwyer}(2012)}]{Dwyer2012}
 Dwyer, J.~R., {The relativistic feedback discharge model of terrestrial gamma
   ray flashes}, \textit{Journal of Geophysical Research}, \textit{117}(A2),
   1--25, \doi{10.1029/2011JA017160}, 2012.
+
+\bibitem[{\textit{Ester et~al.}(1996)\textit{Ester, Kriegel, Sander, and
+  Xu}}]{Ester1996}
+Ester, M., H.~Kriegel, J.~Sander, and X.~Xu, {A density-based algorithm for
+  discovering clusters in large spatial databases with noise.}, in \textit{2nd
+  International Conference on Knowledge Discovery and Data Mining (KDD-96)},
+  1996.
 
 \bibitem[{\textit{Ferguson}(1998)}]{Ferguson1998}
 Ferguson, J.~A., {Computer Programs for Assessment of Long- Wavelength Radio
@@ -163,10 +198,25 @@ Golde, R.~H., {Lightning currents and related parameters}, in
   \textit{Lightning}, edited by R.~H. Golde, chap.~9, pp. 309--350, Academic
   Press, New York, 1977.
 
+\bibitem[{\textit{Hansen et~al.}(2013)\textit{Hansen, Sato, and
+  Ruedy}}]{Hansen2013a}
+Hansen, J., M.~Sato, and R.~Ruedy, {Global Temperature Update Through 2012},
+  \textit{NASA GISS}, p. website November 1, 2013.
+
+\bibitem[{\textit{Hays and Roble}(1979)}]{Hays1979}
+Hays, P.~B., and R.~G. Roble, {A Quasi-Static Model of Global Atmsopheric
+  Electricity 1. The Lower Atmosphere}, \textit{Journal of Geophysical
+  Research}, \textit{84}(A7), 3291--3305, 1979.
+
 \bibitem[{\textit{Heckman and Liu}(2010)}]{Heckman2010}
 Heckman, S., and C.~Liu, {The Application of Total Lightning Detection for
   Severe Storm Prediction}, in \textit{10th European Conference on Applications
   of Meteorology}, p. Abstract, Z\"{u}rich, 2010.
+
+\bibitem[{\textit{Holzworth}(1981)}]{Holzworth1981}
+Holzworth, R., {High latitude stratospheric electrical measurements in fair and
+  foul weather under various solar conditions}, \textit{Journal of Atmospheric
+  and Terrestrial Physics}, \textit{43}(11), 1115--1125, 1981.
 
 \bibitem[{\textit{Holzworth and Volland}(1986)}]{Holzworth1986}
 Holzworth, R., and H.~Volland, {Do We Need a Geoelectric Index?}, \textit{Eos},
@@ -256,10 +306,43 @@ Jacobson, A.~R., X.-M. Shao, and E.~Lay, {Time domain waveform and azimuth
   lightning}, \textit{Radio Science}, \textit{47}(4), 1--17,
   \doi{10.1029/2012RS004980}, 2012.
 
+\bibitem[{\textit{Jacobson and Krider}(1976)}]{Jacobson1976}
+Jacobson, E., and E.~Krider, {Electrostatic field changes produced by Florida
+  lightning}, \textit{Journal of the Atmospheric Sciences}, \textit{33}, 103 --
+  117, 1976.
+
+\bibitem[{\textit{Kartalev et~al.}(2004)\textit{Kartalev, Rycroft, and
+  Papitashvili}}]{Kartalev2004}
+Kartalev, M., M.~Rycroft, and V.~Papitashvili, {A quantitative model of the
+  effect of global thunderstorms on the global distribution of ionospheric
+  electrostatic potential}, \textit{Journal of Atmospheric and
+  Solar-Terrestrial Physics}, \textit{66}(13-14), 1233--1240,
+  \doi{10.1016/j.jastp.2004.05.012}, 2004.
+
+\bibitem[{\textit{Kasemir}(1977)}]{Kasemir1977}
+Kasemir, H.~W., {Theoretical Problems of the Global Atmospheric Electric
+  Circuit}, in \textit{Electrical Processes in Atmospheres}, edited by
+  H.~Dolezalek and R.~Reiter, pp. 423--439, Darmstadt: Steinkopff, 1977.
+
+\bibitem[{\textit{Kawanishi et~al.}(2000)}]{Kawanishi2000}
+Kawanishi, T., et~al., {TRMM precipitation radar}, \textit{Advances in Space
+  Research}, \textit{25}(5), 969--972, 2000.
+
 \bibitem[{\textit{Krider and Guo}(1983)}]{Krider1983}
 Krider, E.~P., and C.~Guo, {The peak electromagnetic power radiated by
   lightning return strokes}, \textit{Journal of geophysical research},
   \textit{88}(C13), 8471--8474, 1983.
+
+\bibitem[{\textit{Krider and Blakeslee}(1985)}]{Krider1985}
+Krider, E. P.~I., and R.~J. Blakeslee, {The Electric Currents Produced by
+  Thunderclouds}, \textit{Journal of Electrostatics}, \textit{16}, 369--378,
+  1985.
+
+\bibitem[{\textit{Kriegel et~al.}(2011)\textit{Kriegel, Kr\"{o}ger, Sander, and
+  Zimek}}]{Kriegel2011a}
+Kriegel, H.-P., P.~Kr\"{o}ger, J.~Sander, and A.~Zimek, {Density-based
+  clustering}, \textit{Wiley Interdisciplinary Reviews: Data Mining and
+  Knowledge Discovery}, \textit{1}(3), 231--240, \doi{10.1002/widm.30}, 2011.
 
 \bibitem[{\textit{Kumar et~al.}(2009)\textit{Kumar, Deo, and
   Ramachandran}}]{Kumar2009}
@@ -285,11 +368,56 @@ Liu, C., and S.~Heckman, {The Application of Total Lightning Detection and Cell
   Tracking for Severe Weather Prediction}, in \textit{91st American
   Meteorological Society Annual Meeting}, pp. 1--10, Seattle, 2011.
 
+\bibitem[{\textit{Liu et~al.}(2010)\textit{Liu, Williams, Zipser, and
+  Burns}}]{Liu2010}
+Liu, C., E.~R. Williams, E.~J. Zipser, and G.~Burns, {Diurnal Variations of
+  Global Thunderstorms and Electrified Shower Clouds and Their Contribution to
+  the Global Electrical Circuit}, \textit{Journal of the Atmospheric Sciences},
+  \textit{67}(2), 309, \doi{10.1175/2009JAS3248.1}, 2010.
+
 \bibitem[{\textit{Lyons et~al.}(1998)\textit{Lyons, Uliasz, and
   Nelson}}]{Lyons1998}
 Lyons, W., M.~Uliasz, and T.~Nelson, {Large peak current cloud-to-ground
   lightning flashes during the summer months in the contiguous United States},
   \textit{Monthly weather review}, \textit{126}, 2217--2233, 1998.
+
+\bibitem[{\textit{Mach et~al.}(2009)\textit{Mach, Blakeslee, Bateman, and
+  Bailey}}]{Mach2009}
+Mach, D.~M., R.~J. Blakeslee, M.~G. Bateman, and J.~C. Bailey, {Electric
+  fields, conductivity, and estimated currents from aircraft overflights of
+  electrified clouds}, \textit{Journal of Geophysical Research},
+  \textit{114}(D10), 1--15, \doi{10.1029/2008JD011495}, 2009.
+
+\bibitem[{\textit{Mach et~al.}(2010)\textit{Mach, Blakeslee, Bateman, and
+  Bailey}}]{Mach2010}
+Mach, D.~M., R.~J. Blakeslee, M.~G. Bateman, and J.~C. Bailey, {Comparisons of
+  total currents based on storm location, polarity, and flash rates derived
+  from high-altitude aircraft overflights}, \textit{Journal of Geophysical
+  Research}, \textit{115}(D3), D03,201, \doi{10.1029/2009JD012240}, 2010.
+
+\bibitem[{\textit{Mach et~al.}(2011)\textit{Mach, Blakeslee, and
+  Bateman}}]{Mach2011}
+Mach, D.~M., R.~J. Blakeslee, and M.~G. Bateman, {Global electric circuit
+  implications of combined aircraft storm electric current measurements and
+  satellite-based diurnal lightning statistics}, \textit{Journal of Geophysical
+  Research}, \textit{116}(D5), 1--13, \doi{10.1029/2010JD014462}, 2011.
+
+\bibitem[{\textit{Mallios and Pasko}(2012)}]{Mallios2012}
+Mallios, S.~a., and V.~P. Pasko, {Charge transfer to the ionosphere and to the
+  ground during thunderstorms}, \textit{Journal of Geophysical Research},
+  \textit{117}(A8), 1--16, \doi{10.1029/2011JA017061}, 2012.
+
+\bibitem[{\textit{Mareev et~al.}(2008)\textit{Mareev, Yashunin, Davydenko,
+  Marshall, Stolzenburg, and Maggio}}]{Mareev2008}
+Mareev, E.~a., S.~a. Yashunin, S.~S. Davydenko, T.~C. Marshall, M.~Stolzenburg,
+  and C.~R. Maggio, {On the role of transient currents in the global electric
+  circuit}, \textit{Geophysical Research Letters}, \textit{35}(15), 1--5,
+  \doi{10.1029/2008GL034554}, 2008.
+
+\bibitem[{\textit{Markson}(1978)}]{Markson1978}
+Markson, R., {Solar modulation of atmospheric electrification and possible
+  implications for the Sun-weather relationship}, \textit{Nature},
+  \textit{273}, 103--109, 1978.
 
 \bibitem[{\textit{McRae and Thomson}(2000)}]{McRae2000d}
 McRae, W., and N.~Thomson, {VLF phase and amplitude: daytime ionospheric
@@ -301,11 +429,19 @@ Metzger, E., and W.~a. Nuss, {The Relationship between Total Cloud Lightning
   Behavior and Radar-Derived Thunderstorm Structure}, \textit{Weather and
   Forecasting}, \textit{28}(1), 237--253, \doi{10.1175/WAF-D-11-00157.1}, 2013.
 
+\bibitem[{\textit{Mezuman}(2013)}]{Mezuman2013a}
+Mezuman, K., {Detecting global thunderstorm distribution from lightning
+  clusters}, Msc thesis, Tel Aviv Univeristy, 2013.
+
 \bibitem[{\textit{Nag et~al.}(2011)}]{Nag2011}
 Nag, A., et~al., {Evaluation of U.S. National Lightning Detection Network
   performance characteristics using rocket-triggered lightning data acquired in
   2004–2009}, \textit{Journal of Geophysical Research}, \textit{116}(D2),
   1--8, \doi{10.1029/2010JD014929}, 2011.
+
+\bibitem[{\textit{Ogawa}(1985)}]{Ogawa1985}
+Ogawa, T., {Fair-weather electricity}, \textit{Journal of Geophysical
+  Research}, \textit{90}(10), 5951--5960, 1985.
 
 \bibitem[{\textit{Pan et~al.}(2010)\textit{Pan, Qie, Liu, Wang, and
   Yang}}]{Pan2010}
@@ -317,11 +453,26 @@ Pan, L., X.~Qie, D.~Liu, D.~Wang, and J.~Yang, {The lightning activities in
 Popolansky, F., {Frequency Distribution of amplitudes of lightning currents},
   \textit{Electra}, \textit{22}, 139--146, 1972.
 
+\bibitem[{\textit{Price}(2009)}]{Price2009a}
+Price, C., {Will a drier climate result in more lightning?},
+  \textit{Atmospheric Research}, \textit{91}(2-4), 479--484,
+  \doi{10.1016/j.atmosres.2008.05.016}, 2009.
+
+\bibitem[{\textit{Price and Rind}(1992)}]{Price1992}
+Price, C., and D.~Rind, {A simple lightning parameterization for calculating
+  global lightning distributions}, \textit{Journal of geophysical research},
+  \textit{97}(D9), 9919--9933, 1992.
+
 \bibitem[{\textit{Price et~al.}(2009)\textit{Price, Asfur, and
   Yair}}]{Price2009}
 Price, C., M.~Asfur, and Y.~Yair, {Maximum hurricane intensity preceded by
   increase in lightning frequency}, \textit{Nature Geoscience},
   \textit{2}(April), 2--5, \doi{10.1038/NGEO477}, 2009.
+
+\bibitem[{\textit{Roble}(1991)}]{Roble1991}
+Roble, R., {On modeling component processes in the Earth's global electric
+  circuit}, \textit{Journal of Atmospheric and Terrestrial Physics},
+  \textit{53}(9), 831--847, \doi{10.1016/0021-9169(91)90097-Q}, 1991.
 
 \bibitem[{\textit{Rodger et~al.}(2006)\textit{Rodger, Werner, Brundell, Lay,
   Thomson, Holzworth, and Dowden}}]{Rodger2006}
@@ -348,6 +499,27 @@ Rudlosky, S. D.~S., and D.~T.~D. Shea, {Evaluating WWLLN performance relative
   to TRMM/LIS}, \textit{Geophysical Research Letters}, \textit{40}(March),
   1--5, \doi{10.1002/grl.50428}, 2013.
 
+\bibitem[{\textit{Ruhnke}(1969)}]{Ruhnke1969}
+Ruhnke, L., {Area Averaging of Atmospheric Electric Currents}, \textit{Tech.
+  Rep.~1}, Atmospheric Physics and Chemistry Lab., Boulder, Colo., 1969.
+
+\bibitem[{\textit{Rycroft}(2006)}]{Rycroft2006}
+Rycroft, M.~J., {Electrical processes coupling the atmosphere and ionosphere:
+  An overview}, \textit{Journal of Atmospheric and Solar-Terrestrial Physics},
+  \textit{68}(3-5), 445--456, \doi{10.1016/j.jastp.2005.04.009}, 2006.
+
+\bibitem[{\textit{Rycroft and Harrison}(2011)}]{Rycroft2011a}
+Rycroft, M.~J., and R.~G. Harrison, {Electromagnetic Atmosphere-Plasma
+  Coupling: The Global Atmospheric Electric Circuit}, \textit{Space Science
+  Reviews}, \textit{168}(1-4), 363--384, \doi{10.1007/s11214-011-9830-8}, 2011.
+
+\bibitem[{\textit{Rycroft et~al.}(2000)\textit{Rycroft, Isrealsson, and
+  Price}}]{Rycroft2000c}
+Rycroft, M.~J., S.~Isrealsson, and C.~Price, {The global atmospheric electric
+  circuit, solar activity and climate change}, \textit{Journal of Atmospheric
+  and Solar-Terrestrial Physics}, \textit{62}(17-18), 1563--1576,
+  \doi{10.1016/S1364-6826(00)00112-7}, 2000.
+
 \bibitem[{\textit{Schultz et~al.}(2009)\textit{Schultz, Petersen, and
   Carey}}]{Schultz2009}
 Schultz, C.~J., W.~a. Petersen, and L.~D. Carey, {Preliminary Development and
@@ -368,13 +540,20 @@ Seity, Y., S.~Soula, and H.~Sauvageot, {Lightning and precipitation
   relationship in coastal thunderstorms}, \textit{Journal of Geophysical
   Research}, \textit{106}(D19), 22,801 -- 22,816, 2001.
 
-\bibitem[{\textit{Singh et~al.}(2011)\textit{Singh, Veenadhari, Maurya, Cohen,
-  Kumar, Selvakumaran, Pant, Singh, and Inan}}]{Singh2011}
+\bibitem[{\textit{Singh et~al.}(2011{\natexlab{a}})\textit{Singh, Siingh,
+  Singh, and Mishra}}]{Singh2011a}
+Singh, a.~K., D.~Siingh, R.~P. Singh, and S.~Mishra, {Electrodynamical Coupling
+  of Earth's Atmosphere and Ionosphere: An Overview}, \textit{International
+  Journal of Geophysics}, \textit{2011}, 1--13, \doi{10.1155/2011/971302},
+  2011{\natexlab{a}}.
+
+\bibitem[{\textit{Singh et~al.}(2011{\natexlab{b}})\textit{Singh, Veenadhari,
+  Maurya, Cohen, Kumar, Selvakumaran, Pant, Singh, and Inan}}]{Singh2011}
 Singh, R., B.~Veenadhari, A.~K. Maurya, M.~B. Cohen, S.~Kumar, R.~Selvakumaran,
   P.~Pant, A.~K. Singh, and U.~S. Inan, {D-region ionosphere response to the
   total solar eclipse of 22 July 2009 deduced from ELF-VLF tweek observations
   in the Indian sector}, \textit{Journal of Geophysical Research},
-  \textit{116}(A10), 1--9, \doi{10.1029/2011JA016641}, 2011.
+  \textit{116}(A10), 1--9, \doi{10.1029/2011JA016641}, 2011{\natexlab{b}}.
 
 \bibitem[{\textit{Soula et~al.}(2011)\textit{Soula, van~der Velde, Montanya,
   Huet, Barthe, and B\'{o}r}}]{Soula2011}
@@ -382,6 +561,19 @@ Soula, S., O.~van~der Velde, J.~Montanya, P.~Huet, C.~Barthe, and J.~B\'{o}r,
   {Gigantic jets produced by an isolated tropical thunderstorm near R\'{e}union
   Island}, \textit{Journal of Geophysical Research}, \textit{116}(D19),
   \doi{10.1029/2010JD015581}, 2011.
+
+\bibitem[{\textit{Stergis et~al.}(1957)\textit{Stergis, Rein, and
+  Kangas}}]{Stergis1957}
+Stergis, C.~G., G.~C. Rein, and T.~Kangas, {Electric field measurements above
+  thunderstorms}, \textit{Journal of Atmospheric and Terrestrial Physics},
+  \textit{11}, 83--90, 1957.
+
+\bibitem[{\textit{Stolzenburg et~al.}(2010)\textit{Stolzenburg, Marshall, and
+  Krehbiel}}]{Stolzenburg2010}
+Stolzenburg, M., T.~C. Marshall, and P.~R. Krehbiel, {Duration and extent of
+  large electric fields in a thunderstorm anvil cloud after the last
+  lightning}, \textit{Journal of Geophysical Research}, \textit{115}(D19),
+  D19,202, \doi{10.1029/2010JD014057}, 2010.
 
 \bibitem[{\textit{Suszcynsky}(2003)}]{Suszcynsky2003}
 Suszcynsky, D.~M., {Narrow Bipolar Events as indicators of thunderstorm
@@ -418,6 +610,11 @@ Tinsley, B., G.~Burns, and L.~Zhou, {The role of the global electric circuit in
   solar and internal forcing of clouds and climate}, \textit{Advances in Space
   Research}, \textit{40}(7), 1126--1139, \doi{10.1016/j.asr.2007.01.071}, 2007.
 
+\bibitem[{\textit{Tzur and Roble}(1985)}]{Tzur1985}
+Tzur, I., and R.~Roble, {The interaction of a dipolar thunderstorm with its
+  global electrical environment}, \textit{Journal of Geophysical Research},
+  \textit{90}(D4), 5989--5999, 1985.
+
 \bibitem[{\textit{Uman}(1969)}]{Uman1969}
 Uman, M.~A., \textit{{Lightning}}, Dover books on physics and chemistry, Dover
   Publications, 1969.
@@ -450,6 +647,11 @@ Wait, J., and K.~Spies, {Influence of earth curvature and the terrestrial
 Wait, J.~R., \textit{{Electromagnetic Waves in Stratified Media}}, 2nd ed.,
   Pergamon Press, New York, 1970.
 
+\bibitem[{\textit{Ward}(1963)}]{Ward1963}
+Ward, J. H.~J., {Hierarchical grouping to optimize an objective function},
+  \textit{Journal of the American statistical association}, \textit{58}(301),
+  236 -- 244, 1963.
+
 \bibitem[{\textit{Whipple}(1929)}]{Whipple1929}
 Whipple, F., {On the association of the diurnal variation of electric potential
   gradient in fine weather with the distribution of thunderstorms over the
@@ -468,6 +670,14 @@ Williams, E., V.~Mushtak, D.~Rosenfeld, S.~Goodman, and D.~Boccippio,
   mixed phase microphysics and lightning flash rate}, \textit{Atmospheric
   Research}, \textit{76}(1-4), 288--306, \doi{10.1016/j.atmosres.2004.11.009},
   2005.
+
+\bibitem[{\textit{Williams}(1985)}]{Williams1985}
+Williams, E.~R., {Large-Scale Charge Separation in Thunderclouds},
+  \textit{Journal of Geophysical Research}, \textit{90}(D4), 6013--6025, 1985.
+
+\bibitem[{\textit{Williams}(2005)}]{Williams2005a}
+Williams, E.~R., {Lightning and climate: A review}, \textit{Atmospheric
+  Research}, \textit{76}, 272--287, 2005.
 
 \bibitem[{\textit{Williams et~al.}(1989)\textit{Williams, Weber, and
   Orville}}]{Williams1989}
