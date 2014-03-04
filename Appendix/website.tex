@@ -1,0 +1,141 @@
+This appendix discusses operations of the updated WWLLN website and the real-time lightning map.
+
+\section{WWLLN.net}
+
+The new WWLLN website uses Wordpress as the content management system for every webpage.
+The structure of the webpage (e.g. headers, footers, titles, spacing) are stored in the Wordpress theme, while the content is, for the most part, stored in either the MySQL database or in three list files.
+Editing the files in the theme will change every corresponding page of the website, while content edits will just change that page.
+
+\subsection{Directory Structure}
+
+The website directory looks like:
+
+\begin{verbatim}
+backup.sh
+hosts_list.htm
+index.php
+map/
+map_demo/
+publications_list.htm
+README.txt
+spectra_list.htm
+volcanoMonitor.html
+wordpress/
+\end{verbatim}
+
+The three files \texttt{hosts\_list.htm}, \texttt{spectra\_list.htm}, and \texttt{publication\_list.htm} are used to generate the list content on their respective pages (hosts, spectra, publications).  
+
+\texttt{backup.sh} is a script to backup the Wordpress database to a file called \texttt{wwlln\_site.bak.sql.bz2} that is discussed below.
+
+\texttt{index.php} redirects the user to the Wordpress based pages and generally should not be changed.
+
+\texttt{map/} and \texttt{map\_demo/} are the folders containing the scripts and data for the WWLLN lightning maps.
+The .htaccess file in each directory should be used to control who can access them (this data access is completely separate from Wordpress).
+The .htaccess is currently set to use the .htpasswd file at /home/mlhutch/sites/.htpasswd
+
+\texttt{volcanoMonitor.html} is used to redirect users to the new volcano monitor page, other previous permanent links (e.g. wwlln.net/climate) were replaced more easily and did not need a redirect file.
+
+Finally there is the \texttt{wordpress/} directory.
+This contains all of the support files used to power the wordpress aspects of the website, including the  admin page, the blogs, the MySQL database settings, and WWLLN theme page settings.
+
+Outside of the website directory is the MySQL database.  This is stored by the MySQL program running on webflash and does not have an exact file location.  How to backup and restore the content from the MySQL database is covered below.
+
+\subsection{Wordpress}
+
+\subsubsection*{Files}
+
+Inside the \texttt{wordpress/} directory there are only a few files that will ever need to be changed, or that even should be changed.
+The main file is the \texttt{wordpress/wp-config.php} file, this file contains the information for connecting to the MySQL database including the user name and password \emph{in plain text}.
+It is important to note that access to this file non-locally (e.g. through the website) is not allowed and it can only be seen with a local connection (e.g. ssh).
+
+The other set of files in the \texttt{wordpress/} directory are the WWLLN theme files.
+These files control how the website looks and feels with some content stored in the files themselves.
+They are located in the non-intuitive location of \texttt{wordpress/wp-content/themes/wwlln}.
+Editing these files will change how the corresponding pages look.
+In general only the style files (*.css files) should be changed to alter the website appearance.
+The other files that may be changed is the \texttt{header.php} file, this is where you can change the items and order of the menu bar.
+
+\subsubsection*{Admin}
+
+The admin panel for Wordpress is used to create content alter the site if the user is an administrator.
+To access the admin panel go to \texttt{wp-admin.php} from the main page of the website (e.g. \texttt{wwlln.net/wp-admin.php}.
+From here new pages can be made, new blog posts, website settings, and user control.
+
+\subsubsection*{Content Creation}
+
+Wordpress content comes in two forms: blog posts and static pages.
+Blog posts show up in reverse chronological order on the blog (newest first) and the first few are listed on the front page of the website.
+Blog posts are created with the Wordpress tools and text editor and support embedding pictures and videos.
+Pages are similarly created but use different templates instead (each described below).
+Both can be drafted, edited, published, deleted, and generally controlled through the admin page.
+If other users are added (say other management team members) they can add blog posts as well.
+
+\subsubsection*{Page Templates}
+
+There are 6 page templates, depending on the template the content will be placed in different locations.
+All pages can be written with the text editor provided or HTML.
+
+\begin{itemize}
+\item Default Template -- content is placed inside a white box exactly like the blog posts.
+\item HTML Content Page -- blank page below the header that uses the HTML given to create the page
+\item Home page -- main index page, entirely in HTML. 
+	Editing using the visual editor may break the page.
+\item Lightning map -- page specifically designed to show the WWLLN lightning maps.
+	The content is placed below the inset lightning map.
+	Note: there needs to be a folder with the same URL as the listed page with the lightning code in it, see the existing pages/folders for examples.
+\item List -- Uses a [name]\_list.htm file to generate a single list of that data below the content, where [name] is the post URL.
+	The file format is one line per list item with a blank line in between.
+\item List (Two-Column) -- same as List but uses two columns.
+	Two lines between spaces where the second line is the second column entry.
+	See hosts\_list.htm as an example.
+\end{itemize}
+
+\subsection{MySQL}
+
+The MySQL server can be backed up with the \texttt{backup.sh} script or with the command:
+
+\begin{verbatim}
+mysqldump --add-drop-table -h localhost -u wwlln -p wordpress | 
+       bzip2 -c > wwlln_site.bak.sql.bz2
+\end{verbatim}
+
+To restore the Wordpress database from a back up file is relatively easy, use the command:
+
+\begin{verbatim}
+mysql -h localhost -u wwlln -p wordpress < wwlln_site.bak.sql
+\end{verbatim}
+
+Which will then prompt for the password (located in the \texttt{wp-config.php} file) and perform the backup.
+This does not require any special sudo permissions to run.
+
+\subsection{Moving Wordpress}
+
+Moving the Wordpress directory is a more involved process and is not recommended to do casually.
+First backup the current Wordpress directory along with the \texttt{.htaccess} and \texttt{index.php} files in the root directory.
+Then go to the settings page on the websites \texttt{wp-admin.php} page, here change the website and Wordpress directories to what they will be after the move.
+After saving the site will stop working.
+Move the Wordpress directory to the new location listed on the admin page and move the \texttt{.htaccess} and \texttt{index.php} files to the root of the website page that was also listed.
+Now the admin page should work.
+Back on the admin page go to the Permalinks page on the settings menu and at the bottom will be the updated .htaccess file listed.
+Propagate the changes over to the root \texttt{.htaccess} file and the \texttt{wordpress/.htaccess} file.
+After that the website should be working as before.
+
+\section{Lightning Maps}
+
+A WWLLN (http://wwlln.net) visualization tool to show realtime lightning activity.
+
+The map displays WWLLN data viewed in realtime or at other speeds.
+The user can pause the display, return to the start of the loaded data, jump around by 30-seconds, resume playing, or return to real time data display (where available).
+There are options to show a Google Map cloud layer (only shows current cloud conditions), a density map of all loaded strokes, place a selection box for more refined statistics, and an option to clear the loaded strokes in memory.
+
+Users can also load their own WWLLN .loc files for playback and viewing.
+There is a load limit of 25,000 strokes to prevent slow playback due to too many strokes.
+Loading a file larger than 25,000 will only load the first 25,000 strokes and ignore the rest.
+Loaded data files play from the beginning of the file.
+
+The terminator code is taken from https://github.com/marmat/google-maps-api-addons.
+
+Login in controlled by the .htpasswd file specified in .htaccess.  An .htpasswd file is created with: \texttt{htpasswd -c .htpasswd [new\_user]}
+And amended with: \texttt{htpasswd .htpasswd [new\_user]}
+
+
