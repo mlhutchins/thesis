@@ -1,18 +1,18 @@
 \documentclass [11pt, twoside] {uwthesis}[2012/06/19]
- 
+
 \usepackage{amsmath, graphicx, natbib, listings, lscape, longtable,hyperref}
 \def\bibpreamble{\protect\addcontentsline{toc}{chapter}{Bibliography}}
 
 \setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
- 
-\usepackage{alltt}  % 
+
+\usepackage{alltt}  %
 \newenvironment{demo}
   {\begin{alltt}\leftskip3em
      \def\\{\ttfamily\char`\\}%
      \def\{{\ttfamily\char`\{}%
      \def\}{\ttfamily\char`\}}}
   {\end{alltt}}
- 
+
 % metafont font.  If logo not available, use the second form
 %
 % \font\mffont=logosl10 scaled\magstep1
@@ -20,14 +20,14 @@
 % --- end-of-sample-stuff ---
 
 \begin{document}
- 
+
 % ==========   Preliminary pages
 %
 % ( revised 2012 for electronic submission )
 %
 
 \prelimpages
- 
+
 %
 % ----- copyright and title pages
 %
@@ -45,14 +45,14 @@
 
 \copyrightpage
 
-\titlepage  
+\titlepage
 
 %
 % ----- abstract
 %
 
 \setcounter{page}{-1}
-\abstract{%
+\abstract{
 
 In this dissertation the capabilities of the World Wide Lightning Location Network (WWLLN) are expanded and examined.
 The expansion of available data sources from the network allows for the research into the source, propagation, and effects of lightning in the Earth-ionosphere system.
@@ -80,9 +80,9 @@ Aside from their global electric circuit contribution, the overall properties of
 \listoffigures
 
 \listoftables  % I have no tables
- 
+
 %
-% ----- glossary 
+% ----- glossary
 %
 
 \chapter*{Glossary}      % starred form omits the `chapter x'
@@ -91,9 +91,9 @@ Aside from their global electric circuit contribution, the overall properties of
 %
 \begin{glossary}
 \item[WWLLN] a network.
- 
+
 \end{glossary}
- 
+
 %
 % ----- acknowledgments
 %
@@ -106,26 +106,26 @@ Text
 % ----- dedication
 %
 
-\dedication{\begin{center}to blank, for blank\end{center}}
+\dedication{\begin{center}To Leah, for the motivation to finish.\end{center}}
 
 %
 % end of the preliminary pages
- 
+
 %
 % ==========      Text pages
 %
 
 \textpages
- 
+
 % ========== Chapter Introduction
- 
+
 \chapter{Introduction}
 \label{thesis:chapter:introduction}
 
-\include{Introduction/introduction} 
- 
+\include{Introduction/introduction}
+
 % ========== Chapter Stroke Energy
- 
+
 \chapter{Stroke Energy}
 \label{thesis:chapter:energy}
 
@@ -161,7 +161,7 @@ Text
 
 
 % ========== Chapter Global Electric Circuit
- 
+
 \chapter{Global Electric Circuit}
 \label{thesis:chapter:gec}
 
@@ -182,7 +182,7 @@ Text
 
 \appendix
 \raggedbottom\sloppy
- 
+
 % ========== Appendix Code
 
 \chapter{Code Repositories}
