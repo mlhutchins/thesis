@@ -7,13 +7,22 @@ Several of the possibilites for research on WWLLN, thunderstorms, the global ele
 
 \subsection{Network Characterization}
 
-Network characterization:
-  Leave one out detection efficiency study for station placement
-  Variability in regional energy distributions over time
-  Energy uncertainty as distance from main calibrated station
-  Speed of light optimization
-  Regional comparisons with CHUVA, ENTLN, GOES-R
-  Flash multiplicity and subsequent stroke energies
+The relative detection efficiency model developed in Chapter~\ref{efficiency} provides one view of the network performance but it relies on several assumptions.
+Either the model can be advanced to not rely on these assumptions or those assumptions themselves can be monitored.
+The main assumption is that the distribution of lightning energy is the same everywhere, this was shown to not be the case in Chapter~\ref{landsea} when examining land and oceanic thunderstorms.
+The model can take into account the varying distributions, or the expected variance in the energy distribution, by looking into the variability of the observerd regional energy distributions over time.
+
+A promising method for examining the energy detection performance is to check how the measured energy values change when the network changes station configuration.
+For example, processing the energy data a second time after artificially removing a few stations to quantify how the energy distributions change.
+Compare the energy distribution changes to the change relative to another network (e.g. ENTLN or LIS) to better paramterize the detection efficiency model.
+
+Similarly the accuracy of the energy measurements themselves can be improved by adapting the energy per stroke processing to include multiple well calibrated WWLLN stations.
+In the processing described in this work the entire network is bootstrap calibrated from one station; the addition of a second well calibrated station can improve the energy measurements and help quantify the regional variation in energy uncertainty.
+This is assuming that more uncertainty is introduced in a stations calibrated as the station requires more calibration steps from the first station.
+
+Finally other network characterizations can be developed based on the clustering results.
+The number of thunderstorms, the average number of strokes per thunderstorm, average flash multiplicity, or time between flashes within a single thunderstorm.
+
 \subsection{Network Improvements}
 
 Network improvements
