@@ -25,13 +25,28 @@ The number of thunderstorms, the average number of strokes per thunderstorm, ave
 
 \subsection{Cluster Validation}
 
-Cluster comparison to weather radar and case studies
-  Thunderstorm property Variability
+The thunderstorm clustering discussed in Chapter~\ref{thesis:chapter:gec} and~\ref{thesis:chapter:thunderstorm} can benefit from additional validation.
+Two potential methods for validation could be a large scale comparison to TRMM precipitation and case studies against regional weather radar.
+The TRMM study would require grouping of the precitipation data and a comparison of those groupings to the thunderstorm areas.
+Weather radar comparisons would provide detailed ground truth comparisons of the thunderstorm extent and duration to the measured radar data.
+Further weather radar would allow for a measure of thunderstorm tracking accuracy.
+
+Aside from comparisons to other sytems the properties measured by the thunderstorm clustering can be tracked over spatial and temporal scales.
+For example the average thunderstorm duration interannual variability in a given region or the overall network observed thunderstorm duration.
+This can explore the effect of the growing network on the measured values and the accuracy of the clustering algorithm as the stroke rate detected by WWLLN changes with time.
 
 \subsection{Parameterization}
 
-  Thunderstorm parameterization and controls of flash rate and stroke energy
-  Analysis of thunderstorm charging rate
+Thunderstorm parameterizations are functional relationships between different properties of thunderstorms.
+Using lightning detection networks allows for the development of these: inferring thunderstorm properties based on the observed lightning flash rates, in particular for regions with low availibility of direct observations (e.g. radar, satellite).
+\citet{Zipser1994} examined the relation between the flash rate in a thunderstorm with the updraft velocities, which in turn are controlled by the differential surface heating below the thudnerstorm.
+Parameterization of flash rate based on other observations has led to simple models of global lightning behavior, \citet{Price1992} used cloud height parameterization for flash rate.
+These empirical parameterizations can help in the development and validation of models (e.g. \citet{Baker1999}) of thunderstorm electrification and enable or expand prediction of the global electric circuit, NO$_\text{x}$ production, and weather forecasting.
+Investigating the parameterization of lightning behaviour in relation to the properties of a thunderstorm on a large scale, compared to small studies, can create better and more robust paramterizations.
+The WWLLN thunderstorm clustering results can be compared to other networks and systems in order to develop and validate parameterizations of inferred thunderstorm parameters.
+
+With the development of these parameterizations the WWLLN clustering can be used to constrain the various controls on the flash rate and subsequent flash energy.
+From there the thunderstorm charging rate can be estimated, allowing for research on the difference between continental and oceanic thunderstorms.
 
 \subsection{Thunderstorm Properties}
 
