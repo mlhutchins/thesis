@@ -1,6 +1,3 @@
-
-Diurnal variation of the global electric circuit from clustered thunderstorms
-
 \section{Overview}
 
 %% Trim out/down first two paragraphs which were the abstract
@@ -19,7 +16,7 @@ Thunderstorm cluster and electrified storm cloud activity are combined with thun
 By utilizing the global coverage and high time resolution of WWLLN, the total active thunderstorm count and current is shown to be less than previous estimates based on compiled climatologies.
 
 Diurnal variation in global thunderstorm activity was original observed by \citet{Wilson1921} and \citet{Whipple1929} through a combination of thunderstorm day and electric field measurements.
-Strong correlations between thunderstorm activity and fair weather return current led to the model of the global electric circuit, a system of ionospheric charging and discharging through thunderstorms and fair weather return currents. 
+Strong correlations between thunderstorm activity and fair weather return current led to the model of the global electric circuit, a system of ionospheric charging and discharging through thunderstorms and fair weather return currents.
 Studies to date have estimated that globally there are 1000 -- 2000 thunderstorms active at any one time, with most concentrated over tropical landmasses, covering 1 -- 10\% of Earth's surface \citep{Markson1978, Rycroft2011a, Singh2011a}.
 Previous work on diagnosing the generator source of the global electric circuit used several methods:  long time scales \citep{Tinsley2007, Liu2010}, mathematical models \citep{Kasemir1977, Hays1979, Roble1991}, engineering models \citep{Ogawa1985, Kartalev2004, Rycroft2006}, parameterization \citep{Price1992, Williams1985}, and thunderstorm overflight estimates \citep{Mach2011}.
 Most work with the global electric circuit uses long term averaging to recreate the known Carnegie curve of \citet{Whipple1929}, yet short time scales do not match the long term averaging \citep{Holzworth1984a}.
@@ -30,7 +27,7 @@ Individual lightning strokes and flashes are not yet a reliable method of charac
 \citet{Ruhnke1969} proposes the Maxwell current above thunderstorms as the global electric circuit generator source as it varies slowly through the evolution of a thunderstorm and the current is fairly independent from impulsive events like lightning.
 \citet{Krider1985} looked at Maxwell currents below a thunderstorm to find them steady with abrupt, but insignificant, changes due to lightning.
 \citet{Rycroft2000c} created an engineering model with three different regions for the the return current, concluding that sprites, lightning, and other transients will have little direct effect on the global electric circuit.
-\citet{Stergis1957} showed that cloud to ground lightning is not necessary for upward current from thunderstorms. 
+\citet{Stergis1957} showed that cloud to ground lightning is not necessary for upward current from thunderstorms.
 With a numerical model of a dipolar thunderstorm \citet{Tzur1985} estimated the upward current contribution of thunderstorms to the global electric circuit to be 0.7~A.
 Similarly, with a combination of numerical and analytical models of dipolar thunderstorm, \citet{Driscoll1992} estimated a total contribution of 0.4~A to the global circuit per thunderstorm.
 Unlike the other models, \citet{Mareev2008} estimated a 50 -- 400~A current contribution directly from lightning;  with a similar model \citet{Mallios2012} investigated the efficiency of lightning and found lightning contributed 1\% of the total 300~A from thunderstorms.
@@ -47,12 +44,6 @@ Compared to satellite and balloon observations, ground based lightning networks 
 Global very low frequency networks, such as the World Wide Lightning Location Network (WWLLN), are capable of locating lightning around the entire globe.
 \citet{Holzworth2005} compared the stroke counts of a nascent WWLLN to the fair weather return current and found strong temporal correlation between the measurements.
 A better measure of global circuit activity is the total number of active thunderstorms around the globe; applying clustering algorithms to lightning network data enables the network to locate, track, and monitor global thunderstorm activity.
-
-The WWLLN (see wwlln.net) is a global lightning network with, as of September 2013, over 70 VLF receivers distributed globally \citep{Rodger2006, Rodger2009}.
-WWLLN locates strokes by analyzing the time of group arrival of the sferic wave packet in the 6 -- 18~kHz band \citep{Dowden2000}.
-Previous studies have shown that WWLLN locates most strokes to an average accuracy of 10~km with a cloud to ground detection efficiency of 11\% \citep{Rodger2009, Abarca2010, Hutchins2012a, Rudlosky2013}.
-A recent upgrade to the network allows for the measurement of the radiated VLF energy of located strokes within the 8 -- 18~kHz VLF band \citep{Hutchins2012}.
-Through comparisons with the Los Alamos Sferic Array \citet{Jacobson2006c} found that WWLLN locates nearly all active thunderstorm regions.
 
 The WWLLN data are clustered into thunderstorms with the Density-Based Spatial Clustering of Application with Noise (DBSCAN) algorithm \citep{Ester1996, Kriegel2011a}.
 DBSCAN was chosen as the clustering algorithm for several key features: the capability to handle noise, no requirement to specify the number of clusters, arbitrary cluster shapes, and the insensitivity to the ordering of the data.
@@ -76,7 +67,7 @@ For example the unfilled triangle symbol in Group~1 of Figure~\ref{gec:fig:dbsca
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/dbscan.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/dbscan.pdf}
     \caption{DBSCAN clustering example, with $minPts = 3$, showing the same clusters located in a) latitude and longitude and b) latitude and time.
     		 Solid rings show the $\epsilon$ distance from core points (filled), dashed rings are for non-core points (unfilled).
 		 Triangles (1), squares (2), and stars (3) show clustered points, crosses are non-clustered points.}
@@ -101,10 +92,10 @@ With this requirement the value of $\epsilon_{time} = 18$~minutes is found, givi
 The minimum number of strokes needed to produce a cluster is set at $minPts = 2$, as two detected WWLLN strokes confirms the presence of a thunderstorm.
 A sharp drop in the total number of thunderstorms can be seen in Figure~\ref{gec:fig:parameters}c when $minPts$ moves from 2 to 3.
 To get a majority of strokes included in the thunderstorm clusters while retaining reasonable physical attributes of the thunderstorms the parameters $\epsilon = 0.12^\circ$, $\epsilon_{time} = 18$~minutes, and $minPts = 2$~strokes were chosen.
- 
+
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/parameters.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/parameters.pdf}
     \caption{Variation in average thunderstorm duration (rows), counts (left column) and area (right column) through varying one clustering parameter with the others held constant (constant set: $\epsilon = 0.12^\circ$, $\epsilon_{time} = 18$~minutes, and $minPts = 2$).
     		 a) $\epsilon$ varies from $0.03^\circ$ -- $1^\circ$.
 		 b) $\epsilon_{time}$ varies from 10 -- 180 minutes.
@@ -112,7 +103,7 @@ To get a majority of strokes included in the thunderstorm clusters while retaini
 		 }
     \label{gec:fig:parameters}
  \end{figure}
- 
+
 \section{WWLLN thunderstorm clusters}
 
 Using the DBSCAN algorithm, the individual WWLLN lightning strokes from 2010 June - 2013 June are clustered into active thunderstorms.
@@ -124,7 +115,7 @@ The thunderstorm opacity increases at 8\% per hour with each color corresponding
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/evolution.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/evolution.pdf}
     \caption{Thunderstorm evolution from 2013 May 21, 12 -- 23 UTC.
     		 Polygons outline active lightning regions, colors correspond to thunderstorm cluster, opacity increases 8\%/hour.
 		 For clarity, thunderstorms with less than 50 strokes were removed.}
@@ -138,7 +129,7 @@ WWLLN strokes are shown in Figure~\ref{gec:fig:overpass} if they occur between t
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/overpass.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/overpass.pdf}
     \caption{WWLLN thunderstorm clusters (identified by color) over TRMM precipitation rate (mm/Hr) for 2013 May 06, 15:49 -- 15:59 UTC (a), 17:28 -- 17:37 UTC (b), 2013 May 21, 10:04 -- 10:13 UTC (c), 11:42 -- 11:52 (d).
     		(a) and (b) are successive passes as are (c) and (d), cluster colors are contiguous between passes.
 		Gray areas were outside the range of the TRMM radar.}
@@ -161,10 +152,10 @@ Averages of thunderstorm activity are calculated from the total number of unique
 
  \begin{figure}[ht!]
     \centering
-     \includegraphics[scale=1]{GEC/Figures/carnegie.pdf} 
+     \includegraphics[scale=1]{GEC/Figures/carnegie.pdf}
     \caption{Diurnal variation of WWLLN thunderstorm 30~minute counts for 2010 -- 2013 obtained using the DBSCAN clustering algorithm.
     		 For a) thunderstorms over each major lightning chimney region (divided between longitudes $-180^\circ$, $-30^\circ$, and $60^\circ$),
-		 b) all, land, ocean, and coastal thunderstorms (coastal thunderstorms have strokes over land and ocean), 
+		 b) all, land, ocean, and coastal thunderstorms (coastal thunderstorms have strokes over land and ocean),
 		 and c) the full year and each season.
 		 }
     \label{gec:fig:carnegie}
@@ -189,7 +180,7 @@ This time change in regional contributions has been seen in other global circuit
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/bimonthly.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/bimonthly.pdf}
     \caption{Diurnal variation of WWLLN thunderstorms for each major chimney region (colors) divided by hemisphere (Northern Hemisphere solid line, Southern Hemisphere dashed line).
     		Each panel shows two months of thunderstorm clusters averaged over 2010 -- 2013.
 		 }
@@ -206,7 +197,7 @@ It can been seen that the stroke rate has increased relatively steadily while th
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/timescale.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/timescale.pdf}
     \caption{Variation in WWLLN thunderstorm count (black) and stroke rate (red) for:
     		a) daily averages 30~minute counts from 2010 June -- 2013 June,
 		b) 30~minute counts from 2011 June 01 -- 30,
@@ -228,7 +219,7 @@ With such short time scale variation global observations of the global electric 
 
  \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/averaging.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/averaging.pdf}
     \caption{Diurnal UTC variation in WWLLN 30~minute thunderstorm count for:
     		multi-year average of Figure~\ref{gec:fig:timescale}a (solid line),
 		monthly average of Figure~\ref{gec:fig:timescale}b (dot-dash line),
@@ -248,7 +239,7 @@ Since not all ESC will produce lightning the counts shown in Figure~\ref{gec:fig
 
   \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=1]{GEC/Figures/wilson.pdf} 
+    \includegraphics[scale=1]{GEC/Figures/wilson.pdf}
     \caption{A simple model of the total global electric circuit current with contributions from land thunderstorms (green solid), oceanic thunderstorms (blue solid), land electrified storm clouds (green dashed), and oceanic electrified storm clouds (blue dashed).
     		a) shows the counts for each group and b) the current contribution to the total (black line).
 		}

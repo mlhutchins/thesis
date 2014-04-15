@@ -1,5 +1,4 @@
-
-\section{Introduction}
+\section{Overview}
 
 Application of clustering algorithms to ground based lightning detection networks expands the real time global observations of lightning from strokes to flashes and strokes to thunderstorms.
 Lightning detection networks, such as the World Wide Lightning Location Network (WWLLN) or the Earth Networks Total Lightning Network (ENTLN), are then able to identify, locate, and analyze nearly every active thunderstorms within their operational range.
@@ -26,18 +25,7 @@ Within known thunderstorms the time between successive flashes can be used to ex
 The effects of a flash can be directly related to properties and behaviors of the parent thunderstorm, only after considering and validating the performance of the lightning detection networks used.
 Inferring thunderstorm properties based on the observed lightning flash rates can beneifit regions with low availibility of direct or continuous observations (e.g. radar).
 
-\section{Data and Networks}
-
-The World Wide Lightning Location Network (WWLLN) is a global lightning detection network with, as of 2014, over 70 stations located globally \citep{Rodger2006, Rodger2009}.
-Studies have shown that the network detects 11\% of strokes \citep{Rudlosky2013} with a stroke accuracy of 10~km \citep{Abarca2010, Hutchins2012a}.
-\citet{Hutchins2014} demonstrated that WWLLN strokes can be clustered into thunderstorms to produce identifiable thunderstorm clusters.
-The thunderstorm detection performance of WWLLN was evaluated by \citet{Jacobson2006c}, showing the network detected most active lightning regions in a comparison to the Los Alamos Sferic Array.
-
-%%WWLLN locates strokes by analyzing the time of group arrival of the sferic wave packet in the 6 -- 18~kHz band \citep{Dowden2000}.
-
-The Earth Networks Total Lightning Network (ENTLN) is a regional lightning network primarily based in North America.
-Within the continental United States it has approximately 530 operational stations, each operating in a short range (5~kHz -- 12~MHz) and long range (1~Hz -- 256~kHz) mode \citep{Heckman2010}.
-In addition to locations the network measures the peak current amplitude, altitude, polarity, and type of the located strokes \citep{Liu2011a}.
+\section{Data}
 
 %% Line about the detection efficiency?
 
@@ -62,7 +50,7 @@ Similarly, thunderstorm duration is taken to be the time from the first stroke i
 With these thunderstorm clustering parameters both networks observe similar average thunderstorm size and durations over North America.
 WWLLN observes a median area and duration of 66 km$^2$ and 9.5~minutes, while ENTLN observes an average of 60 km$^2$ and 10.2 minutes.
 
-A parameter used throughout this work is the time between successive strokes and flashes.
+A parameter used throughout this chapter is the time between successive strokes and flashes.
 This interstroke time will refer to the time since the previous stroke in the parent thunderstorm cluster, while interflash time will refer to the time since the start of the previous flash in the thunderstorm cluster.
 
 \section{Detection Efficiency}
@@ -214,7 +202,7 @@ It is not a constant offset but increases at the weaker stages of the thundersto
 The time between flashes is one of the main controlling factors in the strength of the resulting flash.
 %% Speculation: over 9000
 
-\section{Discussion}
+\section{Conclusion}
 
 %% Discussion of the detection efficiency
 
