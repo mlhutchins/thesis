@@ -66,12 +66,21 @@ While this may only work for small case studies it may be possible to use more a
 
 \section{Global Electric circuit}
 
-\subsection{Model Improvement}
+The global electric circuit model presented in Chapter~\ref{thesis:chapter:gec} provides an estimate of the thunderstorm contribution to the circuit based on the WWLLN thunderstorm clusters.
+It is shown that the model is able to reproduce the expected Carnegie curve over lone time scales and has the capability to provide current estimates on shorter time scales.
+The model can be improved for a more accurate measure of the current contribution, but without any validation it cannot be reliable used.
 
-\subsection{Validation Campaign}
+For the model improvements there are several underlying assumptions that can be factored in.
+The main one is that all thunderstorms produce the same upward current to the ionosphere regardless of their size or activity.
+The estimates used in the model from \citep{Mach2010} can be scaled by either the thunderstorm cluster activity or the estimated cluster size.
+Since the development of the model the thunderstorm cluster area was validated against ENTLN in Chapter~\ref{thesis:chapter:thunderstorm}, giving confidence to the area measurements.
+The second assumption is that all continental thunderstorms will behave the same as well all oceanic thunderstorms.
+This assumption is harder to address as it relies on direct measurements made in different regions.
 
-Global electric circuit balloon campaign and comparison to WWLLN
-  Stroke count model, flash count model, thunderstorm count model
+Regardless of the model improvements made, the model needs to be compared against a ground truth measurement.
+Further, comparison to a ground truth will allow for adjustments of the model to better fit the observerd measurements, or if adjustments cannot be made then other components of the global electric circuit need to be included in the model.
+For the ground truth a balloon campaign needs to be conducted to measure the fair weather return current over the span of one to several weeks.
+With a reliable and clean measurements of the return current the model validation can be performaed on a very short time scale instead of relying on long term averages.
 
 \section{Lightning Processes}
 
