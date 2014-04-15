@@ -42,7 +42,7 @@ In addition to locations the network measures the peak current amplitude, altitu
 %% Line about the detection efficiency?
 
 The global WWLLN data will be used everywhere in this work unless specifically restricted to a given region, the ENTLN data will only be the North American subset of the data.
-The data is from the 2011 and 2012 datasets, with the exception of Section~\ref{sec:interflash} which extends through June 2013.
+The data is from the 2011 and 2012 datasets, with the exception of Section~\ref{thunderstorm:sec:interflash} which extends through June 2013.
 
 \section{Methods}
 
@@ -54,7 +54,7 @@ The flash clustering uses the same algorithm as the thunderstorm clustering, wit
 For thunderstorms, WWLLN strokes are clustered together if they occur within $0.5^\circ$ and 18~minutes; for ENTLN it is $0.25^\circ$ and 15~minutes.
 The tighter restraints on the ENTLN clustering stem from the higher density of strokes seen by ENTLN compared to WWLLN.
 For flash clustering the strokes of both networks are clustered if they are within $0.12^\circ$ and 1~second of each other.
-The 1~second timing is based on the natural inflection point observed in the WWLLN data (see Figure~\ref{interflash} in Section~\ref{sec:interflash}).
+The 1~second timing is based on the natural inflection point observed in the WWLLN data (see Figure~\ref{thunderstorm:fig:interflash} in Section~\ref{thunderstorm:sec:interflash}).
 
 The thunderstorm area is estimated by the best fit ellipse encapsulating all of the strokes in the cluster.
 This will not be the areal extent of the thunderstorm system, rather the electrified lightning region of the thunderstorm.
@@ -74,7 +74,7 @@ Using a convex hull method requires at least three strokes in a thunderstorm for
 
 Over the 2011 -- 2012 period in North America the average thunderstorm detection efficiency of WWLLN compared to ENTLN was 61\%.
 Similar to how detection efficiency varies with stroke strength, WWLLN has a higher detection efficiency of larger thunderstorms than smaller ones.
-The spatial distribution of the detection efficiency is shown in Figure~\ref{deMap}.
+The spatial distribution of the detection efficiency is shown in Figure~\ref{thunderstorm:fig:deMap}.
 In the southern regions, where there is typically higher thunderstorm activity, WWLLN has a detection efficiency above 70\%.
 In regions with few thunderstorms (e.g. the West) there is a lower detection efficiency, possibly due to a lower detection efficiency of ENTLN in that region.
 
@@ -82,7 +82,7 @@ In regions with few thunderstorms (e.g. the West) there is a lower detection eff
    \centering
    \includegraphics[scale=1]{thunderstorm/Figures/deMap.pdf}
    \caption{WWLLN detection efficiency of ENTLN thunderstorms over North America for 2011 -- 2012 (top panel), with each season broken out in the lower panels.}
-   \label{deMap}
+   \label{thunderstorm:fig:deMap}
 \end{figure}
 
 The seasonal behavior shows a similar overall distribution of detection efficiency, with an increase in winter (DJF) and spring (MAM) compared to summer (JJA) and fall (SON).
@@ -90,7 +90,7 @@ A winter increase, 68\% compared to 56\% in summer, is tied to the decreased occ
 In all seasons WWLLN has the highest detection efficiency over the oceans.
 Increased detection efficiency at the limits of the ETNLN detection range (e.g. in the center of the Atlantic Ocean) is convoluted with the decreased efficiency of ENTLN and not solely an increase in the WWLLN detection efficiency.
 
-The daily spatially averaged detection efficiency is shown in Figure~\ref{deDaily}.
+The daily spatially averaged detection efficiency is shown in Figure~\ref{thunderstorm:fig:deDaily}.
 Here the seasonal variation is  evident; the high levels of noise in the winter reflects the lower overall thunderstorm counts during these months.
 Within the annual variation, the detection efficiency does not vary with thunderstorm area, size, or duration; there is just a constant overall change in detection efficiency for all thunderstorm types.
 
@@ -98,14 +98,14 @@ Within the annual variation, the detection efficiency does not vary with thunder
    \centering
    \includegraphics[scale=1]{thunderstorm/Figures/deDaily.pdf}
    \caption{Spatially averaged detection efficiency of ENTLN thunderstorms over North America.}
-   \label{deDaily}
+   \label{thunderstorm:fig:deDaily}
 \end{figure}
 
-The temporal distribution of thunderstorm detection efficiency can be split into different thunderstorm sizes (Figure~\ref{deBroken}a), total counts (Figure~\ref{deBroken}b), and durations (Figure~\ref{deBroken}c).
-In Figure~\ref{deBroken} the daily detection efficiency increases for larger, productive, and longer thunderstorms.
+The temporal distribution of thunderstorm detection efficiency can be split into different thunderstorm sizes (Figure~\ref{thunderstorm:fig:deBroken}a), total counts (Figure~\ref{thunderstorm:fig:deBroken}b), and durations (Figure~\ref{thunderstorm:fig:deBroken}c).
+In Figure~\ref{thunderstorm:fig:deBroken} the daily detection efficiency increases for larger, productive, and longer thunderstorms.
 For thunderstorms larger than $10^2$ km$^2$ the detection efficiency is 53\% while for those larger than $10^3$ km$^2$ it is 80\%.
 In a similar vein, thunderstorms with more than $10^2$~strokes are detected with 75\% efficiency and for more than $10^3$~strokes at 94\% efficiency.
-Almost all thunderstorms observed are less than 1 hour in duration (Figure~\ref{deBroken}c, right), for those lasting more than 2 hours the detection efficiency increases to 93\%.
+Almost all thunderstorms observed are less than 1 hour in duration (Figure~\ref{thunderstorm:fig:deBroken}c, right), for those lasting more than 2 hours the detection efficiency increases to 93\%.
 
 
 \begin{figure}[ht!]
@@ -113,13 +113,13 @@ Almost all thunderstorms observed are less than 1 hour in duration (Figure~\ref{
    \includegraphics[scale=1]{thunderstorm/Figures/deBroken.pdf}
    \caption{Temporal variation in thunderstorm detection efficiency for different thunderstorm sizes: a) thunderstorm area, b) thunderstorm stroke counts, and c) thunderstorm duration.
            The distribution of thunderstorms for each parameter is shown in the right panels.}
-   \label{deBroken}
+   \label{thunderstorm:fig:deBroken}
 \end{figure}
 
 Removing the temporal variation demonstrates the trend of increasing detection efficiency for each thunderstorm parameter.
-In Figure~\ref{deParameter} the black lines represent all thunderstorms and the colored lines split the thunderstorms by total counts detected by WWLLN in these thunderstorms.
-Thunderstorm area, Figure~\ref{deParameter}a, shows a gradual increase in detection efficiency from 40\% to near 100\% efficiency above $10^3$ km$^2$; the total number of strokes does not have an independent effect from area of the thunderstorm.
-Similarly the longer a thunderstorm is active the more likely it is to be detected by WWLLN, shown in Figure~\ref{deParameter}c.
+In Figure~\ref{thunderstorm:fig:deParameter} the black lines represent all thunderstorms and the colored lines split the thunderstorms by total counts detected by WWLLN in these thunderstorms.
+Thunderstorm area, Figure~\ref{thunderstorm:fig:deParameter}a, shows a gradual increase in detection efficiency from 40\% to near 100\% efficiency above $10^3$ km$^2$; the total number of strokes does not have an independent effect from area of the thunderstorm.
+Similarly the longer a thunderstorm is active the more likely it is to be detected by WWLLN, shown in Figure~\ref{thunderstorm:fig:deParameter}c.
 Unlike area, this is convoluted with the size and count of the thunderstorm: smaller thunderstorms have lower detection efficiency regardless of duration while larger thunderstorms are easier to detect.
 
 \begin{figure}[ht!]
@@ -127,7 +127,7 @@ Unlike area, this is convoluted with the size and count of the thunderstorm: sma
    \includegraphics[scale=1]{thunderstorm/Figures/deParameter.pdf}
    \caption{Thunderstorm detection efficiency for different thunderstorm a) areas, b) stroke counts, and c) durations.
            Area and duration plots are shown with the overall average (black) and for different total stroke counts (colors) within the thunderstorms.}
-   \label{deParameter}
+   \label{thunderstorm:fig:deParameter}
 \end{figure}
 
 %% I don't like the first "shows" in this sentence.
@@ -137,9 +137,9 @@ For example, if WWLLN measures a thunderstorm to have an area of 66~km$^2$ with 
 %% This needs to be better
 
 The properties of the matched thunderstorm  between WWLLN and ENTLN can be directly compared for thunderstorm area and duration.
-Density plots of the two networks estimation for each matched thunderstorm are shown in Figure~\ref{deSim}, where the counts in each bin are displayed on a log scale.
-Each characteristics in Figure~\ref{deSim} shows a strong distribution along a single 1-to-1 line.
-Area, Figure~\ref{deSim}a, has good agreement between both networks with 46\% of matches within $\pm25\%$ of each other; there is increased deviation for smaller thunderstorms compared to larger ones.
+Density plots of the two networks estimation for each matched thunderstorm are shown in Figure~\ref{thunderstorm:fig:deSim}, where the counts in each bin are displayed on a log scale.
+Each characteristics in Figure~\ref{thunderstorm:fig:deSim} shows a strong distribution along a single 1-to-1 line.
+Area, Figure~\ref{thunderstorm:fig:deSim}a, has good agreement between both networks with 46\% of matches within $\pm25\%$ of each other; there is increased deviation for smaller thunderstorms compared to larger ones.
 The background level for larger WWLLN thunderstorms with smaller ENTLN thunderstorms may be caused by incorrect matches or accidental merging between two thunderstorm clusters.
 The thunderstorm duration has the strongest relation of the two parameters, with 33\% of matches falling within $\pm25\%$ of the 1-to-1 line.
 There is fairly good agreement between the two networks on thunderstorm properties despite the differences in overall detection efficiency.
@@ -149,7 +149,7 @@ There is fairly good agreement between the two networks on thunderstorm properti
    \includegraphics[scale=1]{thunderstorm/Figures/deSim.pdf}
    \caption{Thunderstorm comparison of matched thunderstorms for WWLLN and ENTLN for a) area and b) duration.
            Note: the density levels are on a log scale.}
-   \label{deSim}
+   \label{thunderstorm:fig:deSim}
 \end{figure}
 
 
@@ -159,11 +159,11 @@ In contrast ENTLN had 96\% of stroke clustered into thunderstorms due to the hig
 The identified WWLLN thunderstorms exhibited similar characteristics to their corresponding ENTLN thunderstorms.
 
 \section{Flash Clusters}
-\label{sec:interflash}
+\label{thunderstorm:sec:interflash}
 
 Within a thunderstorm cluster lightning detection networks are able to measure two properties: the interstroke and interflash timing.
-The full WWLLN interstroke time, Figure~\ref{interflash}a, naturally shows two distinct peaks: one at 40~ms and another at 100~seconds with a natural inflection at 1~second.
-With ENTLN the interstroke distribution does not show the same distinct peaks (Figure~\ref{interflash}c) because it is able to locate more strokes in each flash, the tail of the interstroke time distribution overlaps the interflash time distribution.
+The full WWLLN interstroke time, Figure~\ref{thunderstorm:fig:interflash}a, naturally shows two distinct peaks: one at 40~ms and another at 100~seconds with a natural inflection at 1~second.
+With ENTLN the interstroke distribution does not show the same distinct peaks (Figure~\ref{thunderstorm:fig:interflash}c) because it is able to locate more strokes in each flash, the tail of the interstroke time distribution overlaps the interflash time distribution.
 In the WWLLN interevent time distribution there is a spike of events near 10~$\mu$s caused by the same event recorded twice by the network, this can also occur with ENTLN but less frequently.
 
 \begin{figure}[ht!]
@@ -171,12 +171,12 @@ In the WWLLN interevent time distribution there is a spike of events near 10~$\m
    \includegraphics[scale=1]{thunderstorm/Figures/interflash.pdf}
    \caption{The interevent times for WWLLN (a) and ENTLN (c) and the interstroke (black) and interflash (blue) time distributions for WWLLN (b) and ENTLN (d).
            The dashed lines correspond to the best lognormal fits of the distributions.}
-   \label{interflash}
+   \label{thunderstorm:fig:interflash}
 \end{figure}
 
-After the network events are clustered into flashes the time distributions can be split into the time between strokes in the same flash (black) and time between flashes (blue) in Figure~\ref{interflash}b and~\ref{interflash}d.
-The stroke and flash distribution can be fit as lognormal distributions for each day of the year, an example set of fits is shown with the dashed lines in Figure~\ref{interflash}b and~\ref{interflash}d.
-This fitting allows for the daily tracking of the interstroke (Figure~\ref{stability}a) and interflash (Figure~\ref{stability}b) times for both networks.
+After the network events are clustered into flashes the time distributions can be split into the time between strokes in the same flash (black) and time between flashes (blue) in Figure~\ref{thunderstorm:fig:interflash}b and~\ref{thunderstorm:fig:interflash}d.
+The stroke and flash distribution can be fit as lognormal distributions for each day of the year, an example set of fits is shown with the dashed lines in Figure~\ref{thunderstorm:fig:interflash}b and~\ref{thunderstorm:fig:interflash}d.
+This fitting allows for the daily tracking of the interstroke (Figure~\ref{thunderstorm:fig:stability}a) and interflash (Figure~\ref{thunderstorm:fig:stability}b) times for both networks.
 With WWLLN the global distributions (black) remain relatively centered at 71~ms and 100~seconds; over North America WWLLN averages (blue) are 60~ms for interstroke and 39~seconds for interflash times.
 ENTLN (red) has lower daily averages of 53~ms and 17~seconds due to the higher detection efficiency.
 The North American WWLLN distribution more closely matches the seasonal behavior present in the ENTLN distribution with a small offset in timing.
@@ -186,30 +186,30 @@ The North American WWLLN distribution more closely matches the seasonal behavior
    \includegraphics[scale=1]{thunderstorm/Figures/interflashStability.pdf}
    \caption{Peak of interstroke (a) and interflash (b) times for WWLLN (black), WWLLN over North America (blue), and ENTLN (red).
           Points beyond $2^{th}$ and $98^{th}$ percentiles shown as dots for WWLLN North America and ENTLN.}
-   \label{stability}
+   \label{thunderstorm:fig:stability}
 \end{figure}
 
 Directly comparing the time evolution of a thunderstorm interflash time will not work with thunderstorms of differing durations.
 To account for this the thunderstorm life cycle in normalized by the duration of the thunderstorm.
 Each thunderstorm is broken into 9 time segments where the first flash in the thunderstorm is at time~1 and the last flash at time~9.
-With this normalization the average interflash time is found at each step for all thunderstorm clusters seen by the two networks, shown in black in Figure~\ref{timerate}.
+With this normalization the average interflash time is found at each step for all thunderstorm clusters seen by the two networks, shown in black in Figure~\ref{thunderstorm:fig:timerate}.
 The interflash time can be seen to decrease to the center of a thunderstorms life cycle before increasing at the end, this is consistant with the known life cycle of a thunderstorm.
-The interflash time for different energy (Figure~\ref{timerate}a) and absolute peak current (Figure~\ref{timerate}b) deciles are also shown, along with the overall average interflash times.
+The interflash time for different energy (Figure~\ref{thunderstorm:fig:timerate}a) and absolute peak current (Figure~\ref{thunderstorm:fig:timerate}b) deciles are also shown, along with the overall average interflash times.
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=1]{thunderstorm/Figures/stormTimeRate.pdf}
    \caption{The interflash time for time-normalized thunderstorms for WWLLN (a) and ENTLN (b), with times shown for all flashes (black) and by stroke strength decile bins.
      WWLLN strength is divided by flash energy and ENTLN by absolute peak current.}
-   \label{timerate}
+   \label{thunderstorm:fig:timerate}
 \end{figure}
 
 All flashes follow the same behavior, regardless of energy or peak current, however there are offsets in interflash time for different strength strokes.
-As seen with WWLLN, Figure~\ref{timerate}a, the interflash time increases for more energetic strokes; for ENTLN, Figure~\ref{timerate}b, the interflash time increases for absolute peak current.
+As seen with WWLLN, Figure~\ref{thunderstorm:fig:timerate}a, the interflash time increases for more energetic strokes; for ENTLN, Figure~\ref{thunderstorm:fig:timerate}b, the interflash time increases for absolute peak current.
 Between normalized time~1 and~5 the interflash time for the 90$^{th}$ percentile and above stroke strengths decreases by 9\% for WWLLN and 17\% for ENTLN compared to the median interflash time.
 
 This shows that longer times between flashes results in stronger flashes; more charge separation can occur in the thunderstorm resulting in the stronger flashes.
-In Figure~\ref{timerate} the separation between different flash strengths is consistant at all points in the thunderstorm life cycle.
+In Figure~\ref{thunderstorm:fig:timerate} the separation between different flash strengths is consistant at all points in the thunderstorm life cycle.
 It is not a constant offset but increases at the weaker stages of the thunderstorm (beginning and end) where longer time is necessary for a stronger flash, caused by a decreased charge separation rate.
 The time between flashes is one of the main controlling factors in the strength of the resulting flash.
 %% Speculation: over 9000
