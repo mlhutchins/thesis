@@ -1,4 +1,4 @@
-\begin{thebibliography}{116}
+\begin{thebibliography}{120}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -25,6 +25,13 @@ Abreu, D., D.~Chandan, R.~H. Holzworth, and K.~Strong, {A performance
 Altaratz, O., I.~Koren, Y.~Yair, and C.~Price, {Lightning response to smoke
   from Amazonian fires}, \textit{Geophysical Research Letters}, \textit{37}(7),
   1--6, \doi{10.1029/2010GL042679}, 2010.
+
+\bibitem[{\textit{Baker et~al.}(1999)\textit{Baker, a.M Blyth, Christian,
+  Latham, Miller, and a.M Gadian}}]{Baker1999}
+Baker, M., a.M Blyth, H.~Christian, J.~Latham, K.~Miller, and a.M Gadian,
+  {Relationships between lightning activity and various thundercloud
+  parameters: satellite and modelling studies}, \textit{Atmospheric Research},
+  \textit{51}(3-4), 221--236, \doi{10.1016/S0169-8095(99)00009-5}, 1999.
 
 \bibitem[{\textit{Beasley et~al.}(2010)\textit{Beasley, Weiss, and
   Heckman}}]{Beasley2010}
@@ -128,6 +135,11 @@ Connaughton, V., et~al., {Associations between Fermi Gamma-ray Burst Monitor
   terrestrial gamma ray flashes and sferics from the World Wide Lightning
   Location Network}, \textit{Journal of Geophysical Research},
   \textit{115}(A12), 1--14, \doi{10.1029/2010JA015681}, 2010.
+
+\bibitem[{\textit{Connaughton et~al.}(2013)}]{Connaughton2013}
+Connaughton, V., et~al., {Radio signals from electron beams in terrestrial
+  gamma ray flashes}, \textit{Journal of Geophysical Research: Space Physics},
+  \textit{118}(5), 2313--2320, \doi{10.1029/2012JA018288}, 2013.
 
 \bibitem[{\textit{Crombie}(1958)}]{Crombie1958}
 Crombie, D., {Differences between the east-west and west-east propagation of
@@ -269,6 +281,13 @@ Hutchins, M.~L., A.~R. Jacobson, R.~H. Holzworth, and J.~B. Brundell,
   {Azimuthal Dependence of VLF Propagation}, \textit{Journal of Geophysical
   Research: Space Physics}, \textit{118}, 5808--5812, \doi{10.1002/jgra.50533},
   2013{\natexlab{b}}.
+
+\bibitem[{\textit{Hutchins et~al.}(2014)\textit{Hutchins, Holzworth, and
+  Brundell}}]{Hutchins2014}
+Hutchins, M.~L., R.~H. Holzworth, and J.~B. Brundell, {Diurnal variation of the
+  global electric circuit from clustered thunderstorms}, \textit{Journal of
+  Geophysical Research - Space Physics}, (119), 620--629,
+  \doi{10.1002/2013JA019593.Received}, 2014.
 
 \bibitem[{\textit{Ishii et~al.}(2010)\textit{Ishii, Saito, Fujii, Matsui, and
   Itamoto}}]{Ishii2010}
@@ -693,5 +712,12 @@ Wilson, C. T.~R., {Investigation on Lightning Discharges and on the Electric
 \bibitem[{\textit{Zipser}(1994)}]{Zipser1994}
 Zipser, E., {Deep cumulonimbus cloud systems in the tropics with and without
   lightning}, \textit{Monthly weather review}, \textit{1222}, 1837--1851, 1994.
+
+\bibitem[{\textit{Zoghzoghy et~al.}(2013)\textit{Zoghzoghy, Cohen, Said, and
+  Inan}}]{Zoghzoghy2013}
+Zoghzoghy, F.~G., M.~B. Cohen, R.~K. Said, and U.~S. Inan, {Statistical
+  patterns in the location of natural lightning}, \textit{Journal of
+  Geophysical Research: Atmospheres}, \textit{118}(2), 787--796,
+  \doi{10.1002/jgrd.50107}, 2013.
 
 \end{thebibliography}
