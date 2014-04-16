@@ -1,22 +1,22 @@
 Over the course of this dissertation WWLLN has been expanded to include several new features: energy per stroke, relative detection efficiency, flash clustering, and thunderstorm clustering.
 These new features have been developed alongside new research and analysis using WWLLN by itself or in conjunction with other systems.
 Most of the research completed here naturally leads to future projects and research avenues that can be explored in the context of this work.
-Several of the possibilites for research on WWLLN, thunderstorms, the global electric circuit, and other lightning processes are discussed in this chapter.
+Several of the possibilites for research with WWLLN: network characterization, thunderstorms, the global electric circuit, and other lightning processes are discussed in this chapter.
 
-\section{WWLLN}
+\section{WWLLN Characterization}
 
-The relative detection efficiency model developed in Chapter~\ref{thesis:chapter:efficiency} provides one view of the network performance but it relies on several assumptions.
-Either the model can be advanced to not rely on these assumptions or those assumptions themselves can be monitored.
-The main assumption is that the distribution of lightning energy is the same everywhere; this was seen not to hold in Chapter~\ref{thesis:chapter:landsea} with land and oceanic thunderstorms.
-The model can take into account the varying energy distributions, or the expected variance, by looking into the variability of the observerd regional energy distributions over time.
+The relative detection efficiency model developed in Chapter~\ref{thesis:chapter:efficiency} provides one view of the WWLLN network performance but it relies on several assumptions.
+Either the model can be advanced to not rely on these assumptions or those assumptions themselves can be directly monitored.
+The main assumption is that the distribution of lightning energy is the same everywhere; this was seen not to hold in Chapter~\ref{thesis:chapter:landsea} between land and oceanic thunderstorms.
+The model can take into account the varying energy distributions, or the expected variance, through the variability of the observed regional energy distributions over time.
 
-A promising method for examining the energy detection performance is to check how the measured energy values change when the station configuration changes.
-For example, processing the energy data a second time after artificially removing a few stations to quantify how the energy distributions change.
-Compare the two energy distribution changes to the change in detection efficiency relative to another network (e.g. ENTLN or LIS) to better parameterize the model.
+A promising method for examining the energy detection efficiency is to check how the measured energy values change when the station configuration changes.
+For example, processing the energy data after artificially removing a few stations to quantify how the energy distributions change.
+Compare the two energy distributions to the change in detection efficiency relative to a reference network (e.g. ENTLN or LIS) to better parameterize the model.
 
 Similarly, the accuracy of the energy measurements themselves can be improved by adapting the energy per stroke processing to include multiple well calibrated WWLLN stations.
-In the processing described in this work the entire network calibratin is bootstrapped from one station; the addition of a second well calibrated station can improve the energy measurements and help quantify the regional variation in energy uncertainty.
-This is assuming that more uncertainty is introduced in the station calibrations with calibration steps from the first station.
+In the processing described in this work the entire network calibration is bootstrapped from one station; the addition of a second well calibrated station can improve the energy measurements and help quantify the regional variation in energy uncertainty.
+This can address the uncertainty that is introduced in the station calibrations for stations far from the first station.
 
 Finally other network characterizations can be developed based on the clustering results.
 The number of thunderstorms, the average number of strokes per thunderstorm, average flash multiplicity, or time between flashes within a single thunderstorm can be routinely monitored for network health.
@@ -26,59 +26,54 @@ The number of thunderstorms, the average number of strokes per thunderstorm, ave
 \subsection{Cluster Validation}
 
 The thunderstorm clustering discussed in Chapter~\ref{thesis:chapter:gec} and~\ref{thesis:chapter:thunderstorm} can benefit from additional validation.
-Two potential methods for validation can be large scale comparisons to TRMM precipitation rates and case studies against regional weather radars.
-The TRMM comparison would require grouping of the precitipation data and a comparison of those groupings to the estimated thunderstorm extents.
-Weather radar comparisons would provide detailed ground truth comparisons of the thunderstorm cluster areas and durations.
-Further weather radar would allow for a measure of thunderstorm tracking accuracy.
+Two potential methods for validation are large scale comparisons to TRMM precipitation rates and case studies against regional weather radars.
+The TRMM comparison would require grouping of the precipitation data to compare to the estimated thunderstorm extents.
+Weather radar comparisons would provide detailed ground truth of the thunderstorm cluster areas and durations.
+Further, weather radar would allow for a measure of thunderstorm tracking accuracy.
 
 Aside from comparisons to other sytems the properties measured by the thunderstorm clustering can be tracked over spatial and temporal scales.
-For example the average thunderstorm duration interannual variability in a given region or the overall network observed thunderstorm area.
+For example: the average thunderstorm duration interannual variability in a given region or the overall network observed thunderstorm area.
 This can explore the changes in the clustering values and accuracy as the stroke rate detected by WWLLN changes with time.
 
 \subsection{Parameterization}
 
 Thunderstorm parameterizations are functional relationships between different properties of thunderstorms.
 Using lightning detection networks allows for the development of these relationships that infer thunderstorm properties based on the observed lightning flash rates; of particular benefit for regions with low availibility of direct observations (e.g. radar, satellite).
-\citet{Zipser1994} examined the relation between the flash rate in a thunderstorm with the updraft velocities, which in turn are controlled by the differential surface heating below the thudnerstorm.
+\citet{Zipser1994} examined the relation between the flash rate in a thunderstorm with the updraft velocities, which in turn are controlled by the differential surface heating below the thunderstorm.
 Parameterization of flash rate based on other observations has led to simple models of global lightning behavior, \citet{Price1992} used cloud height parameterization for flash rate.
 These empirical parameterizations can help in the development and validation of models (e.g. \citet{Baker1999}) of thunderstorm electrification and enable or expand prediction of the global electric circuit, NO$_\text{x}$ production, and weather forecasting.
-Investigating the parameterization of lightning behaviour in relation to the properties of a thunderstorm on a large scale, compared to small studies, can create better and more robust parameterizations.
-The WWLLN thunderstorm clustering results can be compared to other networks and systems in order to develop and validate parameterizations of inferred thunderstorm parameters.
-
-With the development of these parameterizations the WWLLN clustering can be used to constrain the various controls on the flash rate and subsequent flash energy.
-From there the thunderstorm charging rate can be estimated, allowing for future research on the difference between continental and oceanic thunderstorms.
+Investigating the parameterization of lightning behavior in relation to the properties of a thunderstorm on a large scale can create better and more robust parameterizations.
+The WWLLN thunderstorm clustering can be compared to other networks and systems in order to develop and validate new parameterizations.
 
 \subsection{Thunderstorm Properties}
 
 The WWLLN thunderstorm clustering can be used to investigate global and regional thunderstorm properties and their distributions.
 Thunderstorm area and duration are briefly discussed in Chapter~\ref{thesis:chapter:thunderstorm}, but can be explored in more depth and in more regions.
 These two properties can be measured over different spatial and temporal scales.
-For example the distribution of winter thunderstorm over the Sea of Japan compared to the Gulf of Mexico, or the South American ``green ocean'' phenoma.
+For example the distribution of winter thunderstorms over the Sea of Japan, or the South American ``green ocean'' phenoma.
 
-Alternativey more complex measures of thunderstorms can be developed.
-The average stroke count per thunderstorm, the peak flash rate, or the electrical activity.
+Alternativey more complex measures of thunderstorms can be developed: the average stroke count per thunderstorm, the peak flash rate, or the electrical activity.
 The electrical activity can be measured as the total flash energy per unit area per unit time for the thunderstorm: the sum of measured flash energies within the thunderstorm.
-This measure, and others, may be highly dependent on the network performance or may not be absolutely calibrated.
-However they can still allow for relative comparisons between thunderstorms in a limited temporal or spatial scope (e.g. North America in July 2013).
+This measure, and others, may be highly dependent on the network performance or may not be absolutely calibrated, however they can still allow for relative comparisons between thunderstorms in a limited temporal or spatial scope (e.g. North America in July 2013).
 
 The thunderstorm dataset can also be advanced by classifying thunderstorms into different thunderstorm types.
-While this may only work for small case studies it may be possible to use more advanced machine learning classifiers to automatically assign cloud types to clusters.
+While this may only work for small case studies it may be possible to use more advanced machine learning classifiers to automatically assign cloud types to thunderstorm clusters.
 
 \section{Global Electric circuit}
 
 The global electric circuit model presented in Chapter~\ref{thesis:chapter:gec} provides an estimate of the thunderstorm contribution to the circuit based on the WWLLN thunderstorm clusters.
-It is shown that the model is able to reproduce the expected Carnegie curve over lone time scales and has the capability to provide current estimates on shorter time scales.
+It is shown that the model is able to reproduce the expected Carnegie curve over long time scales and has the capability to provide current estimates on shorter time scales.
 The model can be improved for a more accurate measure of the current contribution, but without any validation it cannot be reliably used.
 
-For the model improvements there are several underlying assumptions that can be factored in.
+To improve the model there are several underlying assumptions that can be factored in.
 The main one is that all thunderstorms produce the same upward current to the ionosphere regardless of their size or activity.
-The estimates used in the model from \citep{Mach2010} can be scaled by either the thunderstorm cluster activity or the estimated cluster size.
+The estimates used in the model from \citet{Mach2010} can be scaled by either the thunderstorm cluster activity or the estimated cluster size.
 Since the development of the model the thunderstorm cluster area was validated against ENTLN in Chapter~\ref{thesis:chapter:thunderstorm}, giving confidence to the area measurements.
 The second assumption is that all thunderstorm currents are the same everywhere.
 This assumption is harder to address as it relies on direct measurements of the current made in different regions.
 
 Regardless of the model improvements made, the model needs to be compared against a ground truth measurement.
-Further, comparison to a ground truth will allow for adjustments of the model to better fit the observerd measurements; or if adjustments cannot be made then other components of the global electric circuit need to be included in the model.
+Further, comparison to a ground truth will allow for tuning of the model to better fit the observerd measurements; or if adjustments cannot be made then other components of the global electric circuit need to be included in the model.
 For the ground truth a balloon campaign needs to be conducted to measure the fair weather return current over the span of one to several weeks.
 With a reliable and clean measurements of the return current the model can be validated on a very short time scale instead of relying on long term averages.
 
@@ -86,7 +81,7 @@ With a reliable and clean measurements of the return current the model can be va
 
 WWLLN is able to measure and detect more than just the main discharge of a lightning stroke.
 The network is able to directly detect terrestrial gamma-ray flashes (TGF) and their related strokes, it is also able to detect whistler waves at the individual stations.
-For TGFs WWLLN has been used to geolocate the TGF itself and the originating thunderstorm.
+For TGFs WWLLN has been used to geolocate the TGF itself and the originating thunderstorm \citep{Connaughton2010, Connaughton2013}.
 WWLLN can be used to create an estimate of the global TGF production rate by comparing the detected TGFs with the lightning within view of one of the TGF satellites (e.g. FERMI or RHESSI).
 With whistler waves an automated whistler detector running at the remote WWLLN stations could enable the creation of a large database of whistler waves.
 Such a database could provide the means for investigations of the ionosphere and magnetosphere, especially if the detector is able to run on multiple WWLLN stations.
