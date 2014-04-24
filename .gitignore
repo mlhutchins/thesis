@@ -1,3 +1,6 @@
+todo.md
+chapter_test*
+*latexmk
 .litexrc
 *.out
 matlabImages
