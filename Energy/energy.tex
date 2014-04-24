@@ -10,8 +10,8 @@ The capabilities of the network are expanded to allow for measurements of the fa
 This is accomplished by calibrating the network from a single well calibrated station using a bootstrapping method.
 With this technique the global median stroke power seen by the network is 1.0 x $10^6$~watts with an average uncertainty of 17\%.
 The results are validated by comparing to return stroke peak current as measured by the New Zealand Lightning Detection Network and to previous ground wave power measurements in the literature.
-Our global median stroke power is found to be four orders of magnitude lower than reported earlier for the measurements including the nearby ground and sky wave.
-However, we find our far-field waveguide mode observations are consistent with the previous literature due to differences in observational techniques and the efficiency of coupling into a propagation wave in the Earth-ionosphere waveguide.
+The global median stroke power is found to be four orders of magnitude lower than previous measurements that included the ground and sky wave.
+Accounting for the different observational techniques, we find our far-field observations of the waveguide mode are consistent with the previous literature
 This study demonstrates that the WWLLN determined powers can be used to estimate the return stroke peak currents of individual lightning strokes occurring throughout the globe.
 
 %% Need reference to this figure
@@ -33,21 +33,24 @@ This calibration of a single station allows for the calculation of stroke power 
 
 A previous study by \citet{Rodger2006} attempted to calibrate the network through observations of narrow-band VLF communication transmitters at each WWLLN station.
 These observations were combined with the U.S. Navy Long Wave Propagation Capability (LWPC) code, described by \citet{Ferguson1998}, to predict what the received amplitude should be in order to calibrate each station.
-However the study assumed that the frequency response of the sound cards was the same across the network, an assumption which was false.
+However the study assumed that the frequency response and calibration of the sound cards was the same across the network, assumptions that are false.
 The current study utilizes a broader range of frequencies and calibrates each station such that differing frequency responses are accounted for in the calibration.
+%% MM: In fact, sound cards vary by a factor of 'X' in their sensitivity
+%% MM: How bad was this assumptions
 
 Measuring stroke power is an important step forward as it allows the network to make real time measurements of the strength of lightning worldwide.
 Being able to measure characteristics of the strokes will allow for insights into thunderstorm evolution, large scale storm phenomena, and global effects of lightning.
 For example, stroke power values could help current research on terrestrial gamma ray flashes by \citet{Briggs2011} constraining efficiencies and source mechanisms, and tropical hurricanes by \citet{Thomas2010d} could utilize the power in analyzing eyewall replacement.
 
-As we will show here, the network measures a median global VLF stroke power in the far-field waveguide mode of 1.0 x $10^6$~W with an average uncertainty of 17\%.
-Previous measurements have shown the power radiated by strokes is often near $10^{10}$~W \citep{Krider1983}. This difference is due to methodology in the measurements.
-Past measurements used a broad band peak power measurement taken in range of the ground wave (100~km), while WWLLN measures the power in the 6-18~kHz band from the RMS electric field at much longer distances.
+As we will show in this Chapter, the network measures a median global VLF stroke power in the far-field waveguide mode of 1.0 x $10^6$~W with an average uncertainty of 17\%.
+Previous measurements have shown the power radiated by strokes is often near $10^{10}$~W \citep{Krider1983}.
+Past measurements used a wider band of frequencies much closer to that strokes (100~km) and use the peak power, resulting in a measurement of both the sky- and ground-wave of the sferic.
+WWLLN measures the RMS electric field in a narrower frequency band, 6 -- 18~kHz, at distances where only the waveguide mode of the sferic remains.
 When these factors are accounted for the median power from WWLLN located strokes is comparable to the previously reported value of $10^{10}$~W peak power.
 
 \section{Instrumentation and Data Processing}
 
-In order to calculate the stroke power from WWLLN three steps are necessary: measure RMS electric field of a stroke, calculate the stroke power needed to produce the electric field at the station, and calibrate each station in the network.
+In order to calculate the stroke power from WWLLN three steps are necessary: calibrate each station in the network, measure RMS electric field of a stroke at each station, and calculate the stroke power needed to produce the electric field at each station.
 
 \subsection{Station Electric Field}
 
@@ -82,7 +85,7 @@ To calculate the stroke power based on the RMS electric field at a station the L
 The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{Thomson2011}.
 In this research we made use of LWPC version 2.1.
 
-With a known conversion from a stations SCU value to V m$^{-1}$, $A_{local}$, of the lightning waveform, power is calculated using equation~\ref{energy:eq:power_eq}.
+With a known conversion from a station's SCU value to V m$^{-1}$, $A_{local}$, of the lightning waveform, power is calculated using equation~\ref{energy:eq:power_eq}.
 The ratio from LWPC between a 100kW transmitter and the modeled field (given in dB above 1 $\mu$V m$^{-1}$) is used to account for the sferic attenuation, $\alpha$, along the path for every grid location for every detector.
 
 \begin{equation}
@@ -126,7 +129,7 @@ This is repeated for many strokes with the median of the conversion factor distr
 Only one station in the network is thoroughly calibrated to VLF fields, the station in Scott Base, Antarctica.
 Using the method described below the Dunedin station was calibrated off of Scott Base station.
 With both stations calibrated, Dunedin was chosen as the first calibrated station in the bootstrapping process, by using thousands of mutually observed sferics.
-Dunedin was chosen instead of Scott Base due to strong observed seasonal variations likely due to changes local ground conductivity that are not accounted for in the propagation model.
+Dunedin was chosen instead of Scott Base due to strong observed seasonal variations likely due to changes in local ground conductivity that are not accounted for in the propagation model.
 
 To calibrate the entire network off of a single station a bootstrapping method is used.
 Station to station calibrations are done using strokes that have all day paths to both stations and are within 1000-8000 km of both stations.
@@ -165,7 +168,7 @@ Currently the station calibrations along with this iterative technique are perfo
 A study was conducted comparing the stroke power values determined by WWLLN to the ground based NZLDN measurements of return stroke absolute peak current. NZLDN was described earlier by \citet{Rodger2006}.
 The comparison was done using three periods of high lightning activity over New Zealand: 25-27 August 2009, 26-27 September 2009 and 21 October 2009.
 WWLLN strokes were considered to match NZLDN strokes if they occurred within 0.5ms and 400km of a NZLDN detector, the same criteria used by \citet{Rodger2006}.
-From the comparison the empirical relation between return stroke peak current and radiated power was found to be: 
+From the comparison the empirical relation between return stroke peak current and 6 -- 18~kHz RMS radiated power was found to be: 
 
 \begin{equation}
 P_{stroke} = 1676 * |I_{peak}|^{1.62}
@@ -200,7 +203,7 @@ These issues arise from the inherent speed limitations of the LWPC code.
 A secondary source of uncertainty manifests as variations in the WWLLN station calibration factors.
 These are not caused by drift in the electronics, rather from variations in the local station environment and the ionosphere along the path.
 Local weather could change the gain at a station (for example through water or ice on an antenna) or if there are significant changes in conductivity of the ground or ionosphere.
-Since the LWPC code results are fixed, the only free variable in the bootstrapping process are the station conversion factors, so variations in the propagation path manifests within the these factors.
+Since the LWPC code results are fixed, the only free variable in the bootstrapping process are the station conversion factors, so variations in the propagation path manifests within these factors.
 These uncertainties are mitigated by performing a seven day running average of the calibration values but they are still present as daily variations in the calibrations.
 
 Uncertainties that arise through the use of the LWPC model and through the station calibrations are seen through the MAD of each stroke.
@@ -218,20 +221,19 @@ The analysis of the difference was done using the raw waveform data from three s
 Data was taken from between 20 April 2011 and 9 May 2011. In this interval 198 events were selected that had a clear waveform at the network trigger time.
 
 All of the measurements of power in the literature are measurements of peak power, however WWLLN is measuring RMS power.
-The average peak value of the sferic waveform is 8.8 dB greater than the RMS value of the waveform. 
-
+The average peak value of the sferic waveforms, used in Figure~\ref{energy:fig:average_spectra}, is 8.8 dB greater than the RMS value of the waveform. 
 Before the power value is computed at a WWLLN station the full waveform is sent through a 6 to 18 kHz 16 point FIR bandpass filter.
 This filter is used to cut out the strong signals from various high powered VLF communications transmitters.
 While most of the VLF radiated power is in the 6 to 18 kHz band, it is not a sharp cutoff.
 This filtering of the waveform before calculating power causes a power reduction of 1.5 dB.
 
 The biggest effect on the received stroke power is caused by the distances involved in the measurement and most particularly the differences between the ground and sky wave near the stroke and the waveguide propagated signal (and hence received powers).
-Most of the VLF power measurements in the literature have measured waveforms at around 100km from the stroke.
+Most of the VLF power measurements in the literature have measured waveforms at around 100~km from the stroke.
 These distances are near enough that the ground and sky wave has not yet been attenuated by the structure of the Earth-ionosphere waveguide.
 
-To measure the effect that the nearby high attenuation will have compared to a signal in the waveguide the difference in stroke power of the VLF transmitter near Seattle, NLK (250 kW radiated power at a frequency of 24.8 kHz, i.e. \citet{Clilverd2009}), was compared to the same signal seen at two stations in Florida.
-A second transmitter in Hawaii, NPM (500 kW radiated power at a frequency of 21.4 kHz), was used as a reference for both stations.
-The two Florida stations were chosen as they are far from both VLF transmitters and sample at a Nyquist frequency of 48kHz, well above the frequencies of the lightning peak power and the VLF radio transmitter frequencies.
+To measure the effect that the nearby high attenuation will have compared to a signal in the waveguide the difference in stroke power of the VLF transmitter near Seattle, NLK (250~kW radiated power at a frequency of 24.8~kHz, i.e. \citet{Clilverd2009}), was compared to the same signal seen at two stations in Florida.
+A second transmitter in Hawaii, NPM (500~kW radiated power at a frequency of 21.4 kHz), was used as a reference for both stations.
+The two Florida stations were chosen as they are far from both VLF transmitters and sample at a Nyquist frequency of 48~kHz, well above the frequencies of the lightning peak power and the VLF radio transmitter frequencies.
 
 The LWPC code estimate for the transmitter signal at the WWLLN stations is compared to the measured transmitter signal to determine the conversion factor for each event.
 The conversions are found to be consistent with calculations and calibrations reported in this study for broadband lightning produced signals.
@@ -240,11 +242,11 @@ Based on the verification of the LWPC code performed by \citet{Thomson2010}, LWP
 The conversion factors from the NLK and NPM signals present in the selected waveforms were used to calculate the power of the two transmitters using the same method as the WWLLN power calculations.
 To determine the importance of the ground wave, the ratio of estimated NLK to NPM powers at Seattle were divided by the NLK to NPM ratio at the two Florida stations.
 This ratio is necessary, instead of just the Seattle NLK to actual NLK power ratio, in order to normalize out any intrinsic errors in the calculation process.
-Measuring the waveguide signal causes a loss of 17.90 dB to 23.83 dB on the signal power as seen by WWLLN compared to the corresponding nearby ground and sky wave measurements.
+Measuring the waveguide signal causes a loss of 17.9 dB to 23.8 dB on the signal power as seen by WWLLN compared to the corresponding nearby ground and sky wave measurements.
 
-These three factors show how 27.95 to 39.21 dB of power is lost from ground wave measurements to those made of the waveguide propagating fields by WWLLN, which is in the range if the 35 to 43 dB loss needed to explain the difference between the WWLLN and past power measurements.
+These three factors show how 28.2 to 34.1~dB of power is lost from ground wave measurements to those made of the waveguide propagating fields by WWLLN, which is near the range of the 35 to 43 dB loss needed to explain the difference between the WWLLN and past power measurements.
 
-This analysis leads to the conclusion that the power being measured by WWLLN is not the absolute power of the stroke, rather it is the RMS power radiated into the Earth-ionosphere waveguide in the 6-18 kHz band.
+This analysis leads to the conclusion that the power being measured by WWLLN is not the total radiated power of the stroke, rather it is the RMS power radiated into the Earth-ionosphere waveguide in the 6 -- 18 kHz band.
 
 \subsection{Power Distribution}
 
@@ -280,7 +282,7 @@ With a lower detection efficiency only the strongest strokes are seen by the mor
 An initial effort to model the detection efficiency of WWLLN showed this effect very strongly (\citet{Rodger2006}, Fig. 11).
 This results in the distribution of figure~\ref{energy:fig:distribution}, with fewer low powered strokes occurring over Africa compared to the other regions.
 
-Without a full understanding of the regional detection efficiency of the network it cannot be concluded if every regions follows the same lognormal power distribution or whether local environments affect the power of strokes in the region.
+Without a full understanding of the regional detection efficiency of the network it cannot be determined whether every region follows the same lognormal power distribution or whether local environments affect the power of strokes in the region.
 However, the bootstrap calibration process described in the current study may allow new estimates of the global variation in WWLLN detection efficiency, following \citet{Rodger2006}.
 
 \section{Conclusion}
