@@ -30,7 +30,7 @@ The Gumstix COM has direct pinouts to the processor, however as it is not used w
 
 \begin{figure}[ht!]
    \centering
-   \includegraphics[scale=1]{Appendix/Figures/tobi_pinout.pdf} 
+   \includegraphics[scale=1]{Appendix/Figures/tobi_pinout.pdf}
    \caption{Pinout of the Gumstix Tobi breakout board.}
    \label{app:gumstix:fig:tobi}
 \end{figure}
@@ -40,65 +40,31 @@ RXD1 and TXD1 are used for the serial communication with the GPS.
 GPIO145 is used to control the pre-amp power supply.
 V\_BATT is the 5~V power for the Gumstix.
 
-\section{Gumstix Operating System}
+\section{Gumstix Operating System v2.0}
 
-\subsection{\r{A}ngstrom}
+\subsection{Gumstix-Yocto}
 
-The Gumstix used in the service unit is running the basic \r{A}ngstrom operating system (http://www.angstrom-distribution.org).
-It also supports Ubuntu, however Ubuntu has been found to be slow and harder to configure with the Gumstix.
-\r{A}ngstrom runs similar to most unix operating systems, with the main difference being the opkg package manager instead of yum or apt-get.
+The Gumstix used in the service unit is running a custom Linux distribution created using the Yocto Project build system.
+This OS runs similar to most unix operating systems, with the main difference being the smart package manager instead of yum or apt-get.
 
 A useful resource in setting up and configuring the Gumstix software is the Gumstix developer site (http://gumstix.org) and the mailing list archive forum (http://gumstix.8.x6.nabble.com).
 
 \subsection{Distribution Location}
 \label{app:gum:distribution}
-The operating system used is the Sakoman GNOME r13 build, available online:
+The operating system used is the Yocto Project Gumstix Layer v1.5, available on flash5 or in the Git repository:
 
-http://www2.sakoman.com/category/8-gnome-daily-builds-r13.html
+/home/mlhutch/Git/gumstix.git repository on flash5 in the image folder.
 
-http://feeds.sakoman.com/feeds/gnome-r13/images/
+\subsection{Building}
 
-Or in the /home/mlhutch/Git/gumstix.git repository on flash5 in the baseKernel folder.
+Building the operating system can be done by following the instructions at:
 
-\subsection{Bitbake and the Kernel}
+https://github.com/gumstix/Gumstix-YoctoProject-Repo
 
-The default kernel provided in the builds listed above is missing the ability to run ipfilter which is necessary as the firewall on the Gumstix operating system.
-To enable this the kernel needs to be reconfigured to run netfilter, then compiled and deployed.
-Bitbake was used previously to alter the linux kernel.
+With the final configuration in the Git repository on flash5 in image/yocto/local.conf.
+If rebuilding use the local.conf file in the build/conf folder and run the bitbake target \texttt{bitbake gumstix-xfce-image}.
 
-To set up a Bitbake development environment it is recommended to follow a guide such as:
-http://ezrover.com/ 2012/01/12/ sakoman-r13-gnome-firmware-howto-101-guide-for-gumstix-overo-openembedded-board/
-Where the git repository for the bitbake and recipes is either:
-www.sakoman.com/git/openembedded.git
-or already pre-configured with the netfilter options on flash5 in the /home/mlhutch/Git/openembedded.git repository.
-
-The following commands allow for changing the kernel:
-
-\begin{enumerate}
-
-\item \begin{verbatim}cd openembedded \end{verbatim}
-\item \begin{verbatim}make ARCH=arm menuconfig \end{verbatim}
-
-\item Enable all netfilter options under: Networking Support / Networking Options / Network Packet Filtering (netfilter) /
-
-\item save results as new.config
-\item Copy (and backup originals) as defconfig in: recipes/linux/linux-sakoman-pm-3.0/omap3-multi/defconfig
-
-\item \begin{verbatim}bitbake virtual/kernel -c clean \end{verbatim}
-\item \begin{verbatim}bitbake virtual/kernel \end{verbatim}
-
-\end{enumerate}
-
-Where the resulting kernel and modules are found in the tmp/deploy/glibc/images/overo/ directory.
-
-After deploying a new kernel it may be necessary to recover the default boot variables on the Gumstix.
-On the initial Gumstix startup, pause in the first 5 seconds (this needs to be done via the USB-console connection).
-Once paused the defaults can be restored with:
-
-\begin{verbatim}
-nand erase 240000 20000
-reset
-\end{verbatim}
+With either a newly made OS image or the one in the gumstix.git repository, follow the install instructions in INSTALL.md for setting up a new microSD card to run with WWLLN.
 
 \section{Software}
 
@@ -142,8 +108,8 @@ The default location for the gps.log file is in the public\_html folder where it
 
 \subsection{RAM Disk}
 
-The \r{A}ngstrom distribution for Gumstix automatically sets up a RAM disk for users.
-It is created at /media/ram with half of the available RAM (256~MB).
+The Linux distribution for Gumstix automatically sets up a RAM disk for users.
+It is created at /var/volatile with half of the available RAM (256~MB).
 It needs to be used for the running of the WWLLN software as the microSD card is too slow.
 At start-up the public\_html folder (logs and spectrograms) and sferics folder are created in the ram disk and symlinked to the main sferics directory.
 
@@ -152,31 +118,7 @@ For this reason all permanent edits to the Service Unit website should be made i
 \section{Creating Gumstix microSD Card}
 
 There are two methods for configuring a new microSD card for use with the service unit Gumstix computer.
-Either a card can be formatted and loaded with the latest software using the {\bf makeSD.sh} script and other configuration scripts, or an existing installation disk image can be copied over.
-
-\subsection{Formatting and Installation}
-
-The {\bf makeSD.sh} is based on the script given in Subsection~\ref{app:gum:distribution}.
-It is configured to run on a Linux system but may also work with other Unix based operating systems.
-The script automatically formats the microSD, loads the bootscripts, loads the operating system, and updates the kernel and modules produced with Bitbake.
-
-\subsection{Installing Packages}
-
-After a card has been successfully partitioned with a new operating system installed it should be run in a Gumstix to allow for the new kernel to configure the necessary modules.
-This process takes a few hours for each card, on top of installation, so it is recommended that further cards are created via duplication described below in subsection~\ref{app:gumstix:duplication}.
-
-Once configured a new user can login as {\bf root} with the password {\bf root}.
-In the root directory should be a folder called {\bf firstRunFiles}.
-The {\bf install.sh} script should be run after connecting the Gumstix to the internet (the script will start dhcp).
-This script will install all of the necessary packages for the Gumstix to function as a WWLLN station.
-
-\subsection{Configuring Settings}
-
-With the packages installed the Gumstix needs to be configured with the {\bf setup.sh} script.
-The first three tasks of the script are changing the root, sferix, and host passwords.
-They should be set according the current standard password practices (contact Robert Holzworth bobholz@ess.washington.edu for exact details).
-The script finishes by moving all of the programs, crontabs, startup scripts, bash profiles, and WWLLN programs to the sferix and host accounts.
-Lastly it sets up the RAM disk to use with the web server and running the toga program.
+Either a card can be formatted and loaded with the latest software following the INSTALL.md instructions, or an existing installation disk image can be copied over (located on flashfile and flash5).
 
 \subsection{Card Duplication}
 \label{app:gumstix:duplication}
@@ -205,7 +147,7 @@ A more up to date version is available in the {\bf gumstix.git} repository in th
 Also included in the station setup instructions are how to setup and customize the service unit webpage, as described in Subsection~\ref{app:gumstix:website}.
 
 \subsection{Connecting to the Gumstix}
-\label{app:appendix:setup} 
+\label{app:appendix:setup}
 %%
 %% Update to latest version
 
@@ -258,26 +200,26 @@ Power on the box, it will take a few minutes for the login screen to show up.
 Select ``Other...'' and login with the username \textbf{host}.
 Wait a few more minutes for the graphical display to load.
 
-Adjust the network settings by either changing the files listed in Method 1, or by logging in as root as adjusting them through System $\rightarrow$ Network in the top menu bar.
+Adjust the network settings by the steps listed in Method 1 or 3.
 
 \begin{enumerate}
 \item{Connect an HDMI display, keyboard and mouse}
-\item{Set network information through GUI}
+\item{Follow Method~1 or Method~3}
 \end{enumerate}
 
 
 \subsection*{Method 3: Manual microSD Editing}
 
-The file that need to be edited on the rootfs partition are:
+The files that need to be edited on the rootfs partition are:
 
 \begin{verbatim}
 /etc/network/interfaces
 /etc/resolv.conf
-/etc/init.d/dropbear
+/etc/systemd/system/sshd.socket
 \end{verbatim}
 
 The interfaces file lists the IP information of the machine whole the resolv.conf file is for the DNS information.
-The sshd\_config file on line 13 sets the port with which SSH is allowed.
+The sshd.socket file sets the port with which SSH is allowed.
 
 The last step, if a non-standard port is being used, is to also alter the built in firewall of iptables and netfilter.
 The firewall settings are stored in:
@@ -296,13 +238,13 @@ and can be edited as a standard iptables configuration file.
 To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
 
 \begin{verbatim}
-Line 96:	#ServerName www.example.com:80
+#ServerName www.example.com:80
 \end{verbatim}
 
 Needs to be uncommented and changed to the hostname of the computer, e.g.:
 
 \begin{verbatim}
-Line96:	ServerName gumstix.ess.washington.edu:80
+ServerName gumstix.ess.washington.edu:80
 \end{verbatim}
 
 Then httpd needs to be restarted:
@@ -323,8 +265,22 @@ Included in the installation files is the default alsa profile {\bf asound.state
 
 \begin{figure}[ht!]
    \centering
-   \includegraphics[scale=.3]{Appendix/Figures/gumstixmixer.png} 
+   \includegraphics[scale=.3]{Appendix/Figures/gumstixmixer.png}
    \caption{Alsamixer settings for Gumstix stereo input, $<$Analog$>$ controls the stereo gain.}
    \label{app:gumstix:fig:alsa}
 \end{figure}
+
+\section{Common Problems}
+
+\begin{itemize}
+\item The network icon in the top menu bar says the network connections are disabled.
+
+\emph{The GUI network manager is disabled, but the network settings set as above still work.}
+
+\item The GPS pulse per second is not working with the TOGA program, it lists ``PPS bad'' for most lines.
+
+\emph{Adjust the gain on the pulse per second with Alsamixer <TX1 Digital> right channel, usually lowering it will resolve the problem.}
+
+\end{itemize}
+
 
