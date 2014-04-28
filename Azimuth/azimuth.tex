@@ -4,10 +4,12 @@
 
 The World Wide Lightning Location Network (WWLLN) is used to measure the normalized lightning electric field at three network stations in order to examine the sferic attenuation between the stroke and the station.
 The electric field measurements are normalized to the radiated very low frequency (VLF) stroke energy to allow direct comparisons of the many stroke-station paths seen by WWLLN.
-Comparing past theoretical results and models show that WWLLN observes a stronger dependence of VLF propagation on magnetic azimuth compared to past work.
-The average attenuation over the water of eastward-propagating sferics is found to be $1.13\pm0.35$~dB/Mm during the day and $0.71\pm0.68$~dB/Mm at night, with westward-propagating sferics having average attenuation rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night respectively.
+WWLLN observes a strong dependence of VLF propagation on magnetic azimuth similar to past work.
+From WWLLN the average attenuation over the water of eastward-propagating sferics is found to be $1.13\pm0.35$~dB/Mm during the day and $0.71\pm0.68$~dB/Mm at night, with westward-propagating sferics having average attenuation rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night respectively.
 
 %% Transition
+
+%% MM: Add a quick summary of the Wait and Spies theory for why there is the magnetic asymmetry.
 
 Past experimental work has shown a strong dependence of VLF attenuation on the magnetic azimuthal angle of propagation.
 \citet{Wait1960a} present a theoretical background for why the attenuation changes with azimuth.
@@ -17,7 +19,7 @@ Recently \citet{Jacobson2012} used negative cloud-to-ground strokes to examine i
 
 The past work has examined stationary VLF transmitters with either a few receivers or one moving receiver.
 Recent work by \citet{Burkholder2013} utilized the World Wide Lightning Location Network (WWLLN) to examine how eastward and westward propagating VLF sferics couple into the ionosphere.
-This work motivated us to use the many stroke-receivers paths of WWLLN to study the azimuthal dependence of VLF propagation within the Earth-ionosphere waveguide.
+This work motivated us to use the many stroke-receiver paths of WWLLN to study the azimuthal dependence of VLF propagation within the Earth-ionosphere waveguide.
 
 The global coverage of the network allows for many long range stroke-receiver paths with which to estimate VLF attenuation rates.
 The sferic attenuation for a single station can be found with WWLLN by comparing the stroke energies measured by the network to the RMS electric field measured at a single WWLLN station.
@@ -45,7 +47,7 @@ This resulted in over $2\times10^6$ total stroke-receiver paths used in this stu
 The subset of data contains the RMS electric field at each station, the distance to the strokes, and the VLF energy of the stroke.
 VLF stroke energies and station measured electric fields both vary over several orders of magnitude.
 All station electric fields (in units of $1 \mu V m^{-1}$) are normalized by the square root of the stroke energy (in $J$) to allow for direct comparisons between differing source energies.
-The stroke energy normalization give the electric field in dB above $1 \mu Vm^{-1}/J^{1/2}$.
+The stroke energy normalization gives the electric field in dB above $1 \mu Vm^{-1}/J^{1/2}$.
 Changes in the normalized electric field with stroke distance gives the attenuation of the lightning sferic for that distance interval, reported as the dB/Mm decrease. 
 
 Normalized field values are grouped into 45$^\circ$ azimuth and 500~km distance bins.
@@ -102,6 +104,7 @@ There is a small upturn in field strength as the sferics propagate past 10~Mm be
  \end{figure}
 
 The method for estimating the attenuation and the uncertainty is outlined in Figure~\ref{azimuth:fig:attenuationCalculation} using the station averaged eastward-propagating electric field values as an example (red line in Figure~\ref{azimuth:fig:azimuthAverage}).
+The following fitting and smoothing method is used to estimate the attenuation to remove the noise in the direct attenuation (Figure~\ref{azimuth:fig:attenuationCalculation}b). 
 First, the normalized electric field versus distance curves are smoothed and fitted to quadratics for the bins that have data, as shown with the dashed line in Figure~\ref{azimuth:fig:attenuationCalculation}a.
 Second, the attenuation between each bin of the fit (the slope of Figure~\ref{azimuth:fig:attenuationCalculation}a) is found and shown in Figure~\ref{azimuth:fig:attenuationCalculation}b.
 Lastly, the attenuation for a given electric field curve is calculated by the mean of the fitted attenuation where positive attenuation corresponds to a signal loss over distance.
@@ -109,6 +112,8 @@ The standard deviation of the attenuation is taken as the uncertainty in the att
 In the example of Figure~\ref{azimuth:fig:attenuationCalculation} the fitted attenuation is $1.13\pm0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{azimuth:fig:attenuationCalculation}b) is $0.79\pm2.34$~dB/Mm.
 The increased uncertainty in the direct attenuation is due to the variations in attenuation between successive 500~km distance bins.
 The fitted attenuation is used for all of the following attenuation values.
+
+%% MM: What about geometric effects?  Why not remove them to get a better signal
 
 \begin{figure}[h!t]
     \centering
@@ -135,6 +140,8 @@ The azimuthal variation, P$(\phi)$, is found by comparing the attenuation with t
 For the WWLLN data the average attenuation of all azimuths is taken as representative of the attenuation with no magnetic field.
 The variability of the attenuation rate (in dB/Mm) with magnetic azimuth from \citet{Wait1960a} is approximated as $P(\phi) = - 0.3 \times \text{sin}(\phi) + 1$.
 
+%% MM: does the wait attenuation rats here account for the geometric effect?
+
 \begin{figure}[h!t]
    \centering
    \includegraphics[scale=1]{Azimuth/Figures/attenuationTheory.pdf} 
@@ -145,16 +152,19 @@ The variability of the attenuation rate (in dB/Mm) with magnetic azimuth from \c
    \label{azimuth:fig:attenuationTheory}
 \end{figure}
 
-The average attenuation azimuthal variation was fit to the same form as the theory ($P(\phi) = - a~\times~\text{sin}(b~\times~\phi + c) + d$) with the resulting fits shown in Figure~\ref{azimuth:fig:attenuationTheory}.
+The average attenuation azimuthal variation was fit to the same form as the theory ($P(\phi) = - a~\times~\text{sin}(\phi + b) + 1$) with the resulting fits shown in Figure~\ref{azimuth:fig:attenuationTheory}.
 The leading coefficient, $a$, gives the relative variation in attenuation with azimuth; how much attenuation rates will change between northward/southward and eastward/westward propagating sferics.
-The day attenuation best fit is $P(\phi) = - 0.58 \times \text{sin}(1.00\times\phi - 13.0) + 0.99$ and the night attenuation best fit is $P(\phi) = - 0.77 \times \text{sin}(1.03\times\phi - 20.4) + 0.99$.
-Both day and night paths show twice the amplitude relative to the theory ($a_{theory} = 0.3$), with a weaker day dependence and a stronger night dependence, $a=0.58$ and $a=0.77$ respectively.
+The day attenuation best fit is $P(\phi) = - 0.58 \times \text{sin}(\phi + 348) + 1$ and the night attenuation best fit is $P(\phi) = - 0.76 \times \text{sin}(\phi - 344) + 1$.
+Both day and night paths show twice the amplitude relative to the theory ($a_{theory} = 0.3$), with a weaker day dependence and a stronger night dependence, $a=0.58 \pm 0.18$ and $a=0.76 \pn 0.26$ respectively.
 On average the day measurements vary from the theory by 19\% and the night measurements by 34\%.
 
 In previous measurements of 3 -- 30~kHz VLF attenuation \citet{Taylor1960a} observed westward VLF paths to exhibit 1-3~dB/Mm more attenuation than eastward paths.
 This is in line with the WWLLN measured increase of 1.9-- 2.0~dB/Mm from eastward to westward-propagating sferics.
 Similarly the LWPC model shows an attenuation increase of 2~dB/Mm from eastward to westward-propagating sferics for equatorial day paths over the Pacific Ocean.
 The model also gives a 28\% to 37\% variability of attenuation between propagation directions, relative to northward propagation, compared to 30\% for \citet{Wait1960a} and 58\% to 77\% for WWLLN.
+
+%% MM: Need to say something definite and original.
+%% MM: So are the measurements consistent with theory or not?
 
 \section{Conclusion}
 
