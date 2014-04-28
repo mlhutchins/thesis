@@ -1,4 +1,4 @@
-\begin{thebibliography}{120}
+\begin{thebibliography}{122}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -468,6 +468,12 @@ Pan, L., X.~Qie, D.~Liu, D.~Wang, and J.~Yang, {The lightning activities in
   super typhoons over the Northwest Pacific}, \textit{Science China Earth
   Sciences}, \textit{53}(8), 1241--1248, \doi{10.1007/s11430-010-3034-z}, 2010.
 
+\bibitem[{\textit{Peckham et~al.}(1984)\textit{Peckham, Uman, and
+  Wilcox}}]{Peckham1984}
+Peckham, D.~W., M.~a. Uman, and C.~E. Wilcox, {Lightning phenomenology in the
+  Tampa Bay area}, \textit{Journal of Geophysical Research}, \textit{89}(D7),
+  11,789, \doi{10.1029/JD089iD07p11789}, 1984.
+
 \bibitem[{\textit{Popolansky}(1972)}]{Popolansky1972}
 Popolansky, F., {Frequency Distribution of amplitudes of lightning currents},
   \textit{Electra}, \textit{22}, 139--146, 1972.
@@ -487,6 +493,10 @@ Price, C., and D.~Rind, {A simple lightning parameterization for calculating
 Price, C., M.~Asfur, and Y.~Yair, {Maximum hurricane intensity preceded by
   increase in lightning frequency}, \textit{Nature Geoscience},
   \textit{2}(April), 2--5, \doi{10.1038/NGEO477}, 2009.
+
+\bibitem[{\textit{Rakov and Uman}(2003)}]{Rakov2003}
+Rakov, V.~A., and M.~A. Uman, \textit{{Lightning: Physics and Effects}},
+  Cambridge University Press, Cambridge, 2003.
 
 \bibitem[{\textit{Roble}(1991)}]{Roble1991}
 Roble, R., {On modeling component processes in the Earth's global electric
