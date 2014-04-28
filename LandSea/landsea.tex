@@ -51,21 +51,25 @@ $\overline{E_i}$ has a power law dependence on decile number due to the lognorma
 In order to make a linear regression between $\overline{E_i}$ and decile number $i$, the log$_{10}$ of $\overline{E_i}$ is used. 
 A linear regression is found between $\text{log}_{10}(\bar{E_i})$ and $i$ to get an approximation of the mean energy with decile:
 
+%% MM: Both (above) the linear regression of the log10 value cannot both be true
+
 \begin{equation}
 \text{log}_{10}(\overline{E(i)}) = C + \frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i} i
 \end{equation}
 
-The first parameter from the fit, $C$, corresponds to the overall mean of the stroke energies in the particular spatial bin.
-It is not used in this analysis since $C$ greatly depends on the network coverage at the time and location where it calculated.
+The first parameter from the fit, $C$, is related to the overall mean of the stroke energies in the particular spatial bin.
+It is not used in this analysis as $C$ greatly depends on the network coverage at the time and location where it calculated.
 $C$ will be larger where coverage is lower (WWLLN detecting only strong strokes) and lower with high coverage (WWLLN detecting both strong and weak strokes).
 By using the regression method the network coverage and variable detection efficiency is factored out of the energy distribution into $C$ allowing for the shape of the energy distribution to be examined directly.
 
 The second parameter, $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$, is the slope of the regression and will be used to study the energy changes between land and ocean regimes.
 $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$ is the measure of how much (logarithmically) the average stroke energy changes from one decile to the next.
 So a value of $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$~=~0.1 at a location will increase the mean stroke energy by $10^{0.1}~=~25\%$ per decile, while a value of 0.2 will increase by $10^{0.2} = 58\%$ per decile.
-The regression slope will be higher for either more high-energy strokes or fewer low-energy strokes.
+The regression slope will be higher for either more high-energy strokes or fewer low-energy strokes, corresponding to more variance in the distribution.
 The low-energy tail of the energy distribution is mostly set by the efficiency of the network, while the high end is always well detected even where the network is thin.
 As $C$ captures the effects of the network performance, the slope of the regression will be mainly set by the energy of the strokes in the high-energy tail of the distribution.
+
+%% MM: Go through, or elaborate, on the low energy side of things.  Explain why low energy increase can be ignored
 
 An example of the linear regression method is shown in Figure~\ref{landsea:fig:linRegTheory} using 15~days of data from 1-15 June 2012, separated into land (black) and ocean (gray) strokes.
 The stroke counts are split into the ten decile bins outlined in Figure~\ref{landsea:fig:linRegTheory}a.
@@ -129,7 +133,7 @@ The ratio of these ocean and land energy distributions is shown in Figure~\ref{l
 \begin{figure}[ht!]
    \centering
    \noindent\includegraphics[width=20pc]{LandSea/Figures/5_distribution.pdf} 
-   \caption{The ratio of ocean to land counts for WWLLN within each energy bin. The dashed horizontal line is a ratio of 1. The vertical dashed black lines in show the 15th and 85th percentile levels for the distribution.}
+   \caption{The ratio of ocean to land counts for WWLLN within each energy bin. The dashed horizontal line is a ratio of 1. The vertical dashed lines show the 15th and 85th percentile levels for the distribution.}
    \label{landsea:fig:ratioComp}
 \end{figure}
 
@@ -151,7 +155,7 @@ Three regions are chosen for closer examination, shown outlined by the white box
 
 WWLLN has an inherent bias towards more readily detecting low energy strokes over oceans than over land.
 This is due to lower VLF wave attenuation over oceans, so low-energy strokes propagating over the ocean can reach more WWLLN stations compared to the same stroke traveling over land.
-Hence WWLLN is naturally biased to predominately detect only the highest strokes over land, and relatively more lower energy strokes over water \citep{Hutchins2012}.
+Hence WWLLN is naturally biased to predominately detect only the highest energy strokes over land, and relatively more lower energy strokes over water \citep{Hutchins2012}.
 The method of linear regression described in Section~\ref{landsea:section:secLinReg} should remove most of this bias in WWLLN, and this can be checked in part by the recent work on relative detection efficiency \citep{Hutchins2012a}.
 The three regions chosen in Figure~\ref{landsea:fig:wwlln_regional} were chosen such that the gradient of relative detection efficiency is changing parallel to the coastline.
 
