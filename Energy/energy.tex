@@ -1,9 +1,5 @@
-%% Convert all powers to energies
-%% Change tense to something completed
-
 \section{Overview}
 
-%% Turn into introductory paragraph of why we want Energy
 The World Wide Lightning Location Network (WWLLN) is a long range network capable of locating lightning strokes in space and time.
 While able to locate lightning to within a few kilometers and ten microseconds, the network currently does not measure any characteristics of the strokes themselves.
 The capabilities of the network are expanded to allow for measurements of the far-field power from the root mean square electric field of the detected strokes in the 6-18~kHz band.
@@ -13,9 +9,6 @@ The results are validated by comparing to return stroke peak current as measured
 The global median stroke power is found to be four orders of magnitude lower than previous measurements that included the ground and sky wave.
 Accounting for the different observational techniques, we find our far-field observations of the waveguide mode are consistent with the previous literature
 This study demonstrates that the WWLLN determined powers can be used to estimate the return stroke peak currents of individual lightning strokes occurring throughout the globe.
-
-%% Need reference to this figure
-%% Maybe move to introduction
 
 \begin{figure}[ht!]
 \centering
@@ -34,9 +27,8 @@ This calibration of a single station allows for the calculation of stroke power 
 A previous study by \citet{Rodger2006} attempted to calibrate the network through observations of narrow-band VLF communication transmitters at each WWLLN station.
 These observations were combined with the U.S. Navy Long Wave Propagation Capability (LWPC) code, described by \citet{Ferguson1998}, to predict what the received amplitude should be in order to calibrate each station.
 However the study assumed that the frequency response and calibration of the sound cards was the same across the network, assumptions that are false.
+In fact, the sound cards, preamplifier, and antenna vary by a factor of 10 in their sensitivity. 
 The current study utilizes a broader range of frequencies and calibrates each station such that differing frequency responses are accounted for in the calibration.
-%% MM: In fact, sound cards vary by a factor of 'X' in their sensitivity
-%% MM: How bad was this assumptions
 
 Measuring stroke power is an important step forward as it allows the network to make real time measurements of the strength of lightning worldwide.
 Being able to measure characteristics of the strokes will allow for insights into thunderstorm evolution, large scale storm phenomena, and global effects of lightning.
@@ -78,8 +70,6 @@ The RMS value of the resultant waveform is stored in uncalibrated sound card uni
 After being calibrated to the $\sim$10~km wavelength signal the SCU measurement can be converted into the RMS electric field of the sferic. 
 
 \subsection{LWPC and Power}
-
-%% Update to 2 degree or possibly 1 degree image
 
 To calculate the stroke power based on the RMS electric field at a station the LWPC code is used to model the attenuation, as a function of frequency, between a transmitter at the stroke location and the receiving station.
 The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{Thomson2011}.
@@ -257,8 +247,6 @@ This analysis leads to the conclusion that the power being measured by WWLLN is 
 
 \subsection{Power Distribution}
 
-%% Update median energy to present
-
 Stroke power in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}. Figure~\ref{energy:fig:distribution} shows the stroke power distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
 The Americas and Asia/Australia show similar distributions, likely a result of having similar WWLLN coverage, while Africa/Europe differ, possibly due to uneven network coverage.
 
@@ -293,8 +281,6 @@ Without a full understanding of the regional detection efficiency of the network
 However, the bootstrap calibration process described in the current study may allow new estimates of the global variation in WWLLN detection efficiency, following \citet{Rodger2006}.
 
 \section{Conclusion}
-
-%% Change tense
 
 A new method of measuring the VLF waveguide mode power radiated from lightning using the WWLLN has been shown and validated.
 While not the total radiated power of the strokes, the power measured is directly related to the peak current and therefore to inherent properties of the strokes.
