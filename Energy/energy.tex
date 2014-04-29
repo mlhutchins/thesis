@@ -161,7 +161,12 @@ The first set of power values are used as a basis to recalibrate all of the stat
 These new values are used to recalibrate again with this process repeating several times until the station calibrations converge to a stable and final value.
 Currently the station calibrations along with this iterative technique are performed once a day for calculating the stroke powers of that day.
 
-\section{Results and Discussion}
+The bootstrap method of calibration is an internally consistent method of determining the conversion factors at each station.
+The iterative technique allows for a convergence of calibrations to reduce the uncertainty in the power measurements.
+Even the original calibrated station is updated in each iteration, removing errors that may be introduced by local effects since the initial ground truth calibration.
+However the internal consistency could be improved and monitored through the introduction of a second well-calibrated station; such a station would enable additional diagnostics and error correction not possible with a single starting station.
+
+\section{Results}
 
 \subsection{Validation}
 
@@ -209,6 +214,8 @@ These uncertainties are mitigated by performing a seven day running average of t
 Uncertainties that arise through the use of the LWPC model and through the station calibrations are seen through the MAD of each stroke.
 Without these uncertainties each stations should agree on the detected stroke power, however the variations between each station, due to changes in the propagation path or in the calibration, appear as differences in reported stroke power.
 Even with these differences the overall 17\% uncertainty of the WWLLN power measurements is comparable to the 13\% uncertainty in the peak current measurements of the U.S. National Lightning Detection Network (NLDN) \citep{Nag2011}.
+
+\section{Discussion}
 
 \subsection{Comparison to Literature}
 
@@ -292,6 +299,10 @@ However, the bootstrap calibration process described in the current study may al
 A new method of measuring the VLF waveguide mode power radiated from lightning using the WWLLN has been shown and validated.
 While not the total radiated power of the strokes, the power measured is directly related to the peak current and therefore to inherent properties of the strokes.
 Our study shows that WWLLN observations can provide realistic return stroke peak current measurements in addition to the timing and location of global lightning activity.
+
+The method developed here can be applied to similar ground based lightning detection networks.
+The key components in applying this method are the availability of a propagation model in the frequency range of the sensors (LWPC in the case of WWLLN), a measure of stroke strength (e.g. peak electric field), and at least one well-calibrated station.
+Finally the station density needs to be high enough such that the average inter-station distance is within the applicable range of the propagation model used.
 
 An enhanced WWLLN allows for a global real time view of lightning with the ability to distinguish between weak and strong strokes.
 This will allow for future research into areas such as the long range evolution of thunderstorms over oceans, wider surveys of terrestrial gamma ray flashes, and with a more complete understanding of detection efficiency an analysis of global lightning power output.
