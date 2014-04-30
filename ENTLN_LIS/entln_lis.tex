@@ -1,18 +1,18 @@
 \section{Overview}
 
 Performance of the Earth Networks Total Lightning Network (ENTLN) is evaluated with respect to the TRMM Lightning Imaging Sensor (LIS).
-ENTLN lightning strokes are matched to LIS lightning flashes from January 2012 -- May 2013 over the continental United States and within the 35$^\circ$ orbital inclination of LIS.
-ENTLN matched $8.9\times10^4$ of the $1.4\times10^5$ LIS flashes with a total of $3.2\times10^5$ strokes, giving an average multiplicity of 3.6 and 65\% detection efficiency of all flashes.
-Over the course of the evaluation period the average daily detection efficiency was $69\pm15$\%.
-The median timing offset from the first ENTLN stroke was 2.3~ms (LIS leading) with a sharp peak at -1.9~ms; the median distance offset was 7.0~km from the flash centroid.
+ENTLN lightning strokes are matched to LIS lightning flashes from 2011 -- 2013 over the continental United States and within the 35$^\circ$ orbital inclination of LIS.
+ENTLN matched $1.4\times10^5$ of the $2.1\times10^5$ LIS flashes with a total of $4.8\times10^5$ strokes, giving an average multiplicity of 3.5 and 66\% detection efficiency of all flashes.
+Over the course of the evaluation period the average daily detection efficiency was $69\pm14$\%.
+The median timing offset from the first ENTLN stroke was 2.4~ms (LIS leading) with a sharp peak at -1.9~ms; the median distance offset was 7.0~km from the flash centroid.
 The sharp peak at -1.9~ms is likely caused by inherent differences in the detection techniques: LIS observes light emitted from the tops of the clouds and ENTLN measure the radio signals from the return stroke.
 %During this period ENTLN detected a total of $3.1\times10^8$ strokes within the observation region, additional capabilities of the network such as peak current estimates and stroke type discrimination were not directly examined.
 
 The performance of LIS relative to ENTLN is also evaluated by finding all ENTLN strokes located within the LIS field of view.
-LIS matched 69\% of the $4.7\times10^5$ ENTLN strokes to observed flashes in the LIS field of view.
-The $70\pm13$\% daily average LIS detection efficiency of ENTLN strokes demonstrates that neither system detects every flash or stroke located by the other.
-Assuming a 3.6 multiplicity of ENTLN unmatched strokes, LIS did not detect $4.2\times10^4$ flashes, or 23\% of all flashes.
-The ENTLN-LIS matched strokes were $22.6\pm0.7$\% cloud to ground and unmatched strokes were $24.5\pm1.1$\% cloud to ground.
+LIS matched 68\% of the $7.1\times10^5$ ENTLN strokes to observed flashes in the LIS field of view.
+The $70\pm12$\% daily average LIS detection efficiency of ENTLN strokes demonstrates that neither system detects every flash or stroke located by the other.
+Assuming a 3.5 multiplicity of ENTLN unmatched strokes, LIS did not detect $6.6\times10^4$ flashes, or 31\% of all flashes.
+The ENTLN-LIS matched strokes were $20.3\pm0.6$\% cloud to ground and unmatched strokes were $21.8\pm0.8$\% cloud to ground.
 There is a marginal difference in the lightning populations sampled by both systems;  LIS is slightly biased towards cloud flashes.
 
 There is a growing importance, both scientifically and operationally, of ground based lightning detection networks.
@@ -27,16 +27,16 @@ Lightning mapping arrays are able to locally detect, locate, and distinguish IC 
 
 To evaluate the ENTLN performance it is compared against the Lightning Imaging Sensor (LIS) onboard the Tropical Rainfall Measurement Mission (TRMM) satellite orbiting at a 35$^\circ$ inclination \citep{Christian1999}.
 LIS is used as a reference system as the sensor performance has not changed over time and it is has no overlapping detections methods with the ground network. 
-The LIS data are available at several processed levels, the January 2012 -- May 2013 flash level data is used for this comparison.
+The LIS data are available at several processed levels, the 2011 -- 2013 flash level data is used for this comparison.
 The comparison with LIS is made over North America and within the inclination of LIS, the area covered is shown in Figure~\ref{entln_lis:fig:density}.
-In this region LIS located $1.4\times10^5$ flashes, with the distribution shown in Figure~\ref{entln_lis:fig:density}a, and ENTLN located $3.1\times10^8$ strokes shown in Figure~\ref{entln_lis:fig:density}b.
-ENTLN detected $4.7\times10^5$ strokes within the field of view of LIS.
+In this region LIS located $2.1\times10^5$ flashes, with the distribution shown in Figure~\ref{entln_lis:fig:density}a, and ENTLN located $3.1\times10^8$ strokes shown in Figure~\ref{entln_lis:fig:density}b.
+ENTLN detected $1.4\times10^5$ strokes within the field of view of LIS.
 
 \begin{figure}[t]
    \centering
    \noindent\includegraphics[width=19pc,angle=0]{entln_lis/Figures/density.pdf}
    \caption{a) LIS flash density at 0.5$^\circ$ grid spacing for fully viewed granules and
-   		b) ENTLN stroke density at 0.25$^\circ$ grid spacing for Jan 2012 -- May 2013.
+   		b) ENTLN stroke density at 0.25$^\circ$ grid spacing for 2011 -- May 2013.
    		Densities normalized to counts/km$^2$/year, grid points with less than 30 counts are shown in gray.}
    \label{entln_lis:fig:density}
 \end{figure}
@@ -52,7 +52,7 @@ Using the LIS instrument allows for a robust and standard analysis of the ENTLN 
 ENTLN strokes are matched to LIS flashes when the ENTLN stroke is within a $\pm0.5^\circ$ box around the flash centroid and within $\pm10$~ms of the flash duration.
 If multiple strokes are matched to a single LIS flash the timing and location of the stroke closest in time to the start of the flash is used as the best match.
 For the case of multiple flashes matched to a single stroke only the flash closest in time to the stroke is matched.
-Matches between ENTLN-LIS had 30\% of LIS flashes matched to a single ENTLN stroke, with an overall mean multiplicity of 3.6.
+Matches between ENTLN-LIS had 30\% of LIS flashes matched to a single ENTLN stroke, with an overall mean multiplicity of 3.5.
 Days with less than 30 LIS flashes are not used in this evaluation.
 
 Evaluation of the effectiveness of LIS at observing ENTLN strokes utilizes the viewpoint granule data available with the flash level data.
@@ -61,7 +61,7 @@ Full coverage for a given viewpoint granule is determined by the start and end t
 When LIS has at least partial coverage of the four corner viewpoint granules the center viewpoint granule will be in full view of the sensor.
 The latest start time and earliest end time of the adjacent corner granules determines the time when the viewpoint granule is in full view of LIS.
 Only ENTLN strokes and LIS flashes within viewpoint granules with full LIS coverage are used in this evaluation.
-This restriction reduces the total number of LIS flashes by 30\% from $2.0 \times 10^5$ to $1.4 \times 10^5$ flashes.
+This restriction reduces the total number of LIS flashes by 30\% from $3.0 \times 10^5$ to $2.1 \times 10^5$ flashes.
 This restriction on strokes and flashes ensures that all ENTLN strokes are within full view of LIS, removing edge and partial view cases.
 
 An example of a single LIS overpass full coverage field of view, determined by the viewpoint granules, is shown in Figure~\ref{entln_lis:fig:overpass}.
@@ -84,8 +84,8 @@ In both cases the missed events are shown as red crosses.
 \subsection{Accuracy}
 
 System accuracy is measured by the timing and spatial offset between the lightning locations.
-The timing offset ($t_{LIS} - t_{ENTLN}$), Figure~\ref{entln_lis:fig:accuracy}a, is sharply peaked at -1.9~ms, with ENTLN occurring before the LIS flash time; the median timing offset is 2.3~ms.
-The LIS flash time is the time of the first LIS event in the flash group; 41\% of ENTLN strokes occurring 0 -- 4~ms before the start of the LIS flash, the remaining strokes correspond to other discharges of the flash.
+The timing offset ($t_{LIS} - t_{ENTLN}$), Figure~\ref{entln_lis:fig:accuracy}a, is sharply peaked at -1.9~ms, with ENTLN occurring before the LIS flash time; the median timing offset is 2.4~ms.
+The LIS flash time is the time of the first LIS event in the flash group; 42\% of ENTLN strokes occurring 0 -- 4~ms before the start of the LIS flash, the remaining strokes correspond to other discharges of the flash.
 
 \begin{figure}[t]
    \centering
@@ -98,17 +98,17 @@ The LIS flash time is the time of the first LIS event in the flash group; 41\% o
 
 The median distance offset from the flash centroid is 7.0~km, as seen Figure~\ref{entln_lis:fig:accuracy}b, slightly above the LIS spatial resolution of 3 -- 6~km \citep{Christian1999}.
 The location offset can be given in either kilometers from the flash centroid or in units of the estimated flash radius, where the radius is calculated by considering the given LIS flash area as a circle.
-Using the flash radius for distance results in a median offset of 0.80 flash radii, 66\% of the strokes are located within the visible extent of the flash.
+Using the flash radius for distance results in a median offset of 0.80 flash radii, 65\% of the strokes are located within the visible extent of the flash.
 The exact location accuracy of ENTLN cannot be determined with LIS due to the spatial accuracy of the LIS pixels.
 
 \subsection{Detection efficiency}
 
-During the January 2012 -- May 2013 evaluation period the average daily detection efficiency of LIS flashes by ENTLN was 69\% $\pm$ 15\%.
-The detection efficiency was marginally higher during the day at 72 $\pm$ 14\% and lower during the night at 64 $\pm$ 17\%.
+During the 2011 -- 2013 evaluation period the average daily detection efficiency of LIS flashes by ENTLN was 69\% $\pm$ 14\%.
+The detection efficiency was marginally higher during the day at 72 $\pm$ 14\% and lower during the night at 65 $\pm$ 16\%.
 The ENTLN decrease at night likely stems from the increased detection efficiency of LIS at observing lightning against a non-sunlit ground.
 The spatial distribution of detection efficiency is shown in Figure~\ref{entln_lis:fig:map}a, with the daily variability shown in Figure~\ref{entln_lis:fig:de}a.
-The spatially averaged detection efficiency is $58 \pm 18$\%, due to the uneven distribution of ENTLN stations with fewer stations in the West.
-ENTLN detected 65\% of the $1.4\times10^5$ LIS flashes, within those flashes ENTLN detected $4.7\times10^5$ strokes ($<0.15$\% of total ENTLN strokes).
+The spatially averaged detection efficiency is $61 \pm 16$\%, due to the uneven distribution of ENTLN stations with fewer stations in the West.
+ENTLN detected 66\% of the $2.1\times10^5$ LIS flashes, within those flashes ENTLN detected $7.4\times10^5$ strokes ($<0.15$\% of total ENTLN strokes).
 
 \begin{figure}[t]
    \centering
@@ -121,10 +121,10 @@ ENTLN detected 65\% of the $1.4\times10^5$ LIS flashes, within those flashes ENT
    \label{entln_lis:fig:de}
 \end{figure}
 
-Within the LIS field of view ENTLN detected $4.7\times10^5$ strokes, of these strokes $3.2\times10^5$ were matched to LIS flashes for an overall LIS detection efficiency of ENTLN strokes of 69\%.
+Within the LIS field of view ENTLN detected $7.1\times10^5$ strokes, of these strokes $4.8\times10^5$ were matched to LIS flashes for an overall LIS detection efficiency of ENTLN strokes of 68\%.
 The spatial distribution of LIS detection efficiency of ENTLN strokes is shown in Figure~\ref{entln_lis:fig:map}b and the daily detection efficiency is shown in Figure~\ref{entln_lis:fig:de}c.
-The average spatial variability of LIS is $68 \pm 13$\%, with an average daily detection efficiency of $70 \pm 13$\%.
-Assuming the same multiplicity of 3.6 for the unmatched ENTLN strokes LIS missed $4.2\times10^4$, or 23\%, of all flashes.
+The average spatial variability of LIS is $67 \pm 13$\%, with an average daily detection efficiency of $70 \pm 12$\%.
+Assuming the same multiplicity of 3.5 for the unmatched ENTLN strokes LIS missed $6.6\times10^4$, or 31\%, of all flashes.
 To test for the possibility that the strokes not detected by LIS were improperly located, the waveforms for a random subset for ENTLN strokes were examined and the locations were found to be correct.
 
 \begin{figure}[t]
@@ -144,9 +144,9 @@ The increased detection efficiency off of the coasts is a combined effect of few
 LIS has a more uniform detection efficiency than ENTLN, as is expected from the imaging system.
 
 On a daily scale the ENTLN-LIS detection efficiency, seen in Figure~\ref{entln_lis:fig:de}a, is fairly high through this time period, with brief periods of decreased performance.
-The average daily detection efficiency is 69 $\pm$ 15\% with a $5^\text{th}$ to $95^\text{th}$ percentile range of 48\% -- 88\%.
+The average daily detection efficiency is 69 $\pm$ 15\% with a $5^\text{th}$ to $95^\text{th}$ percentile range of 48\% -- 87\%.
 Some of the larger decreases in detection efficiency match with the increased LIS flash counts in Figure~\ref{entln_lis:fig:de}b, such as early April 2012, late May 2012, and mid-July 2012.
-On days with low LIS flash counts, $<40^\text{th}$ percentile, ENTLN detects $73\pm14$\% of flashes; while on days with high LIS flash counts, $>70^\text{th}$ percentile, ENTLN detects $65\pm12$\% of flashes.
+On days with low LIS flash counts, $<40^\text{th}$ percentile, ENTLN detects $71\pm16$\% of flashes; while on days with high LIS flash counts, $>70^\text{th}$ percentile, ENTLN detects $65\pm10$\% of flashes.
 During these times of increased lightning activity the ENTLN would need to raise the data compression threshold; causing it to miss weaker strokes that are still detected by LIS, resulting in the suppressed detection efficiency.
 
 \subsection{Observation bias}
@@ -154,6 +154,8 @@ During these times of increased lightning activity the ENTLN would need to raise
 Two populations of ENTLN strokes are found with the comparison to LIS: the strokes matched to LIS flashes and the strokes that are unmatched.
 Characteristics of these populations should show any bias of the flashes that are observed by LIS.
 As ENTLN is a total lightning network it has the capability to detect and distinguish between CG and IC strokes.
+
+%% STOPPED UPDATING NUMBERS HERE
 
 To get a statistically robust measure of the percentage of cloud to ground strokes observed by LIS the matched LIS-ENTLN stroke data was randomly subdivided into 100 subsets of approximately $3.2\times10^3$ matched strokes.
 Averaging these subsamples results in the statistically robust measure of the matched stroke CG percentage.
