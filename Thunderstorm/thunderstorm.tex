@@ -80,6 +80,7 @@ Increased detection efficiency at the limits of the ETNLN detection range (e.g. 
 
 The daily spatially averaged detection efficiency is shown in Figure~\ref{thunderstorm:fig:deDaily}.
 Here the seasonal variation is  evident; the high variation in the winter reflects the lower overall thunderstorm counts during these months.
+With fewer lightning strokes and thunderstorms during the winter, both networks are able to lower the detection threshold at the nearby stations and increase their detection sensitivity.
 The annual variation in detection efficiency is imprinted on the dependence of detection efficiency with thunderstorm area, size, and duration; the relative scale and behavior of the annual signal is seen in every other detection efficiency relation.
 
 \begin{figure}[ht!]
@@ -94,7 +95,6 @@ The daily detection efficiency increases for larger, productive, and longer thun
 For thunderstorms larger than $10^2$ km$^2$ the detection efficiency is 53\%, while for those larger than $10^3$ km$^2$ it is 80\%.
 In a similar vein, thunderstorms with more than $10^2$~strokes are detected with 75\% efficiency and for more than $10^3$~strokes at 94\% efficiency.
 Almost all thunderstorms observed are less than 1 hour in duration (Figure~\ref{thunderstorm:fig:deBroken}c, right), for those lasting more than 2 hours the detection efficiency increases to 93\%.
-
 
 \begin{figure}[ht!]
    \centering
@@ -166,6 +166,8 @@ This fitting allows for the daily tracking of the interstroke (Figure~\ref{thund
 With WWLLN the global distributions (black) remain relatively centered at 71~ms and 100~seconds; over North America WWLLN averages (blue) are 60~ms for interstroke and 39~seconds for interflash times.
 ENTLN (red) has lower daily averages of 53~ms and 17~seconds due to detecting more strokes within each thunderstorm.
 The North American WWLLN distribution more closely matches the seasonal behavior present in the ENTLN distribution with a small offset in timing.
+The average daily offset in interflash timing is 14~seconds, with WWLLN detecting flashes further apart than ENTLN. 
+The longer interflash time is directly related to the detection efficiency of both networks, with the longer WWLLN interflash time reflecting the lower detection efficiency of the network.
 
 \begin{figure}[ht!]
    \centering
@@ -200,14 +202,14 @@ The time between flashes is a parameter associated with the strength of the resu
 
 \section{Conclusion}
 
-%% MM: Do you have anything to say about WWLLN storms missed by ENTLN? With a greater number of stations and higher sensitivity I'd expect ENTLN to see any storm WWLLN saw, but that doesn't happen.  Weird, huh?
-
 %% Discussion of the detection efficiency
 
 When compared to ENTLN, WWLLN performs better when detecting large and active thunderstorm regions.
 The lower performance for smaller thunderstorm clusters may be due to the cutoff in the clustering that requires at least 3 strokes for a cluster, removing 39\% of strokes from the analysis.
 Including these strokes would lead to less robust matches between the networks and conflate a stroke to thunderstorm detection efficiency and the thunderstorm to thunderstorm detection efficiency.
 For the thunderstorms WWLLN does detect, the characteristics of the thunderstorm are on par with those of ENTLN.
+As WWLLN does not detect every ENTLN thunderstorm, ENTLN does not detect every WWLLN thunderstorm.
+While it is assumed for this work that ENTLN acts as a ground-truth it is not a perfect network so the estimates of WWLLN performance will be lower estimates than the actual detection efficiency of the network.
 
 %% Discussion of flash clusters
 
