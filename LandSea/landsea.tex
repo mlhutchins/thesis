@@ -40,10 +40,9 @@ The strokes in each bin are split into 10 energy deciles each containing $J$ str
 \end{equation}
 
 $\overline{E_i}$ has a power law dependence on decile number due to the lognormal distribution of stroke energies.
-In order to make a linear regression between $\overline{E_i}$ and decile number $i$, the log$_{10}$ of $\overline{E_i}$ is used. 
+In order to make a regression between $\overline{E_i}$ and decile number $i$, the log$_{10}$ of $\overline{E_i}$ is used.
+This allows for a simple linear regression between the two variables instead of a power regression in linear space; this prevents overweighting of the high energy values of the distribution. 
 A linear regression is found between $\text{log}_{10}(\bar{E_i})$ and $i$ to get an approximation of the mean energy with decile:
-
-%% MM: Both (above) the linear regression of the log10 value cannot both be true
 
 \begin{equation}
 \text{log}_{10}(\overline{E(i)}) = C + \frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i} i
@@ -57,11 +56,10 @@ By using the regression method the network coverage and variable detection effic
 The second parameter, $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$, is the slope of the regression and will be used to study the energy changes between land and ocean regimes.
 $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$ is the measure of how much (logarithmically) the average stroke energy changes from one decile to the next.
 So a value of $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$~=~0.1 at a location will increase the mean stroke energy by $10^{0.1}~=~25\%$ per decile, while a value of 0.2 will increase by $10^{0.2} = 58\%$ per decile.
-The regression slope will be higher for either more high-energy strokes or fewer low-energy strokes, corresponding to more variance in the distribution.
-The low-energy tail of the energy distribution is mostly set by the efficiency of the network, while the high end is always well detected even where the network is thin.
+The regression slope will be higher for either relatively more high-energy strokes or fewer low-energy strokes, corresponding to more variance in the distribution.
+The low-energy tail of the energy distribution is mostly set by the detection efficiency of the network where a higher detection efficiencies result in an overall shift of the distribution to lower energies, while the high end is always well detected even where the network has low station density.
 As $C$ captures the effects of the network performance, the slope of the regression will be mainly set by the energy of the strokes in the high-energy tail of the distribution.
-
-%% MM: Go through, or elaborate, on the low energy side of things.  Explain why low energy increase can be ignored
+Detecting more low energy strokes will shift the distribution but not change the shape, or variance, of energies.
 
 An example of the linear regression method is shown in Figure~\ref{landsea:fig:linRegTheory} using 15~days of data from 1-15 June 2012, separated into land (black) and ocean (gray) strokes.
 The stroke counts are split into the ten decile bins outlined in Figure~\ref{landsea:fig:linRegTheory}a.
