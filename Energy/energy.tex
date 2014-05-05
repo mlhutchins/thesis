@@ -5,7 +5,7 @@ While able to locate lightning to within a few kilometers and ten microseconds, 
 The capabilities of the network are expanded to allow for measurements of the far-field energy from the root mean square electric field of the detected strokes in the 6 -- 18~kHz band.
 This is accomplished by calibrating the network from a single well calibrated station using a bootstrapping method.
 With this technique the global median stroke energy seen by the network is 1.3 x $10^3$~J with an average uncertainty of 17\%.
-The results are validated by comparing to return stroke peak current as measured by the New Zealand Lightning Detection Network and to previous ground wave power measurements in the literature.
+The results are validated by comparing to return stroke peak current as measured by the New Zealand Lightning Detection Network and to previous energy measurements in the literature.
 The global median stroke energy is found to be 2\% of previous measurements of radiated electromagnetic energy.
 Accounting for the different observational distances, we find our far-field observations of the waveguide mode are consistent with the previous literature
 This study demonstrates that the WWLLN determined energies can be used to estimate the return stroke peak currents of individual lightning strokes occurring throughout the globe.
@@ -34,7 +34,7 @@ Measuring stroke energy is an important step forward as it allows the network to
 Being able to measure characteristics of the strokes will allow for insights into thunderstorm evolution, large scale storm phenomena, and global effects of lightning.
 For example, stroke energy values could help current research on terrestrial gamma ray flashes by \citet{Briggs2011} constraining efficiencies and source mechanisms, and tropical hurricanes by \citet{Thomas2010d} could utilize the energy in analyzing eyewall replacement.
 
-As we will show in this Chapter, the network measures a median global VLF energy power in the far-field waveguide mode of 1.3 x $10^3$~J with an average uncertainty of 17\%.
+As we will show in this Chapter, the network measures a median global VLF energy in the far-field waveguide mode of 1.3 x $10^3$~J with an average uncertainty of 17\%.
 Previous measurements have shown the energy radiated by strokes is often near $7.0^{4}$~J \citep{Taylor1963}.
 Past measurements were measured much closer to that strokes (100~km) and normalize to closer distances, resulting in a measurement of both the sky- and ground-wave of the sferic.
 WWLLN measures the RMS electric field at distances where only the waveguide mode of the sferic remains.
@@ -174,7 +174,7 @@ E_{stroke} = 2.23 * |I_{peak}|^{1.62}
 where $E_{stroke}$ has units of watts and $I_{peak}$ has units of kA.
 In figure~\ref{energy:fig:pvi} the WWLLN peak current (using the inverse of equation~\ref{energy:eq:Peq}) is shown against the NZLDN absolute peak current.
 When taking the uncertainties of the energy values (converted to peak current) and an assumed 30\% uncertainty in the NZLDN data, 84\% of the matched strokes have equivalent peak currents.
-The peak current values fit close to the unity line with a robust linear fit of $I_{WWLLN}=0.93*I_{NZLDN}+1.93$ with an $R^2$ value of 0.92, a robust fit is used due to the lognormal behavior of the WWLLN power data.
+The peak current values fit close to the unity line with a robust linear fit of $I_{WWLLN}=0.93*I_{NZLDN}+1.93$ with an $R^2$ value of 0.92, a robust fit is used due to the lognormal behavior of the WWLLN energy data.
 Of the matched strokes 86.5\% are shown in figure~ \ref{energy:fig:pvi} with the remaining 13.5\% out of the plotted bounds.
 This strong relationship confirms that the energy values measured are directly related to the physical properties of the stroke. i.e. the return stroke peak current.
 
@@ -203,33 +203,27 @@ Since the LWPC code results are fixed, the only free variable in the bootstrappi
 These uncertainties are mitigated by performing a seven day running average of the calibration values but they are still present as daily variations in the calibrations.
 
 Uncertainties that arise through the use of the LWPC model and through the station calibrations are seen through the MAD of each stroke.
-Without these uncertainties each stations should agree on the detected stroke power, however the variations between each station, due to changes in the propagation path or in the calibration, appear as differences in reported stroke power.
+Without these uncertainties each stations should agree on the detected stroke energy, however the variations between each station, due to changes in the propagation path or in the calibration, appear as differences in reported stroke energy.
 Even with these differences the overall 17\% uncertainty of the WWLLN energy measurements is comparable to the 13\% uncertainty in the peak current measurements of the U.S. National Lightning Detection Network (NLDN) \citep{Nag2011}.
 
 \section{Discussion}
 
 \subsection{Comparison to Literature}
 
-The current method of measuring stroke powers using WWLLN results in a consistent global median RMS power of 1.33 x $10^3$~J for 2010.
-However it has been shown in past literature on radiated stroke power that the average is between $3\pm4$ x $10^9$~W and  $2\pm2$ x $10^{10}$~W \citep{Krider1983}.
-A gain of 35 dB to 43 dB in power is needed to bring the WWLLN stroke powers into the range of those in the literature.
-Three aspects of our measurement technique: peak vs RMS power, digital filtering, and the attenuation of the ground and sky wave near the stroke combine to explain this large difference in the scalable value of the reported stroke power.
+The current method of measuring stroke energies using WWLLN results in a consistent global median energy of $1.33 \times 10^3$~J for 2010.
+However it has been shown in past literature that the average radiated energy for a typical stroke is $6.9 \times 10^{4}$~J \citep{Taylor1963}.
+A 17.2~dB increase is needed to bring the WWLLN stroke energies into the range of those in the literature.
+The main difference in the measurement method is the difference in attenuation between nearby measurements of the sferic with measurements made at a larger distance.
 
-The analysis of the difference was done using the raw waveform data from three stations: the secondary Seattle station, the Canaveral station and the Tallahassee station.
+The analysis of this difference was done using the raw waveform data from three stations: the secondary Seattle station, the Canaveral station and the Tallahassee station.
 Data was taken from between 20 April 2011 and 9 May 2011. In this interval 198 events were selected that had a clear waveform at the network trigger time.
 
-All of the measurements of power in the literature are measurements of peak power, however WWLLN is measuring RMS power.
-The average peak value of the sferic waveforms, used in Figure~\ref{energy:fig:average_spectra}, is 8.8~dB greater than the RMS value of the waveform. 
-Before the power value is computed at a WWLLN station the full waveform is sent through a 6 -- 18~kHz 16 point FIR bandpass filter.
-This filter is used to cut out the strong signals from various high powered VLF communications transmitters.
-While most of the VLF radiated power is in the 6 -- 18~kHz band, it is not a sharp cutoff.
-This filtering of the waveform before calculating power causes a power reduction of 1.5~dB.
+The biggest effect on the received stroke energy is caused by the distances involved in the measurements.
+Particularly the difference between the ground and sky wave near the stroke and the wave propagating in the waveguide.
+Most of the VLF energy measurements in the literature have measured waveforms at 100~km distance from the stroke.
+At larger distances only the lowest order mode is propagating in the Earth-ionosphere waveguide; at near distances other modes have not been attenuated by the structure of the waveguide.
 
-The biggest effect on the received stroke power is caused by the distances involved in the measurement and most particularly the differences between the ground and sky wave near the stroke and the waveguide propagated signal (and hence received powers).
-Most of the VLF power measurements in the literature have measured waveforms at around 100~km from the stroke.
-These distances are near enough that the ground and sky wave has not yet been attenuated by the structure of the Earth-ionosphere waveguide.
-
-To measure the effect that the nearby high attenuation will have compared to a signal in the waveguide the difference in stroke power of the VLF transmitter near Seattle, NLK (250~kW radiated power at a frequency of 24.8~kHz, i.e. \citet{Clilverd2009}), was compared to the same signal seen at two stations in Florida.
+To measure the effect that the nearby high attenuation will have compared to a signal in the waveguide the difference in received power of the VLF transmitter near Seattle, NLK (250~kW radiated power at a frequency of 24.8~kHz, i.e. \citet{Clilverd2009}), was compared to the same signal seen at two stations in Florida.
 A second transmitter in Hawaii, NPM (500~kW radiated power at a frequency of 21.4 kHz), was used as a reference for both stations.
 The two Florida stations were chosen as they are far from both VLF transmitters and sample at a Nyquist frequency of 48~kHz, well above the frequencies of the lightning peak power and the VLF radio transmitter frequencies.
 
@@ -241,33 +235,30 @@ The conversion factors from the NLK and NPM signals present in the selected wave
 To determine the importance of the ground wave, the ratio of estimated NLK to NPM powers at Seattle were divided by the NLK to NPM ratio at the two Florida stations.
 This ratio is necessary, instead of just the Seattle NLK to actual NLK power ratio, in order to normalize out any intrinsic errors in the calculation process.
 Measuring the waveguide signal causes a loss of 17.9~dB to 23.8~dB on the signal power as seen by WWLLN compared to the corresponding nearby ground and sky wave measurements.
+This loss is near the 17.2~dB difference between the measured WWLLN stroke energies and those made by \citet{Taylor1963}.
 
-These three factors show how 28.2 to 34.1~dB of power is lost from ground wave measurements to those made of the waveguide propagating fields by WWLLN, which is near the range of the 35 to 43~dB loss needed to explain the difference between the WWLLN and past power measurements.
+This analysis leads to the conclusion that the energy being measured by WWLLN is not the total radiated energy of the stroke, rather it is the energy radiated into the Earth-ionosphere waveguide in the 6 -- 18~kHz band.
 
-This analysis leads to the conclusion that the power being measured by WWLLN is not the total radiated power of the stroke, rather it is the RMS power radiated into the Earth-ionosphere waveguide in the 6 -- 18~kHz band.
+\subsection{Energy Distribution}
 
-\subsection{Power Distribution}
-
-Stroke power in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}. Figure~\ref{energy:fig:distribution} shows the stroke power distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
+Stroke energy in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}.
+Figure~\ref{energy:fig:distribution} shows the stroke energy distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
 The Americas and Asia/Australia show similar distributions, likely a result of having similar WWLLN coverage, while Africa/Europe differ, possibly due to uneven network coverage.
-
-
-%% Remake with energy
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=1]{energy/Figures/PPS_Distribution2.pdf}\\
-\caption{Histogram of stroke powers for 2010 with 100 logarithmically spaced bins, the histogram for the globe (1.4 x 10$^8$ strokes) is shown in black, the Americas (6.1 x 10$^7$ strokes) in blue, Africa/Europe (2.4 x 10$^7$ strokes) in red and Asia/Australia (5.0 x 10$^7$ strokes) in green. Error bars are too small to display.}
+\caption{Histogram of stroke energies for 2010 with 100 logarithmically spaced bins, the histogram for the globe (1.4 x 10$^8$ strokes) is shown in black, the Americas (6.1 x 10$^7$ strokes) in blue, Africa/Europe (2.4 x 10$^7$ strokes) in red and Asia/Australia (5.0 x 10$^7$ strokes) in green. Error bars are too small to display.}
 \label{energy:fig:distribution}
 \end{figure}
  
-When the power distribution of figure~\ref{energy:fig:distribution} is converted to peak current using equation~\ref{energy:eq:Peq} it can be compared to earlier measurements of peak current distributions.
+When the energy distribution of figure~\ref{energy:fig:distribution} is converted to peak current using equation~\ref{energy:eq:Peq} it can be compared to earlier measurements of peak current distributions.
 We can compare the WWLLN peak current distribution to that of \citet{Popolansky1972} as shown in \citet{Golde1977}.
 That study used peak current data from 624~return strokes to create a cumulative probability distribution of stroke currents as shown in Figure~\ref{energy:fig:PPS_CDF}.
 A similar frequency distribution was created using the WWLLN peak current estimates and is shown in the same figure.
 As can be seen, the WWLLN distribution is shifted by a factor of two compared to the previous distribution, which is expected as WWLLN is known to detect higher current strokes when compared to what is seen by regional ground based networks \citep{Abarca2010}.
 In a comparison to the NLDN those authors found that the probability distribution function of the WWLLN coincident strokes was similarly of an order two higher than the distribution for all NLDN strokes.
-These comparisons further validate the stroke power to peak current relation of equation~\ref{energy:eq:Peq} and demonstrates this relationship is likely valid for the entire global network, and not just the New Zealand region.
+These comparisons further validate the stroke energy to peak current relation of equation~\ref{energy:eq:Peq} and demonstrates this relationship is likely valid for the entire global network, and not just the New Zealand region.
 
 %% Remake with stroke energy
 \begin{figure}[ht!]
@@ -280,15 +271,15 @@ These comparisons further validate the stroke power to peak current relation of 
 Africa has a lower detection efficiency in the network due to the small number of stations on the continent.
 With a lower detection efficiency only the strongest strokes are seen by the more distant stations while the weaker strokes are not seen by these stations due to the stronger attenuation of VLF over continents than for propagation paths over water \citep{Wait1970}.
 An initial effort to model the detection efficiency of WWLLN showed this effect very strongly (\citet{Rodger2006}, Fig. 11).
-This results in the distribution of figure~\ref{energy:fig:distribution}, with fewer low powered strokes occurring over Africa compared to the other regions.
+This results in the distribution of figure~\ref{energy:fig:distribution}, with fewer low energy strokes occurring over Africa compared to the other regions.
 
-Without a full understanding of the regional detection efficiency of the network it cannot be determined whether every region follows the same lognormal power distribution or whether local environments affect the power of strokes in the region.
+Without a full understanding of the regional detection efficiency of the network it cannot be determined whether every region follows the same lognormal energy distribution or whether local environments affect the energy of strokes in the region.
 However, the bootstrap calibration process described in the current study may allow new estimates of the global variation in WWLLN detection efficiency, following \citet{Rodger2006}.
 
 \section{Conclusion}
 
-A new method of measuring the VLF waveguide mode power radiated from lightning using the WWLLN has been shown and validated.
-While not the total radiated power of the strokes, the power measured is directly related to the peak current and therefore to inherent properties of the strokes.
+A new method of measuring the VLF waveguide mode energy radiated from lightning using the WWLLN has been shown and validated.
+While not the total radiated energy of the strokes, the energy measured is directly related to the peak current and therefore to inherent properties of the strokes.
 Our study shows that WWLLN observations can provide realistic return stroke peak current measurements in addition to the timing and location of global lightning activity.
 
 The method developed here can be applied to similar ground based lightning detection networks.
@@ -296,7 +287,7 @@ The key components in applying this method are the availability of a propagation
 Finally the station density needs to be high enough such that the average inter-station distance is within the applicable range of the propagation model used.
 
 An enhanced WWLLN allows for a global real time view of lightning with the ability to distinguish between weak and strong strokes.
-This will allow for future research into areas such as the long range evolution of thunderstorms over oceans, wider surveys of terrestrial gamma ray flashes, and with a more complete understanding of detection efficiency an analysis of global lightning power output.
+This will allow for future research into areas such as the long range evolution of thunderstorms over oceans, wider surveys of terrestrial gamma ray flashes, and with a more complete understanding of detection efficiency an analysis of global lightning energy output.
 
 \subsection*{Acknowledgments} 
 We are grateful to the New Zealand MetService Ltd. for collecting the NZLDN data, and to Antarctica New Zealand for supporting the operation of the Scott Base WWLLN station.
