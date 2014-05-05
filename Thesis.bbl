@@ -347,11 +347,6 @@ Kasemir, H.~W., {Theoretical Problems of the Global Atmospheric Electric
 Kawanishi, T., et~al., {TRMM precipitation radar}, \textit{Advances in Space
   Research}, \textit{25}(5), 969--972, 2000.
 
-\bibitem[{\textit{Krider and Guo}(1983)}]{Krider1983}
-Krider, E.~P., and C.~Guo, {The peak electromagnetic power radiated by
-  lightning return strokes}, \textit{Journal of geophysical research},
-  \textit{88}(C13), 8471--8474, 1983.
-
 \bibitem[{\textit{Krider and Blakeslee}(1985)}]{Krider1985}
 Krider, E. P.~I., and R.~J. Blakeslee, {The Electric Currents Produced by
   Thunderclouds}, \textit{Journal of Electrostatics}, \textit{16}, 369--378,
@@ -608,6 +603,11 @@ Stolzenburg, M., T.~C. Marshall, and P.~R. Krehbiel, {Duration and extent of
 Suszcynsky, D.~M., {Narrow Bipolar Events as indicators of thunderstorm
   convective strength}, \textit{Geophysical Research Letters}, \textit{30}(17),
   1879, \doi{10.1029/2003GL017834}, 2003.
+
+\bibitem[{\textit{Taylor}(1963)}]{Taylor1963}
+Taylor, W., {Radiation Field Characteristics of Lightning Discharges In the
+  Band 1 kc/s to 100 kc/s}, \textit{Journal of Research National Beruau of
+  Standards, Section D Radio Propagation}, \textit{67D}(5), 539 -- 550, 1963.
 
 \bibitem[{\textit{Taylor}(1960)}]{Taylor1960a}
 Taylor, W.~L., {VLF attenuation for east-west and west-east daytime propagation
