@@ -83,7 +83,7 @@ P_{stroke}=\frac{E_{scu}^2}{A_{local}^2} * \frac{100kW}{(10^{\alpha/20}\mu V/m)^
 \label{energy:eq:power_eq}
 \end{equation}
 
-Since energy of the stroke is the time integrated electric field, and the power measurements are from the RMS electric field value, the energy of the stroke can be found from the size of the recording window: $E_{stroke}=P_{stroke} * t_{record}$, with the current recording window set at 1.33 ms.
+Since energy of the stroke is proportional to the time integrated square electric field, and the power measurements are from the RMS electric field value, the energy of the stroke can be found from the size of the recording window: $E_{stroke}=P_{stroke} * t_{record}$, with the current recording window set at 1.33 ms.
 The power measurement is an intermediary step with all WWLLN stroke strength values measured and recorded in terms of radiated energy.
 
 Due to computing limitations running the LWPC code, we cannot conduct a full run for every stroke-station pair in real time.
@@ -161,10 +161,11 @@ However the internal consistency could be improved and monitored through the int
 
 \subsection{Validation}
 
-A study was conducted comparing the stroke energy values determined by WWLLN to the ground based NZLDN measurements of return stroke absolute peak current. NZLDN was described earlier by \citet{Rodger2006}.
+A study was conducted comparing the stroke energy values determined by WWLLN to the ground based NZLDN estimates of return stroke peak current.
+NZLDN was described earlier by \citet{Rodger2006}.
 The comparison was done using three periods of high lightning activity over New Zealand: 25 -- 27 August 2009, 26 -- 27 September 2009 and 21 October 2009.
 WWLLN strokes were considered to match NZLDN strokes if they occurred within 0.5~ms and 400~km of a NZLDN detector, the same criteria used by \citet{Rodger2006}.
-From the comparison the empirical relation between return stroke peak current and 6 -- 18~kHz RMS radiated energy was found to be: 
+From the comparison the empirical relation between return stroke peak current and 6 -- 18~kHz radiated energy was found to be: 
 
 \begin{equation}
 E_{stroke} = 2.23 * |I_{peak}|^{1.62}
@@ -220,12 +221,12 @@ Data was taken from between 20 April 2011 and 9 May 2011. In this interval 198 e
 
 The biggest effect on the received stroke energy is caused by the distances involved in the measurements.
 Particularly the difference between the ground and sky wave near the stroke and the wave propagating in the waveguide.
-Most of the VLF energy measurements in the literature have measured waveforms at 100~km distance from the stroke.
+Most of the VLF energy measurements in the literature have measured waveforms near 100~km distance from the stroke.
 At larger distances only the lowest order mode is propagating in the Earth-ionosphere waveguide; at near distances other modes have not been attenuated by the structure of the waveguide.
 
 To measure the effect that the nearby high attenuation will have compared to a signal in the waveguide the difference in received power of the VLF transmitter near Seattle, NLK (250~kW radiated power at a frequency of 24.8~kHz, i.e. \citet{Clilverd2009}), was compared to the same signal seen at two stations in Florida.
 A second transmitter in Hawaii, NPM (500~kW radiated power at a frequency of 21.4 kHz), was used as a reference for both stations.
-The two Florida stations were chosen as they are far from both VLF transmitters and sample at a Nyquist frequency of 48~kHz, well above the frequencies of the lightning peak power and the VLF radio transmitter frequencies.
+The two Florida stations were chosen as they are far from both VLF transmitters with a sampling frequency of 96~kHz (Nyquist frequency of 48~kHz), well above the frequencies of the lightning peak power and the VLF radio transmitter frequencies.
 
 The LWPC code estimate for the transmitter signal at the WWLLN stations is compared to the measured transmitter signal to determine the conversion factor for each event.
 The conversions are found to be consistent with calculations and calibrations reported in this study for broadband lightning produced signals.
