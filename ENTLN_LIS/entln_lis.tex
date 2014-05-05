@@ -26,7 +26,7 @@ The higher frequencies of total lightning networks are also useful for researchi
 Lightning mapping arrays are able to locally detect, locate, and distinguish IC activity, however total lightning networks have the advantage of much larger spatial coverage.
 
 To evaluate the ENTLN performance it is compared against the Lightning Imaging Sensor (LIS) onboard the Tropical Rainfall Measurement Mission (TRMM) satellite orbiting at a 35$^\circ$ inclination \citep{Christian1999}.
-LIS is used as a reference system as the sensor performance has not changed over time and it is has no overlapping detections methods with the ground network. 
+LIS is used as a reference system as the sensor performance has not changed over time and it is uses a different detection method (optical) than ground networks. 
 The LIS data are available at several processed levels, the 2011 -- 2013 flash level data is used for this comparison.
 The comparison with LIS is made over North America and within the inclination of LIS, the area covered is shown in Figure~\ref{entln_lis:fig:density}.
 In this region LIS located $2.1\times10^5$ flashes, with the distribution shown in Figure~\ref{entln_lis:fig:density}a, and ENTLN located $3.1\times10^8$ strokes shown in Figure~\ref{entln_lis:fig:density}b.
@@ -53,12 +53,14 @@ ENTLN strokes are matched to LIS flashes when the ENTLN stroke is within a $\pm0
 If multiple strokes are matched to a single LIS flash the timing and location of the stroke closest in time to the start of the flash is used as the best match.
 For the case of multiple flashes matched to a single stroke only the flash closest in time to the stroke is matched.
 Matches between ENTLN-LIS had 30\% of LIS flashes matched to a single ENTLN stroke, with an overall mean multiplicity of 3.5.
-Days with less than 30 LIS flashes are not used in this evaluation.
+Days with less than 30 total LIS flashes over North America are not used in this evaluation.
+
+%% Add in a viewpoint granule figure?
 
 Evaluation of the effectiveness of LIS at observing ENTLN strokes utilizes the viewpoint granule data available with the flash level data.
 The viewpoint granules give the start and end times of LIS observation for $0.5^\circ \times 0.5^\circ$ bins.
-Full coverage for a given viewpoint granule is determined by the start and end times of the viewpoint granules that are the adjacent corner granules.
-When LIS has at least partial coverage of the four corner viewpoint granules the center viewpoint granule will be in full view of the sensor.
+Full coverage for a given viewpoint granule is determined by the start and end times of the adjacent corner granules.
+When LIS has at least partial coverage of the four corner viewpoint granules the center viewpoint granule is guaranteed to be in full view of the sensor.
 The latest start time and earliest end time of the adjacent corner granules determines the time when the viewpoint granule is in full view of LIS.
 Only ENTLN strokes and LIS flashes within viewpoint granules with full LIS coverage are used in this evaluation.
 This restriction reduces the total number of LIS flashes by 30\% from $3.0 \times 10^5$ to $2.1 \times 10^5$ flashes.
