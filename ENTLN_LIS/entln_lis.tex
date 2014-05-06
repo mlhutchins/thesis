@@ -55,16 +55,23 @@ For the case of multiple flashes matched to a single stroke only the flash close
 Matches between ENTLN-LIS had 30\% of LIS flashes matched to a single ENTLN stroke, with an overall mean multiplicity of 3.5.
 Days with less than 30 total LIS flashes over North America are not used in this evaluation.
 
-%% Add in a viewpoint granule figure?
-
 Evaluation of the effectiveness of LIS at observing ENTLN strokes utilizes the viewpoint granule data available with the flash level data.
 The viewpoint granules give the start and end times of LIS observation for $0.5^\circ \times 0.5^\circ$ bins.
-Full coverage for a given viewpoint granule is determined by the start and end times of the adjacent corner granules.
+Full coverage for a given viewpoint granule is determined by the start and end times of the adjacent corner granules, as shown in Figure~\ref{entln_lis:fig:viewpoint}.
 When LIS has at least partial coverage of the four corner viewpoint granules the center viewpoint granule is guaranteed to be in full view of the sensor.
 The latest start time and earliest end time of the adjacent corner granules determines the time when the viewpoint granule is in full view of LIS.
 Only ENTLN strokes and LIS flashes within viewpoint granules with full LIS coverage are used in this evaluation.
 This restriction reduces the total number of LIS flashes by 30\% from $3.0 \times 10^5$ to $2.1 \times 10^5$ flashes.
 This restriction on strokes and flashes ensures that all ENTLN strokes are within full view of LIS, removing edge and partial view cases.
+
+\begin{figure}[ht!]
+   \begin{center}
+      \includegraphics[scale=1]{entln_lis/Figures/viewpointGranule.pdf}
+   \end{center}
+   \caption{Classification of a viewpoint granule ($0.5^\circ \times 0.5^\circ$ bin) of LIS being in full view.
+   If all four corner granules are at least partially viewed (left and center) the granule is in full view, if not it is only partially viewed (right).}
+   \label{entln_lis:fig:viewpoint}
+\end{figure}
 
 An example of a single LIS overpass full coverage field of view, determined by the viewpoint granules, is shown in Figure~\ref{entln_lis:fig:overpass}.
 This overpass occurred on 2012 April 21 from 15:20 -- 15:31 UTC.
