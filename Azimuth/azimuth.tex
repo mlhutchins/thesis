@@ -3,14 +3,14 @@
 The World Wide Lightning Location Network (WWLLN) is used to measure the normalized lightning electric field at three network stations in order to examine the sferic attenuation between the stroke and the station.
 The electric field measurements are normalized to the square root radiated very low frequency (VLF) stroke energy to allow direct comparisons of the many stroke-station paths seen by WWLLN.
 WWLLN observes a strong dependence of VLF propagation on magnetic azimuth similar to past work.
-From WWLLN the average attenuation over the water of eastward-propagating sferics is found to be $1.13\pm0.35$~dB/Mm during the day and $0.71\pm0.68$~dB/Mm at night, with westward-propagating sferics having average attenuation rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night respectively.
+From WWLLN the average attenuation over the water of eastward-propagating sferics is found to be $1.13 \pm 0.35$~dB/Mm during the day and $0.71 \pm 0.68$~dB/Mm at night, with westward-propagating sferics having average attenuation rates of $2.98 \pm 0.68$~dB/Mm and $2.66 \pm 0.39$~dB/Mm for day and night respectively.
 
-The propagation dependence on magnetic azimuth stems from the polarization of the VLF wave with respect to the electron motion in the ionosphere.
+The propagation dependence on magnetic azimuth stems from the polarization of the VLF wave with respect to the electron motion in the ionosphere .
 Ionospheric electrons are constrained to gyrate in one direction; for VLF waves propagating eastward the polarization of the wave is in the same direction as the electrons providing more efficient propagation, the opposite in the case for westward propagating waves.
 There is then no change in propagation for waves aligned with the magnetic field, e.g. northward or southward propagating waves.
 
 Past experimental work has shown a strong dependence of VLF attenuation on the magnetic azimuthal angle of propagation.
-\citet{Wait1960a} present a theoretical background for why the attenuation changes with azimuth.
+\citet{Wait1960a} provide an in-depth analysis of the theoretical background.present a theoretical background for why the attenuation changes with azimuth.
 By measuring the signal strength from the same nearly antipodal transmitter along the short and long great circle path, \citet{Crombie1958} found less attenuation for the eastward propagating signals.
 Similarly \citet{Taylor1960a} showed that eastward propagating VLF waves have 1 -- 3 dB/Mm less attenuation than westward propagating waves.
 Recently \citet{Jacobson2012} used negative cloud-to-ground strokes to examine ionospheric reflectance and also found a strong azimuthal dependence to the measurements.
@@ -31,16 +31,16 @@ By examining the propagation it is shown that WWLLN captures the effects of prop
 To examine eastward and westward propagation three WWLLN stations were chosen based on their island locations: Suva, Tahiti, and Honolulu.
 These stations were selected as a majority of their stroke-receiver paths are over water, so the effects of variable ground conductivity can be ignored. 
 
-The WWLLN energy calculation uses the LWPC code, that accounts for eastward and westward propagation.
+The WWLLN energy calculation uses the LWPC code that accounts for eastward and westward propagation.
 However each WWLLN energy measurement is the median energy of several WWLLN stations, so by selecting strokes with a similar number of stations to the east and west the azimuthal dependence computed by LWPC can be minimized.
 There is allowed to be at most 25\% more WWLLN stations to the east or west of a located stroke, where this abundance is defined by: $|n_{east} - n_{west}| / n$.
 For example, a located stroke with 1 station to the north, 2 east, and 3 west will have a westward abundance of 16.7\% and would be included in the analysis.
 
-With these three stations the WWLLN data are reduced to only consider sferics that crossed at most 5\% land, and propagated in either 95\% day or night ionospheric conditions.
+With these three stations the WWLLN data are reduced to only consider sferics that crossed at most 5\% land, and propagated in either at least 95\% day or night ionospheric conditions.
 The stroke energy uncertainty (median absolute deviation of contributing stations, see \citet{Hutchins2012}) is limited to a maximum of 10\%.
 Further the data are reduced by selecting only strokes with a similar number of locating WWLLN stations situated to the east and west as described above.
-These requirements reduce the stroke-receiver paths in the WWLLN dataset to 0.2\% of the total paths for each station, where 87\% occur during the day and 13\% occur at night.
-This resulted in over $2\times10^6$ total stroke-receiver paths used in this study.
+These requirements reduce the stroke-receiver paths in the WWLLN dataset to 0.2\% of the total paths for each station; where 87\% occur during the day and 13\% occur at night.
+This resulted in over $2\times10^6$ total stroke-receiver paths used in this Chapter.
 
 The subset of data contains the RMS electric field at each station, the distance to the strokes, and the VLF energy of the stroke.
 VLF stroke energies and station measured electric fields both vary over several orders of magnitude.
@@ -107,7 +107,7 @@ First, the normalized electric field versus distance curves are smoothed and fit
 Second, the attenuation between each bin of the fit (the slope of Figure~\ref{azimuth:fig:attenuationCalculation}a) is found and shown in Figure~\ref{azimuth:fig:attenuationCalculation}b.
 Lastly, the attenuation for a given electric field curve is calculated by the mean of the fitted attenuation where positive attenuation corresponds to a signal loss over distance.
 The standard deviation of the attenuation is taken as the uncertainty in the attenuation measurement.
-In the example of Figure~\ref{azimuth:fig:attenuationCalculation} the fitted attenuation is $1.13\pm0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{azimuth:fig:attenuationCalculation}b) is $0.79\pm2.34$~dB/Mm.
+In the example of Figure~\ref{azimuth:fig:attenuationCalculation} the fitted attenuation is $1.13 \pm 0.35$~dB/Mm whereas the attenuation directly from the data (solid line in Figure~\ref{azimuth:fig:attenuationCalculation}b) is $0.79 \pm 2.34$~dB/Mm.
 The increased uncertainty in the direct attenuation is due to the variations in attenuation between successive 500~km distance bins.
 The fitted attenuation is used for all of the following attenuation values.
 
@@ -126,13 +126,13 @@ Because past models, such as \citet{Wait1960a}, include the effects of the geome
     \label{azimuth:fig:attenuationCalculation}
  \end{figure}
 
-Overall there is an average attenuation of $1.87\pm1.06$~dB/Mm for all azimuths and times.
-Within the first 4~Mm of the stroke the attenuation is fairly high for both day and night, with $2.08\pm0.90$~dB/Mm during the day and $2.09\pm1.02$~dB/Mm at night.
-Beyond 4~Mm the attenuation decreases to $1.29\pm1.09$~dB/Mm for day and $0.24\pm0.48$~dB/Mm for night.
+Overall there is an average attenuation of $1.87 \pm 1.06$~dB/Mm for all azimuths and times.
+Within the first 4~Mm of the stroke the attenuation is fairly high for both day and night, with $2.08 \pm 0.90$~dB/Mm during the day and $2.09 \pm 1.02$~dB/Mm at night.
+Beyond 4~Mm the attenuation decreases to $1.29 \pm 1.09$~dB/Mm for day and $0.24 \pm 0.48$~dB/Mm for night.
 The 4~Mm cutoff was chosen based on Figure~\ref{azimuth:fig:azimuth} and~\ref{azimuth:fig:azimuthAverage} where the eastward and westward-propagating sferics start to clearly differentiate.
 The increased attenuation near the stroke is likely due to the fast decay of higher order modes that cannot propagate far from their source \citep{Wait1970}.
 
-For eastward sferics the average attenuation is $1.13\pm0.35$~dB/Mm and $0.71\pm0.68$~dB/Mm for day and night; for westward sferics attenuation is higher with rates of $2.98\pm0.68$~dB/Mm and $2.66\pm0.39$~dB/Mm for day and night paths.
+For eastward sferics the average attenuation is $1.13 \pm 0.35$~dB/Mm and $0.71 \pm 0.68$~dB/Mm for day and night; for westward sferics attenuation is higher with rates of $2.98 \pm 0.68$~dB/Mm and $2.66 \pm 0.39$~dB/Mm for day and night paths.
 The difference in attenuation between eastward and westward-propagating sferics is an increase of  1.9~dB/Mm for day and 2.0~dB/Mm for night.
   
 \section{Comparisons to Theory}
@@ -173,7 +173,7 @@ Four years of WWLLN data were used to analyze the normalized VLF electric field 
 The electric fields were used to calculate the average attenuation in the 8 -- 18~kHz band at different propagation azimuths.
 The stroke-receiver paths were selected for sferics propagating over at least 95\% water and under either 90\% day or 90\% night ionospheric conditions.
 
-It was found that compared to day propagation, night propagating sferics have higher attenuation close to the stroke ($2.09\pm1.02$) with less attenuation farther out ($0.24\pm0.48$).
+It was found that compared to day propagation, night propagating sferics have higher attenuation close to the stroke ($2.09 \pm 1.02$) with less attenuation farther out ($0.24 \pm 0.48$).
 Similarly attenuation of night sferics have a higher dependence on magnetic azimuth compared to day sferics.
 Variations with magnetic azimuth showed that westward propagation had 1.9 -- 2.0~dB/Mm more attenuation than eastward propagation for both day and night ionospheric conditions.
 
