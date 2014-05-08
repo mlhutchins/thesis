@@ -6,8 +6,8 @@ The capabilities of the network are expanded to allow for measurements of the fa
 This is accomplished by calibrating the network from a single well calibrated station using a bootstrapping method.
 With this technique the global median stroke energy seen by the network is 1.3 x $10^3$~J with an average uncertainty of 17\%.
 The results are validated by comparing to return stroke peak current as measured by the New Zealand Lightning Detection Network and to previous energy measurements in the literature.
-The global median stroke energy is found to be 2\% of previous measurements of radiated electromagnetic energy.
-Accounting for the different observational distances, we find our far-field observations of the waveguide mode are consistent with the previous literature
+The global median stroke energy is found to be 2\% of past estimates of the average radiated electromagnetic energy.
+Accounting for the different observational distances, we find our far-field observations of the waveguide mode are consistent with the previous literature.
 This study demonstrates that the WWLLN determined energies can be used to estimate the return stroke peak currents of individual lightning strokes occurring throughout the globe.
 
 \begin{figure}[ht!]
@@ -17,8 +17,8 @@ This study demonstrates that the WWLLN determined energies can be used to estima
 \label{energy:fig:wwlln_dist}
 \end{figure}
 
-As only the spectral variations through the sferic wave packet are needed for determining the TOGA, the absolute electric field amplitude is unnecessary to accurately locate lightning. Due to this, the network does not currently report other characteristics of strokes such as peak current.
-However, each WWLLN station does record the root mean square (RMS) electric field value of the sferic waveform used in the TOGA calculation, but these values need to be calibrated, as discussed below.
+As only the spectral variations through the sferic wave packet are needed for determining the TOGA, the absolute electric field amplitude is unnecessary to accurately locate lightning. Due to this, the network does not currently report other characteristics of strokes such as peak field.
+However, each WWLLN station does record the root mean square (RMS) electric field value of the sferic waveform used in the TOGA calculation, but these values need to first be calibrated.
 
 The station operated by the University of Otago near New Zealand's Antarctic station, Scott Base, was calibrated by a field team in December 2009.
 The field team injected a series of calibration signals, ramped progressively in frequency, through the crossed magnetic loops of the Scott Base antenna and computed the calibration from the equivalent electric field.
@@ -27,18 +27,18 @@ This calibration of a single station allows for the calculation of stroke energy
 A previous study by \citet{Rodger2006} attempted to calibrate the network through observations of narrow-band VLF communication transmitters at each WWLLN station.
 These observations were combined with the U.S. Navy Long Wave Propagation Capability (LWPC) code, described by \citet{Ferguson1998}, to predict what the received amplitude should be in order to calibrate each station.
 However the study assumed that the frequency response and calibration of the sound cards was the same across the network, assumptions that are false.
-In fact, the sound cards, preamplifier, and antenna vary by a factor of 10 in their sensitivity. 
+In fact, the sound cards, preamplifier, and antenna can vary in their sensitivity by a factor of 10 . 
 The current study utilizes a broader range of frequencies and calibrates each station such that differing frequency responses are accounted for in the calibration.
 
 Measuring stroke energy is an important step forward as it allows the network to make real time measurements of the strength of lightning worldwide.
-Being able to measure characteristics of the strokes will allow for insights into thunderstorm evolution, large scale storm phenomena, and global effects of lightning.
+Measuring characteristics of the strokes will allow for insights into thunderstorm evolution, large scale storm phenomena, and global effects of lightning.
 For example, stroke energy values could help current research on terrestrial gamma ray flashes by \citet{Briggs2011} constraining efficiencies and source mechanisms, and tropical hurricanes by \citet{Thomas2010d} could utilize the energy in analyzing eyewall replacement.
 
-As we will show in this Chapter, the network measures a median global VLF energy in the far-field waveguide mode of 1.3 x $10^3$~J with an average uncertainty of 17\%.
-Previous measurements have shown the energy radiated by strokes is often near $7.0^{4}$~J \citep{Taylor1963}.
+As we will show in this Chapter, the network measures a median global VLF energy in the far-field waveguide mode of $1.3 \times 10^3$~J with an average uncertainty of 17\%.
+Previous measurements have shown the energy radiated by strokes is often near $7.0 \times 10^{4}$~J \citep{Taylor1963}.
 Past measurements were measured much closer to that strokes (100~km) and normalize to closer distances, resulting in a measurement of both the sky- and ground-wave of the sferic.
 WWLLN measures the RMS electric field at distances where only the waveguide mode of the sferic remains.
-When these factors are accounted for the median energy from WWLLN located strokes is comparable to the previously reported value of $7.0^{4}$~J electromagnetic energy.
+When these factors are accounted for the median energy from WWLLN located strokes is comparable to the previously reported value of $7.0 \times 10^{4}$~J electromagnetic energy.
 
 \section{Instrumentation and Data Processing}
 
@@ -49,22 +49,23 @@ In order to calculate the stroke energy from WWLLN three steps are necessary: ca
 Each WWLLN station consists of four main components: the antenna, a preamplifier, a service unit for signal and power management, and the sound card that digitizes the measured fields.
 The difficulty in making an energy measurement with the network arises in calibrating for the coupling between a short (2m) station antenna to a signal with an approximately $\sim$10~km wavelength.
 When a station digitizes the electric field waveform it stores it in uncalibrated sound card units (SCU).
-Additionally, the effective gain and calibration differs at each station due to the preamplifier, antenna construction, soundcard frequency response, and local environmental conditions.
+Additionally, the effective gain and calibration differs at each station due to the preamplifier, antenna construction, soundcard sensitivity, and local environmental conditions.
 This results in the RMS electric field being reported in station specific sound card units.
 
 The average power spectra from 194 stroke waveforms recorded at the Tallahassee, Florida station are shown in figure~\ref{energy:fig:average_spectra} along with the frequency response of a typical preamplifier.
 The strokes used were located at distances of 5000~km to 10000~km from the station and were recorded between 18:00 and 21:00 UTC on May 3 and May 9 2011.
-As can be seen in the figure the power peaks between 6 -- 18 kHz with the analog response remaining relatively flat through the entire frequency range.
+As can be seen in the figure the average power peaks between 6 -- 18 kHz with the analog response remaining relatively flat through the entire frequency range.
 The spikes in the power spectra are a result of manmade VLF communication transmitters.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[scale=1]{energy/Figures/PPS_Spectra.pdf}\\
-\caption{The top panel shows average power spectra from 194 stroke waveforms recorded at the Tallahassee, FL station between 0 and 48 kHz. The strokes were located between 5~Mm and 10~Mm away from the  station on May 3 2011 and May 9 2011 between 18:00 and 21:00 UTC. The bottom panel shows the frequency response of the preamplifier.}
+\caption{The top panel shows average power spectra from 194 stroke waveforms recorded at the Tallahassee, FL station between 0 and 48 kHz. The strokes were located 5~Mm -- 10~Mm away from the  station on May 3 2011 and May 9 2011 between 18:00 and 21:00 UTC. 
+	The bottom panel shows the frequency response of a preamplifier.}
 \label{energy:fig:average_spectra}
 \end{figure}
 
-The waveforms used are 1.33~ms long with 0.33~ms pre-trigger and 1~ms post-trigger.
+The waveforms used are 1.33~ms long with 0.33~ms pre-trigger samples and 1~ms post-trigger samples.
 Prior to processing the waveform is put through a 6 -- 18~kHz 16 point finite impulse response (FIR) bandpass filter.
 The RMS value of the resultant waveform is stored in uncalibrated sound card units.
 After being calibrated to the $\sim$10~km wavelength signal the SCU measurement can be converted into the RMS electric field of the sferic. 
@@ -77,22 +78,25 @@ In this research we made use of LWPC version 2.1.
 
 With a known conversion from a station's SCU value to V m$^{-1}$, $A_{local}$, of the lightning waveform, power is calculated using equation~\ref{energy:eq:power_eq}.
 The ratio from LWPC between a 100~kW transmitter and the modeled field (given in dB above 1~$\mu$V m$^{-1}$) is used to account for the sferic attenuation, $\alpha$, along the path for every grid location for every detector.
+Since energy of the stroke is proportional to the time integrated square electric field, and the power measurements are from the RMS electric field value, the energy of the stroke can be found from the size of the recording window: $U_{stroke}=P_{stroke} * t_{record}$, with the current recording window set at 1.33 ms.
+WWLLN stroke strength values measured and recorded in terms of radiated energy.
 
 \begin{equation}
 P_{stroke}=\frac{E_{scu}^2}{A_{local}^2} * \frac{100kW}{(10^{\alpha/20}\mu V/m)^2}
 \label{energy:eq:power_eq}
 \end{equation}
 
-Since energy of the stroke is proportional to the time integrated square electric field, and the power measurements are from the RMS electric field value, the energy of the stroke can be found from the size of the recording window: $E_{stroke}=P_{stroke} * t_{record}$, with the current recording window set at 1.33 ms.
-The power measurement is an intermediary step with all WWLLN stroke strength values measured and recorded in terms of radiated energy.
+\begin{equation}
+U_{stroke}= P_{stroke} * t_{record} = \frac{E_{scu}^2}{A_{local}^2} * \frac{100kW}{(10^{\alpha/20}\mu V/m)^2} * t_{record}
+\label{energy:eq:energy_eq}
+\end{equation}
 
-Due to computing limitations running the LWPC code, we cannot conduct a full run for every stroke-station pair in real time.
+Due to computing limitations running the LWPC code we cannot conduct a full run for every stroke-station pair in real time.
 Instead a lookup table is used which breaks stroke locations into $1^{\circ}$ by $1^{\circ}$ bins and uses either an all day ($\beta=0.3$ km$^{-1}$ and $h'=74$ km) or an all night ($\beta(f)=0.3-0.8$ km$^{-1}$ and $h'=87$ km) ionospheric model, where $\beta$ and $h'$ are the slope of the conductivity ($\beta$ is frequency dependent at night) and the reference height in the ionospheric model.
 The ionospheric models are the default models of LWPC code and fully described in \citet{Ferguson1998}. 
 To account for transitions across the terminator a weighted average of the day and night electric field values are used.
 The lookup tables give the electric field averaged over the 8 -- 18 kHz band which captures the frequencies of the peak radiated power from lightning (6 -- 7~kHz omitted due to code limitations) \citep{Volland1995}.
-An example of the day ionosphere lookup table for the Dunedin station is shown in figure~\ref{energy:fig:lookup}.
-The discontinuity of electric field over Greenland and in the South Atlantic is caused by the high attenuation rate of VLF propagating over ice.
+An example of the day ionosphere lookup table for the Dunedin station is shown in figure~\ref{energy:fig:lookup}; the discontinuity of electric field over Greenland and in the South Atlantic is caused by the high attenuation rate of VLF propagating over ice.
 
 \begin{figure}[ht!]
 \centering
@@ -103,12 +107,11 @@ The discontinuity of electric field over Greenland and in the South Atlantic is 
 
 \subsection{Calibration and Bootstrapping}
 
-With one calibrated station it is possible to find the calibration of other nearby stations.
-The process is shown in figure~\ref{energy:fig:calibrate}.
+With one calibrated station it is possible to find the calibration of other nearby stations; the process is shown in figure~\ref{energy:fig:calibrate}.
 Using a well calibrated station (on the right) the stroke energy of a given stroke is found using LWPC for the same stroke.
-The uncalibrated station also finds the power using LWPC, however instead of a power in watts, it measures the power in sound card power, SCP.
-The ratio between the two power values will give the calibration factor, $A_{local}^2$, of the second station.
-This is repeated for many strokes with the median of the conversion factor distribution used as the conversion factor between the two stations.
+The uncalibrated station also finds the energy using LWPC, however instead of an energy in joules, it measures the energy in sound card energy, SCE.
+The ratio between the two energy values will give the calibration factor, $A_{local}^2$, of the second station.
+This is repeated for many strokes with the median of the conversion factors used as the conversion factor between the two stations.
 
 \begin{figure}[ht!]
 \centering
@@ -117,20 +120,15 @@ This is repeated for many strokes with the median of the conversion factor distr
 \label{energy:fig:calibrate}
 \end{figure}
 
-Only one station in the network is thoroughly calibrated to VLF fields, the station in Scott Base, Antarctica.
-Using the method described below the Dunedin station was calibrated off of Scott Base station.
-With both stations calibrated, Dunedin was chosen as the first calibrated station in the bootstrapping process, by using thousands of mutually observed sferics.
-Dunedin was chosen instead of Scott Base due to strong observed seasonal variations likely due to changes in local ground conductivity that are not accounted for in the propagation model.
-
 To calibrate the entire network off of a single station a bootstrapping method is used.
 Station to station calibrations are done using strokes that have all day paths to both stations and are within 1000 -- 8000~km of both stations.
 All day paths were chosen as the daytime ionosphere is modeled more accurately by LWPC than the night ionosphere \citep{McRae2000d}.
 
 The first set of calibrations are done between the well calibrated station and those with common strokes that have the desired path characteristics.
 Once calibrated these stations are used to calibrate the next set of stations, and these newly calibrated stations are used to find the next set.
-This process is repeated until no further stations can be calibrated, figure~\ref{energy:fig:bootstrap} is an example of this process.
-Not all stations are calibrated for each day, they may not be calibrated if they do not see any common strokes with another station that match the path requirements or if their calibration to the next set of stations does not match direct calibrations.
-For example, if station A calibrates B and then B calibrates C then if the calibration path ABC does not match the well calibrated path of AC it is determined that B is not well calibrated, so it is not used.
+This process is repeated until no further stations can be calibrated; Figure~\ref{energy:fig:bootstrap} is an example of this process.
+Not all stations are calibrated for each day; they may not be calibrated if they do not see any common strokes with another station that match the path requirements or if their calibration to the next set of stations does not match direct calibrations.
+For example, if station A calibrates B and then B calibrates C then if the calibration path ABC does not match the well calibrated path of AC it is determined that B is not well calibrated, so it is not used for the day.
 
 \begin{figure}[ht!]
 \centering
@@ -141,11 +139,11 @@ For example, if station A calibrates B and then B calibrates C then if the calib
 
 \subsection{Energy Calculation}
 
-The fully calibrated WWLLN network is used to calculate the stroke energy for each station participating in a TOGA event using equation~\ref{energy:eq:power_eq} with the $A_{local}$ values known for a majority of the stations.
-Of the participating stations, the median of their energy measurements is used as the final stroke value for the event.
-The uncertainty in the energy is the median absolute deviation (MAD) of the participating station energy measurements, the MAD is the method of getting standard deviation of median values (MAD = median($|E_i - $median$(E_i)|$)).
-On average 96.97\% of WWLLN strokes have an energy value, even with only an average of 2/3 of stations being well calibrated and participating in energy calculations.
-The 3.03\% of strokes without energy values either were not reported by any well calibrated stations or had an uncertainty greater than 100\% in which case they are thrown out.
+The fully calibrated WWLLN network is used to calculate the stroke energy for each station participating in a TOGA event using equation~\ref{energy:eq:energy_eq} with the $A_{local}$ values known for a majority of the stations.
+Of the participating stations, the median of their energy measurements is used as the final energy value for the event.
+The uncertainty in the energy is the median absolute deviation (MAD) of the participating station energy measurements, the MAD is the method of getting standard deviation of median values (MAD = median($|U_i - $median$(U_i)|$)).
+On average 967\% of WWLLN strokes have an energy value, even with only an average of 2/3 of stations being well calibrated and participating in energy calculations.
+The 3\% of strokes without energy values either were not reported by any well calibrated stations or had an uncertainty greater than 100\% and are removed.
 
 The last step in calculating the energy per stroke is an iterative technique to improve accuracy.
 The first set of energy values are used as a basis to recalibrate all of the stations in the network.
@@ -161,23 +159,22 @@ However the internal consistency could be improved and monitored through the int
 
 \subsection{Validation}
 
-A study was conducted comparing the stroke energy values determined by WWLLN to the ground based NZLDN estimates of return stroke peak current.
-NZLDN was described earlier by \citet{Rodger2006}.
+A study was conducted comparing the stroke energy values determined by WWLLN to the ground based NZLDN estimates of return stroke peak current (NZLDN described in \citet{Rodger2006}).
 The comparison was done using three periods of high lightning activity over New Zealand: 25 -- 27 August 2009, 26 -- 27 September 2009 and 21 October 2009.
 WWLLN strokes were considered to match NZLDN strokes if they occurred within 0.5~ms and 400~km of a NZLDN detector, the same criteria used by \citet{Rodger2006}.
 From the comparison the empirical relation between return stroke peak current and 6 -- 18~kHz radiated energy was found to be: 
 
 \begin{equation}
-E_{stroke} = 2.23 * |I_{peak}|^{1.62}
+U_{stroke} = 2.23 * |I_{peak}|^{1.62}
 \label{energy:eq:Peq}
 \end{equation}
 
-where $E_{stroke}$ has units of watts and $I_{peak}$ has units of kA.
+where $U_{stroke}$ has units of joules and $I_{peak}$ has units of kA.
 In figure~\ref{energy:fig:pvi} the WWLLN peak current (using the inverse of equation~\ref{energy:eq:Peq}) is shown against the NZLDN absolute peak current.
-When taking the uncertainties of the energy values (converted to peak current) and an assumed 30\% uncertainty in the NZLDN data, 84\% of the matched strokes have equivalent peak currents.
-The peak current values fit close to the unity line with a robust linear fit of $I_{WWLLN}=0.93*I_{NZLDN}+1.93$ with an $R^2$ value of 0.92, a robust fit is used due to the lognormal behavior of the WWLLN energy data.
+When taking the uncertainties of the energy values (converted to peak current) and an assumed 30\% uncertainty in the NZLDN data 84\% of the matched strokes have equivalent peak currents.
+The peak current values fit close to the unity line with a robust linear fit of $I_{WWLLN}=0.93*I_{NZLDN}+1.93$ with an $R^2$ value of 0.92; a robust fit is used due to the lognormal behavior of the WWLLN energy data.
 Of the matched strokes 86.5\% are shown in figure~ \ref{energy:fig:pvi} with the remaining 13.5\% out of the plotted bounds.
-This strong relationship confirms that the energy values measured are directly related to the physical properties of the stroke. i.e. the return stroke peak current.
+This strong relationship confirms that the energy values measured are directly related to the physical properties of the stroke (i.e. the return stroke peak current).
 
 \begin{figure}[ht!]
 \centering
@@ -189,7 +186,7 @@ This strong relationship confirms that the energy values measured are directly r
 \subsection{Error and Uncertainty}
 
 The model used in relating the stroke energy to the peak current uses the 2010 average stroke uncertainty of 17\% from the median of the MAD distribution of all strokes in the year.
-If a stroke has an uncertainty greater than 100\% that value is thrown out, doing so only decreases the number of stroke energies by 3.03\%.
+If a stroke has an uncertainty greater than 100\% that value is thrown out, doing so only decreases the number of stroke energies by 3\%.
 
 The largest source of uncertainty in the calculations arises from the assumptions that are made using the LWPC code and in the calibration process.
 The lookup tables used to calculate attenuation on a given stroke are gridded into $1^{\circ}$ by $1^{\circ}$ bins and averaged over the 8 -- 18~kHz frequency range.
@@ -198,20 +195,20 @@ The ionospheric models used within the code assume a perfectly smooth day or nig
 These issues arise from the inherent speed limitations of the LWPC code.
 
 A secondary source of uncertainty manifests as variations in the WWLLN station calibration factors.
-These are not caused by drift in the electronics, rather from variations in the local station environment and the ionosphere along the path.
+These are not caused by drift in the electronics, but from variations in the local station environment and the ionosphere along the path.
 Local weather could change the gain at a station (for example through water or ice on an antenna) or if there are significant changes in conductivity of the ground or ionosphere.
 Since the LWPC code results are fixed, the only free variable in the bootstrapping process are the station conversion factors, so variations in the propagation path manifests within these factors.
 These uncertainties are mitigated by performing a seven day running average of the calibration values but they are still present as daily variations in the calibrations.
 
 Uncertainties that arise through the use of the LWPC model and through the station calibrations are seen through the MAD of each stroke.
 Without these uncertainties each stations should agree on the detected stroke energy, however the variations between each station, due to changes in the propagation path or in the calibration, appear as differences in reported stroke energy.
-Even with these differences the overall 17\% uncertainty of the WWLLN energy measurements is comparable to the 13\% uncertainty in the peak current measurements of the U.S. National Lightning Detection Network (NLDN) \citep{Nag2011}.
+Even with these differences the overall 17\% uncertainty of the WWLLN energy measurements is comparable to the 13\% uncertainty in the peak current estimates of the U.S. National Lightning Detection Network (NLDN) \citep{Nag2011}.
 
 \section{Discussion}
 
 \subsection{Comparison to Literature}
 
-The current method of measuring stroke energies using WWLLN results in a consistent global median energy of $1.33 \times 10^3$~J for 2010.
+The current method of measuring stroke energies using WWLLN results in a global median energy of $1.33 \times 10^3$~J for 2010.
 However it has been shown in past literature that the average radiated energy for a typical stroke is $6.9 \times 10^{4}$~J \citep{Taylor1963}.
 A 17.2~dB increase is needed to bring the WWLLN stroke energies into the range of those in the literature.
 The main difference in the measurement method is the difference in attenuation between nearby measurements of the sferic with measurements made at a larger distance.
@@ -232,7 +229,7 @@ The LWPC code estimate for the transmitter signal at the WWLLN stations is compa
 The conversions are found to be consistent with calculations and calibrations reported in this study for broadband lightning produced signals.
 Based on the verification of the LWPC code performed by \citet{Thomson2010}, LWPC is confidently used as a ground truth for this comparison.
 
-The conversion factors from the NLK and NPM signals present in the selected waveforms were used to calculate the power of the two transmitters using the same method as the WWLLN power calculations.
+The conversion factors from the NLK and NPM signals present in the selected waveforms were used to calculate the power of the two transmitters using the same method as the WWLLN energy calculations (Equation~\ref{energy:eq:energy_eq}).
 To determine the importance of the ground wave, the ratio of estimated NLK to NPM powers at Seattle were divided by the NLK to NPM ratio at the two Florida stations.
 This ratio is necessary, instead of just the Seattle NLK to actual NLK power ratio, in order to normalize out any intrinsic errors in the calculation process.
 Measuring the waveguide signal causes a loss of 17.9~dB to 23.8~dB on the signal power as seen by WWLLN compared to the corresponding nearby ground and sky wave measurements.
@@ -242,7 +239,7 @@ This analysis leads to the conclusion that the energy being measured by WWLLN is
 
 \subsection{Energy Distribution}
 
-Stroke energy in a given thunderstorm, region or time span closely follows a lognormal distribution \citep{Golde1977}.
+Stroke energy in a given thunderstorm, region, or time span closely follows a lognormal distribution \citep{Golde1977}.
 Figure~\ref{energy:fig:distribution} shows the stroke energy distribution for all strokes seen by WWLLN in 2010 along with the distributions for the three major chimney regions of the Americas, Africa/Europe and Asia/Australia.
 The Americas and Asia/Australia show similar distributions, likely a result of having similar WWLLN coverage, while Africa/Europe differ, possibly due to uneven network coverage.
 
@@ -257,7 +254,7 @@ When the energy distribution of figure~\ref{energy:fig:distribution} is converte
 We can compare the WWLLN peak current distribution to that of \citet{Popolansky1972} as shown in \citet{Golde1977}.
 That study used peak current data from 624~return strokes to create a cumulative probability distribution of stroke currents as shown in Figure~\ref{energy:fig:PPS_CDF}.
 A similar frequency distribution was created using the WWLLN peak current estimates and is shown in the same figure.
-As can be seen, the WWLLN distribution is shifted by a factor of two compared to the previous distribution, which is expected as WWLLN is known to detect higher current strokes when compared to what is seen by regional ground based networks \citep{Abarca2010}.
+As can be seen, the WWLLN distribution is shifted by a factor of two compared to the previous distribution, which is expected as WWLLN is known to preferentially detect higher current strokes when compared to what is seen by regional ground based networks \citep{Abarca2010}.
 In a comparison to the NLDN those authors found that the probability distribution function of the WWLLN coincident strokes was similarly of an order two higher than the distribution for all NLDN strokes.
 These comparisons further validate the stroke energy to peak current relation of equation~\ref{energy:eq:Peq} and demonstrates this relationship is likely valid for the entire global network, and not just the New Zealand region.
 
@@ -275,7 +272,7 @@ An initial effort to model the detection efficiency of WWLLN showed this effect 
 This results in the distribution of figure~\ref{energy:fig:distribution}, with fewer low energy strokes occurring over Africa compared to the other regions.
 
 Without a full understanding of the regional detection efficiency of the network it cannot be determined whether every region follows the same lognormal energy distribution or whether local environments affect the energy of strokes in the region.
-However, the bootstrap calibration process described in the current study may allow new estimates of the global variation in WWLLN detection efficiency, following \citet{Rodger2006}.
+However, the bootstrap calibration process described in the current study allows new estimates of the global variation in WWLLN detection efficiency in Chapter~\ref{thesis:chapter:efficiency}.
 
 \section{Conclusion}
 
