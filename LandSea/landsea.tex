@@ -17,9 +17,7 @@ Along with the difference in flash rates, there have been several observations s
 The U.S. National Lightning Detection Network (NLDN) observed higher average peak currents for negative cloud to ground (CG) strokes off of the coast, but the NLDN is limited in range for oceanic strokes near to coastlines \citep{Rudlosky2010, Lyons1998}.
 \citet{Boccippio2000} observed with LIS/OTD an increase in the optical radiance and extent of oceanic flashes compared to those over land.
 It was suggested that either a more energetic lightning generation process or a reduced cloud optical depth for the oceanic storms could produce the increased optical radiance.
-However, it could not be be determined whether the more radiant flashes were caused by changes in the flashes or in the cloud optical depth using just the available satellite data.
-
-The capability to measure stroke energies as well as the global coverage of the network allows for a global comparison of stroke energies over land and ocean regimes.
+However using just the available satellite data, it could not be be determined whether the more radiant flashes were caused by changes in the flashes or in the cloud optical depth.
 
 A comparison is made between the global stroke count climatologies of WWLLN and the 13-year Lightning Imaging Sensor (LIS) and 5-year Optical Transient Detector (OTD) flash count climatologies. 
 The LIS (1997-present) and OTD (1995-2000) are nearly identical satellite-based lightning detectors flown in low earth orbit that observe total lightning activity from individual thunderstorms for 90 sec and 2 min, respectively, as the satellite passes overhead.
@@ -61,7 +59,7 @@ The low-energy tail of the energy distribution is mostly set by the detection ef
 As $C$ captures the effects of the network performance, the slope of the regression will be mainly set by the energy of the strokes in the high-energy tail of the distribution.
 Detecting more low energy strokes will shift the distribution but not change the shape, or variance, of energies.
 
-An example of the linear regression method is shown in Figure~\ref{landsea:fig:linRegTheory} using 15~days of data from 1-15 June 2012, separated into land (black) and ocean (gray) strokes.
+An example of the linear regression method is shown in Figure~\ref{landsea:fig:linRegTheory} using 15~days of data from 1 -- 15 June 2012, separated into land (black) and ocean (gray) strokes.
 The stroke counts are split into the ten decile bins outlined in Figure~\ref{landsea:fig:linRegTheory}a.
 $\overline{E_i}$ is shown in Figure~\ref{landsea:fig:linRegTheory}b with the corresponding regressions plotted on top of the points.
 Departures from the regression are acceptable as only the trend of increasing energy is important and not an exact fit.
@@ -75,7 +73,7 @@ Departures from the regression are acceptable as only the trend of increasing en
 
 \section{Regression Slope Maps}
 
-This technique is applied over 3 years of WWLLN data from May 2009 through May 2012 on a 0.5$^\circ$ grid, with the resulting regression slopes shown in Figure~\ref{landsea:fig:regMap}.
+This technique is applied over 3 years of WWLLN data from May 2009 through May 2012 on a 0.5$^\circ$ grid; the resulting regression slopes are shown in Figure~\ref{landsea:fig:regMap}.
 For this analysis the calculated regressions must have an R-square value of at least 0.80 to be used.
 In general higher slopes are seen over oceans and lower slopes over land, except for several regions of low detection efficiency (e.g. off the shore of Madagascar) and regions such as the Andes mountain range.
 The map is similar to Figure~\ref{landsea:fig:virts}, adapted from \citet{Virts2013}, which shows the ratio of the WWLLN normalized stroke climatology to the LIS/OTD normalized flash climatology.
@@ -110,8 +108,8 @@ The difference also exists off the coast of the southeastern United States, but 
 \end{figure}
 
 For the ENTLN data the linear regression slopes only range from 0.05 to 0.15 compared to 0.05 to 0.25 for the WWLLN regressions.
-Since energy is related to peak current by $E_{stroke} = 2229 \times | I_{peak} | ^{1.62}$ \citep{Hutchins2012}, $\text{log$_{10}$}(\overline{E_i})$ will be 1.62 times higher than $\text{log$_{10}$}(\overline{I_{peak,i}})$.
-The range of the slopes for the ENTLN regression should then be correspondingly lower by a factor of 1.62, or from 0.03 to 0.15.
+Since energy is related to peak current by $E_{stroke} = 2.23 \times | I_{peak} | ^{1.62}$ \citep{Hutchins2012}, $\text{log$_{10}$}(\overline{E_i})$ will be 1.62 times higher than $\text{log$_{10}$}(\overline{I_{peak,i}})$.
+The range of the slopes for the ENTLN regression should then be correspondingly lower by a factor of 1.62, or from 0.03 to 0.15, matching the range seen by WWLLN.
 
 \section{Stroke Distributions}
 
