@@ -1,19 +1,19 @@
 \section{Overview}
 
 The diurnal variation of the global electric circuit is investigated using the World Wide Lightning Location Network (WWLLN), which has been shown to identify nearly all thunderstorms (\citet{Jacobson2006c}, using WWLLN data from 2005).
-To create an estimate of global electric circuit activity, a clustering algorithm is applied to the WWLLN dataset to identify global thunderstorms from 2010 -- 2013.
+To create an estimate of global electric circuit activity a clustering algorithm is applied to the WWLLN dataset to identify global thunderstorms from 2010 -- 2013.
 Annual, seasonal, and regional thunderstorm activity is investigated in this new WWLLN thunderstorm dataset in order to estimate the source behavior of the global electric circuit.
 Through the clustering algorithm, the total number of active thunderstorms are counted every 30 minutes creating a measure of the global electric circuit source function.
 The thunderstorm clusters are compared to precipitation radar data from the Tropical Rainfall Measurement Mission satellite and with case studies of thunderstorm evolution.
 
 The clustering algorithm reveals an average of $660 \pm 70$ thunderstorms active at any given time with a peak-to-peak variation of 36\%.
 The highest number of thunderstorms occurs in November ($720 \pm 90$) and the lowest number occurs in January ($610 \pm 80$).
-Thunderstorm cluster and electrified storm cloud activity are combined with thunderstorm overflight current measurements to estimate the global electric circuit thunderstorm contribution current to be $1090 \pm 70$~A with a variation of 24\%.
+Thunderstorm cluster and electrified storm cloud activity are combined with thunderstorm overflight current measurements to estimate the global electric circuit thunderstorm current contribution to be $1090 \pm 70$~A with a variation of 24\%.
 By utilizing the global coverage and high time resolution of WWLLN, the total active thunderstorm count and current is shown to be less than previous estimates based on compiled climatologies.
 
 Diurnal variation in global thunderstorm activity was original observed by \citet{Wilson1921} and \citet{Whipple1929} through a combination of thunderstorm day and electric field measurements.
 Strong correlations between thunderstorm activity and fair weather return current led to the model of the global electric circuit, a system of ionospheric charging and discharging through thunderstorms and fair weather return currents.
-Studies to date have estimated that globally there are 1000 -- 2000 thunderstorms active at any one time, with most concentrated over tropical landmasses, covering 1 -- 10\% of Earth's surface \citep{Markson1978, Rycroft2011a, Singh2011a}.
+Studies to date have estimated that globally there are 1000 -- 2000 thunderstorms active at any one time; most concentrated over tropical landmasses, covering 1 -- 10\% of Earth's surface \citep{Markson1978, Rycroft2011a, Singh2011a}.
 Previous work on diagnosing the generator source of the global electric circuit used several methods:  long time scales \citep{Tinsley2007, Liu2010}, mathematical models \citep{Kasemir1977, Hays1979, Roble1991}, engineering models \citep{Ogawa1985, Kartalev2004, Rycroft2006}, parameterization \citep{Price1992, Williams1985}, and thunderstorm overflight estimates \citep{Mach2011}.
 Most work with the global electric circuit uses long term averaging to recreate the known Carnegie curve of \citet{Whipple1929}, yet short time scales do not match the long term averaging \citep{Holzworth1984a}.
 The variation of the global electric circuit changes on short time scales that is not resolved in past models or with long term averaged observations.
@@ -55,8 +55,7 @@ Even though the electrically active portion of a thunderstorm extends beyond the
 \subsection{DBSCAN}
 
 DBSCAN clusters n-dimensional points based on the distance between the points, a length scale $\epsilon$, and the minimum number of points necessary to form a cluster, $minPts$ \citep{Kriegel2011a}.
-Points in a cluster are either core points or non-core points.
-A point is a core point of a cluster if there are $minPts - 1$ other points within $\epsilon$ distance of that point (resulting in $minPts$ points within distance $\epsilon$).
+Points in a cluster are either core points or non-core points; a point is a core point of a cluster if there are $minPts - 1$ other points within $\epsilon$ distance of that point (resulting in $minPts$ points within distance $\epsilon$).
 In Figure~\ref{gec:fig:dbscan} the distance $\epsilon$ is represented by the circle around each point, lines connect points within $\epsilon$ of each other, and core points are shown as filled symbols.
 Points that are within $\epsilon$ of one core point, but less than two core points ($minPts$ = 3), are added to the cluster as non-core points and cannot be used to add more points into the cluster.
 For example the unfilled triangle symbol in Group~1 of Figure~\ref{gec:fig:dbscan} is within $\epsilon$ of one core point and clustered into the group as a non-core point, but cannot connect further unclustered points (crosses) into the cluster.
@@ -84,7 +83,7 @@ As the clustering parameters are varied the total number of thunderstorms, the a
 In Figure~\ref{gec:fig:parameters}a it can be seen that $\epsilon$ has a high degree of control over thunderstorm area and total thunderstorms.
 To balance the total number of thunderstorms, average area (320~km$^2$), and percentage of strokes clustered (89\%, not shown) the best value is found to be $\epsilon = 0.12^\circ$ or about 13~km.
 To prevent consecutive thunderstorms from being clustered (e.g. one thunderstorm occurring in the same area as a previous distinct thunderstorm storm) $\epsilon_{time}$, Figure~\ref{gec:fig:parameters}b, needs to be smaller than average duration of a thunderstorm.
-With this requirement the value of $\epsilon_{time} = 18$~minutes is found, giving an average thunderstorm cluster duration of 16~minutes.
+With this requirement the value of $\epsilon_{time} = 18$~minutes is found; giving an average thunderstorm cluster duration of 16~minutes.
 The minimum number of strokes needed to produce a cluster is set at $minPts = 2$, as two detected WWLLN strokes confirms the presence of a thunderstorm.
 A sharp drop in the total number of thunderstorms can be seen in Figure~\ref{gec:fig:parameters}c when $minPts$ moves from 2 to 3.
 To get a majority of strokes included in the thunderstorm clusters while retaining reasonable physical attributes of the thunderstorms the parameters $\epsilon = 0.12^\circ$, $\epsilon_{time} = 18$~minutes, and $minPts = 2$~strokes were chosen.
@@ -102,9 +101,8 @@ To get a majority of strokes included in the thunderstorm clusters while retaini
 
 \section{WWLLN thunderstorm clusters}
 
-Using the DBSCAN algorithm, the individual WWLLN lightning strokes from 2010 June - 2013 June are clustered into active thunderstorms.
-Clustered WWLLN strokes allow for simple thunderstorm tracking as shown in Figure~\ref{gec:fig:evolution}.
-Here the strokes comprising a thunderstorm are outlined with polygons every hour, and plotted with opacity increasing with time.
+Using the DBSCAN algorithm the individual WWLLN lightning strokes from 2010 June - 2013 June are clustered into active thunderstorms.
+Clustered WWLLN strokes allow for simple thunderstorm tracking as shown in Figure~\ref{gec:fig:evolution}; here the strokes comprising a thunderstorm are outlined with polygons every hour, and plotted with opacity increasing with time.
 Figure~\ref{gec:fig:evolution} shows several active thunderstorms on 2013 May 21, 12 -- 23 UTC.
 For clarity clustered thunderstorms with less than 50 strokes were removed from the plot.
 The thunderstorm opacity increases at 8\% per hour with each color corresponding to a single thunderstorm cluster.
@@ -119,8 +117,7 @@ The thunderstorm opacity increases at 8\% per hour with each color corresponding
  \end{figure}
 
 The cluster results can be directly compared to active precipitation regions as seen by the TRMM Precipitation Radar \citep{Kawanishi2000}.
-Rainfall rates from the TRMM data product 2A25 were used as binned rates on a $0.25^\circ$ grid.
-In Figure~\ref{gec:fig:overpass} the TRMM rainfall data are shown as the background image, gray areas are not in view of the satellite.
+Rainfall rates from the TRMM data product 2A25 were used as binned rates on a $0.25^\circ$ grid; in Figure~\ref{gec:fig:overpass} the TRMM rainfall data are shown as the background image, gray areas are not in view of the satellite.
 WWLLN strokes are shown in Figure~\ref{gec:fig:overpass} if they occur between the start and end times of the TRMM regional overpass.
 
  \begin{figure}[ht!]
@@ -157,10 +154,9 @@ Averages of thunderstorm activity are calculated from the total number of unique
     \label{gec:fig:carnegie}
  \end{figure}
 
-Each chimney region is separated in Figure~\ref{gec:fig:carnegie}a with peaks in thunderstorm activity occurring in the local afternoon (Americas 19~UTC, Africa 15~UTC, and Asia 8~UTC) with a slow decrease during the night until a minimum in the early hours of the morning.
+Each chimney region is separated in Figure~\ref{gec:fig:carnegie}a with peaks in thunderstorm activity occurring in the local afternoon (Americas 19~UTC, Africa 15~UTC, and Asia 8~UTC) then a slow decrease during the night until a minimum in the early hours of the morning.
 A strong diurnal variation is evident for thunderstorms over land, seen in Figure~\ref{gec:fig:carnegie}b, with  little diurnal variation in oceanic thunderstorm activity.
-On average WWLLN observes a total of $660 \pm 70$ thunderstorms on any given day of the year.
-While the total is lower than previous estimates in the 1000 -- 2000 thunderstorm range, those estimates were made using partial or extrapolated datasets.
+On average WWLLN observes a total of $660 \pm 70$ thunderstorms on any given day of the year; while the total is lower than previous estimates in the 1000 -- 2000 thunderstorm range, those estimates were made using partial or extrapolated datasets.
 For each chimney region the average number of thunderstorms are $280 \pm 80$ for the Americas, $140 \pm 60$ for African and Europe, and $240 \pm 50$ for Asia and the Maritime Continent.
 The long-term thunderstorm behavior observed by WWLLN resembles the previous measurement of global electric circuit behavior.
 Of the clustered thunderstorms $350 \pm 70$ were continental and $300 \pm 10$ were oceanic.
@@ -185,7 +181,7 @@ This time change in regional contributions has been seen in other global circuit
 
 \section{Temporal thunderstorm activity}
 
-As a result of constantly growing number of WWLLN stations, the number of WWLLN strokes detected increases with time due to improvements in the network and the detection efficiency.
+As a result of a constantly growing number of WWLLN stations, the number of WWLLN strokes detected increases with time due to improvements in the network and the detection efficiency.
 As a result long term tracking of stroke rate  cannot be used without deconvolving detection efficiency improvements.
 However thunderstorm counts have remained relatively constant while stroke rate has increased; WWLLN has been capable of detecting almost every thunderstorm since 2005 \citep{Jacobson2006c}.
 In Figure~\ref{gec:fig:timescale}a the daily average 30~minute thunderstorm counts (black) are plotted alongside the daily average stroke rate (red).
@@ -225,7 +221,7 @@ With such short time scale variations global observations of the global electric
 
 \section{Global Electric Circuit Thunderstorm Contribution}
 
-With the WWLLN thunderstorm clusters, a simple model is made to estimate the total contribution of thunderstorms and electrified storm clouds to the global electric circuit.
+With the WWLLN thunderstorm clusters a simple model is made to estimate the total contribution of thunderstorms and electrified storm clouds to the global electric circuit.
 \citet{Mach2011} considered LIS/OTD observed land thunderstorms with less than 1.7 flashes min$^{-1}$ and ocean thunderstorms with less than 0.33 flashes min$^{-1}$ electrified storm clouds.
 For an average storm duration of 15~minutes these cutoffs are 26 flashes for land and 5 flashes for oceanic electrified storm clouds (ESCs).
 With a WWLLN-LIS/OTD detection efficiency of 6.4\% over land and 17\% over oceans \citep{Rudlosky2013}, WWLLN would expect cutoffs of 2~strokes per thunderstorm over land and 1~stroke per thunderstorm over oceans.
@@ -246,12 +242,11 @@ The average thunderstorm and ESC current contribution is taken from the overflig
 Average current contribution for land thunderstorms is 1.0~A, for oceanic thunderstorms 1.7~A, for land ESCs 0.41~A, and for oceanic ESCs 0.13~A.
 The total current for each contributor and the total current is shown in Figure~\ref{gec:fig:wilson}b.
 The average thunderstorm current is found to be $1090 \pm 70$~A with a total peak-to-peak variability of 24\%.
-The largest contributor are oceanic thunderstorms (47\%) with $510 \pm 10$~A, followed by land thunderstorms (32\%) with $350 \pm 70$~A.
-Overall ESCs contribute 21\% to the thunderstorm global circuit current.
+The largest contributor are oceanic thunderstorms (47\%) with $510 \pm 10$~A, followed by land thunderstorms (32\%) with $350 \pm 70$~A; overall ESCs contribute 21\% to the thunderstorm global circuit current.
 
 With a similar model based on the TRMM LIS/OTD data, \citet{Mach2011} found ocean thunderstorms contribute 32\% and land thunderstorms 55\%, with a total ESC contribution of 13\% to the total mean current of 2.04~kA.
-Their difference in current and contributor fraction stems from an increased count of land thunderstorms.
-This highlights a shortcoming of this simple model, land thunderstorms tend to be larger than oceanic storms; thunderstorm area should be taken into account along with overall counts.
+Their difference in current and contributing fraction stems from an increased count of land thunderstorms.
+This highlights a shortcoming of this simple model: land thunderstorms tend to be larger than oceanic storms; thunderstorm area should be taken into account along with overall counts.
 However to validate any global circuit model a comparison needs to be made with simultaneous fair weather return current measurements in order to constrain the models.
 
 \section{Conclusion}
