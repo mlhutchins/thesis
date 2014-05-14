@@ -1,0 +1,79 @@
+\documentclass[12pt, letterpaper, onecolumn, oneside]{report}
+
+
+\usepackage{amsmath, graphicx, natbib, listings, lscape, longtable,hyperref}
+
+\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
+
+%
+% ==========  Title Page
+%
+
+\title{WWLLN Technical Work}
+\author{Michael Hutchins}
+\linespread{1.3} %Line spacing
+\oddsidemargin 0in %Creates 1 inch margins all around
+\textwidth 6.5in
+\topmargin 0in
+\headheight 0in
+\headsep 0in
+\textheight 9in
+\begin{document}
+\maketitle
+
+%
+% ========== Table of Contents
+%
+
+\tableofcontents
+\listoffigures
+\listoftables  % I have no tables
+
+%
+% ==========   Chapters
+%
+
+% ========== Appendix Code
+
+\chapter{Code Repositories}
+\label{thesis:appendix:code}
+
+\include{Appendix/code}
+
+% ========== Appendix Bootstrap
+
+\chapter{Energy Processing}
+\label{thesis:appendix:energy}
+
+\include{Appendix/bootstrap}
+
+% ========== Appendix Service Unit
+
+\chapter{WWLLN Service Unit v4}
+\label{thesis:appendix:su}
+
+\include{Appendix/su}
+
+% ========== Appendix Gumstix
+
+\chapter{Gumstix}
+\label{thesis:appendix:gumstix}
+
+\include{Appendix/gumstix}
+
+% ========== Appendix Gumstix
+
+\chapter{Website}
+\label{thesis:appendix:website}
+
+\include{Appendix/website}
+
+%
+% ==========   Bibliography
+%
+
+\bibliography{/users/michael/documents/ess/research/library}
+\bibliographystyle{/users/michael/documents/ess/research/agu}
+
+
+\end{document}
