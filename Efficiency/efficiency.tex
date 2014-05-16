@@ -12,7 +12,7 @@ The results are also used to show spatial, temporal, and energy distributions as
 
 The WWLLN network does not observe lightning with the same detection efficiency everywhere.
 This is due to variable WWLLN station coverage and the strong effect on VLF radio propagation from surface electrical conductivity and ionospheric conditions along the great circle path of a wave.
-This chapter demonstrates a technique which only uses data collected by the WWLLN network itself to estimate the relative detection efficiency of each $5^\circ$ x $5^\circ$ pixel over the earth compared to the best average WWLLN detection efficiency.
+This chapter demonstrates a technique which only uses data collected by the WWLLN network itself to estimate the relative detection efficiency of each $1^\circ$ x $1^\circ$ pixel over the earth compared to the best average WWLLN detection efficiency.
 For instance, the lightning stroke density over central Africa, where WWLLN station density is sparse, can now be compared to the region of the Earth with the best detection efficiency, such as North America.
 This chapter does not provide an absolute detection efficiency calculation.
 
@@ -98,7 +98,7 @@ Slow ionospheric variations can also affect the MDE by changing the VLF attenuat
 
 Every hour the reconstructed minimum RMS field necessary to trigger an event is calculated and converted to a stroke energy.
 To make this conversion the same method as calculating the radiated energy per stroke is used as described in \citet{Hutchins2012}.
-This results in a station MDE for every point on a $5^\circ$ x $5^\circ$ global grid, which is the stroke energy necessary at that location to trigger a TOGA calculation at the given station.
+This results in a station MDE for every point on a $1^\circ$ x $1^\circ$ global grid, which is the stroke energy necessary at that location to trigger a TOGA calculation at the given station.
 As an example the map of the MDE for our Dunedin station (data shown in Figure~\ref{efficiency:fig:Threshold}) is shown in Figure~\ref{efficiency:fig:Threshold_Map}a.
 Figure~\ref{efficiency:fig:Threshold_Map}a applies only to strokes detected at this one station in Dunedin, a similar map can be generated for every WWLLN station.
 The high MDEs in Figure~\ref{efficiency:fig:Threshold_Map}a over the Antarctic, Western Africa, and Greenland are due to the high VLF attenuation over ice, and imply that Dunedin is very unlikely to detect strokes with energy less than the MDE if they were to occur in these regions.
@@ -114,7 +114,7 @@ The high MDEs in Figure~\ref{efficiency:fig:Threshold_Map}a over the Antarctic, 
 \end{figure}
 
 In order to locate a stroke, WWLLN requires TOGA values from at least five stations in order to conduct adequate fit error analysis.
-For every $5^\circ$ x $5^\circ$ grid cell all of the minimum stroke energies from currently active WWLLN stations are ordered.
+For every $1^\circ$ x $1^\circ$ grid cell all of the minimum stroke energies from currently active WWLLN stations are ordered.
 An example for one cell is shown in Table~\ref{efficiency:table:mdeTable}.
 The 5th lowest from this list is used as the network MDE, because at least five stations can trigger on that energy value.
 In other words, WWLLN cannot detect a stroke until it has a radiated energy which is above the trigger threshold at five or more WWLLN stations.
@@ -173,7 +173,7 @@ The fraction for all possible MDE values is shown as the curve in (b).}
 
 This calculation is done for a range of hypothetical network MDE values which produces a curve shown in Figure~\ref{efficiency:fig:Curve}b, giving the relationship between MDE and relative detection efficiency.
 This relationship is established once per day, and it is used to produce hourly maps of relative detection efficiency for that day.
-This is done by taking the hourly maps of network MDE and applying this relation to every $5^\circ$ x $5^\circ$ point on the globe for every hour to convert the network MDE to the relative detection efficiency.
+This is done by taking the hourly maps of network MDE and applying this relation to every $1^\circ$ x $1^\circ$ point on the globe for every hour to convert the network MDE to the relative detection efficiency.
 
 The relative detection values given by this process are only in reference to the energy distribution of the past seven days as seen by WWLLN.
 If a region has a relative detection efficiency of 100\% then the region is able to detect all of the detected stroke energies present in the 7-day network energy distribution.
@@ -321,7 +321,7 @@ The detection efficiency model can be applied to global maps of stroke density t
 This does not correct for the overall absolute detection efficiency (11\% for CG flashes in the United States, see \citet{Abarca2010}), rather it corrects for the areas with less WWLLN coverage.
 The hourly stroke density plots are corrected by dividing the counts in each grid cell by the relative detection efficiency of that cell.
 For example a grid cell with 100 strokes and an efficiency of 80\% would be corrected to 125 strokes.
-The stroke density from 2011, Figure~\ref{efficiency:fig:Global2011}a, had the model corrections applied hourly with the condition that a 5$^\circ$ x 5$^\circ$ grid cell needed at least two strokes to have a correction applied.
+The stroke density from 2011, Figure~\ref{efficiency:fig:Global2011}a, had the model corrections applied hourly with the condition that a 1$^\circ$ x 1$^\circ$ grid cell needed at least two strokes to have a correction applied.
 A second condition was that a minimum relative detection efficiency of 5\% was set for the model.
 
 \begin{figure}[ht!]
