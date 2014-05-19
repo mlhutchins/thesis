@@ -54,9 +54,9 @@ By using the regression method the network coverage and variable detection effic
 The second parameter, $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$, is the slope of the regression and will be used to study the energy changes between land and ocean regimes.
 $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$ is the measure of how much (logarithmically) the average stroke energy changes from one decile to the next.
 So a value of $\frac{\partial \text{log}_{10}(\overline{E_i})}{\partial i}$~=~0.1 at a location will increase the mean stroke energy by $10^{0.1}~=~25\%$ per decile, while a value of 0.2 will increase by $10^{0.2} = 58\%$ per decile.
-The regression slope will be higher for either relatively more high-energy strokes or fewer low-energy strokes, corresponding to more variance in the distribution.
+The regression slope will be higher for either relatively more high-energy or low-energ strokes, corresponding to greater variance in the distribution.
 The low-energy tail of the energy distribution is mostly set by the detection efficiency of the network where a higher detection efficiencies result in an overall shift of the distribution to lower energies, while the high end is always well detected even where the network has low station density.
-As $C$ captures the effects of the network performance, the slope of the regression will be mainly set by the energy of the strokes in the high-energy tail of the distribution.
+As $C$ captures the effects of the network performance, the slope of the regression will be mainly set by the energy of the strokes in the tails of the distribution.
 Detecting more low energy strokes will shift the distribution but not change the shape, or variance, of energies.
 
 An example of the linear regression method is shown in Figure~\ref{landsea:fig:linRegTheory} using 15~days of data from 1 -- 15 June 2012, separated into land (black) and ocean (gray) strokes.
@@ -84,7 +84,8 @@ Comparing the stroke and flash data directly is possible as a majority of flashe
 \begin{figure}[ht!]
    \centering
    \noindent\includegraphics[width=20pc]{LandSea/Figures/2_regMap.pdf} 
-   \caption{Slope of the linear regression used on the energy distribution as described in the text. High slope corresponds to a larger high-energy tail in the energy distribution as there are relatively more high-energy strokes.}
+   \caption{Slope of the linear regression used on the energy distribution as described in the text. 
+      High slope values corresponds to a more strokes in the tails of the energy distribution.}
    \label{landsea:fig:regMap}
 \end{figure}
 
@@ -103,7 +104,9 @@ The difference also exists off the coast of the southeastern United States, but 
 \begin{figure}[ht!]
    \centering
    \noindent\includegraphics[width=20pc]{LandSea/Figures/4_regMapENTLN.pdf} 
-   \caption{Slope of the linear regression used on the 2011 ENTLN absolute peak current distribution as described in the text. High slope corresponds to a larger high peak current tail in the distribution.}
+   \caption{Slope of the linear regression used on the 2011 ENTLN absolute peak current distribution as described in the text.
+        High slope values corresponds to a more strokes in the tails of the energy distribution.}
+   }
    \label{landsea:fig:regMapENTLN}
 \end{figure}
 
