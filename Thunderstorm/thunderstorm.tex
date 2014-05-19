@@ -23,7 +23,7 @@ Within known thunderstorms the time between successive flashes can be used to ex
 \citet{Zoghzoghy2013} examined the effect of the time between flashes as a measure of thunderstorm discharging in terms of the supression of future flashes.
 \citet{Zipser1994} examined the relation between the flash rate in a thunderstorm with the updraft velocities, which in turn are controlled by the differential surface heating below the thunderstorm.
 Only after considering and validating the performance of lightning detection networks can the effects of a flash be directly related to properties and behaviors of the parent thunderstorm.
-Inferring thunderstorm properties based on the observed lightning flash rates can benefit regions with low availibility of direct or continuous observations (e.g. radar over oceans).
+Inferring thunderstorm properties based on the observed lightning flash rates can benefit regions with low availability of direct or continuous observations (e.g. radar over oceans).
 
 \section{Data}
 
@@ -33,7 +33,7 @@ The data is from 2011 and 2012, with the exception of Section~\ref{thunderstorm:
 \section{Methods}
 
 Clustering the located strokes of both networks provides the thunderstorm and flash data.
-The clustering is performed with the DBSCAN algorithm \citep{Ester1996, Kriegel2011a} following the application metholodgy discussed in Chapter~\ref{thesis:chapter:gec} \citep{Hutchins2014}.
+The clustering is performed with the DBSCAN algorithm \citep{Ester1996, Kriegel2011a} following the application methodology discussed in Chapter~\ref{thesis:chapter:gec} \citep{Hutchins2014}.
 DBSCAN is used over other clustering methods as it clusters based on the spatial and temporal distance between strokes with robust handling of noise (e.g. nearby thunderstorms).
 The flash clustering uses the same algorithm as the thunderstorm clustering, with adjustment of the spatial and temporal clustering parameters.
 
@@ -50,13 +50,14 @@ WWLLN observes a median area and duration of 66 km$^2$ and 10~minutes, while ENT
 %% Conversion chapter -> work
 Two parameters used throughout this chapter are the times between successive strokes or flashes.
 This interstroke time will refer to the time since the previous stroke in the parent thunderstorm cluster; interflash time will refer to the time since the start of the previous flash in the thunderstorm cluster.
+When discussing interflash time in relation to flash energy or peak current the values refer to the strength of the second flash.
 
 \section{Detection Efficiency}
 
 The WWLLN thunderstorm detection efficiency is examined by comparing the located thunderstorm clusters with those located by ENTLN.
 ENTLN does not have 100\% detection efficiency of strokes, it is used as a readily available baseline to compare to as a nominal ground truth for WWLLN.
 Two thunderstorm clusters are considered to be matches if the convex hull of their constituent strokes overlap to within 5~km and $\pm5$~minutes.
-Using a convex hull method requires at least three strokes in a thunderstorm for it be considered a match; this creates an artifically lower detection efficiency for WWLLN for the cases where only 1 -- 2 strokes are detected in a thunderstorm.
+Using a convex hull method requires at least three strokes in a thunderstorm for it be considered a match; this creates an artificially lower detection efficiency for WWLLN for the cases where only 1 -- 2 strokes are detected in a thunderstorm.
 
 Over the 2011 -- 2012 period in North America the average thunderstorm detection efficiency of WWLLN compared to ENTLN was 61\% while ENTLN has a detection efficiency of WWLLN of 86\%.
 Similar to how detection efficiency varies with stroke strength, WWLLN has a higher detection efficiency of larger thunderstorms than smaller ones.
@@ -181,13 +182,13 @@ To account for this the thunderstorm life cycle is normalized by the duration of
 Each thunderstorm is broken into 9 time segments where the first flash in the thunderstorm is at time~1 and the last flash at time~9.
 With this normalization the average interflash time is found at each step for all thunderstorm clusters located by the two networks, shown in black in Figure~\ref{thunderstorm:fig:timerate}.
 The interflash time can be seen to decrease to the center of a thunderstorms life cycle before increasing at the end; this is consistent with the known life cycle of a thunderstorm \citep{Peckham1984,Rakov2003}.
-The interflash time for different energy (Figure~\ref{thunderstorm:fig:timerate}a) and absolute peak current (Figure~\ref{thunderstorm:fig:timerate}b) deciles are also shown.
+The interflash time for different energy (Figure~\ref{thunderstorm:fig:timerate}a) and absolute peak current (Figure~\ref{thunderstorm:fig:timerate}b) deciles are also shown (energy and peak current from the second flash).
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=1]{thunderstorm/Figures/stormTimeRate.pdf}
    \caption{The interflash time, since the previous flash, for time-normalized thunderstorms for WWLLN (a) and ENTLN (b), with times shown for all flashes (black) and by stroke strength decile bins.
-     WWLLN strength is divided by flash energy and ENTLN by absolute peak current.}
+     WWLLN strength is divided by flash energy and ENTLN by absolute peak current of the second flash.}
    \label{thunderstorm:fig:timerate}
 \end{figure}
 
@@ -195,7 +196,7 @@ All flashes follow the same behavior, regardless of energy or peak current, howe
 As seen with WWLLN, Figure~\ref{thunderstorm:fig:timerate}a, the interflash time increases for more energetic strokes; for ENTLN, Figure~\ref{thunderstorm:fig:timerate}b, the interflash time increases for absolute peak current.
 Between normalized time~1 and~5 the interflash time for the 90$^{th}$ percentile and above stroke strengths decreases by 9\% for WWLLN and 17\% for ENTLN compared to the median interflash time.
 This shows that longer times between flashes is associated with stronger flashes; more charge separation can occur in the thunderstorm resulting in the stronger flashes.
-In Figure~\ref{thunderstorm:fig:timerate} the separation between different flash strengths is consistant at all points in the thunderstorm life cycle.
+In Figure~\ref{thunderstorm:fig:timerate} the separation between different flash strengths is consistent at all points in the thunderstorm life cycle.
 It is not a constant offset but increases at the weaker stages of the thunderstorm (beginning and end) where longer time is necessary for a stronger flash, caused by a decreased charge separation rate.
 The time between flashes is a parameter associated with the strength of the resulting flash.
 
