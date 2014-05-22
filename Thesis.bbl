@@ -1,4 +1,4 @@
-\begin{thebibliography}{122}
+\begin{thebibliography}{123}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -543,6 +543,11 @@ Rycroft, M.~J., S.~Isrealsson, and C.~Price, {The global atmospheric electric
   circuit, solar activity and climate change}, \textit{Journal of Atmospheric
   and Solar-Terrestrial Physics}, \textit{62}(17-18), 1563--1576,
   \doi{10.1016/S1364-6826(00)00112-7}, 2000.
+
+\bibitem[{\textit{Saunders}(1995)}]{Saunders1995}
+Saunders, C. P.~R., {Thunderstorm Electrification}, in \textit{Handbook of
+  Atmospheric Electrification}, vol.~1, edited by H.~Volland, chap.~3, pp. 61
+  -- 92, CRC Press, 1995.
 
 \bibitem[{\textit{Schultz et~al.}(2009)\textit{Schultz, Petersen, and
   Carey}}]{Schultz2009}
