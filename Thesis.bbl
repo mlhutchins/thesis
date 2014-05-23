@@ -1,4 +1,4 @@
-\begin{thebibliography}{123}
+\begin{thebibliography}{124}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -457,6 +457,11 @@ Nag, A., et~al., {Evaluation of U.S. National Lightning Detection Network
 Ogawa, T., {Fair-weather electricity}, \textit{Journal of Geophysical
   Research}, \textit{90}(10), 5951--5960, 1985.
 
+\bibitem[{\textit{Ogawa}(1995)}]{Ogawa1995}
+Ogawa, T., {Lightning Currents}, in \textit{Handbook of Atmospheric
+  Electrodynamics}, edited by H.~Volland, chap.~4, pp. 93 -- 136, CRC Press,
+  1995.
+
 \bibitem[{\textit{Pan et~al.}(2010)\textit{Pan, Qie, Liu, Wang, and
   Yang}}]{Pan2010}
 Pan, L., X.~Qie, D.~Liu, D.~Wang, and J.~Yang, {The lightning activities in
@@ -546,7 +551,7 @@ Rycroft, M.~J., S.~Isrealsson, and C.~Price, {The global atmospheric electric
 
 \bibitem[{\textit{Saunders}(1995)}]{Saunders1995}
 Saunders, C. P.~R., {Thunderstorm Electrification}, in \textit{Handbook of
-  Atmospheric Electrification}, vol.~1, edited by H.~Volland, chap.~3, pp. 61
+  Atmospheric Electrodynamics}, vol.~1, edited by H.~Volland, chap.~3, pp. 61
   -- 92, CRC Press, 1995.
 
 \bibitem[{\textit{Schultz et~al.}(2009)\textit{Schultz, Petersen, and
