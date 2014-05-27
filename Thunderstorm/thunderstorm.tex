@@ -108,7 +108,9 @@ Removing the temporal variation demonstrates the trend of increasing detection e
 In Figure~\ref{thunderstorm:fig:deParameter} the black lines represent all thunderstorms and the colored lines split the thunderstorms by total counts detected by WWLLN in these thunderstorms.
 Thunderstorm area, Figure~\ref{thunderstorm:fig:deParameter}a, shows a gradual increase in detection efficiency from 40\% to near 100\% efficiency above $10^3$ km$^2$; the total number of strokes does not have an independent effect from area of the thunderstorm.
 Similarly the longer a thunderstorm is active the more likely it is to be detected by WWLLN, shown in Figure~\ref{thunderstorm:fig:deParameter}c.
+On short time scales the thunderstorm detection efficiency is lower than the previous estimates of \citet{Jacobson2006c}, but for thunderstorms lasting more than 1~hour the average detection efficiency is 91\%.
 Unlike area, duration is convolved with the lightning count of the thunderstorm: smaller thunderstorms have lower detection efficiency regardless of duration and larger thunderstorms are easier to detect.
+
 
 \begin{figure}[ht!]
    \centering
@@ -209,7 +211,7 @@ The lower performance for smaller thunderstorm clusters may be due to the cutoff
 Including these strokes would lead to less robust matches between the networks and conflate a stroke to thunderstorm detection efficiency and the thunderstorm to thunderstorm detection efficiency.
 For the thunderstorms WWLLN does detect, the characteristics of the thunderstorm are on par with those of ENTLN.
 As WWLLN does not detect every ENTLN thunderstorm, ENTLN does not detect every WWLLN thunderstorm.
-While it is assumed for this work that ENTLN acts as a ground-truth it is not a perfect network so the estimates of WWLLN performance will be lower estimates than the actual detection efficiency of the network.
+So assuming ENTLN as a ground-truth leads to lower estimates of the WWLLN performance as ENTLN only detects 86\% of WWLLN thunderstorms.
 
 %% Discussion of flash clusters
 
