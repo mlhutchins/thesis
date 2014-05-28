@@ -1,5 +1,6 @@
 This appendix discusses the distribution of WWLLN data files on the Flash series of computers along with the storage locations of routine processing code.
 The code locations are given in terms of both their active locations and as the source control repositories, managed using git (http://git-scm.com).
+The file locations and paths are likely out of date.
 
 \section{File Storage on Flash Machines}
 
@@ -117,9 +118,9 @@ A basic primer on how to use git, including retrieval of the repositories, is gi
 \rule{0pt}{3ex}
 Energy Processing	&bootstrap.git	&	Requires process.git and functions.git \\ 
 
-\hline
-\rule{0pt}{3ex}
-Detection Efficiency	&de.git	&	Requires functions.git\\ 
+% \hline
+% \rule{0pt}{3ex}
+% Detection Efficiency	&de.git	&	Requires functions.git\\ 
 
 \hline
 \rule{0pt}{3ex}
@@ -141,9 +142,9 @@ SU Eagle Files	&eagle.git	&	Eagle files for WWLLN SU and Pre-amps, includes Erin
 \rule{0pt}{3ex}
 Gumstix	&gumstix.git	&	Files for building and configuring Gumstix microSD cards.\\ 
 
-\hline
-\rule{0pt}{3ex}
-Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix kernel\\ 
+% \hline
+% \rule{0pt}{3ex}
+% Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix kernel\\ 
 
 \hline
 \end{tabular}
@@ -175,67 +176,67 @@ clone sferix@flash5.ess.washington.edu:/home/mlhutch/Git/bootstrap.git .
 
 Where the user can be anyone with permission to access that directory.
 More information on how to use git for source control, instead of downloading the repositories, can be found in the online resources.
-Several useful commands are given in Table~\ref{code:table:gitCommands}.
-I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
+% Several useful commands are given in Table~\ref{code:table:gitCommands}.
+% I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
 
-\begin{landscape}
-\begin{center}
-\begin{longtable}{|p{4in}|p{4in}|}
-\caption{Command git commands}
-\label{code:table:gitCommands}\\
-\hline
-\bf Command & \bf Notes \\ 
-\hline
-\endfirsthead
-\multicolumn{2}{c}
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-\hline
-\bf Command & \bf Notes \\ 
-\hline
-\endhead
-\hline \multicolumn{2}{r}{\textit{Continued on next page}} \\
-\endfoot
-\hline
-\endlastfoot
-git checkout -b [name] master/origin/[name] & Checkout and create branch on server  \\
-Push over a specific port: &  \\
-Create .ssh/config file: &host flash5 \\
-&user mlhutch \\
-&hostname flash5.ess.washington.edu \\
-&port 7777 \\
-& identityfile ~/.ssh/id\_dsa \\
-git push flash5:~/Git/landsea.git & Shortened format  \\
-On a new git install: & \\
-git config - -global user.email "mlhutch@uw.edu" & \\
-git config - -global user.name "Michael Hutchins" & \\
-Common commands: & \\
-git status & \\
-git add [filename] & \\
-git commit & \\
-git commit -am "Message" & Adds all modified files and commits them with Message \\
-git branch [branch name] & Creates a new branch, all files appear to be unstaged \\
-git checkout [branch name] & Switch to new branch (add and commit files after this) \\
-git diff [filename] & diff between file name and last branch commit \\
-git diff - -staged & diff on all staged files \\
-git status - - . & revert to last convert for all files (or use filename instead of . for one file) \\
-git push origin [branch name] & push new branch to server, otherwise git push updates ALL branches \\
-git pull & update current branch from origin (bitbucket) \\
-git fetch & update all branch information (i.e. update not upgrade) \\
-git merge [branch] & merges latest in [branch] into current branch \\
-& resolve conflicts by editing files \\
-& add and commit resolved files (still in branch, [branch] untouched) \\
-& git push afterward to put onto server \\
-Setting up Git server: & \\
-mkdir ~/Git/eagle.git & Make the repository file on the server \\
-cd ~/Git/eagle.git & \\
-git init - -bare & \\
-On computer set up server & \\
-git remote add [server name/alias] user@server.edu:Git/eagle.git & \\
-git push -u [server name/alias] & uploads everything to server 
-\label{label}
-\end{longtable}
-\end{center}
-\end{landscape}
+% \begin{landscape}
+% \begin{center}
+% \begin{longtable}{|p{4in}|p{4in}|}
+% \caption{Command git commands}
+% \label{code:table:gitCommands}\\
+% \hline
+% \bf Command & \bf Notes \\ 
+% \hline
+% \endfirsthead
+% \multicolumn{2}{c}
+% {\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+% \hline
+% \bf Command & \bf Notes \\ 
+% \hline
+% \endhead
+% \hline \multicolumn{2}{r}{\textit{Continued on next page}} \\
+% \endfoot
+% \hline
+% \endlastfoot
+% git checkout -b [name] master/origin/[name] & Checkout and create branch on server  \\
+% Push over a specific port: &  \\
+% Create .ssh/config file: &host flash5 \\
+% &user mlhutch \\
+% &hostname flash5.ess.washington.edu \\
+% &port 7777 \\
+% & identityfile ~/.ssh/id\_dsa \\
+% git push flash5:~/Git/landsea.git & Shortened format  \\
+% On a new git install: & \\
+% git config - -global user.email "mlhutch@uw.edu" & \\
+% git config - -global user.name "Michael Hutchins" & \\
+% Common commands: & \\
+% git status & \\
+% git add [filename] & \\
+% git commit & \\
+% git commit -am "Message" & Adds all modified files and commits them with Message \\
+% git branch [branch name] & Creates a new branch, all files appear to be unstaged \\
+% git checkout [branch name] & Switch to new branch (add and commit files after this) \\
+% git diff [filename] & diff between file name and last branch commit \\
+% git diff - -staged & diff on all staged files \\
+% git status - - . & revert to last convert for all files (or use filename instead of . for one file) \\
+% git push origin [branch name] & push new branch to server, otherwise git push updates ALL branches \\
+% git pull & update current branch from origin (bitbucket) \\
+% git fetch & update all branch information (i.e. update not upgrade) \\
+% git merge [branch] & merges latest in [branch] into current branch \\
+% & resolve conflicts by editing files \\
+% & add and commit resolved files (still in branch, [branch] untouched) \\
+% & git push afterward to put onto server \\
+% Setting up Git server: & \\
+% mkdir ~/Git/eagle.git & Make the repository file on the server \\
+% cd ~/Git/eagle.git & \\
+% git init - -bare & \\
+% On computer set up server & \\
+% git remote add [server name/alias] user@server.edu:Git/eagle.git & \\
+% git push -u [server name/alias] & uploads everything to server 
+% \label{label}
+% \end{longtable}
+% \end{center}
+% \end{landscape}
 
 \section{Other Useful Matlab Code}
 
