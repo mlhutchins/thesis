@@ -1,6 +1,5 @@
 This appendix discusses the distribution of WWLLN data files on the Flash series of computers along with the storage locations of routine processing code.
 The code locations are given in terms of both their active locations and as the source control repositories, managed using git (http://git-scm.com).
-The file locations and paths are likely out of date.
 
 \section{File Storage on Flash Machines}
 
@@ -16,10 +15,10 @@ Some, but not all, of the WWLLN data file directories have been copied to the ot
 \begin{table}[h!]
 \begin{center}
 \caption{WWLLN Data Types}
-\begin{tabular}{|p{.75in}|p{2in}|p{3.5in}|}
+\begin{tabular}{|p{.75in}|p{1.5in}|p{3.5in}|}
 
 \hline
-{\bf File Type} & {\bf Naming} &	{\bf Description} \\
+{\bf File Type} & {\bf Name} &	{\bf Description} \\
 
 \hline
 \rule{0pt}{3ex}
@@ -43,7 +42,7 @@ DE-files	& DE20121231.mat	&	Relative detection efficiency maps, as Matlab data.\
 
 \hline
 \rule{0pt}{3ex}
-S-files	& S201212310510.Seattle.loc	&	Waveform data for strokes located near a given station.\\ 
+S-files	& S201212310510.loc	&	Waveform data for strokes located near a given station.\\ 
 
 \hline
 \rule{0pt}{3ex}
@@ -79,8 +78,8 @@ The final two are the timing uncertainty in microseconds and the number of WWLLN
 AP-files are similar to A-files with additional information after the stroke location:
 
 \begin{verbatim}
-2013/02/12,00:00:07.142335,-10.4622,  20.0863, 13.4,  5, 17, 600, 19, 2084, 26, 453, 
-	53, 225, 64, 2263
+2013/02/12,00:00:07.142335,-10.4622,  20.0863, 13.4,  5, 17, 600, 19, 2084,
+	 26, 453, 53, 225, 64, 2263
 \end{verbatim}
 
 Starting at \verb|17,600| are pairs of numbers that give the station ID (\verb|17|) and the field strength (\verb|600|) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
@@ -109,7 +108,7 @@ A basic primer on how to use git, including retrieval of the repositories, is gi
 \begin{table}[h!]
 \caption{Git Repositories (flash5:/home/mlhutch/Git/)}
 \begin{center}
-\begin{tabular}{|p{1.5in}|p{1.25in}|p{3in}|}
+\begin{tabular}{|p{1.5in}|p{1in}|p{3in}|}
 
 \hline
 {\bf Code} &	{\bf Repository} &	{\bf Notes}\\

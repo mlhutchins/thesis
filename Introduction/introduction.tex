@@ -193,7 +193,7 @@ The LIS flash density for 2011 -- 2012 is shown in Figure~\ref{intro:fig:lis}.
 
 The Long Wave Propagation Capability code (LWPC) is used to model the VLF attenuation between WWLLN located lightning and the network stations.
 The LWPC code was developed by the Space and Naval Warfare Systems Center by \citet{Ferguson1998} and has most recently been validated by \citet{McRae2000d} and \citet{Thomson2011}.
-In this research we made use of an adapted LWPC version 2.1 (available online).
+In this research we made use of an adapted LWPC version 2.1 (available online, see Appendix~\ref{thesis:appendix:code}).
 
 LWPC can be used to model the attenuation along a mixed day/night ionospheric path, however due to computational limitations a lookup table is used instead.
 The lookup tables model the received electric field at a given station for a 100~kW transmitter in each grid cell.
@@ -269,6 +269,45 @@ The thunderstorm clustering is expanded to flash clustering and explored in the 
 Chapter~\ref{thesis:chapter:conclusion} &
 Explores the future work that can be carried forward from this work. &
 \\
+
+\end{tabular}
+\end{center}
+\end{table}
+
+The appendices discuss the code implementation of the techniques described in a few of the chapters along with the construction, design, and operation of the WWLLN stations.
+The descriptions are given in Table~\ref{intro:table:outline_appendix}.
+Notably the code for the energy calculations (Chapter~\ref{thesis:chapter:energy}), relative detection efficiency model (Chapter~\ref{thesis:chapter:efficiency}), and thunderstorm clustering (Chapter~\ref{thesis:chapter:gec}) are available online as described in Appendix~\ref{thesis:appendix:code}.  The same appendix contains the schematics, EAGLE files, parts list, and software for the WWLLN Service Units.
+
+\begin{table}[ht!]
+\caption{Appendix outline.}
+\label{intro:table:outline_appendix}
+\begin{center}
+\begin{tabular}{l p{5in}}
+
+\rule{0pt}{3ex}
+Appendix~\ref{thesis:appendix:code}	&
+Describes the different types of WWLLN data files available, their location, and the common code used in this thesis.
+\\ 
+
+\rule{0pt}{3ex}
+Appendix~\ref{thesis:appendix:energy} &
+Describes the WWLLN stroke energy processing code and operations, enabling reproduction or reprocessing of the energies.
+\\ 
+
+\rule{0pt}{3ex}
+Appendix~\ref{thesis:appendix:su}	&
+Describes the development, design, and construction of the WWLLN Service Unit v4.
+\\  
+
+\rule{0pt}{3ex}
+Appendix~\ref{thesis:appendix:gumstix}	&
+Describes the software and operations of the WWLLN Service Unit v4 computers.
+\\ 
+
+\rule{0pt}{3ex}
+Appendix~\ref{thesis:appendix:website}	&
+Outlines the new WWLLN website structure and operation along with the realtime lightning display.
+\\ 
 
 \end{tabular}
 \end{center}
