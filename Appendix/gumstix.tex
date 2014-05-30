@@ -45,35 +45,35 @@ V\_BATT is the 5~V power for the Gumstix.
 \subsection{Gumstix-Yocto}
 
 The Gumstix used in the service unit is running a custom Linux distribution created using the Yocto Project build system.
-This OS runs similar to most unix operating systems, with the main difference being the smart package manager instead of yum or apt-get.
+This OS runs similar to most unix operating systems, with the main difference being the smart package manager instead of \texttt{yum} or \texttt{apt-get}.
 
-A useful resource in setting up and configuring the Gumstix software is the Gumstix developer site (http://gumstix.org) and the mailing list archive forum (http://gumstix.8.x6.nabble.com).
+A useful resource in setting up and configuring the Gumstix software is the Gumstix developer site (\texttt{http://gumstix.org}) and the mailing list archive forum (\texttt{http://gumstix.8.x6.nabble.com}).
 
 \subsection{Distribution Location}
 \label{app:gum:distribution}
-The operating system used is the Yocto Project Gumstix Layer v1.5, available on flash5 or in the Git repository:
+The operating system used is the Yocto Project Gumstix Layer v1.5, available on \texttt{flashfile} or in the Git repository:
 
-/home/mlhutch/Git/gumstix.git repository on flash5 in the image folder.
+\texttt{/home/mlhutch/Git/gumstix.git} repository on \texttt{flashfile} in the image folder.
 
 \subsection{Building}
 
 Building the operating system can be done by following the instructions at:
 
-https://github.com/gumstix/Gumstix-YoctoProject-Repo
+\texttt{https://github.com/gumstix/Gumstix-YoctoProject-Repo}
 
-With the final configuration in the Git repository on flash5 in image/yocto/local.conf.
-If rebuilding use the local.conf file in the build/conf folder and run the bitbake target \texttt{bitbake gumstix-xfce-image}.
+With the final configuration in the Git repository on \texttt{flashfile} in \texttt{image/yocto/local.conf}.
+If rebuilding use the \texttt{local.conf} file in the \texttt{build/conf} folder and run the bitbake target \texttt{bitbake gumstix-xfce-image}.
 
-With either a newly made OS image or the one in the gumstix.git repository, follow the install instructions in INSTALL.md for setting up a new microSD card to run with WWLLN.
+With either a newly made OS image or the one in the \texttt{gumstix.git} repository, follow the install instructions in \texttt{INSTALL.md} for setting up a new microSD card to run with WWLLN.
 
 \section{Software}
 
 \subsection{WWLLN Software}
 
 The WWLLN software is provided by James Brundell and compiled specifically for the ARM process.
-The three programs are {\bf toga}, {\bf ntpcheck}, and {\bf GDspectro}.
-{\bf toga} is the main WWLLN processing programming that reads in the VLF and GPS signals to produce the UDP packets sent on to the main WWLLN processors.
-It should be always running on the system with a crontab entry such as:
+The three programs are \texttt{toga}, \texttt{ntpcheck}, and \texttt{GDspectro}.
+\texttt{toga} is the main WWLLN processing programming that reads in the VLF and GPS signals to produce the UDP packets sent on to the main WWLLN processors.
+It should be always running on the system with a \texttt{crontab} entry such as:
 
 \begin{verbatim}
 0,5,10,15,20,25,30,35,40,45,50,55 * * * * toga -s 100 -a 3 -j 1 -g -o &
@@ -81,7 +81,7 @@ It should be always running on the system with a crontab entry such as:
 
 This will try to start it every 5 minutes in case it stops for any reason.
 
-The {\bf ntpcheck} and {\bf GDspectro} and programs used by {\bf toga} but do not need to be called or run on their own.
+The \texttt{ntpcheck} and \texttt{GDspectro} and programs used by \texttt{toga} but do not need to be called or run on their own.
 
 \subsection{Hardware Controls}
 
@@ -93,38 +93,38 @@ The command to change a GPIO pin value is:
 echo 0 > /sys/class/gpio/gpio145/value
 \end{verbatim}
 
-The two scripts {\bf preampOn.sh} and {\bf preampOff.sh} can be used to easily toggle the preamp power supply.
+The two scripts \texttt{preampOn.sh} and \texttt{preampOff.sh} can be used to easily toggle the preamp power supply.
 
-The default value for GPIO pins is to hold them high, so during boot the preamp turns off until the {\bf preampOn.sh} script can be called at the end of the boot sequence.
+The default value for GPIO pins is to hold them high, so during boot the preamp turns off until the \texttt{preampOn.sh} script can be called at the end of the boot sequence.
 
 \subsection{GPS Interface}
 
 The Trimble GPS communicates with the TSIP protocal, compared the NMEA of the previous GPS engine used.
-The pythons script {\bf readTSIP.py} interprets the TSIP messages and reports the GPS status to the file gps.log and prints them to the console.
-The console printing can be turned off by changing the variable print\_to\_console to False.
+The pythons script \texttt{readTSIP.py} interprets the TSIP messages and reports the GPS status to the file gps.log and prints them to the console.
+The console printing can be turned off by changing the variable \texttt{print\_to\_console} to \texttt{False}.
 
 The program can be started and run in the background to produce a continues record of GPS activity.
-The default location for the gps.log file is in the public\_html folder where it can be remotely checked through the service unit website.
+The default location for the \texttt{gps.log} file is in the \texttt{public\_html} folder where it can be remotely checked through the service unit website.
 
 \subsection{RAM Disk}
 
 The Linux distribution for Gumstix automatically sets up a RAM disk for users.
-It is created at /var/volatile with half of the available RAM (256~MB).
+It is created at \texttt{/var/volatile} with half of the available RAM (256~MB).
 It needs to be used for the running of the WWLLN software as the microSD card is too slow.
-At start-up the public\_html folder (logs and spectrograms) and sferics folder are created in the ram disk and symlinked to the main sferics directory.
+At start-up the \texttt{public\_html} folder (logs and spectrograms) and sferics folder are created in the ram disk and symlinked to the main sferics directory.
 
-For this reason all permanent edits to the Service Unit website should be made in the public\_html\_static directory.
+For this reason all permanent edits to the Service Unit website should be made in the \texttt{public\_html\_static directory}.
 
 \section{Creating Gumstix microSD Card}
 
 There are two methods for configuring a new microSD card for use with the service unit Gumstix computer.
-Either a card can be formatted and loaded with the latest software following the INSTALL.md instructions, or an existing installation disk image can be copied over (located on flashfile and flash5).
+Either a card can be formatted and loaded with the latest software following the \texttt{INSTALL.md} instructions, or an existing installation disk image can be copied over (located on \texttt{flashfile} and \texttt{flash5}).
 
 \subsection{Card Duplication}
 \label{app:gumstix:duplication}
 
 Once a new card is created it is advised to make an exact copy of the card to allow for duplication onto new cards.
-Since the partitioning, and bit location on the card, is critical for the Gumstix the direct copy program {\bf dd} should be used to make the copy.
+Since the partitioning, and bit location on the card, is critical for the Gumstix the direct copy program \texttt{dd} should be used to make the copy.
 To copy a card to a disk image the command will look like:
 
 \begin{verbatim}
@@ -137,13 +137,13 @@ And the command to copy a microSD image back to a new card in the same slot as t
 sudo dd if=/Path/To/Target/gumstix.iso of=/dev/sdb bs=512
 \end{verbatim}
 
-A word of warning: the {\bf dd} command can overwrite and destroy hard drives if they are incorrectly targeted.
-Always double check the mount point of the microSD card before running the {\bf dd} command.
+A word of warning: the \texttt{dd} command can overwrite and destroy hard drives if they are incorrectly targeted.
+Always double check the mount point of the microSD card before running the \texttt{dd} command.
 
 \section{Gumstix System Setup}
 
 Subsection~\ref{app:appendix:setup} gives the setup instructions for a new station, namely setting the IP address so it can be added to the network.
-A more up to date version is available in the {\bf gumstix.git} repository in the {\bf user\_manual} folder.
+A more up to date version is available in the \texttt{gumstix.git} repository in the \texttt{user\_manual} folder.
 Also included in the station setup instructions are how to setup and customize the service unit webpage, as described in Subsection~\ref{app:gumstix:website}.
 
 \subsection{Connecting to the Gumstix}
@@ -171,15 +171,15 @@ netmask:	255.255.255.0
 ssh -p 7777 sferix@192.168.10.2
 password: [	]
 \end{verbatim}}
-\item{Set desired static ip configuration in file $\sim$/networkSetup.sh}
+\item{Set desired static ip configuration in file \texttt{$\sim$/networkSetup.sh}}
 \item{\begin{verbatim}
 sudo ./networkSetup.sh
 \end{verbatim}}
-\item{Switch SU to main network ethernet within 1 minute of running networkSetup.sh}
+\item{Switch SU to main network ethernet within 1 minute of running \texttt{networkSetup.sh}}
 \item{Test connection by SSH'ing into SU with new IP address}
 \item{
 \begin{enumerate}
-\item{If successful: set new IP setting in /etc/network/interfaces}
+\item{If successful: set new IP setting in \texttt{/etc/network/interfaces}}
 \item{If unsuccessful: power cycle SU and check settings starting with step 3}
 \end{enumerate}}
 \item{Reset SU and confirm new settings}
@@ -197,7 +197,7 @@ The Workstation setup method requires:
 Connect the powered USB hub to the back USB port of the service unit, and attach the keyboard and mouse to the hub.
 Connect a monitor to the HDMI port, DVI - HDMI adapters work as well.
 Power on the box, it will take a few minutes for the login screen to show up.
-Select ``Other...'' and login with the username \textbf{host}.
+Select ``Other...'' and login with the username \texttt{host}.
 Wait a few more minutes for the graphical display to load.
 
 Adjust the network settings by the steps listed in Method 1 or 3.
@@ -210,7 +210,7 @@ Adjust the network settings by the steps listed in Method 1 or 3.
 
 \subsection*{Method 3: Manual microSD Editing}
 
-The files that need to be edited on the rootfs partition are:
+The files that need to be edited on the \texttt{rootfs} partition are:
 
 \begin{verbatim}
 /etc/network/interfaces
@@ -218,10 +218,10 @@ The files that need to be edited on the rootfs partition are:
 /etc/systemd/system/sshd.socket
 \end{verbatim}
 
-The interfaces file lists the IP information of the machine whole the resolv.conf file is for the DNS information.
-The sshd.socket file sets the port with which SSH is allowed.
+The interfaces file lists the IP information of the machine whole the \texttt{resolv.conf} file is for the DNS information.
+The \texttt{sshd.socket} file sets the port with which SSH is allowed.
 
-The last step, if a non-standard port is being used, is to also alter the built in firewall of iptables and netfilter.
+The last step, if a non-standard port is being used, is to also alter the built in firewall of \texttt{iptables} and netfilter.
 The firewall settings are stored in:
 
 \begin{verbatim}
@@ -235,7 +235,7 @@ and can be edited as a standard iptables configuration file.
 
 \subsection*{Starting apache2}
 
-To get apache2 running only one change needs to be made in the /etc/apache2/httpd.conf file.
+To get \texttt{apache2} running only one change needs to be made in the \texttt{/etc/apache2/httpd.conf} file.
 
 \begin{verbatim}
 #ServerName www.example.com:80
@@ -247,7 +247,7 @@ Needs to be uncommented and changed to the hostname of the computer, e.g.:
 ServerName gumstix.ess.washington.edu:80
 \end{verbatim}
 
-Then httpd needs to be restarted:
+Then \texttt{httpd} needs to be restarted:
 
 \begin{verbatim}
 sudo httpd -k restart
@@ -255,18 +255,18 @@ sudo httpd -k restart
 
 \subsection*{Setting up the website}
 
-All changes to the website need to be made in the /home/sferix/public\_html\_static folder, this folder is copied to /home/sferix/public\_html during start up. Changes to public\_html are not saves as the folder is located in system RAM due to SD card read/write limitations. A restart in not necessary if the public\_html\_static contents are copied to public\_html.
+All changes to the website need to be made in the \texttt{/home/sferix/public\_html\_static} folder, this folder is copied to \texttt{/home/sferix/public\_html} during start up. Changes to \texttt{public\_html} are not saves as the folder is located in system RAM due to SD card read/write limitations. A restart in not necessary if the \texttt{public\_html\_static} contents are copied to \texttt{public\_html}.
 
 \subsection{Sound Settings}
 
-The Gumstix a myriad of analog inputs that are all controlled with {\bf alsamixer}.
+The Gumstix a myriad of analog inputs that are all controlled with \texttt{alsamixer}.
 For the WWLLN service unit the stereo input is controlled by the $<$Analog$>$ input as shown highlighted in Figure~\ref{app:gumstix:fig:alsa}, and a digital gain through $<$TX1 Digital$>$.
-Included in the installation files is the default alsa profile {\bf asound.state}.
+Included in the installation files is the default alsa profile \texttt{asound.state}.
 
 \begin{figure}[ht!]
    \centering
    \includegraphics[scale=.25]{Appendix/Figures/gumstixmixer.png}
-   \caption{Alsamixer settings for Gumstix stereo input, $<$Analog$>$ controls the stereo gain.}
+   \caption{\texttt{alsamixer} settings for Gumstix stereo input, $<$Analog$>$ controls the stereo gain.}
    \label{app:gumstix:fig:alsa}
 \end{figure}
 
