@@ -5,12 +5,10 @@ The code locations are given in terms of both their active locations and as the 
 
 There are several types of WWLLN data files, summarized in Table~\ref{code:table:fileType}.
 The example filenames given in the table are for 31 December 2013, 5:10 UTC.
-Most of the file types, with exception of WB-files, are located on flash5 on one of two hard drives.
-Data for the current year is stored on /wd2/ while previous years are stored on /wd3/.
+Most of the file types, with exception of WB-files, are located on \texttt{flashfile} on \texttt{/wd1/wwlln/}.
 Each file type has it's own directory, denoted Afiles, AEfiles, etc., with flat file structures (except for R-files).
-R-files, due to the large number generated, are broken into yearly and monthly folders of the form: /wd2/R[YYYY]/R[YYYY][MM]
-The R-file repository on flash5 differs from that of flashdat since the 2005 and 2006 data has been cleaned and organized into a consistent file hierarchy.
-Some, but not all, of the WWLLN data file directories have been copied to the other flashes on a need-basis and so the other flashes should not be considered a backup of the flash5 dataset.
+R-files, due to the large number generated, are broken into yearly and monthly folders of the form: \texttt{Rfiles/R[YYYY]/R[YYYY][MM]}.
+Some, but not all, of the WWLLN data file directories have been copied to the other flashes on a need-basis and so the other flashes should not be considered a backup of the flashfile dataset.
 
 \begin{table}[h!]
 \begin{center}
@@ -22,35 +20,35 @@ Some, but not all, of the WWLLN data file directories have been copied to the ot
 
 \hline
 \rule{0pt}{3ex}
-R-files	& R20121231051000	&	Raw packets sent by stations\\ 
+R-files	& \texttt{R20121231051000}	&	Raw packets sent by stations\\ 
 
 \hline
 \rule{0pt}{3ex}
-A-files	& A20121231.loc	&	Lightning locations generated in real time\\ 
+A-files	& \texttt{A20121231.loc}	&	Lightning locations generated in real time\\ 
 
 \hline
 \rule{0pt}{3ex}
-AP-files	& AP20121231.loc	&	Location data with station and E-field data of each stroke solution, generated daily with relocate-B\\ 
+AP-files	& \texttt{AP20121231.loc}	&	Location data with station and E-field data of each stroke solution, generated daily with relocate-B\\ 
 
 \hline
 \rule{0pt}{3ex}
-AE-files	& AE20121231.loc	&	Location and stroke energy data, generated daily by Bootstrap.\\ 
+AE-files	& \texttt{AE20121231.loc}	&	Location and stroke energy data, generated daily by Bootstrap.\\ 
 
 \hline
 \rule{0pt}{3ex}
-DE-files	& DE20121231.mat	&	Relative detection efficiency maps, as Matlab data.\\ 
+DE-files	& \texttt{DE20121231.mat}	&	Relative detection efficiency maps, as Matlab data.\\ 
 
 \hline
 \rule{0pt}{3ex}
-S-files	& S201212310510.loc	&	Waveform data for strokes located near a given station.\\ 
+S-files	& \texttt{S201212310510.loc}	&	Waveform data for strokes located near a given station.\\ 
 
 \hline
 \rule{0pt}{3ex}
-WB-files	& WB201212310510.dat	&	Continuos wideband field data output by toga -r\\ 
+WB-files	& \texttt{WB201212310510.dat}	&	Continuos wideband field data output by toga -r\\ 
 
 \hline
 \rule{0pt}{3ex}
-T-files	& T20131114\_Single.dat	&	Station packet count record, TCurrent.dat is the current running record\\ 
+T-files	& \texttt{T20131114\_Single.dat}	&	Station packet count record, TCurrent.dat is the current running record\\ 
 
 \hline
 \end{tabular}
@@ -82,31 +80,31 @@ AP-files are similar to A-files with additional information after the stroke loc
 	 26, 453, 53, 225, 64, 2263
 \end{verbatim}
 
-Starting at \verb|17,600| are pairs of numbers that give the station ID (\verb|17|) and the field strength (\verb|600|) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
+Starting at \texttt{17,600} are pairs of numbers that give the station ID (\texttt{17}) and the field strength (\texttt{600}) in sound card units, the same value as in the R-files. Finally AE-files are similar to A-files but with three additional numbers:
 
 \begin{verbatim}
 2013/2/12,00:00:07.142335, -10.4622,  020.0863, 13.4, 5, 448.86, 114.87, 4
 \end{verbatim}
 
-The last three numbers correspond to the radiated VLF stroke energy in joules (448.86), the median absolute deviation of the energy value in joules (114.87), and the subset of stations that participated in the energy value solution (4).
+The last three numbers correspond to the radiated VLF stroke energy in joules (\texttt{448.86}), the median absolute deviation of the energy value in joules (\texttt{114.87}), and the subset of stations that participated in the energy value solution (\texttt{4}).
 
-T-files are records of how many packets a given station sent to flash4 during the history of WWLLN.
-Unlike the other files it is not automatically generated, rather it is written whenever it is updated through the TfileUpdater.m script in the functions.git repository.
+T-files are records of how many packets a given station sent to \texttt{flash4} during the history of WWLLN.
+Unlike the other files it is not automatically generated, rather it is written whenever it is updated through the \texttt{TfileUpdater.m} script in the \texttt{functions.git} repository.
 Each line contains the date in days since 01/01/0000 and the counts for each station, where column 2 corresponds to station 0.
 
 \section{Code Repositories}
 
-All of my code should be stored on flash5 at /home/mlhutch/matlab for Matlab scripts.
-For example the code to run the energy processing is located at /home/mlhutch/matlab/bootstrap/Bootstrap\_automation.m.
+All of my code should be stored on \texttt{flashfile} at \texttt{/home/mlhutch/}.
+The operational code running every day is stored on \texttt{flash5} at \texttt{/home/mlhutch/matlab/bootstrap/} with a non-operational copy on \texttt{flashfile}.
 The exact details of where the energy processing code is located, the necessary files, and similar code for the relative detection efficiency processing is covered in Appendix~\ref{thesis:appendix:energy}.
-Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located both on flash5:/home/mlhutch/Git and hosted online on \href{http://github.com/mlhutchins}{github.com/mlhutchins/}.
+Aside from being stored in plaintext scripts, all of the code is also stored in a Git repository located on \texttt{flashfile:/home/mlhutch/Git} and hosted online on \href{http://github.com/mlhutchins}{\texttt{github.com/mlhutchins/}}.
 
 The Git repositories have the advantage of multiple back ups, version control, easily portable, and easy to use.
 A list of the WWLLN processing code and corresponding git repository is given in Table~\ref{code:table:repo}.
-A basic primer on how to use git, including retrieval of the repositories, is given in Section~\ref{code:section:primer}.
+A basic primer on how to use git is given in Section~\ref{code:section:primer}; online resources are also readily available.
 
 \begin{table}[h!]
-\caption{Git Repositories (flash5:/home/mlhutch/Git/)}
+\caption{Git Repositories (\texttt{flashfile:/home/mlhutch/Git/})}
 \begin{center}
 \begin{tabular}{|p{1.5in}|p{1in}|p{3in}|}
 
@@ -115,35 +113,27 @@ A basic primer on how to use git, including retrieval of the repositories, is gi
 
 \hline
 \rule{0pt}{3ex}
-Energy Processing	&bootstrap.git	&	Requires process.git and functions.git \\ 
-
-% \hline
-% \rule{0pt}{3ex}
-% Detection Efficiency	&de.git	&	Requires functions.git\\ 
+Energy Processing	&\texttt{bootstrap.git}	&	Requires \texttt{process.git} and \texttt{functions.git} \\ 
 
 \hline
 \rule{0pt}{3ex}
-LWPC	&lwpc.git	&	LWPC and Matlab implementation\\ 
+LWPC	&\texttt{lwpc.git}	&	LWPC and Matlab implementation\\ 
 
 \hline
 \rule{0pt}{3ex}
-AP Processing	&process.git	&	Relocate files (required for energy processing)\\ 
+AP Processing	&\texttt{process.git}	&	Relocate files (required for energy processing)\\ 
 
 \hline
 \rule{0pt}{3ex}
-MATLAB Functions	&functions.git	&	Various Matlab functions required by other scripts.\\ 
+MATLAB Functions	&\texttt{functions.git}	&	Various Matlab functions required by other scripts.\\ 
 
 \hline
 \rule{0pt}{3ex}
-SU Eagle Files	&eagle.git	&	Eagle files for WWLLN SU and Pre-amps, includes Erin Lay's files.\\ 
+SU Eagle Files	&\texttt{eagle.git}	&	Eagle files for WWLLN SU and Pre-amps, includes Erin Lay's files.\\ 
 
 \hline
 \rule{0pt}{3ex}
-Gumstix	&gumstix.git	&	Files for building and configuring Gumstix microSD cards.\\ 
-
-% \hline
-% \rule{0pt}{3ex}
-% Gumstix Bitbake	&openembedded.git	&	Bitbake distribution for adjusting Gumstix kernel\\ 
+Gumstix	&\texttt{gumstix.git}	&	Files for building and configuring Gumstix microSD cards.\\ 
 
 \hline
 \end{tabular}
@@ -154,19 +144,19 @@ Gumstix	&gumstix.git	&	Files for building and configuring Gumstix microSD cards.
 \section{Git Primer}
 \label{code:section:primer}
 
-Git (\href{http://git-scm.com}{http://git-scm.com}) is an open source distributed version control system available on all operating systems with very little system resources required.
+Git (\href{http://git-scm.com}{\texttt{http://git-scm.com}}) is an open source distributed version control system available on all operating systems with very little system resources required.
 Most often git is accessed through the command line but there are many graphical interfaces available.
 I chose git for my research and code since it allows easy branching, constant backups (locally and on remote servers), and helps to organize code and projects.
-A brief tutorial on git is available online: \href{http://git-scm.com/book/en/Getting-Started}{http://git-scm.com/book/en/Getting-Started} and \href{http://try.github.com/}{http://try.github.com/}.
+A brief tutorial on git is available online: \href{http://git-scm.com/book/en/Getting-Started}{\texttt{http://git-scm.com/book/en/Getting-Started}} and \href{http://try.github.com/}{\texttt{http://try.github.com/}}.
 
-Once git is installed on a host machine (http://git-scm.com, apt-get install git, or yum install git-core) repositories can be downloaded with the command:
+Once git is installed on a host machine (\texttt{http://git-scm.com}, \texttt{apt-get install git}, or \texttt{yum install git-core}) repositories can be downloaded with the command:
 
 \begin{verbatim}
 git clone [user]@[server]:[repository] .
 \end{verbatim}
 
 This will copy (clone) the repository to the current directory as a folder of the same name as the repository. 
-For example to copy over the energy processing repository listed in Table~\ref{code:table:repo} to the matlab directory:
+For example to copy over the energy processing repository listed in Table~\ref{code:table:repo} to the \texttt{matlab} directory:
 
 \begin{verbatim}
 cd ~/matlab
@@ -175,79 +165,17 @@ clone sferix@flash5.ess.washington.edu:/home/mlhutch/Git/bootstrap.git .
 
 Where the user can be anyone with permission to access that directory.
 More information on how to use git for source control, instead of downloading the repositories, can be found in the online resources.
-% Several useful commands are given in Table~\ref{code:table:gitCommands}.
-% I am happy to have user collaborate with the flash5 git repositories for updates, changes, or additions to the listed repositories.
-
-% \begin{landscape}
-% \begin{center}
-% \begin{longtable}{|p{4in}|p{4in}|}
-% \caption{Command git commands}
-% \label{code:table:gitCommands}\\
-% \hline
-% \bf Command & \bf Notes \\ 
-% \hline
-% \endfirsthead
-% \multicolumn{2}{c}
-% {\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-% \hline
-% \bf Command & \bf Notes \\ 
-% \hline
-% \endhead
-% \hline \multicolumn{2}{r}{\textit{Continued on next page}} \\
-% \endfoot
-% \hline
-% \endlastfoot
-% git checkout -b [name] master/origin/[name] & Checkout and create branch on server  \\
-% Push over a specific port: &  \\
-% Create .ssh/config file: &host flash5 \\
-% &user mlhutch \\
-% &hostname flash5.ess.washington.edu \\
-% &port 7777 \\
-% & identityfile ~/.ssh/id\_dsa \\
-% git push flash5:~/Git/landsea.git & Shortened format  \\
-% On a new git install: & \\
-% git config - -global user.email "mlhutch@uw.edu" & \\
-% git config - -global user.name "Michael Hutchins" & \\
-% Common commands: & \\
-% git status & \\
-% git add [filename] & \\
-% git commit & \\
-% git commit -am "Message" & Adds all modified files and commits them with Message \\
-% git branch [branch name] & Creates a new branch, all files appear to be unstaged \\
-% git checkout [branch name] & Switch to new branch (add and commit files after this) \\
-% git diff [filename] & diff between file name and last branch commit \\
-% git diff - -staged & diff on all staged files \\
-% git status - - . & revert to last convert for all files (or use filename instead of . for one file) \\
-% git push origin [branch name] & push new branch to server, otherwise git push updates ALL branches \\
-% git pull & update current branch from origin (bitbucket) \\
-% git fetch & update all branch information (i.e. update not upgrade) \\
-% git merge [branch] & merges latest in [branch] into current branch \\
-% & resolve conflicts by editing files \\
-% & add and commit resolved files (still in branch, [branch] untouched) \\
-% & git push afterward to put onto server \\
-% Setting up Git server: & \\
-% mkdir ~/Git/eagle.git & Make the repository file on the server \\
-% cd ~/Git/eagle.git & \\
-% git init - -bare & \\
-% On computer set up server & \\
-% git remote add [server name/alias] user@server.edu:Git/eagle.git & \\
-% git push -u [server name/alias] & uploads everything to server 
-% \label{label}
-% \end{longtable}
-% \end{center}
-% \end{landscape}
 
 \section{Other Useful Matlab Code}
 
 Some of the functions present in the functions.git repository are very useful and often critical to the routine WWLLN processing.
 The function terminator.m is used to calculating the percentage of a VLF path that is in daylight and the percentage that is nighttime conditions.
 It is written to take into a either a vector or scaler initial location, time, and end location.
-The function vdist.m is from the MathWorks file exchange and calculated the great circle distance between two points on the ellipsoidal Earth.
-The function smoothn.m performs a two dimensional smoothing on an array of data, it is useful for artificially increasing the resolution of detection efficiency maps.
+The function \texttt{vdist.m} is from the MathWorks file exchange and calculated the great circle distance between two points on the ellipsoidal Earth.
 
-Aside from these three functions there is a directory in the functions.git repository dedicated to reading and writing WWLLN file types.
-In the directory functions/IO are a set of import functions to import A, AP, AE, R, T, and DE files.
-There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{thesis:appendix:energy}), and WWLLN stations.dat data.
+Aside from these three functions there is a directory in the \texttt{functions.git} repository dedicated to reading and writing WWLLN file types.
+In the directory \texttt{functions/IO} are a set of import functions to import A, AP, AE, R, T, and DE files.
+There are also functions to read and write tab delimited data, the LWPC lookup tables (described in Appendix~\ref{thesis:appendix:energy}), and WWLLN \texttt{stations.dat} data.
 All of these functions take in a given date (and possibly time) to find and load the desired file.
-The file dataPath.dat lists locations that the import functions check for the data folders of the particular file type.
-The default is to look for either /wd2/ or /wd3/ hard drives, but other locations can be added to this list as needed.
+The file \texttt{dataPath.dat} lists locations that the import functions check for the data folders of the particular file type.
+The default is to look for either \texttt{flashfile:/wd1/wwlln/} or \texttt{/wd2/} drives, but other locations can be added to this list as needed.
