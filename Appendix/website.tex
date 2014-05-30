@@ -30,10 +30,10 @@ The three files \texttt{hosts\_list.htm}, \texttt{spectra\_list.htm}, and \textt
 \texttt{index.php} redirects the user to the Wordpress based pages and generally should not be changed.
 
 \texttt{map/} and \texttt{map\_demo/} are the folders containing the scripts and data for the WWLLN lightning maps.
-The .htaccess file in each directory should be used to control who can access them (this data access is completely separate from Wordpress).
-The .htaccess is currently set to use the .htpasswd file at /home/mlhutch/sites/.htpasswd
+The \texttt{.htaccess} file in each directory should be used to control who can access them (this data access is completely separate from Wordpress).
+The \texttt{.htaccess} is currently set to use the \texttt{.htpasswd} file at \texttt{/home/mlhutch/sites/.htpasswd}
 
-\texttt{volcanoMonitor.html} is used to redirect users to the new volcano monitor page, other previous permanent links (e.g. wwlln.net/climate) were replaced more easily and did not need a redirect file.
+\texttt{volcanoMonitor.html} is used to redirect users to the new volcano monitor page, other previous permanent links (e.g. \texttt{wwlln.net/climate}) were replaced more easily and did not need a redirect file.
 
 Finally there is the \texttt{wordpress/} directory.
 This contains all of the support files used to power the wordpress aspects of the website, including the  admin page, the blogs, the MySQL database settings, and WWLLN theme page settings.
@@ -133,9 +133,7 @@ There is a load limit of 25,000 strokes to prevent slow playback due to too many
 Loading a file larger than 25,000 will only load the first 25,000 strokes and ignore the rest.
 Loaded data files play from the beginning of the file.
 
-The terminator code is taken from https://github.com/marmat/google-maps-api-addons.
+The terminator code is taken from \texttt{https://github.com/marmat/google-maps-api-addons}.
 
-Login in controlled by the .htpasswd file specified in .htaccess.  An .htpasswd file is created with: \texttt{htpasswd -c .htpasswd [new\_user]}
+Login in controlled by the \texttt{.htpasswd} file specified in \texttt{.htaccess}.  An \texttt{.htpasswd} file is created with: \texttt{htpasswd -c .htpasswd [new\_user]}
 And amended with: \texttt{htpasswd .htpasswd [new\_user]}
-
-
